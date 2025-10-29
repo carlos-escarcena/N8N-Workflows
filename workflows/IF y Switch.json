@@ -1,0 +1,132 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-25T01:20:45.772Z",
+  "id": "4m1hPC3h8mEPmCR0",
+  "isArchived": false,
+  "meta": null,
+  "name": "IF y Switch",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "4d66eea3-d3b8-459c-8f25-3c7ebd015f69",
+      "name": "When chat message received",
+      "webhookId": "61661cb8-bf9e-492d-a96b-fa61b89b21e1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7edb15f9-ee40-40f9-9a8a-fdf1564c7ac4",
+              "leftValue": "={{ $json.chatInput }}",
+              "rightValue": "Hola",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        -160
+      ],
+      "id": "5459be7b-3d60-49bb-944a-dd0dac5033a4",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.chatInput }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "297c2f3e-a387-498f-962f-6952fadd9a8c"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        224,
+        176
+      ],
+      "id": "6614d539-6aa4-49de-977a-c6c7dfeeda32",
+      "name": "Switch"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-25T01:20:45.775Z",
+      "updatedAt": "2025-10-25T01:20:45.775Z",
+      "role": "workflow:owner",
+      "workflowId": "4m1hPC3h8mEPmCR0",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-25T02:08:02.000Z",
+  "versionId": "5e31bdd1-8f99-4b1d-9d07-cf915efab1b1"
+}
