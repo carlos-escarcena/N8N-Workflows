@@ -140,7 +140,7 @@
       "main": [
         [
           {
-            "node": "Send a text message",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -185,6 +185,17 @@
       "main": [
         []
       ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-10-28T09:04:39.234Z",
@@ -201,7 +212,7 @@
       "typeVersion": 1,
       "position": [
         0,
-        512
+        496
       ],
       "id": "bc1e18ea-b650-48c0-87e9-a7923adb8440",
       "name": "When clicking ‘Execute workflow’"
@@ -220,7 +231,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        704
+        688
       ],
       "id": "f7878f89-6d64-4925-b7b5-727ced34b7fc",
       "name": "Schedule Trigger"
@@ -261,7 +272,7 @@
       "typeVersion": 3.4,
       "position": [
         224,
-        512
+        496
       ],
       "id": "ff7473c0-98ca-497b-a85d-1be3e8c6ba9c",
       "name": "Variables"
@@ -275,7 +286,7 @@
       "typeVersion": 1,
       "position": [
         448,
-        512
+        496
       ],
       "id": "a504966c-de95-413f-95be-e041b49cd4d9",
       "name": "Get many workflows",
@@ -292,7 +303,7 @@
       "typeVersion": 3.2,
       "position": [
         1120,
-        544
+        520
       ],
       "id": "f69bb5e7-2881-44bb-babb-1fac6addb3b4",
       "name": "Merge"
@@ -383,7 +394,7 @@
       "typeVersion": 3.3,
       "position": [
         1568,
-        528
+        504
       ],
       "id": "e15c6d90-b4da-4def-8d08-fc4611b0d749",
       "name": "Switch"
@@ -394,7 +405,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        320
+        304
       ],
       "id": "8c7865ec-2315-4b56-91ca-79f2bd3352a5",
       "name": "same"
@@ -405,7 +416,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        512
+        496
       ],
       "id": "4181eada-b574-422d-9ad9-486de1072d27",
       "name": "different"
@@ -416,7 +427,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        704
+        688
       ],
       "id": "7695c4dc-c29a-4fd3-9c22-40b58cb298eb",
       "name": "new"
@@ -442,7 +453,7 @@
       "typeVersion": 1.1,
       "position": [
         2016,
-        976
+        952
       ],
       "id": "0925d2df-e9d1-43e5-a0a2-6758dc6ee872",
       "name": "Create a file",
@@ -462,7 +473,7 @@
       "typeVersion": 2,
       "position": [
         1344,
-        544
+        520
       ],
       "id": "f62253e8-02b5-4252-98a8-93bf5e133d50",
       "name": "isDiffOrNew"
@@ -475,7 +486,7 @@
       "typeVersion": 3,
       "position": [
         672,
-        512
+        496
       ],
       "id": "6940a9ed-e526-4d99-b2a0-1131ef4e6f37",
       "name": "OneAtATime"
@@ -503,7 +514,7 @@
       "type": "n8n-nodes-base.github",
       "position": [
         896,
-        480
+        464
       ],
       "typeVersion": 1,
       "alwaysOutputData": true,
@@ -539,7 +550,7 @@
       "type": "n8n-nodes-base.github",
       "position": [
         2016,
-        784
+        760
       ],
       "typeVersion": 1,
       "webhookId": "b86e690b-299a-4457-ad39-8aa578140e50",
@@ -559,8 +570,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        848,
-        304
+        1120,
+        272
       ],
       "id": "118b3773-08c0-4e3c-8c6c-3a45e9c7e7f2",
       "name": "Send a text message",
@@ -571,6 +582,17 @@
           "name": "Telegram account"
         }
       }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        896,
+        272
+      ],
+      "id": "d9b234b7-c445-46b3-bb37-3f9435b550ee",
+      "name": "Limit"
     }
   ],
   "pinData": {},
@@ -598,6 +620,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-29T04:59:29.000Z",
-  "versionId": "a92810cd-a279-4e2d-b34e-fe046b213fc2"
+  "updatedAt": "2025-10-29T05:00:20.000Z",
+  "versionId": "da5ad9c6-2308-48ad-ba11-31225b8412d5"
 }
