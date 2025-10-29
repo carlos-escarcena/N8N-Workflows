@@ -565,7 +565,9 @@
       "parameters": {
         "chatId": "6834483413",
         "text": "[N8N Backup]: El backup de tus Workflows se ha guardado correctamente!",
-        "additionalFields": {}
+        "additionalFields": {
+          "appendAttribution": false
+        }
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
@@ -620,6 +622,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-29T05:00:20.000Z",
-  "versionId": "da5ad9c6-2308-48ad-ba11-31225b8412d5"
+  "updatedAt": "2025-10-29T05:04:08.000Z",
+  "versionId": "6ab67513-b6da-43fe-a9fb-bcccf7ae88e8"
 }
