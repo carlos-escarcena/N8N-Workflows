@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Schedule Trigger": {
       "main": [
@@ -140,7 +140,7 @@
       "main": [
         [
           {
-            "node": "FIN",
+            "node": "Send a text message",
             "type": "main",
             "index": 0
           }
@@ -179,6 +179,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        []
       ]
     }
   },
@@ -287,7 +292,7 @@
       "typeVersion": 3.2,
       "position": [
         1120,
-        536
+        544
       ],
       "id": "f69bb5e7-2881-44bb-babb-1fac6addb3b4",
       "name": "Merge"
@@ -378,7 +383,7 @@
       "typeVersion": 3.3,
       "position": [
         1568,
-        520
+        528
       ],
       "id": "e15c6d90-b4da-4def-8d08-fc4611b0d749",
       "name": "Switch"
@@ -437,7 +442,7 @@
       "typeVersion": 1.1,
       "position": [
         2016,
-        968
+        976
       ],
       "id": "0925d2df-e9d1-43e5-a0a2-6758dc6ee872",
       "name": "Create a file",
@@ -450,17 +455,6 @@
       }
     },
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        896,
-        288
-      ],
-      "id": "20508348-193d-46c7-ad72-f8a7698fa180",
-      "name": "FIN"
-    },
-    {
       "parameters": {
         "jsCode": "const orderJsonKeys = (jsonObj) => {\n  const ordered = {};\n  Object.keys(jsonObj).sort().forEach(key => {\n    ordered[key] = jsonObj[key];\n  });\n  return ordered;\n}\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Decode base64 content and parse JSON\n  const origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString());\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n// No file returned / new workflow\n} else if (Object.keys($input.all()[0].json).includes(\"data\")) {\n  const origWorkflow = JSON.parse($input.all()[0].json.data);\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n\n} else {\n  // Order JSON object\n  const n8nWorkflow = $input.all()[1].json;\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return items\nreturn $input.all();\n"
       },
@@ -468,7 +462,7 @@
       "typeVersion": 2,
       "position": [
         1344,
-        536
+        544
       ],
       "id": "f62253e8-02b5-4252-98a8-93bf5e133d50",
       "name": "isDiffOrNew"
@@ -545,7 +539,7 @@
       "type": "n8n-nodes-base.github",
       "position": [
         2016,
-        776
+        784
       ],
       "typeVersion": 1,
       "webhookId": "b86e690b-299a-4457-ad39-8aa578140e50",
@@ -555,6 +549,28 @@
           "name": "GitHub account"
         }
       }
+    },
+    {
+      "parameters": {
+        "chatId": "6834483413",
+        "text": "[N8N Backup]: El backup de tus Workflows se ha guardado correctamente!",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        848,
+        304
+      ],
+      "id": "118b3773-08c0-4e3c-8c6c-3a45e9c7e7f2",
+      "name": "Send a text message",
+      "webhookId": "a52b42ad-079a-484f-b419-68e5aa5a06b7",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -562,7 +578,9 @@
     "executionOrder": "v1",
     "timezone": "Australia/Perth",
     "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "availableInMCP": false,
+    "errorWorkflow": "EYX2BC4I0DolsgK7",
+    "timeSavedPerExecution": 15
   },
   "shared": [
     {
@@ -573,9 +591,13 @@
       "projectId": "1hPYqGN0htWyJ6V9"
     }
   ],
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-10-29T04:51:57.000Z",
-  "versionId": "dc490236-6902-4ac4-88b0-58a4bc56575a"
+  "triggerCount": 1,
+  "updatedAt": "2025-10-29T04:59:29.000Z",
+  "versionId": "a92810cd-a279-4e2d-b34e-fe046b213fc2"
 }
