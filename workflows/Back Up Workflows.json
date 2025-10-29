@@ -206,8 +206,7 @@
         "rule": {
           "interval": [
             {
-              "field": "hours",
-              "hoursInterval": 12
+              "triggerAtHour": 23
             }
           ]
         }
@@ -560,7 +559,10 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
   "shared": [
     {
@@ -574,6 +576,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-29T04:50:43.000Z",
-  "versionId": "636efd23-a8d4-4871-8cd9-ce81bf776f2d"
+  "updatedAt": "2025-10-29T04:51:57.000Z",
+  "versionId": "dc490236-6902-4ac4-88b0-58a4bc56575a"
 }
