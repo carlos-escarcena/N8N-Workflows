@@ -45,17 +45,6 @@
         ]
       ]
     },
-    "Get a file": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Merge": {
       "main": [
         [
@@ -96,7 +85,7 @@
       "main": [
         [
           {
-            "node": "Edit a file",
+            "node": "Edit existing file",
             "type": "main",
             "index": 0
           }
@@ -127,13 +116,7 @@
     },
     "Edit a file": {
       "main": [
-        [
-          {
-            "node": "OneAtATime",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "same": {
@@ -169,14 +152,41 @@
         ],
         [
           {
-            "node": "Get a file",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Merge",
             "type": "main",
             "index": 1
+          },
+          {
+            "node": "Get file data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List files1": {
+      "main": [
+        []
+      ]
+    },
+    "Get file data": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit existing file": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -196,7 +206,7 @@
       "typeVersion": 1,
       "position": [
         0,
-        112
+        64
       ],
       "id": "bc1e18ea-b650-48c0-87e9-a7923adb8440",
       "name": "When clicking ‘Execute workflow’"
@@ -216,7 +226,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        304
+        256
       ],
       "id": "f7878f89-6d64-4925-b7b5-727ced34b7fc",
       "name": "Schedule Trigger"
@@ -240,7 +250,7 @@
             {
               "id": "29798405-9a41-4848-b023-995ef65c18cf",
               "name": "repo.path",
-              "value": ".github/workflows/",
+              "value": "workflows/",
               "type": "string"
             },
             {
@@ -257,7 +267,7 @@
       "typeVersion": 3.4,
       "position": [
         224,
-        112
+        64
       ],
       "id": "ff7473c0-98ca-497b-a85d-1be3e8c6ba9c",
       "name": "Variables"
@@ -271,7 +281,7 @@
       "typeVersion": 1,
       "position": [
         448,
-        112
+        64
       ],
       "id": "a504966c-de95-413f-95be-e041b49cd4d9",
       "name": "Get many workflows",
@@ -283,46 +293,12 @@
       }
     },
     {
-      "parameters": {
-        "resource": "file",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "value": "={{ $('Variables').item.json.repo.owner }}",
-          "mode": "name"
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $('Variables').item.json.repo.name }}"
-        },
-        "filePath": "={{ $('Variables').item.json.repo.path }}",
-        "asBinaryProperty": false,
-        "additionalParameters": {}
-      },
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1.1,
-      "position": [
-        896,
-        32
-      ],
-      "id": "23fb163a-8565-4336-80a2-b4a1fee80c29",
-      "name": "Get a file",
-      "webhookId": "107340f2-9207-4305-8fc7-7e6922102b32",
-      "credentials": {
-        "githubApi": {
-          "id": "RL5eAD7XhVDQCuva",
-          "name": "GitHub account"
-        }
-      }
-    },
-    {
       "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
         1120,
-        112
+        96
       ],
       "id": "f69bb5e7-2881-44bb-babb-1fac6addb3b4",
       "name": "Merge"
@@ -341,7 +317,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.result }}",
+                    "leftValue": "={{ $json.github_status }}",
                     "rightValue": "same",
                     "operator": {
                       "type": "string",
@@ -366,7 +342,7 @@
                 "conditions": [
                   {
                     "id": "4f8edb63-36c4-4957-9ac4-0299998b4ac0",
-                    "leftValue": "={{ $json.result }}",
+                    "leftValue": "={{ $json.github_status }}",
                     "rightValue": "different",
                     "operator": {
                       "type": "string",
@@ -391,7 +367,7 @@
                 "conditions": [
                   {
                     "id": "bee5400a-3afe-4518-893d-86cb16968290",
-                    "leftValue": "={{ $json.result }}",
+                    "leftValue": "={{ $json.github_status }}",
                     "rightValue": "new",
                     "operator": {
                       "type": "string",
@@ -413,7 +389,7 @@
       "typeVersion": 3.3,
       "position": [
         1568,
-        96
+        80
       ],
       "id": "e15c6d90-b4da-4def-8d08-fc4611b0d749",
       "name": "Switch"
@@ -424,7 +400,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        -112
+        -128
       ],
       "id": "8c7865ec-2315-4b56-91ca-79f2bd3352a5",
       "name": "same"
@@ -435,7 +411,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        80
+        64
       ],
       "id": "4181eada-b574-422d-9ad9-486de1072d27",
       "name": "different"
@@ -446,7 +422,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        304
+        256
       ],
       "id": "7695c4dc-c29a-4fd3-9c22-40b58cb298eb",
       "name": "new"
@@ -457,23 +433,23 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Variables').item.json.repo.owner }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Variables').item.json.repo.owner }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Variables').item.json.repo.name }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Variables').item.json.repo.name }}"
         },
         "filePath": "={{ $('Variables').item.json.repo.path }}",
-        "fileContent": "={{ $node[\"isDiffOrNew\"].jeson[\"n8n_data_stringy\"]}}",
-        "commitMessage": "=[N8N Backup] {{ $node[\"OneAtATime\"].jeson[\"name\"] }}.json ({{ $json[\"github_status\"] }})"
+        "fileContent": "={{ $node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "=[N8N Backup] {{ $('OneAtATime').item.json.name }}.json ({{ $json[\"github_status\"] }})"
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        2016,
-        416
+        2144,
+        0
       ],
       "id": "bfb7681b-bf0b-4cc9-9fb5-278b4cca8c8a",
       "name": "Edit a file",
@@ -506,7 +482,7 @@
       "typeVersion": 1.1,
       "position": [
         2016,
-        608
+        528
       ],
       "id": "0925d2df-e9d1-43e5-a0a2-6758dc6ee872",
       "name": "Create a file",
@@ -531,13 +507,13 @@
     },
     {
       "parameters": {
-        "jsCode": "// Inputs esperados:\n// $input[0] = archivo obtenido desde GitHub (puede contener o no 'content')\n// $input[1] = workflow actual de n8n a comparar\n\n// Si el archivo existe en GitHub\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n\n  // Decodificar contenido base64 y parsear\n  var origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString('utf8'));\n  var n8nWorkflow = $input.all()[1].json;\n\n  // Ordenar las claves de ambos objetos\n  function orderObject(obj) {\n    const ordered = {};\n    Object.keys(obj).sort().forEach(function(key) {\n      ordered[key] = obj[key];\n    });\n    return ordered;\n  }\n\n  var orderedOriginal = orderObject(origWorkflow);\n  var orderedActual = orderObject(n8nWorkflow);\n\n  // Convertir a string para comparar\n  var origStr = JSON.stringify(orderedOriginal);\n  var actualStr = JSON.stringify(orderedActual);\n\n  if (origStr === actualStr) {\n    return [{ result: \"same\" }];\n  } else {\n    return [{ result: \"different\" }];\n  }\n\n} else {\n  // Si no existe el archivo en GitHub\n  return [{ result: \"new\" }];\n}\n"
+        "jsCode": "const orderJsonKeys = (jsonObj) => {\n  const ordered = {};\n  Object.keys(jsonObj).sort().forEach(key => {\n    ordered[key] = jsonObj[key];\n  });\n  return ordered;\n}\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Decode base64 content and parse JSON\n  const origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString());\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n// No file returned / new workflow\n} else if (Object.keys($input.all()[0].json).includes(\"data\")) {\n  const origWorkflow = JSON.parse($input.all()[0].json.data);\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n\n} else {\n  // Order JSON object\n  const n8nWorkflow = $input.all()[1].json;\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return items\nreturn $input.all();\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
         1344,
-        112
+        96
       ],
       "id": "f62253e8-02b5-4252-98a8-93bf5e133d50",
       "name": "isDiffOrNew"
@@ -550,10 +526,112 @@
       "typeVersion": 3,
       "position": [
         672,
-        112
+        64
       ],
       "id": "6940a9ed-e526-4d99-b2a0-1131ef4e6f37",
       "name": "OneAtATime"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Variables').item.json.repo.owner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "=",
+          "mode": "name"
+        },
+        "filePath": "={{ $('Variables').item.json.repo.path }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1232,
+        -112
+      ],
+      "id": "23fb163a-8565-4336-80a2-b4a1fee80c29",
+      "name": "List files1",
+      "webhookId": "107340f2-9207-4305-8fc7-7e6922102b32",
+      "credentials": {
+        "githubApi": {
+          "id": "RL5eAD7XhVDQCuva",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Variables').item.json.repo.owner }}",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Variables').item.json.repo.name }}",
+          "mode": ""
+        },
+        "filePath": "={{ $('Variables').item.json.repo.path }}{{$json.name}}.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "722fe8d9-c333-47e1-8ee5-ec56f0e9f059",
+      "name": "Get file data",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        896,
+        -16
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "webhookId": "00570551-42a2-4e7e-a12e-7c89f41293f3",
+      "credentials": {
+        "githubApi": {
+          "id": "RL5eAD7XhVDQCuva",
+          "name": "GitHub account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Variables').item.json.repo.owner }}",
+          "mode": ""
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Variables').item.json.repo.name }}",
+          "mode": ""
+        },
+        "filePath": "={{ $('Variables').item.json.repo.path }}{{ $('OneAtATime').item.json.name }}.json",
+        "fileContent": "={{ $node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "=[N8N Backup] {{ $('OneAtATime').item.json.name }}.json ({{ $json[\"github_status\"] }})"
+      },
+      "id": "9db84719-03f8-436c-8456-dfc827b2738d",
+      "name": "Edit existing file",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        2016,
+        176
+      ],
+      "typeVersion": 1,
+      "webhookId": "b86e690b-299a-4457-ad39-8aa578140e50",
+      "credentials": {
+        "githubApi": {
+          "id": "RL5eAD7XhVDQCuva",
+          "name": "GitHub account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -572,6 +650,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-28T15:05:08.000Z",
-  "versionId": "1dc5c1b4-2d93-404f-92a9-1e6dc6404085"
+  "updatedAt": "2025-10-29T04:50:14.000Z",
+  "versionId": "8adf559e-dbda-4483-b268-25b49058a339"
 }
