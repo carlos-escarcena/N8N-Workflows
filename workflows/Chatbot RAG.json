@@ -1,0 +1,199 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-28T08:35:30.779Z",
+  "id": "YV6ewLBuaZZL8V9d",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Chatbot RAG",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2e5837c1-b0ae-4d8a-8540-5f3d8380c0f0",
+      "name": "When chat message received",
+      "webhookId": "85149d3d-b00c-4612-85c1-6862c4cc0d25"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres un agente super amable que ayuda a las personas que buscan formación sobre inteligencia artificial y automatizaciones en UDIA."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "242698ab-c34e-4bc1-9b15-ea8dd48d2212",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        80,
+        208
+      ],
+      "id": "e341b104-3555-4c42-8180-b3b3027a8dce",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        224,
+        208
+      ],
+      "id": "1da2aa24-37b4-4e85-8a4d-2d008a602c9f",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Trabaja con tu pinecone vector store donde tienes toda la información sobre UDIA.es y lo que hacen.",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "prueba-n8n-udia",
+          "mode": "list",
+          "cachedResultName": "prueba-n8n-udia"
+        },
+        "options": {
+          "pineconeNamespace": "prueba-n8n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        416,
+        256
+      ],
+      "id": "eeb50f04-f4bc-47d2-b78d-54a0a3cbdebb",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "hKEjnLBSlIPm7yEr",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        416,
+        416
+      ],
+      "id": "99702ad9-65e7-4a0d-8747-ea4cee47a9a5",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-28T08:35:30.783Z",
+      "updatedAt": "2025-10-28T08:35:30.783Z",
+      "role": "workflow:owner",
+      "workflowId": "YV6ewLBuaZZL8V9d",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-28T08:38:29.000Z",
+  "versionId": "52457be7-8613-4987-abac-dfc81edd96fe"
+}
