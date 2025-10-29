@@ -114,11 +114,6 @@
         ]
       ]
     },
-    "Edit a file": {
-      "main": [
-        []
-      ]
-    },
     "same": {
       "main": [
         [
@@ -162,11 +157,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "List files1": {
-      "main": [
-        []
       ]
     },
     "Get file data": {
@@ -430,40 +420,6 @@
     {
       "parameters": {
         "resource": "file",
-        "operation": "edit",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $('Variables').item.json.repo.owner }}"
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $('Variables').item.json.repo.name }}"
-        },
-        "filePath": "={{ $('Variables').item.json.repo.path }}",
-        "fileContent": "={{ $node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "=[N8N Backup] {{ $('OneAtATime').item.json.name }}.json ({{ $json[\"github_status\"] }})"
-      },
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1.1,
-      "position": [
-        0,
-        64
-      ],
-      "id": "bfb7681b-bf0b-4cc9-9fb5-278b4cca8c8a",
-      "name": "Edit a file",
-      "webhookId": "93b53ebb-ed4e-4fa4-b6c3-068d9ec00e2d",
-      "credentials": {
-        "githubApi": {
-          "id": "RL5eAD7XhVDQCuva",
-          "name": "GitHub account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "file",
         "owner": {
           "__rl": true,
           "value": "={{ $('Variables').item.json.repo.owner }}",
@@ -530,38 +486,6 @@
       ],
       "id": "6940a9ed-e526-4d99-b2a0-1131ef4e6f37",
       "name": "OneAtATime"
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "operation": "list",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $('Variables').item.json.repo.owner }}"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=",
-          "mode": "name"
-        },
-        "filePath": "={{ $('Variables').item.json.repo.path }}"
-      },
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1.1,
-      "position": [
-        0,
-        -160
-      ],
-      "id": "23fb163a-8565-4336-80a2-b4a1fee80c29",
-      "name": "List files1",
-      "webhookId": "107340f2-9207-4305-8fc7-7e6922102b32",
-      "credentials": {
-        "githubApi": {
-          "id": "RL5eAD7XhVDQCuva",
-          "name": "GitHub account"
-        }
-      }
     },
     {
       "parameters": {
@@ -650,6 +574,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-29T04:50:31.000Z",
-  "versionId": "a9add580-8dec-49c2-9056-070c9ad9dab8"
+  "updatedAt": "2025-10-29T04:50:43.000Z",
+  "versionId": "636efd23-a8d4-4871-8cd9-ce81bf776f2d"
 }
