@@ -206,7 +206,7 @@
       "typeVersion": 1,
       "position": [
         0,
-        64
+        512
       ],
       "id": "bc1e18ea-b650-48c0-87e9-a7923adb8440",
       "name": "When clicking ‘Execute workflow’"
@@ -226,7 +226,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        256
+        704
       ],
       "id": "f7878f89-6d64-4925-b7b5-727ced34b7fc",
       "name": "Schedule Trigger"
@@ -267,7 +267,7 @@
       "typeVersion": 3.4,
       "position": [
         224,
-        64
+        512
       ],
       "id": "ff7473c0-98ca-497b-a85d-1be3e8c6ba9c",
       "name": "Variables"
@@ -281,7 +281,7 @@
       "typeVersion": 1,
       "position": [
         448,
-        64
+        512
       ],
       "id": "a504966c-de95-413f-95be-e041b49cd4d9",
       "name": "Get many workflows",
@@ -298,7 +298,7 @@
       "typeVersion": 3.2,
       "position": [
         1120,
-        96
+        536
       ],
       "id": "f69bb5e7-2881-44bb-babb-1fac6addb3b4",
       "name": "Merge"
@@ -389,7 +389,7 @@
       "typeVersion": 3.3,
       "position": [
         1568,
-        80
+        520
       ],
       "id": "e15c6d90-b4da-4def-8d08-fc4611b0d749",
       "name": "Switch"
@@ -400,7 +400,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        -128
+        320
       ],
       "id": "8c7865ec-2315-4b56-91ca-79f2bd3352a5",
       "name": "same"
@@ -411,7 +411,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        64
+        512
       ],
       "id": "4181eada-b574-422d-9ad9-486de1072d27",
       "name": "different"
@@ -422,7 +422,7 @@
       "typeVersion": 1,
       "position": [
         1792,
-        256
+        704
       ],
       "id": "7695c4dc-c29a-4fd3-9c22-40b58cb298eb",
       "name": "new"
@@ -448,8 +448,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        2144,
-        0
+        0,
+        64
       ],
       "id": "bfb7681b-bf0b-4cc9-9fb5-278b4cca8c8a",
       "name": "Edit a file",
@@ -482,7 +482,7 @@
       "typeVersion": 1.1,
       "position": [
         2016,
-        528
+        968
       ],
       "id": "0925d2df-e9d1-43e5-a0a2-6758dc6ee872",
       "name": "Create a file",
@@ -500,7 +500,7 @@
       "typeVersion": 1,
       "position": [
         896,
-        -160
+        288
       ],
       "id": "20508348-193d-46c7-ad72-f8a7698fa180",
       "name": "FIN"
@@ -513,7 +513,7 @@
       "typeVersion": 2,
       "position": [
         1344,
-        96
+        536
       ],
       "id": "f62253e8-02b5-4252-98a8-93bf5e133d50",
       "name": "isDiffOrNew"
@@ -526,7 +526,7 @@
       "typeVersion": 3,
       "position": [
         672,
-        64
+        512
       ],
       "id": "6940a9ed-e526-4d99-b2a0-1131ef4e6f37",
       "name": "OneAtATime"
@@ -550,8 +550,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        1232,
-        -112
+        0,
+        -160
       ],
       "id": "23fb163a-8565-4336-80a2-b4a1fee80c29",
       "name": "List files1",
@@ -586,7 +586,7 @@
       "type": "n8n-nodes-base.github",
       "position": [
         896,
-        -16
+        480
       ],
       "typeVersion": 1,
       "alwaysOutputData": true,
@@ -622,7 +622,7 @@
       "type": "n8n-nodes-base.github",
       "position": [
         2016,
-        176
+        776
       ],
       "typeVersion": 1,
       "webhookId": "b86e690b-299a-4457-ad39-8aa578140e50",
@@ -650,6 +650,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-29T04:50:14.000Z",
-  "versionId": "8adf559e-dbda-4483-b268-25b49058a339"
+  "updatedAt": "2025-10-29T04:50:31.000Z",
+  "versionId": "a9add580-8dec-49c2-9056-070c9ad9dab8"
 }
