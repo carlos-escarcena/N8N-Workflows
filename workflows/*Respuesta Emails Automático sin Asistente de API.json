@@ -1,0 +1,282 @@
+{
+  "active": false,
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Filter1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Filter2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Message a model1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-27T08:16:01.171Z",
+  "id": "BrGT8xm4HeA2S7Sf",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "*Respuesta Emails Automático sin Asistente de API",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "0e7b7c08-ed16-4529-a4dc-86cd77210500",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Con el texto proporcionado, tienes que categorizar qué tipo de soporte requiere el cliente. Solo puedes elegir una de las siguientes categorías:\n\nseguimiento de pedido\nsin categorizar\n\nSi no puedes categorizar, entonces asignalo a la categoria de sin categorizar.\n\nResponde solamente la categoría\n---\n {{ $json.snippet }}"
+            },
+            {
+              "content": "Eres un asistente especializado en responder a correos electrónicos",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        208,
+        0
+      ],
+      "id": "42696c1c-af0c-4348-a762-92e51a082a4f",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f77399d7-a791-485b-9ef9-e3473d4d028f",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        544,
+        -176
+      ],
+      "id": "5e9855a2-75cb-4918-bd7b-dc6c5ceb9fcc",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "05654a3f-5261-4128-850a-d8530987c55f",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        544,
+        0
+      ],
+      "id": "65c0339f-da97-4ca3-8439-2e5a55a59811",
+      "name": "Filter1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "190428fc-571e-4436-9614-ec1929899f20",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        544,
+        160
+      ],
+      "id": "509fe30d-7bc3-4ab5-aaf0-044f5f113f7f",
+      "name": "Filter2"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un asistente especializado en responder a correos electrónicos de forma concisa",
+              "role": "system"
+            },
+            {
+              "content": "Buenas noches, dices que mi pedido ha sido enviado pero en correos me dicen que aún no te han recogido el pedido así que quería saber dónde se encuentra."
+            },
+            {
+              "content": "Buenas noches,\n\nGracias por contactarnos y lamento la confusión que pueda haber surgido con respecto al estado de tu pedido. Entiendo tu preocupación y estoy aquí para ayudarte a esclarecer la situación.\n\nAl recibir la notificación de que tu pedido ha sido \"enviado\", esto indica que hemos procesado y preparado tu pedido para su recogida por parte de la empresa de correos. Sin embargo, puede haber un desfase entre el momento en que el pedido se marca como enviado en nuestro sistema y el momento en que la empresa de correos actualiza el estado de recogida y envío en el suyo.\n\nPara resolver esta discrepancia y proporcionarte información precisa sobre el paradero de tu pedido, procederé a verificar el estado actual del mismo con nuestro departamento de logística y con la empresa de correos. Este proceso puede tomar un poco de tiempo, pero me comprometo a mantenerte informado con la información más actualizada tan pronto como esté disponible.\n\nAgradezco tu paciencia y comprensión en este asunto. Si tienes alguna otra pregunta o necesitas asistencia adicional mientras tanto, por favor, no dudes en comunicarte con nosotros.",
+              "role": "assistant"
+            },
+            {
+              "content": "={{ $('Gmail Trigger').item.json.snippet }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        752,
+        -176
+      ],
+      "id": "0156bb23-60e7-4b19-a03d-92c7619f1cb4",
+      "name": "Message a model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-27T08:16:01.180Z",
+      "updatedAt": "2025-10-27T08:16:01.180Z",
+      "role": "workflow:owner",
+      "workflowId": "BrGT8xm4HeA2S7Sf",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-27T08:25:14.000Z",
+  "versionId": "4ef6eb67-7970-4ffb-8fc7-26aea1443eae"
+}
