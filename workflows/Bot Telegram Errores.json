@@ -1,0 +1,78 @@
+{
+  "active": false,
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-25T01:06:30.173Z",
+  "id": "EYX2BC4I0DolsgK7",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Bot Telegram Errores",
+  "nodes": [
+    {
+      "parameters": {
+        "chatId": "=6834483413",
+        "text": "=Error: Ha habido un error en el nodo \"{{ $json.execution.lastNodeExecuted }}\" del workflow \"{{ $json.workflow.name }}\".",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        0
+      ],
+      "id": "edc84db4-2581-4e77-b1c3-d9ae1402ba2e",
+      "name": "Send a text message",
+      "webhookId": "ee974080-af66-4dd0-8348-cf1c8ac7776e",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        16,
+        0
+      ],
+      "id": "584d75de-b12b-4df9-b5e9-8383cfc8b0fe",
+      "name": "Error Trigger"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-25T01:06:30.178Z",
+      "updatedAt": "2025-10-25T01:06:30.178Z",
+      "role": "workflow:owner",
+      "workflowId": "EYX2BC4I0DolsgK7",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-25T02:07:39.000Z",
+  "versionId": "c00c32cb-8a60-4a1c-898a-6835b3f6acc0"
+}
