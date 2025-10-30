@@ -1,0 +1,40 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-10-30T10:25:29.027Z",
+  "id": "pJSFY2GejTOXzR8U",
+  "isArchived": false,
+  "meta": null,
+  "name": "Prueba SUNNA",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6a876e78-c867-4a53-8d2c-d68d87511515",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-30T10:25:29.038Z",
+      "updatedAt": "2025-10-30T10:25:29.038Z",
+      "role": "workflow:owner",
+      "workflowId": "pJSFY2GejTOXzR8U",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-30T10:26:39.000Z",
+  "versionId": "faeeda2b-7588-4d48-9b91-92558abce8d5"
+}
