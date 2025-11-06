@@ -179,15 +179,7 @@
       "id": "d458dabf-bef1-4fb2-985d-c9fcd6f573fc"
     },
     {
-      "parameters": {
-        "rules": {
-          "rules": [
-            {
-              "operation": "equal"
-            }
-          ]
-        }
-      },
+      "parameters": {},
       "name": "Switch (Intent Rules)",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
@@ -373,6 +365,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-02T09:55:07.000Z",
-  "versionId": "943f02f8-ed7b-48a9-837b-e5a9bee9f310"
+  "updatedAt": "2025-11-06T09:27:38.000Z",
+  "versionId": "f0635ccf-61b9-4ec0-a9e9-ae29f7555677"
 }
