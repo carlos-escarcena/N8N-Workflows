@@ -1,0 +1,1118 @@
+{
+  "active": false,
+  "connections": {
+    "Get Past Objects": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt Agent": {
+      "main": [
+        [
+          {
+            "node": "SET",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Idea Agent": {
+      "main": [
+        [
+          {
+            "node": "Prompt Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Set Object List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Object List": {
+      "main": [
+        [
+          {
+            "node": "Idea Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Object & Caption": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Idea Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get Past Objects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Idea Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Prompt Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload to GCS (To be accessible via URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to GCS (To be accessible via URL)": {
+      "main": [
+        [
+          {
+            "node": "Turn video to 9:16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Turn video to 9:16": {
+      "main": [
+        [
+          {
+            "node": "Rendering...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering...": {
+      "main": [
+        [
+          {
+            "node": "Done?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Done?": {
+      "main": [
+        [
+          {
+            "node": "Configure me",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure me": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Done?1": {
+      "main": [
+        [
+          {
+            "node": "Done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Upload video to Postiz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload video to Postiz": {
+      "main": [
+        [
+          {
+            "node": "Get Postiz integrations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Postiz integrations": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Schedule TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Schedule YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Schedule Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:29:26.753Z",
+  "id": "hrOYzAlTlkKMlxv9",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ Viral Reels Factory",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "56336a38-2554-46a5-a9a6-b083e4f2e753",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1hNzWblAWsI_5u4RUK7kC3tSbR9riex94ZUuslhhDb8o",
+          "mode": "list",
+          "cachedResultName": "VEO ASMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hNzWblAWsI_5u4RUK7kC3tSbR9riex94ZUuslhhDb8o/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hNzWblAWsI_5u4RUK7kC3tSbR9riex94ZUuslhhDb8o/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        224,
+        416
+      ],
+      "id": "c7954aa3-4c02-4356-a312-b1d6e4066818",
+      "name": "Get Past Objects"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output.object }}",
+        "options": {
+          "systemMessage": "=# Overview  \nYou are an AI agent that specializes in generating text-to-video prompts optimized for ASMR-style videos using Google Veo 3. \n\nYou will receive the name of a fruit-shaped glass object (e.g. \"glass apple\", \"glass mango\", \"glass croissant\"). Your task is to generate a hyper-realistic, sensory-rich video prompt of that object being gently and artistically divided in a controlled, CGI-rendered simulation.\n\n---\n\n## Policy Compliance Reminder (CRITICAL):\n\nTo ensure your prompt is accepted and not filtered out by Google Veo, you **must follow these safety guidelines**:\n\n- The scene must depict a **fully stylized digital animation**. It must be clearly artificial, artistic, and safe.\n- Do **not** say the object is being “cut,” “sliced,” “shattered,” “cleaved,” or “stabbed.” These words are policy triggers.\n- Instead, describe the object as made from a **resin-like material that mimics glass** and emphasize **pre-designed seams or grooves**.\n- The object should appear to **separate or open smoothly** as part of an animation, not through destructive force.\n- You may include a “blade” or “tool” only if it is described as sleek, polished, choreographed, and interacting with pre-defined lines in the object.\n- Avoid all aggressive words like “snap,” “pierce,” “strike,” or “break.”\n- Reassure at the end that this is **100% CGI, digitally rendered, with no physical tools or real materials involved**.\n\n---\n\n## Core Requirements:\n\n- The video must feel cinematic, photorealistic, and calming.\n- Framing: 9:16 vertical. The object should fill most of the vertical space.\n- Scene: Static vertical close-up of a dark walnut cutting board and a fruit-shaped resin object with subtle translucency and color.\n- The object should be described as **amber, ruby, or emerald-colored resin** — not literal glass.\n- A **polished steel blade** may appear, but it must move gracefully and along a **pre-designed groove**.\n- The action must be safe, simulated, and elegant. No force or destruction implied.\n- Include four ASMR sound layers:\n  1. A soft tonal contact as the blade touches the surface  \n  2. A smooth glide sound as the form divides  \n  3. A muted wooden note as the tool completes its motion  \n  4. A light chime as the separated piece rests on the board  \n- Keep language soft, immersive, and artistic.\n\n---\n\n## Prompt Output Format:\n\n**Subject**: A sculpted fruit form resembling a [object], made from a colored, semi-translucent resin that mimics glass, rests on a dark walnut cutting board, framed in vertical 9:16.  \n**Setting**: Static vertical close-up, lit softly from above. Gentle light glides over the board’s surface and the object’s colored curves.  \n**Action**: A sleek, polished steel blade enters from the top right. In a graceful, choreographed motion, the blade glides along a pre-designed groove in the resin form. The material responds with a controlled, simulated separation, revealing a smooth, inner core. There are no splinters, no breakage — only a seamless division along internal seams designed for the animation.  \n**Style**: Stylized CGI realism. Every surface is rendered with photographic precision, but the entire scene is clearly artificial, safe, and elegant.  \n**Sound**: Four clean ASMR layers:  \n1. A crisp tone as the blade contacts the smooth resin  \n2. A subtle glide as the form separates  \n3. A soft wooden note as the blade rests  \n4. A delicate chime as the separated half settles onto the board  \n**Camera Motion**: Locked-off 9:16 composition. Focus shifts gently from the tool’s edge to the exposed interior.  \n**Composition**: The object is centered vertically. The blade enters cleanly from the top. No hands are visible.  \n**Ambiance**: No music, no speech — just layered, quiet cutting sounds in a controlled environment.  \n\nThis is a digitally rendered simulation — no real glass, tools, or objects are shown. The scene is entirely safe, artistic, and stylized for ASMR effect.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1296,
+        416
+      ],
+      "id": "a8ab4c30-d4d1-40da-81e8-b1c523154ea9",
+      "name": "Prompt Agent"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Objects: {{ $json.objects.join(\", \") }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=# Overview  \nYou are an AI agent that selects unique **fruits** for ASMR-style glass cutting videos.\n\n## Your Task  \nYou will receive a list of 7 fruits that have already been used.  \nYour job is to generate **one new fruit** that is **not on that list**, and would look visually compelling if it were made of **glass** and cut with a knife in a close-up ASMR video.\n\n## Requirements\n- The fruit must **not repeat** any of the 7 provided items.  \n- The fruit must have a **clear, recognizable shape** and be **physically feasible** to cut with a knife (even if it’s made of glass).  \n- Prioritize fruits that would look **aesthetic and interesting** with a translucent, colored glass texture.  \n- Do **not** explain or describe the fruit.\n\n## Output Format  \nOutput a JSON object with the following structure:\n\n{\n  \"object\": \"Glass [Object name]\",\n  \"caption\": \"Glass [Object name] ASMR\"\n}\n\nReplace `[object name]` with the newly generated fruit. Do not include any punctuation or commentary.\n\n## Example Output  \n{\n  \"object\": \"Glass Apple\",\n  \"caption\": \"Glass Apple ASMR\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        896,
+        416
+      ],
+      "id": "bc2458e9-685a-4740-921b-1b66abf4c8f2",
+      "name": "Idea Agent"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        448,
+        416
+      ],
+      "id": "022ade37-f297-402b-b2e1-8982bca37117",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cf818c10-ad6d-4349-830f-393529a79d62",
+              "name": "objects",
+              "value": "=[\"{{ $json.data[0].object }}\",\"{{ $json.data[1].object }}\"]",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        672,
+        416
+      ],
+      "id": "8b58f76c-dbef-4325-9734-dca31588917d",
+      "name": "Set Object List"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"object\": {\n      \"type\": \"string\",\n      \"description\": \"A new object name in the format 'glass [object]', all lowercase with no punctuation.\"\n    },\n    \"caption\": {\n      \"type\": \"string\",\n      \"description\": \"A caption in the format 'glass [object] ASMR', matching the object field exactly.\"\n    }\n  },\n  \"required\": [\"object\", \"caption\"]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1056,
+        640
+      ],
+      "id": "3d5b9709-22b0-4c85-9a7b-7212576ebb05",
+      "name": "Object & Caption"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        416
+      ],
+      "id": "5c34d559-3323-4172-b21f-18253a9151cd",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        928,
+        640
+      ],
+      "id": "121e00b5-d023-401c-a7cf-2ae4c285efdb",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1696,
+        416
+      ],
+      "id": "0e97943d-64b4-492b-be88-761499e7fd05",
+      "name": "SET"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        416
+      ],
+      "id": "7b1955f0-37cf-4ffb-bfcb-4797653ed98a",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2144,
+        416
+      ],
+      "id": "f272145e-4fdd-456d-9f31-160f51de04a4",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        3040,
+        416
+      ],
+      "id": "682b06e4-a2cb-41bc-9410-42691edbbd35",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": {{ JSON.stringify($('Prompt Agent').item.json.output) }}\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2368,
+        416
+      ],
+      "id": "158d3e89-fc36-443f-bf04-2b2dd09ae2b5",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2816,
+        336
+      ],
+      "id": "90f6b790-a12b-4c67-9e3e-42b27753e053",
+      "name": "Fetch Status"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2592,
+        416
+      ],
+      "id": "0d6763c4-3590-407b-8483-4ef00735e815",
+      "name": "Wait",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3264,
+        416
+      ],
+      "id": "c1c4523c-196d-4d9d-ace4-85a0787e682b",
+      "name": "Convert to File",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3936,
+        416
+      ],
+      "id": "c340a574-565c-4dcb-a629-c081496ced6f",
+      "name": "Rendering...",
+      "webhookId": "25193fe1-b3c9-48f5-ad10-89ad74293042"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Done?').item.json.response.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4832,
+        416
+      ],
+      "id": "80b2004c-e141-48f1-a7fb-e87c18bae70a",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "ViralReelz",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3488,
+        416
+      ],
+      "id": "91fd159c-5bd2-47e6-a587-2d52217e0d01",
+      "name": "Upload to GCS (To be accessible via URL)",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.shotstack.io/v1/render",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\t\"timeline\": {\n\t\t\"tracks\": [\n\t\t\t{\n\t\t\t\t\"clips\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"asset\": {\n\t\t\t\t\t\t\t\"type\": \"video\",\n\t\t\t\t\t\t\t\"src\": \"{{ $json.mediaLink }}\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"start\": 0,\n\t\t\t\t\t\t\"length\": 8,\n\t\t\t\t\t\t\"fit\": \"crop\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t]\n\t},\n\t\"output\": {\n\t\t\"format\": \"mp4\",\n\t\t\"aspectRatio\": \"9:16\",\n\t\t\"resolution\": \"hd\"\n\t}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3712,
+        416
+      ],
+      "id": "5ea752f4-6c58-4327-8383-0684293e31d0",
+      "name": "Turn video to 9:16"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fc24d410-040a-4ca6-b70f-7473af617bd9",
+              "leftValue": "={{ $json.response.status }}",
+              "rightValue": "done",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4384,
+        416
+      ],
+      "id": "d19c381b-b6e7-4b62-b5a7-997611a4dd13",
+      "name": "Done?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0f5772c0-1f84-45e9-b131-8be1c8dd6d85",
+              "name": "postiz_api",
+              "value": "https://api.postiz.com/public/v1",
+              "type": "string"
+            },
+            {
+              "id": "f3d9536a-3dc9-4673-b774-0434ca64575f",
+              "name": "share_title",
+              "value": "={{ $('Idea Agent').item.json.output.caption }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4608,
+        416
+      ],
+      "id": "4b569a0c-4d97-451c-bc19-b49609f2ed7d",
+      "name": "Configure me"
+    },
+    {
+      "parameters": {
+        "content": "# ❗ Config",
+        "height": 380,
+        "width": 220,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4560,
+        192
+      ],
+      "id": "378eb9e6-39f7-477a-9cc2-f92999e5d445",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.shotstack.io/v1/render/{{ $('Turn video to 9:16').item.json.response.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4160,
+        336
+      ],
+      "id": "9ef22266-6e27-4e9c-8d31-39de79d47452",
+      "name": "Done?1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/upload",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5056,
+        416
+      ],
+      "id": "2e19647f-f65d-471a-b023-c27313228030",
+      "name": "Upload video to Postiz"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.postiz.com/public/v1/integrations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5280,
+        416
+      ],
+      "id": "9eb57250-8d74-41f6-8d4a-dc2e44532e48",
+      "name": "Get Postiz integrations"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.identifier }}",
+                    "rightValue": "tiktok",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "3ff74ffe-3f82-437d-9218-bce4f7551211"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "tiktok"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2edc7f5f-18cf-45e2-9a10-03c6ee2a062f",
+                    "leftValue": "={{ $json.identifier }}",
+                    "rightValue": "youtube",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "youtube"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f461c331-7506-486b-ab4a-de03823f82f9",
+                    "leftValue": "={{ $json.identifier }}",
+                    "rightValue": "instagram",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "instagram"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        5504,
+        400
+      ],
+      "id": "f918ada9-b8c4-4abc-9e44-efe49f73b741",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"type\": \"public\"\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5728,
+        416
+      ],
+      "id": "1042c4e1-67c2-46a2-8762-3eb9352e02c5",
+      "name": "Schedule YouTube"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"privacy_level\": \"PUBLIC_TO_EVERYONE\",\n        \"duet\": \"false\",\n        \"stitch\": \"false\",\n        \"comment\": \"true\",\n        \"autoAddMusic\": \"no\",\n        \"brand_content_toggle\": \"false\",\n        \"brand_organic_toggle\": \"false\",\n        \"content_posting_method\": \"DIRECT_POST\"\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5728,
+        224
+      ],
+      "id": "08afc869-6ad0-4162-a9de-bb04e01782f0",
+      "name": "Schedule TikTok"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"post_type\": \"post\"\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5728,
+        608
+      ],
+      "id": "9407be13-eb0a-4362-acee-71edc9d86f80",
+      "name": "Schedule Instagram"
+    },
+    {
+      "parameters": {
+        "content": "## Checking the available channels",
+        "height": 496,
+        "width": 464,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5152,
+        112
+      ],
+      "id": "11d7b6dd-eee0-4d40-afc7-8c66128789b2",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Scheduling the posts",
+        "height": 656,
+        "width": 320,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5616,
+        112
+      ],
+      "id": "0e709123-97f0-4f2e-9cfd-abdc6d2417cd",
+      "name": "Sticky Note8"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:29:26.759Z",
+      "updatedAt": "2025-11-10T16:29:26.759Z",
+      "role": "workflow:owner",
+      "workflowId": "hrOYzAlTlkKMlxv9",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:29:26.000Z",
+  "versionId": "1d5bc896-0664-4da0-b712-41895b657de1"
+}
