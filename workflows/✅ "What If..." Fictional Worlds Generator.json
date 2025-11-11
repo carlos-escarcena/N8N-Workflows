@@ -1,0 +1,2279 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Input variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Audio": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "Generate Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Input variables": {
+      "main": [
+        [
+          {
+            "node": "Story writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Story writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload Hook Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Story writer",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Story writer": {
+      "main": [
+        [
+          {
+            "node": "Hook Veo Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hook Veo Prompt": {
+      "main": [
+        [
+          {
+            "node": "Segment 1 Veo Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Segment 1 Veo Prompt": {
+      "main": [
+        [
+          {
+            "node": "Segment 2 Veo Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Segment 2 Veo Prompt": {
+      "main": [
+        [
+          {
+            "node": "CTA Veo Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Hook Veo Prompt",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Segment 1 Veo Prompt",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Segment 2 Veo Prompt",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "CTA Veo Prompt",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CTA Veo Prompt": {
+      "main": [
+        [
+          {
+            "node": "SET",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Audio1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "Upload Segment 1 Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Audio4": {
+      "main": [
+        [
+          {
+            "node": "Convert to File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File4": {
+      "main": [
+        [
+          {
+            "node": "Upload Segment 2 Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Segment 1 Audio": {
+      "main": [
+        [
+          {
+            "node": "Generate Audio4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Audio5": {
+      "main": [
+        [
+          {
+            "node": "Convert to File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File5": {
+      "main": [
+        [
+          {
+            "node": "Upload CTA Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Segment 2 Audio": {
+      "main": [
+        [
+          {
+            "node": "Generate Audio5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Hook Audio": {
+      "main": [
+        [
+          {
+            "node": "Generate Audio1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File2": {
+      "main": [
+        [
+          {
+            "node": "Video Hook Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File3": {
+      "main": [
+        [
+          {
+            "node": "Video Segment 1 Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video2": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status2": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File6": {
+      "main": [
+        [
+          {
+            "node": "Video Segment 2 Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch3": {
+      "main": [
+        [
+          {
+            "node": "Convert to File7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video3": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status3": {
+      "main": [
+        [
+          {
+            "node": "Switch3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File7": {
+      "main": [
+        [
+          {
+            "node": "Video CTA Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload CTA Audio": {
+      "main": [
+        [
+          {
+            "node": "Generate Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Hook Upload": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Segment 1 Upload": {
+      "main": [
+        [
+          {
+            "node": "Generate Video2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Segment 2 Upload": {
+      "main": [
+        [
+          {
+            "node": "Generate Video3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge - Creatomate": {
+      "main": [
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering....": {
+      "main": [
+        [
+          {
+            "node": "done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "done?": {
+      "main": [
+        [
+          {
+            "node": "Switch4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video1": {
+      "main": [
+        [
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Creatomate HTTP Body": {
+      "main": [
+        [
+          {
+            "node": "Merge - Creatomate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch4": {
+      "main": [
+        [
+          {
+            "node": "Download final video1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Creatomate HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video CTA Upload": {
+      "main": [
+        [
+          {
+            "node": "Creatomate HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:25:14.165Z",
+  "id": "wXml0lrdUFkyDrxV",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ \"What If...\" Fictional Worlds Generator",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        96
+      ],
+      "id": "839d7950-2213-40ae-a188-0067a0cc52d6",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://texttospeech.googleapis.com/v1/text:synthesize",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"text\": \"{{ $('Story writer').item.json.output.scenes[0].voiceover }}\"\n  },\n  \"voice\": {\n    \"languageCode\": \"en-US\",\n    \"name\": \"{{ $('SET').item.json.voice }}\"\n  },\n  \"audioConfig\": {\n    \"audioEncoding\": \"MP3\",\n    \"speakingRate\": 1.15 \n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        96
+      ],
+      "id": "8ed366da-07e8-4082-a8f8-cb42b21b853a",
+      "name": "Generate Audio"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            },
+            {
+              "id": "98da6219-b638-4cf2-b101-8354d38a9fae",
+              "name": "voice",
+              "value": "en-US-Neural2-I",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2192,
+        96
+      ],
+      "id": "43217a15-7ecd-4590-bb8c-8cf479a5e260",
+      "name": "SET"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        2416,
+        96
+      ],
+      "id": "a74479cc-087e-4004-bca7-c3ba2992ced2",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2640,
+        96
+      ],
+      "id": "c2f044e4-754b-457c-bc4e-1e7ebb4639dc",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "audioContent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3088,
+        96
+      ],
+      "id": "75ec75bb-fd1a-4876-b850-00fb0b1712f3",
+      "name": "Convert to File",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a3ecc093-5c08-4a4e-8f39-f16551276e58",
+              "name": "question",
+              "value": "What if everyone was rich with the same amount of money? ",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -160,
+        96
+      ],
+      "id": "16db55e0-dff2-453a-9cad-c8418ab23c09",
+      "name": "Input variables"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        64,
+        320
+      ],
+      "id": "9649978a-2434-4bce-abf2-1bd2772071af",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Generate the video script for the following question:\n{{ $('Input variables').item.json.question }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are a highly efficient scriptwriter for a viral, short-form, faceless content brand. Your role is to convert a \"what if\" question into a simplified, cinematic, 24-second video script optimized for a text-to-video AI model (like Veo).\n\nYour sole task is to generate this script in a structured JSON format. You MUST respond with ONLY the valid JSON object. Do not include markdown or any text outside the JSON structure.\n\nThe JSON output must strictly follow these rules:\n\n1.  **Core Structure:**\n    - `videoTitle`: String. The exact input question.\n    - `totalDurationSeconds`: Integer. Must be 24.\n    - `concept`: String. A one-sentence description of the video's narrative.\n    - `scenes`: Array. Must contain exactly 4 scene objects.\n\n2.  **Scene Simplification Rules (CRITICAL FOR VIDEO AI):**\n    Each `visualDescription` MUST adhere to the following four rules:\n    - **A. The Rule of One:** Focus on a SINGLE primary subject (e.g., \"a lone Velociraptor,\" not \"a pack\"). This ensures character consistency.\n    - **B. Simplify Interactions:** Avoid complex physical interactions between the subject and the environment (e.g., breaking things). Describe juxtaposition, not destruction. (Bad: \"It smashes through the window.\" Good: \"It runs past the window.\")\n    - **C. Describe a Path:** Describe a simple, continuous movement or action for the subject. Avoid static poses or complex, multi-part actions. (e.g., \"A T-Rex sprints down a deserted street.\")\n    - **D. Atmospheric Background:** Use the background for mood and setting only. Do not describe complex actions happening in the background. (Bad: \"people run screaming in the background.\" Good: \"the street is shrouded in an eerie smoke.\")\n\n3.  **Scene Structure & Content:**\n    Each scene object must contain `segmentName`, `durationSeconds`, `visualDescription`, `soundEffects`, and `voiceover`.\n\n    - **Scene 1: Hook** (`durationSeconds`: 4)\n    - **Scene 2: Wonder** (`durationSeconds`: 8)\n    - **Scene 3: Reality** (`durationSeconds`: 8)\n    - **Scene 4: Provocation/CTA** (`durationSeconds`: 4)\n\n4.  **Audio Constraints:**\n    - **`soundEffects`**: No human words. Only environmental sounds, creature noises, or non-lexical human voice effects (e.g., a gasp).\n    - **`voiceover`**: Must be direct, impactful, and adhere to the following STRICT word counts:\n      - **Hook Voiceover:** 10-12 words.\n      - **Wonder Voiceover:** 20-22 words.\n      - **Reality Voiceover:** 20-22 words.\n      - **Provocation/CTA Voiceover:** 10-12 words."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        80,
+        96
+      ],
+      "id": "2db71f54-60bb-4839-b49c-36f56bb25cd7",
+      "name": "Story writer"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"videoTitle\": \"What if dinosaurs lived in Manhattan today?\",\n  \"totalDurationSeconds\": 24,\n  \"concept\": \"A short, cinematic video exploring the positive and negative consequences of dinosaurs co-existing with humans in modern-day Manhattan, structured in four distinct scenes.\",\n  \"scenes\": [\n    {\n      \"segmentName\": \"Hook\",\n      \"durationSeconds\": 4,\n      \"visualDescription\": \"An ultra-realistic, cinematic, street-level shot on a rainy night in a gritty Manhattan neighborhood. The asphalt glistens under the chaotic glow of neon signs from storefronts, with rain dripping from old fire escapes. A classic yellow taxi, its headlights cutting through the gloom, screeches to a violent halt. Water sprays dramatically from its tires. Without warning, a colossal Allosaurus foot slams down directly in front of the cab's bumper. The impact is immense, cracking the pavement and sending pebbles scattering. The camera, initially focused on the cab, whip-pans to the foot, capturing the cracked, leathery texture of the skin and the dirt-caked claws. The shot then begins a slow, intimidating tilt up the creature's powerful leg, conveying immense scale before cutting, leaving the full beast to the imagination.\",\n      \"soundEffects\": \"The constant hum of city traffic mixed with heavy rainfall. A loud, high-pitched tire screech, immediately followed by a deafening, bass-heavy THUD as the foot impacts the ground, combined with the sound of cracking concrete. A short, sharp, guttural roar from the creature.\",\n      \"voiceover\": \"What if dinosaurs lived in Manhattan today? The ancient world's apex predators, unleashed in our most modern jungle.\"\n    },\n    {\n      \"segmentName\": \"Wonder\",\n      \"durationSeconds\": 8,\n      \"visualDescription\": \"A breathtaking, sweeping drone shot flying gracefully over Central Park during a perfect golden hour. The low sun casts long shadows from the skyscrapers that frame the park, bathing the scene in warm, ethereal light. Below, a herd of majestic Brachiosauruses moves with slow, deliberate grace, their long necks reaching above the lush tree canopy to eat. Their skin, textured like ancient bark, catches the light. From this high vantage point, people on the lawns look like tiny spectators in awe of living monuments. Weaving discreetly between the trees are sleek, semi-transparent pipes from a nearby facility, glowing with a soft blue energy, hinting at a powerful, clean technology harmoniously integrated into the landscape.\",\n      \"soundEffects\": \"Uplifting and gentle orchestral ambient music. The faint, distant hum of the city, mixed with the low, peaceful, resonant calls of the Brachiosauruses. A soft, clean humming sound emanates from the energy pipes.\",\n      \"voiceover\": \"Manhattan's energy crisis would be solved overnight. The city would gain a living power plant, harvesting clean methane from dinosaur herds to create a perfect fusion of nature and technology.\"\n    },\n    {\n      \"segmentName\": \"Reality\",\n      \"durationSeconds\": 8,\n      \"visualDescription\": \"A sudden cut to a dark, terrifying shaky-cam shot, as if filmed on a phone by someone hiding. The location is a grimy, derelict subway station, lit only by flickering, sickly-green fluorescent lights that cast erratic shadows. The tiled walls are covered in graffiti and filth. A pack of sleek Velociraptors, their bodies lean and muscular with skin patterned for urban camouflage, stalk the platform. Their movements are fast, jerky, and predatory. One sniffs the air, its head darting around. Another taps a sharp claw on the third rail, creating a shower of sparks. The scene is filled with tension as the camera, peeking from behind a concrete pillar, trembles. The shot ends as a raptor's head snaps towards the camera, its intelligent eyes locking on the viewer before it lets out a piercing shriek.\",\n      \"soundEffects\": \"The music cuts abruptly to a tense, low-frequency drone. The sharp, echoing clicks and piercing shrieks of the raptors. The sound of panicked, heavy breathing from the person filming. The metallic zing of a claw on the rail.\",\n      \"voiceover\": \"But the city's infrastructure would become a death trap. The dark, endless subway tunnels are a perfect nesting ground, turning every daily commute into a life-or-death gamble.\"\n    },\n    {\n      \"segmentName\": \"Provocation/CTA\",\n      \"durationSeconds\": 4,\n      \"visualDescription\": \"An epic, cinematic low-angle shot in a deserted Times Square at night. The recent rain has left the ground slick and reflective, with steam rising from manholes. A colossal Tyrannosaurus Rex stands utterly still in the center of the square, its sheer size dwarfing the world-famous location. It is not roaring, but surveying its new domain with an ancient intelligence. The thousands of massive, vibrant digital billboards are still running, bathing the scene in a chaotic, shifting kaleidoscope of reds, blues, and whites. This light plays across the T-Rex's wet skin, highlighting the texture of its scales and the immense power in its legs and jaw. The camera slowly pushes in on its face, focusing on its eye, which reflects the neon jungle around it.\",\n      \"soundEffects\": \"The ambient, electric hum of Times Square, mixed with a low, guttural, deep breath from the T-Rex. All sound cuts to complete silence on the final frame.\",\n      \"voiceover\": \"Have a 'what if' question of your own? Send it in the comments, and I might answer it.\"\n    }\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        192,
+        320
+      ],
+      "id": "cdd83299-b2d0-4b1c-8ab2-47a6765508dc",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        288,
+        528
+      ],
+      "id": "a8fe27a3-0869-4286-aca6-c02d2d459fa5",
+      "name": "DeepSeek Chat Model"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Generate a Veo 3 video prompt based on the following scene description:\n\nVisual description:\n{{ $json.output.scenes[0].visualDescription }}\n\nSound effects: {{ $json.output.scenes[0].soundEffects }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert AI Video Prompt Engineer specializing in Google's Veo 3 model. Your sole purpose is to transform a detailed scene description, which includes separate visual and sound elements, into a single, cohesive, and highly-specific paragraph optimized for video generation.\n\nYou must adhere to the following rules, derived from the \"VEO GUIDER v2\" and \"AI VARIABLE LEXICON\" principles:\n\nSynthesize, Don't Just Copy: Do not simply combine the input text. You must reinterpret the visualDescription and use the soundEffects as contextual cues to inform the overall mood, intensity, and atmosphere of the visual prompt. Under no circumstances should sound effects, dialogue, or audio cues be mentioned in the final output.\n\nStart with a Cinematic Hook: Always begin the prompt by establishing the mood, style, and core shot type (e.g., \"A tense, found-footage style low-angle shot...\").\n\nWeave a Narrative: Structure the prompt as a single, continuous shot. Describe the subject, their action, and the environment with rich, evocative language.\n\nIncorporate Sensory & Atmospheric Details:\n\nLighting: Be specific (e.g., \"hazy morning sun,\" \"flickering neon billboards,\" \"golden hour dappled light\").\n\nColor & Texture: Describe the color palette and surface qualities (e.g., \"leathery wings,\" \"sleek, wet skin,\" \"massive, textured gray hides\").\n\nAtmosphere: Integrate atmospheric conditions like rain, haze, or wind to enhance the mood.\n\nChoreograph Motion: Clearly define both camera movement (e.g., \"extreme shaky-cam,\" \"slow-motion drone shot,\" \"jarring zoom\") and subject motion (e.g., \"lands clumsily but powerfully,\" \"moves with serene elegance,\" \"hunts with terrifying intelligence\").\n\nComposition is Key: Naturally integrate compositional language where appropriate (e.g., \"low-angle,\" \"extreme macro shot,\" \"unsettling intimacy\").\n\nStrict Output Format:\n\nThe entire output must be a single paragraph.\n\nThe word count must be between 120 and 150 words.\n\nABSOLUTELY NO mention of sound effects, dialogue, aspect ratio, or FPS. The output is purely visual.\n\nYour task is to act as a master cinematographer, translating a script into a direct, actionable command for the Veo 3 video generation model."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        592,
+        96
+      ],
+      "id": "28d64c75-31cd-4a7c-b432-f2681bfb2e40",
+      "name": "Hook Veo Prompt"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Generate a Veo 3 video prompt based on the following scene description:\n\nVisual description:\n{{ $('Story writer').item.json.output.scenes[1].visualDescription }}\n\nSound effects: {{ $('Story writer').item.json.output.scenes[1].soundEffects }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert AI Video Prompt Engineer specializing in Google's Veo 3 model. Your sole purpose is to transform a detailed scene description, which includes separate visual and sound elements, into a single, cohesive, and highly-specific paragraph optimized for video generation.\n\nYou must adhere to the following rules, derived from the \"VEO GUIDER v2\" and \"AI VARIABLE LEXICON\" principles:\n\nSynthesize, Don't Just Copy: Do not simply combine the input text. You must reinterpret the visualDescription and use the soundEffects as contextual cues to inform the overall mood, intensity, and atmosphere of the visual prompt. Under no circumstances should sound effects, dialogue, or audio cues be mentioned in the final output.\n\nStart with a Cinematic Hook: Always begin the prompt by establishing the mood, style, and core shot type (e.g., \"A tense, found-footage style low-angle shot...\").\n\nWeave a Narrative: Structure the prompt as a single, continuous shot. Describe the subject, their action, and the environment with rich, evocative language.\n\nIncorporate Sensory & Atmospheric Details:\n\nLighting: Be specific (e.g., \"hazy morning sun,\" \"flickering neon billboards,\" \"golden hour dappled light\").\n\nColor & Texture: Describe the color palette and surface qualities (e.g., \"leathery wings,\" \"sleek, wet skin,\" \"massive, textured gray hides\").\n\nAtmosphere: Integrate atmospheric conditions like rain, haze, or wind to enhance the mood.\n\nChoreograph Motion: Clearly define both camera movement (e.g., \"extreme shaky-cam,\" \"slow-motion drone shot,\" \"jarring zoom\") and subject motion (e.g., \"lands clumsily but powerfully,\" \"moves with serene elegance,\" \"hunts with terrifying intelligence\").\n\nComposition is Key: Naturally integrate compositional language where appropriate (e.g., \"low-angle,\" \"extreme macro shot,\" \"unsettling intimacy\").\n\nStrict Output Format:\n\nThe entire output must be a single paragraph.\n\nThe word count must be between 120 and 150 words.\n\nABSOLUTELY NO mention of sound effects, dialogue, aspect ratio, or FPS. The output is purely visual.\n\nYour task is to act as a master cinematographer, translating a script into a direct, actionable command for the Veo 3 video generation model."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        992,
+        96
+      ],
+      "id": "5a21cb00-dd57-4159-b51f-b8abfca4b67b",
+      "name": "Segment 1 Veo Prompt"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Generate a Veo 3 video prompt based on the following scene description:\n\nVisual description:\n{{ $('Story writer').item.json.output.scenes[2].visualDescription }}\n\nSound effects: {{ $('Story writer').item.json.output.scenes[2].soundEffects }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert AI Video Prompt Engineer specializing in Google's Veo 3 model. Your sole purpose is to transform a detailed scene description, which includes separate visual and sound elements, into a single, cohesive, and highly-specific paragraph optimized for video generation.\n\nYou must adhere to the following rules, derived from the \"VEO GUIDER v2\" and \"AI VARIABLE LEXICON\" principles:\n\nSynthesize, Don't Just Copy: Do not simply combine the input text. You must reinterpret the visualDescription and use the soundEffects as contextual cues to inform the overall mood, intensity, and atmosphere of the visual prompt. Under no circumstances should sound effects, dialogue, or audio cues be mentioned in the final output.\n\nStart with a Cinematic Hook: Always begin the prompt by establishing the mood, style, and core shot type (e.g., \"A tense, found-footage style low-angle shot...\").\n\nWeave a Narrative: Structure the prompt as a single, continuous shot. Describe the subject, their action, and the environment with rich, evocative language.\n\nIncorporate Sensory & Atmospheric Details:\n\nLighting: Be specific (e.g., \"hazy morning sun,\" \"flickering neon billboards,\" \"golden hour dappled light\").\n\nColor & Texture: Describe the color palette and surface qualities (e.g., \"leathery wings,\" \"sleek, wet skin,\" \"massive, textured gray hides\").\n\nAtmosphere: Integrate atmospheric conditions like rain, haze, or wind to enhance the mood.\n\nChoreograph Motion: Clearly define both camera movement (e.g., \"extreme shaky-cam,\" \"slow-motion drone shot,\" \"jarring zoom\") and subject motion (e.g., \"lands clumsily but powerfully,\" \"moves with serene elegance,\" \"hunts with terrifying intelligence\").\n\nComposition is Key: Naturally integrate compositional language where appropriate (e.g., \"low-angle,\" \"extreme macro shot,\" \"unsettling intimacy\").\n\nStrict Output Format:\n\nThe entire output must be a single paragraph.\n\nThe word count must be between 120 and 150 words.\n\nABSOLUTELY NO mention of sound effects, dialogue, aspect ratio, or FPS. The output is purely visual.\n\nYour task is to act as a master cinematographer, translating a script into a direct, actionable command for the Veo 3 video generation model."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1392,
+        96
+      ],
+      "id": "54c12e6b-967f-481c-90f2-c98382398c4b",
+      "name": "Segment 2 Veo Prompt"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Generate a Veo 3 video prompt based on the following scene description:\n\nVisual description:\n{{ $('Story writer').item.json.output.scenes[3].visualDescription }}\n\nSound effects: {{ $('Story writer').item.json.output.scenes[3].soundEffects }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert AI Video Prompt Engineer specializing in Google's Veo 3 model. Your sole purpose is to transform a detailed scene description, which includes separate visual and sound elements, into a single, cohesive, and highly-specific paragraph optimized for video generation.\n\nYou must adhere to the following rules, derived from the \"VEO GUIDER v2\" and \"AI VARIABLE LEXICON\" principles:\n\nSynthesize, Don't Just Copy: Do not simply combine the input text. You must reinterpret the visualDescription and use the soundEffects as contextual cues to inform the overall mood, intensity, and atmosphere of the visual prompt. Under no circumstances should sound effects, dialogue, or audio cues be mentioned in the final output.\n\nStart with a Cinematic Hook: Always begin the prompt by establishing the mood, style, and core shot type (e.g., \"A tense, found-footage style low-angle shot...\").\n\nWeave a Narrative: Structure the prompt as a single, continuous shot. Describe the subject, their action, and the environment with rich, evocative language.\n\nIncorporate Sensory & Atmospheric Details:\n\nLighting: Be specific (e.g., \"hazy morning sun,\" \"flickering neon billboards,\" \"golden hour dappled light\").\n\nColor & Texture: Describe the color palette and surface qualities (e.g., \"leathery wings,\" \"sleek, wet skin,\" \"massive, textured gray hides\").\n\nAtmosphere: Integrate atmospheric conditions like rain, haze, or wind to enhance the mood.\n\nChoreograph Motion: Clearly define both camera movement (e.g., \"extreme shaky-cam,\" \"slow-motion drone shot,\" \"jarring zoom\") and subject motion (e.g., \"lands clumsily but powerfully,\" \"moves with serene elegance,\" \"hunts with terrifying intelligence\").\n\nComposition is Key: Naturally integrate compositional language where appropriate (e.g., \"low-angle,\" \"extreme macro shot,\" \"unsettling intimacy\").\n\nStrict Output Format:\n\nThe entire output must be a single paragraph.\n\nThe word count must be between 120 and 150 words.\n\nABSOLUTELY NO mention of sound effects, dialogue, aspect ratio, or FPS. The output is purely visual.\n\nYour task is to act as a master cinematographer, translating a script into a direct, actionable command for the Veo 3 video generation model."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1792,
+        96
+      ],
+      "id": "c2522527-698c-486b-bb42-57add4b7768d",
+      "name": "CTA Veo Prompt"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        688,
+        320
+      ],
+      "id": "c7db38bc-eb7d-4527-bc43-7198e45abe2b",
+      "name": "Google Gemini Chat Model1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        320
+      ],
+      "id": "32ac848d-1b0e-4a43-bfdc-8670b88c2eb7",
+      "name": "Google Gemini Chat Model2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        320
+      ],
+      "id": "563cab37-590f-4084-8c66-ecd23d80952b",
+      "name": "Google Gemini Chat Model3"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1888,
+        320
+      ],
+      "id": "8ac73674-5b1a-472e-add2-97231695ce75",
+      "name": "Google Gemini Chat Model4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://texttospeech.googleapis.com/v1/text:synthesize",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"text\": \"{{ $('Story writer').item.json.output.scenes[1].voiceover }}\"\n  },\n  \"voice\": {\n    \"languageCode\": \"en-US\",\n    \"name\": \"{{ $('SET').item.json.voice }}\"\n  },\n  \"audioConfig\": {\n    \"audioEncoding\": \"MP3\",\n    \"speakingRate\": 1.15 \n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        400
+      ],
+      "id": "7a6b68b4-ab82-4229-8d0e-b93b4070cd48",
+      "name": "Generate Audio1"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "audioContent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3088,
+        400
+      ],
+      "id": "90248a99-4233-486a-a1f9-60912f947285",
+      "name": "Convert to File1",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_Segment1Audio",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3312,
+        400
+      ],
+      "id": "fca02cd2-5536-4fa8-8824-bf540c1455fd",
+      "name": "Upload Segment 1 Audio",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://texttospeech.googleapis.com/v1/text:synthesize",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"text\": \"{{ $('Story writer').item.json.output.scenes[2].voiceover }}\"\n  },\n  \"voice\": {\n    \"languageCode\": \"en-US\",\n    \"name\": \"{{ $('SET').item.json.voice }}\"\n  },\n  \"audioConfig\": {\n    \"audioEncoding\": \"MP3\",\n    \"speakingRate\": 1.15 \n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        704
+      ],
+      "id": "ae6d14b0-4424-4ded-b64b-e88cdb4ccce9",
+      "name": "Generate Audio4"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "audioContent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3088,
+        704
+      ],
+      "id": "b1877f5d-4b81-41dc-ab51-f559b2fe55fc",
+      "name": "Convert to File4",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_segment2Audio",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3312,
+        704
+      ],
+      "id": "7c690104-4aaf-438e-81d0-3ef5b27f9de5",
+      "name": "Upload Segment 2 Audio",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://texttospeech.googleapis.com/v1/text:synthesize",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"text\": \"{{ $('Story writer').item.json.output.scenes[3].voiceover.replace(/'/g, \"\") }}\"\n  },\n  \"voice\": {\n    \"languageCode\": \"en-US\",\n    \"name\": \"{{ $('SET').item.json.voice }}\"\n  },\n  \"audioConfig\": {\n    \"audioEncoding\": \"MP3\",\n    \"speakingRate\": 1.15 \n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        1008
+      ],
+      "id": "96395495-147d-480b-9ecd-e11d7d53703b",
+      "name": "Generate Audio5"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "audioContent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3088,
+        1008
+      ],
+      "id": "a440abfa-1f38-44ce-8f4d-6259d96d75ab",
+      "name": "Convert to File5",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_HookAudio",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3312,
+        96
+      ],
+      "id": "2ef6bc28-77a6-425f-ae4a-9f4549bde322",
+      "name": "Upload Hook Audio",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_CTAAudio",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3312,
+        1008
+      ],
+      "id": "afa74b99-66a4-4172-b63c-f6f68ac52007",
+      "name": "Upload CTA Audio",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "content": "# Generation Voiceover",
+        "height": 1296,
+        "width": 672
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        0
+      ],
+      "id": "af13104b-ea8a-41fe-8fb7-95e3722485d4",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4288,
+        96
+      ],
+      "id": "6ba79e13-b877-47de-9c86-022d54ba0ddc",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Hook Veo Prompt').item.json.text.replace(/\"/g, \"'\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3616,
+        96
+      ],
+      "id": "9f208228-9244-4cf1-8f10-9327e4df8663",
+      "name": "Generate Video1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4064,
+        32
+      ],
+      "id": "56631056-39be-43da-bbba-4456a99638b7",
+      "name": "Fetch Status1"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        96
+      ],
+      "id": "9b1aae9d-ad9e-4f7d-b0bc-5d328445f223",
+      "name": "Wait1",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        4512,
+        96
+      ],
+      "id": "07631a5d-eef5-408f-9991-47e435fd4036",
+      "name": "Convert to File2",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4288,
+        400
+      ],
+      "id": "4a361e69-2875-48f0-b974-51450f1b94e3",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Segment 1 Veo Prompt').item.json.text.replace(/\"/g, \"'\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3616,
+        400
+      ],
+      "id": "2bdac975-ecd7-43ac-ad94-6fb8044b1457",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4064,
+        336
+      ],
+      "id": "4db97b90-3c05-4f99-abb0-2bb950c1adcb",
+      "name": "Fetch Status"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        400
+      ],
+      "id": "864b85cd-ef04-416a-bec1-16b331c7cc90",
+      "name": "Wait",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        4512,
+        400
+      ],
+      "id": "8f496a27-2455-44c4-a943-4cd158810399",
+      "name": "Convert to File3",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4288,
+        704
+      ],
+      "id": "1e6103aa-239e-457c-9f40-0ffce097e062",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Segment 2 Veo Prompt').item.json.text.replace(/\"/g, \"'\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3616,
+        704
+      ],
+      "id": "fd6666de-92d7-4a7c-b6e6-5bc4772ff9bc",
+      "name": "Generate Video2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4064,
+        640
+      ],
+      "id": "cc4def62-6b42-4ec1-8463-d36706f3eb7f",
+      "name": "Fetch Status2"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        704
+      ],
+      "id": "9015130e-782d-4807-881a-bce235c22620",
+      "name": "Wait2",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        4512,
+        704
+      ],
+      "id": "c6f02b4c-9a0a-4b56-a329-b8c950d9d9cc",
+      "name": "Convert to File6",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4288,
+        1008
+      ],
+      "id": "2358a354-112c-491a-a83f-1b36206d750c",
+      "name": "Switch3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('CTA Veo Prompt').item.json.text.replace(/\"/g, \"'\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3616,
+        1008
+      ],
+      "id": "955c586d-c7a8-4134-a2d4-6ad341ae2269",
+      "name": "Generate Video3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4064,
+        944
+      ],
+      "id": "3efd44f0-5264-4712-aad6-5aa4a2029902",
+      "name": "Fetch Status3"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        1008
+      ],
+      "id": "e6b81990-395d-43e0-bb7b-845af2993b00",
+      "name": "Wait3",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        4512,
+        1008
+      ],
+      "id": "234e3331-6ce5-4a08-8275-2a61179cab1b",
+      "name": "Convert to File7",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "content": "# Generating video",
+        "height": 1296,
+        "width": 1376,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3536,
+        0
+      ],
+      "id": "c0b8ea4e-74b3-4d65-851e-8f2b1883b3ad",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_hookVideo",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        4736,
+        96
+      ],
+      "id": "dfaab44c-fe6c-4605-8ae9-62dcc6dfae04",
+      "name": "Video Hook Upload",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_segment1Video",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        4736,
+        400
+      ],
+      "id": "00937d45-9d89-4eb4-a5ae-581faf513540",
+      "name": "Video Segment 1 Upload",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_segment2Video",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        4736,
+        704
+      ],
+      "id": "9962dd71-0b84-4832-b2d4-65bf87758b5d",
+      "name": "Video Segment 2 Upload",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "WI_CTAVideo",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        4736,
+        1008
+      ],
+      "id": "d0a5935e-e5c7-4044-9dde-08322b744128",
+      "name": "Video CTA Upload",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS",
+        "height": 256,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2144,
+        0
+      ],
+      "id": "fd497953-ebcb-4ab7-907d-5fb9766d1e93",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Veo 3 prompts",
+        "height": 464,
+        "width": 1568,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        544,
+        0
+      ],
+      "id": "fd470493-cb49-4b2c-8a48-6a5f333902fe",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Planning the video",
+        "height": 672,
+        "width": 496,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d45f73a8-332b-42d7-a9cf-31711fd226e3",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5280,
+        112
+      ],
+      "id": "761a124e-a25c-45a7-8715-2e04936622fb",
+      "name": "Merge - Creatomate"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5504,
+        112
+      ],
+      "id": "27984b8e-e444-4696-a549-f3e75a5ea14b",
+      "name": "Rendering....",
+      "webhookId": "f14aa999-1900-4a3f-8068-033f6a7aa762"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5728,
+        32
+      ],
+      "id": "652b8dbc-e0fe-4ae2-9fb9-15cc0849757e",
+      "name": "done?"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('done?').item.json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6176,
+        176
+      ],
+      "id": "c93cc0a3-ca6a-4e9c-aaf5-46853ee35d61",
+      "name": "Download final video1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the video files\nconst hook_vid = $('Video Hook Upload').first().json.mediaLink;\nconst s1_vid = \"https://res.cloudinary.com/dgm45sdjb/video/fetch/ar_9:16,c_fill,g_auto/\"+$('Video Segment 1 Upload').first().json.mediaLink.replace(\"?\", \"%3F\").replace(\"&\", \"%26\");\nconst s2_vid = \"https://res.cloudinary.com/dgm45sdjb/video/fetch/ar_9:16,c_fill,g_auto/\"+$('Video Segment 2 Upload').first().json.mediaLink.replace(\"?\", \"%3F\").replace(\"&\", \"%26\");\nconst CTA_vid = \"https://res.cloudinary.com/dgm45sdjb/video/fetch/ar_9:16,c_fill,g_auto/\"+$('Video CTA Upload').first().json.mediaLink.replace(\"?\", \"%3F\").replace(\"&\", \"%26\");\n\n// Get the audio files\nconst hook_audio = $('Upload Hook Audio').first().json.mediaLink;\nconst s1_audio = $('Upload Segment 1 Audio').first().json.mediaLink;\nconst s2_audio = $('Upload Segment 2 Audio').first().json.mediaLink;\nconst CTA_audio = $('Upload CTA Audio').first().json.mediaLink;\n\n// Get the question\nconst question = $('Input variables').item.json.question;\n\n\nconst requestBody = {\n  \"template_id\": \"\",\n  \"modifications\": {\n    \"Picture.source\": \"https://creatomate.com/files/assets/d6628425-8e35-4fee-9de8-a18d21309546\",\n    \"Name.text\": \"John Doe\",\n    \"Handle.text\": \"@johndoe\",\n    \"Message.text\": question,\n    \"Voiceover-KQW.source\": hook_audio,\n    \"Voiceover-858.source\": s1_audio,\n    \"Voiceover-QZJ.source\": s2_audio,\n    \"Voiceover-TP4.source\": CTA_audio,\n    \"Video-655.source\": hook_vid,\n    \"Video.source\": s1_vid,\n    \"Video-XTV.source\": s2_vid,\n    \"Video-VZ9.source\": CTA_vid\n  }\n};\n\nreturn [{ json: requestBody }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5056,
+        176
+      ],
+      "id": "7f528407-2c1a-40bc-a06f-e3cb90af5fe3",
+      "name": "Creatomate HTTP Body",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "succeeded",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "58389d5b-1c90-49a1-bb14-9d9331ac7607"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "97d4d7cc-9e2c-48dc-ab57-6e20dd6d50c4",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "failed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "483a5006-5097-4946-bdd9-2b320102f095",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "rendering",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7063bfa0-d1d8-408e-a30d-b0a44a02e79a",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "transcribing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        5952,
+        160
+      ],
+      "id": "067faf24-a7eb-43a7-a261-5770c8dbe611",
+      "name": "Switch4"
+    },
+    {
+      "parameters": {
+        "content": "# Merging everything",
+        "height": 464,
+        "width": 1152,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4960,
+        0
+      ],
+      "id": "caaf40e0-bb70-4f7b-8a5e-c20a1ae44cd3",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        6400,
+        176
+      ],
+      "id": "262a228d-4230-473e-8f21-9be777ca2a25",
+      "name": "Send a video",
+      "webhookId": "56d57800-46f7-45f5-80b2-8bc79b6e5099"
+    },
+    {
+      "parameters": {
+        "content": "# Sending the output",
+        "height": 464,
+        "width": 400,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6128,
+        0
+      ],
+      "id": "940fa019-3d5b-41a4-bb48-f1ab7599dcb8",
+      "name": "Sticky Note6"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:25:14.173Z",
+      "updatedAt": "2025-11-10T16:25:14.173Z",
+      "role": "workflow:owner",
+      "workflowId": "wXml0lrdUFkyDrxV",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:25:14.000Z",
+  "versionId": "9852d889-c65b-4d90-9bd0-27fe507fc021"
+}
