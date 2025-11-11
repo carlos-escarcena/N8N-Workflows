@@ -1,0 +1,1030 @@
+{
+  "active": false,
+  "connections": {
+    "SET": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "GET video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Set Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Analysis & Timestamps": {
+      "main": [
+        [
+          {
+            "node": "Moment Selection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Moment Selection": {
+      "main": [
+        [
+          {
+            "node": "Split moments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split moments": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "B_ROLL_ENGINE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload to GCS (To be accessible via URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "unique file name": {
+      "main": [
+        [
+          {
+            "node": "SET1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET1": {
+      "main": [
+        [
+          {
+            "node": "JWT1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT1": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN1": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to GCS (To be accessible via URL)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "B_ROLL_ENGINE": {
+      "main": [
+        [
+          {
+            "node": "unique file name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "VIDEO URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VIDEO URL": {
+      "main": [
+        [
+          {
+            "node": "SET",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET video": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Prompt": {
+      "main": [
+        [
+          {
+            "node": "Video Analysis & Timestamps",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:27:22.787Z",
+  "id": "IkU6FeemOdEKjuIJ",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ Auto-B-Roll Editor",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2384,
+        576
+      ],
+      "id": "4543f802-1ef0-4b23-afe8-2d2167c0d2d9",
+      "name": "SET"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        576
+      ],
+      "id": "3d22ca36-ede7-4688-b878-da9722b304d8",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1936,
+        576
+      ],
+      "id": "a36d5a58-2308-4910-afd9-a10a231761a4",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -1488,
+        576
+      ],
+      "id": "cd35d335-e263-448d-a0ba-6403aaea6faf",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/gemini-2.5-flash:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1040,
+        576
+      ],
+      "id": "b1007951-1ca6-42e8-99e8-e56fac3a0e64",
+      "name": "Video Analysis & Timestamps"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You are a B-roll placement expert. From the provided Gemini video analysis, select the 3 BEST moments for cinematic B-roll insertion.\n\nReturn ONLY this JSON structure:\n{\n  \"selected_moments\": [\n    {\n      \"timestamp\": \"MM:SS\",\n      \"emotion\": \"string\",\n      \"confidence\": number,\n      \"description\": \"string\",\n      \"b_roll_purpose\": \"enhance_emotion\" | \"provide_context\" | \"create_transition\",\n      \"transcript\": \"transcript\"\n    }\n  ]\n}\n\nSelection criteria:\n- Highest confidence scores (7+ preferred)\n- Strong emotional peaks\n- Moments that benefit from visual enhancement\n- Avoid clustering",
+              "role": "system"
+            },
+            {
+              "content": "=Gemini video analysis: \"{{$json.candidates[0].content.parts[0].text}}\""
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -816,
+        576
+      ],
+      "id": "7851dae0-2e46-487e-a07e-22c60585986c",
+      "name": "Moment Selection"
+    },
+    {
+      "parameters": {
+        "jsCode": "const selectedMoments = items[0].json.message.content.selected_moments;\n\n// turn the 3 moments into 3 new items\nreturn selectedMoments.map((moment, idx) => ({\n  json: {\n    order: idx + 1,\n    ...moment\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -416,
+        576
+      ],
+      "id": "bade1869-1d5b-458d-92b4-dfe5d82c9ee4",
+      "name": "Split moments"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -192,
+        576
+      ],
+      "id": "bfc1857f-0785-480e-a4d8-12e7a3c55294",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2000,
+        576
+      ],
+      "id": "7902ac2a-ab74-4bfa-b2bd-9a5e77512961",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET1').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET1').first().json.PROJECT_ID }}/locations/{{ $('SET1').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN1').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET1').first().json.PROJECT_ID }}/locations/{{ $('SET1').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": {{ JSON.stringify($('SET1').item.json.prompt) }}\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1328,
+        576
+      ],
+      "id": "ef8d0370-3dfd-4051-b932-e5d42d0ec9ea",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET1').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET1').first().json.PROJECT_ID }}/locations/{{ $('SET1').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN1').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1776,
+        496
+      ],
+      "id": "e91728b4-784a-462a-8c3a-1d1f0c622e81",
+      "name": "Fetch Status"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1552,
+        576
+      ],
+      "id": "ec743eb6-20fa-4228-8198-72a70916040a",
+      "name": "Wait",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2224,
+        576
+      ],
+      "id": "4acc355f-01fc-4a44-abcd-6f35e6e3a0c8",
+      "name": "Convert to File",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "={{$('unique file name').item.json.File_Name}}",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        2464,
+        576
+      ],
+      "id": "02ef0555-3953-4f5c-912f-2ca83234c38e",
+      "name": "Upload to GCS (To be accessible via URL)",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "608dc2e3-b7ab-4626-af01-f3e6c051b124",
+              "name": "File_Name",
+              "value": "=file{{ Date.now() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        432,
+        576
+      ],
+      "id": "71f323af-80a8-44f7-a880-2a60babd1489",
+      "name": "unique file name"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            },
+            {
+              "id": "db5a9124-63a6-4859-9989-bd2964632c39",
+              "name": "prompt",
+              "value": "={{ $('B_ROLL_ENGINE').item.json.message.content.b_roll_prompt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        576
+      ],
+      "id": "49f34f6e-68ff-426b-bc76-706bd3429c32",
+      "name": "SET1"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        880,
+        576
+      ],
+      "id": "8f89ffe3-0c71-40f5-b1d7-7d04e32657e4",
+      "name": "JWT1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1104,
+        576
+      ],
+      "id": "3cc92f1a-4538-46a1-8683-5b880d5036a3",
+      "name": "GET TOKEN1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "include": "specifiedFields",
+        "fieldsToInclude": "mediaLink",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        32,
+        176
+      ],
+      "id": "21d32995-f236-46e7-ac1b-6177f8c736e8",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "### IDENTITY\nYou are B_ROLL_ENGINE — a dynamic B-roll prompt writer specialized in creating engaging supplementary footage.\n\n### PRIMARY TASK\nGenerate a concise 80-120 word B-roll prompt for Veo 3 based on the provided description, emotion, transcript, and b_roll_purpose. The video that VEO generates should fit perfectly with the provided description, emotion, transcript, and b_roll_purpose. For example:\n\nUser: {\n  \"description\": \"Andrew Tate immediately challenges the premise of the question, delivering a strong, counter-intuitive statement that people aren't afraid of fighting, but of losing. This reframes the problem and hooks the viewer with a surprising perspective.\",\n  \"b_roll_purpose\": \"enhance_emotion\",\n  \"emotion\": \"Insight/Defiance\",\n  \"transcript\": \"Well, this this this is the thing. Not people aren't very often afraid of fighting. They're afraid of losing.\"\n}\n\nYou: \"Generate a scene of a boxing match where one fighter weaves under a hook and slams a counterpunch into his opponent’s ribs as the camera pans across the ring in a wide shot. Dramatic lighting slices across their bodies, catching sweat and muscle tension with every explosive movement. The opponent recoils into the ropes as the crowd surges in the background, blurred just enough to keep focus locked on the fighters. Cut to a close-up of the victorious boxer in the corner, chest heaving, gloves clenched, eyes locked with brutal intensity. Trainers fan him and wipe blood from his brow as he rises for the next round. Use pounding cinematic drums layered with distant crowd roars to amplify the urgency and grit of the moment.\"\n\n### NON-NEGOTIABLE RULES\n1. Output length **must** be 80-120 words. Self-correct if outside this range.\n2. Include **exactly one** term for each:\n   - Camera movement (dolly, pan, tilt, zoom, etc.)\n   - Lighting style (natural, dramatic, soft, etc.)\n   - Shot type (close-up, wide, medium, etc.)\n3. **Always include** appropriate music/SFX direction:\n   - Match the emotion provided\n   - Support the b_roll_purpose\n   - Be specific (e.g., \"upbeat electronic music\", \"subtle ambient SFX\")\n4. Stay concrete and filmable — no abstract concepts or metaphors\n5. Use action-focused verbs; avoid \"is, are, shows\"\n6. Limit to 4-6 sentences total\n7. Focus on **movement and energy** — B-roll should feel dynamic\n8. End with explicit audio instruction matching the emotion\n\n### OUTPUT FORMAT\nSingle paragraph only. No explanations, no additional text.\nIf adding double quotes like `\"` in the prompt, make sure you escape them with \\ before it, e.g. \\\"TEXT\\\".\nOutput the paragraph within a \"b_roll_prompt\" object. Output should look like:`\n{\"b_roll_prompt\": \"THE SINGLE PARAGRAPH HERE\"}\n`\nNEVER output quotation makes\n\n### SELF-AUDIT CHECKLIST\n- Word count 80-120 \n- One camera movement term \n- One lighting term \n- One shot type \n- Audio/music direction included \n- Concrete, filmable language ",
+              "role": "system"
+            },
+            {
+              "content": "={\n  \"description\": \"{{ $json.description }}\",\n  \"b_roll_purpose\": \"{{ $json.b_roll_purpose }}\",\n  \"emotion\": \"{{ $json.emotion }}\",\n  \"transcript\": \"{{ $json.transcript }}\"\n}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        64,
+        576
+      ],
+      "id": "d8b5b3ef-d262-485d-8a56-7d7b8155fb59",
+      "name": "B_ROLL_ENGINE"
+    },
+    {
+      "parameters": {
+        "chatId": "=",
+        "text": "={{ JSON.stringify($json.data) }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        256,
+        176
+      ],
+      "id": "377cd3c8-c983-4bbb-8990-a262850bbbca",
+      "name": "Send a text message",
+      "webhookId": "1da15df5-1c3b-4159-a6a6-a73bd71177d6"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2864,
+        576
+      ],
+      "id": "4e23bf55-49ce-4728-88b8-345eeda3ab72",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "eeb1359d-79b1-42d4-893e-516d503fc32d",
+              "name": "VIDEO_URL",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2624,
+        576
+      ],
+      "id": "29286320-43ef-4f8b-9f7f-ac7b4fcab15d",
+      "name": "VIDEO URL"
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS\nSame authenticating steps from every workflow",
+        "height": 512,
+        "width": 672,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2448,
+        352
+      ],
+      "id": "58d8051e-a2b0-413f-80a3-97680b8f4f5c",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Set video URL\n\nManually set your video url",
+        "height": 512,
+        "width": 272
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2720,
+        352
+      ],
+      "id": "290dcfcd-e977-417d-abf2-8b45b777ceac",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Video Analysis & Moment Splitting\n\nThis downloads the video, gets the contents, sets the prompt, analyzes the video, selects moments, then splits them up",
+        "height": 512,
+        "width": 1504,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1776,
+        352
+      ],
+      "id": "714cf873-ed61-4024-946f-dda420e74141",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('VIDEO URL').item.json.VIDEO_URL }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1712,
+        576
+      ],
+      "id": "ee2940a1-02a6-4b6e-b009-f8c71a7c1324",
+      "name": "GET video"
+    },
+    {
+      "parameters": {
+        "jsCode": "const videoBase64 = $input.first().json.data;\nconst prompt = `\nAnalyze this 2-minute video and identify emotional peaks and hook moments. For each moment, provide:\n- Timestamp (MM:SS format)\n- Emotion detected (joy, tension, surprise, etc.)\n- Hook type (visual reveal, emotional peak, narrative tension)\n- Confidence score (1-10)\n- Brief description of what's happening\n- Transcript\n\nReturn results in JSON format with this structure:\n{\n  \"emotion_moments\": [\n    {\n      \"timestamp\": \"MM:SS\",\n      \"emotion\": \"string\",\n      \"hook_type\": \"string\",\n      \"confidence\": number,\n      \"description\": \"string\"\n    }\n  ]\n}\n`;\n\nconst finalBody = {\n  \"contents\": [\n    {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"text\": prompt\n        },\n        {\n          \"inlineData\": {\n            \"mimeType\": \"video/mp4\", // Changed from audio/mp3\n            \"data\": videoBase64\n          }\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseMimeType\": \"text/plain\"\n  }\n};\n\nreturn [{ json: finalBody }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1264,
+        576
+      ],
+      "id": "3a9b439c-482f-4bd1-83e6-f4d7d0451354",
+      "name": "Set Prompt"
+    },
+    {
+      "parameters": {
+        "content": "## Loop ",
+        "height": 512,
+        "width": 272,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        352
+      ],
+      "id": "1ade04dc-0056-4508-8a3d-4f54715b7257",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS\nSame authenticating steps from every workflow",
+        "height": 512,
+        "width": 672,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        592,
+        352
+      ],
+      "id": "bf08e390-26e1-4e75-a613-6338b2d5872a",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Write VEO Prompt\n\nThis writes a prompt for VEO using the previous nodes",
+        "height": 512,
+        "width": 384,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        352
+      ],
+      "id": "a737e590-e142-46a2-84de-f04fa32a96f6",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Make Loop Unique\n\nThis makes the current loop unique so we don't loop over the same items twice\n\n",
+        "height": 512,
+        "width": 208,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        384,
+        352
+      ],
+      "id": "d88820cc-4538-44d4-a9a5-25a52e7fc661",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Video Generation & Make it URL\n\nThis generates a video, checks the status, converts it to a file, then makes it accessable via URL\n",
+        "height": 512,
+        "width": 1376,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1264,
+        352
+      ],
+      "id": "54e080b8-535a-44d0-81fd-d4495c809000",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Make all the loops items one bundle, and send to Telegram",
+        "height": 352,
+        "width": 384,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1517a04d-0dab-4bbe-9a89-1613fb3c4920",
+      "name": "Sticky Note8"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:27:22.793Z",
+      "updatedAt": "2025-11-10T16:27:22.793Z",
+      "role": "workflow:owner",
+      "workflowId": "IkU6FeemOdEKjuIJ",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:27:22.000Z",
+  "versionId": "3e21c583-539f-4b8f-b82f-d5840e07a526"
+}
