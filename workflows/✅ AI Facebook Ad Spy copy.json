@@ -1,0 +1,2534 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Run Ad Library Scraper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter For Likes": {
+      "main": [
+        [
+          {
+            "node": "Filter for Images",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Text Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Generate an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to Drive": {
+      "main": [
+        [
+          {
+            "node": "Begin Gemini Upload Session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "SET1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Ad Library Scraper": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Image Ads": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Convert Image to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Text Ads": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Output Text Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Video Ads": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Begin Gemini Upload Session": {
+      "main": [
+        [
+          {
+            "node": "Redownload Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redownload Video": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to Gemini": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Video with Gemini": {
+      "main": [
+        [
+          {
+            "node": "Output Video Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output Video Summary": {
+      "main": [
+        [
+          {
+            "node": "Make Prompt for Video Creation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add as Type = Video": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Image": {
+      "main": [
+        [
+          {
+            "node": "Output Image Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output Image Summary": {
+      "main": [
+        [
+          {
+            "node": "Add as Type = Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add as Type = Image": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output Text Summary": {
+      "main": [
+        [
+          {
+            "node": "Add as Type = Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add as Type = Text": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Analyze Video with Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload to GCS (To be accessible via URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video1": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "Generate Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Done?": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Add Captions",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering...": {
+      "main": [
+        [
+          {
+            "node": "Done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to GCS (To be accessible via URL)": {
+      "main": [
+        [
+          {
+            "node": "Turn video to 9:16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Turn video to 9:16": {
+      "main": [
+        [
+          {
+            "node": "Rendering...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Captions": {
+      "main": [
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering....": {
+      "main": [
+        [
+          {
+            "node": "Captions added?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Captions added?": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Upload to GCS (To be accessible via URL)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to GCS (To be accessible via URL)1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET1": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make Prompt for Video Creation": {
+      "main": [
+        [
+          {
+            "node": "Add as Type = Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Video Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Image Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter for videos": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Video Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter for Images": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Image Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter for Text": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Text Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Filter For Likes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Filter For Likes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Image to File": {
+      "main": [
+        [
+          {
+            "node": "Analyze Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        [
+          {
+            "node": "Filter For Likes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter For Likes2": {
+      "main": [
+        [
+          {
+            "node": "Filter for videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter For Likes1": {
+      "main": [
+        [
+          {
+            "node": "Filter for Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:25:45.437Z",
+  "id": "mHqqtJAuIyDHIV2q",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ AI Facebook Ad Spy copy",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1248,
+        544
+      ],
+      "id": "0f65d49c-80b5-4ecd-85d0-a35e216eff38",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1d74591-13e8-4c79-9a34-117cc6816dfb",
+              "leftValue": "={{ $json.advertiser.ad_library_page_info.page_info.likes }}",
+              "rightValue": 1000,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -576,
+        544
+      ],
+      "id": "6d42f409-7005-472e-97b9-8c9c416f30f0",
+      "name": "Filter For Likes"
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        816,
+        832
+      ],
+      "id": "4d2fe318-59c8-4c51-b46c-b0ce48734cbc",
+      "name": "Wait",
+      "webhookId": "0cbc634a-b2d4-4053-a284-2221f41c7ff2"
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1344,
+        480
+      ],
+      "id": "d11dcf37-bb84-4e23-8f91-77c9c8601020",
+      "name": "Wait1",
+      "webhookId": "12c8667b-4455-439d-b4ac-58bd59ea4d5d"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json['snapshot.videos'].video_sd_url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        192,
+        128
+      ],
+      "id": "b4b93e73-3878-4028-86c1-42cfcf56f2c5",
+      "name": "Download Video"
+    },
+    {
+      "parameters": {
+        "name": "Example File",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        496,
+        128
+      ],
+      "id": "1ddc5a51-9608-4a60-a852-f3a50cf5084c",
+      "name": "Upload Video to Drive"
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3040,
+        128
+      ],
+      "id": "94245f96-8fd4-4d7d-a492-853335f185e4",
+      "name": "Wait2",
+      "webhookId": "d5b50e08-c980-44cd-8fd4-0771a876e8b7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/XtaWFhbtfxyzqrFmd/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer "
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n    \"count\": 100,\n    \"period\": \"last30d\",\n    \"scrapeAdDetails\": true,\n    \"scrapePageAds.activeStatus\": \"active\",\n    \"urls\": [\n        {\n            \"url\": \"https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&q=%22ai%20automation%22&search_type=keyword_exact_phrase&start_date[min]=2025-06-12&start_date[max]\",\n            \"method\": \"GET\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1024,
+        544
+      ],
+      "id": "02635852-e03d-40a6-87fe-22cb9f4148be",
+      "name": "Run Ad Library Scraper"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -128,
+        544
+      ],
+      "id": "3509d1fa-3590-4599-8dab-a4c7762589b4",
+      "name": "Loop Over Image Ads"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -128,
+        832
+      ],
+      "id": "3be5deeb-df91-4260-a94e-f110d8a7c5e0",
+      "name": "Loop Over Text Ads"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -128,
+        208
+      ],
+      "id": "b04e1651-4009-4e90-8d48-f101b8639bf5",
+      "name": "Loop Over Video Ads"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/upload/v1beta/files",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Goog-Upload-Protocol",
+              "value": "resumable"
+            },
+            {
+              "name": "X-Goog-Upload-Command",
+              "value": "start"
+            },
+            {
+              "name": "X-Goog-Upload-Header-Content-Length",
+              "value": "={{ $json.size }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        816,
+        128
+      ],
+      "id": "100c6a65-13e1-497f-992b-8075904e2010",
+      "name": "Begin Gemini Upload Session"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Upload Video to Drive').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1104,
+        128
+      ],
+      "id": "fa464fe8-db69-47ad-93ba-56ded0373231",
+      "name": "Redownload Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.headers['x-goog-upload-url'] }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Length",
+              "value": "={{ $('Upload Video to Drive').item.json.size }}"
+            },
+            {
+              "name": "X-Goog-Upload-Offset",
+              "value": "0"
+            },
+            {
+              "name": "X-Goog-Upload-Command",
+              "value": "upload, finalize"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1344,
+        128
+      ],
+      "id": "cc11740e-99e6-4769-9650-77363f32df20",
+      "name": "Upload Video to Gemini"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Describe this video in excruciating detail. Do not output anything but the description of the video.\"\n        },\n        {\n          \"file_data\": {\n            \"mime_type\": \"{{ $json.file.mimeType }}\",\n            \"file_uri\": \"{{ $json.file.uri }}\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1792,
+        128
+      ],
+      "id": "6c28e126-9bbe-44f4-b8f8-4ec7ae1de1f9",
+      "name": "Analyze Video with Gemini",
+      "retryOnFail": true,
+      "waitBetweenTries": 15
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You're a helpful, intelligent advertisement analysis bot. You analyze advertisements. ",
+              "role": "system"
+            },
+            {
+              "content": "Your task is to take as input a scraped javascript object from an advertisement in the FB ad library, and then summarize it + spin (repurpose, rewrite) the ad copy. \n\nYou're doing this for strategic intelligence. We run an advertising agency and we're always looking at what our competitor advertisers are doing.\n\nOutput your results in this JSON format:\n\n{\"summary\":\"\",\"rewrittenAdCopy\":\"\"}\n\nRules:\n- The intended style and attitude is generally analytical, inquisitive, and precise, despite exploring complex topics, in the “classic style” of Western writing.\nthe level of formality should be inverse to the topic’s novelty: the weirder something is, the more formal. For ‘safer’ topics, one should cut loose with the humor, epigraphs, typographical stunts and experiments, etc.\n- Avoid hedging and qualifying, even at the risk of making overly-strong claims. It is a slippery slope.\n- Use casual abbreviations (like San Francisco -> SF, thanks -> thx, question -> q ), casual contractions (like \"I've\"), shortened forms of common nouns (like \"info\", \"vid\", \"app\") as this signals more human written speech. Do not use em dashes (eliminate — from your vocabulary completely!\n- No rhetorical questions.\n- Make your summary extremely comprehensive and analytical.\n- Make the ad copy very short. Short enough that it can fit into an 8 second video. It should be hook -> value -> CTA"
+            },
+            {
+              "content": "=JSON scrape:\n\n{{ $('Loop Over Video Ads').item.json.toJsonString() }}\n\nVideo description:\n\n{{ $json.candidates[0].content.parts[0].text }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        2016,
+        128
+      ],
+      "id": "fda795ec-1715-4d92-952a-7ad8aa48b237",
+      "name": "Output Video Summary"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM",
+          "mode": "list",
+          "cachedResultName": "FB ad spy",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ad_archive_id": "={{ $('Loop Over Video Ads').item.json.ad_archive_id }}",
+            "page_id": "={{ $('Loop Over Video Ads').item.json.page_id }}",
+            "date_added": "={{ $now }}",
+            "page_name": "={{ $('Loop Over Video Ads').item.json.snapshot.page_name }}",
+            "summary": "={{ $json.message.content.summary }}",
+            "rewritten_ad_copy": "={{ $json.message.content.rewrittenAdCopy }}",
+            "page_url": "={{ $('Loop Over Video Ads').item.json.snapshot.page_profile_uri }}",
+            "image_prompt": "=",
+            "type": "video",
+            "video_prompt": "={{ $('Analyze Video with Gemini').item.json.candidates[0].content.parts[0].text }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ad_archive_id",
+              "displayName": "ad_archive_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_id",
+              "displayName": "page_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_added",
+              "displayName": "date_added",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_name",
+              "displayName": "page_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_url",
+              "displayName": "page_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rewritten_ad_copy",
+              "displayName": "rewritten_ad_copy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "image_prompt",
+              "displayName": "image_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "video_prompt",
+              "displayName": "video_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2816,
+        128
+      ],
+      "id": "ce5fe1d8-6dae-4652-9a7c-e0920bc8c6e2",
+      "name": "Add as Type = Video"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "text": "What's in this image? Be extremely comprehensive.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        480,
+        480
+      ],
+      "id": "97b58ed0-bd1b-4b3a-ab91-1ad33e9d38b2",
+      "name": "Analyze Image"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You're a helpful, intelligent advertisement analysis bot. You analyze advertisements.",
+              "role": "system"
+            },
+            {
+              "content": "Your task is to take as input a scraped javascript object from an advertisement in the FB ad library, and then summarize it + spin (repurpose, rewrite) the ad copy. \n\nYou're doing this for strategic intelligence. We run an advertising agency and we're always looking at what our competitor advertisers are doing.\n\nOutput your results in this JSON format:\n\n{\"summary\":\"\",\"rewrittenAdCopy\":\"\"}\n\nRules:\n- The intended style and attitude is generally analytical, inquisitive, and precise, despite exploring complex topics, in the “classic style” of Western writing.\nthe level of formality should be inverse to the topic’s novelty: the weirder something is, the more formal. For ‘safer’ topics, one should cut loose with the humor, epigraphs, typographical stunts and experiments, etc.\n- Avoid hedging and qualifying, even at the risk of making overly-strong claims. It is a slippery slope.\n- Use casual abbreviations (like San Francisco -> SF, thanks -> thx, question -> q ), casual contractions (like \"I've\"), shortened forms of common nouns (like \"info\", \"vid\", \"app\") as this signals more human written speech. Do not use em dashes (eliminate — from your vocabulary completely!\n- No rhetorical questions.\n- Make your summary extremely comprehensive and analytical."
+            },
+            {
+              "content": "=JSON scrape:\n\n{{ $('Loop Over Image Ads').item.json.toJsonString() }}\n\nImage description:\n\n{{ $json.content }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        720,
+        480
+      ],
+      "id": "bec53f1c-e18e-4ee3-84e2-7c7d44db3bd5",
+      "name": "Output Image Summary"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM",
+          "mode": "list",
+          "cachedResultName": "FB ad spy",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ad_archive_id": "={{ $('Loop Over Image Ads').item.json.ad_archive_id }}",
+            "page_id": "={{ $('Loop Over Image Ads').item.json.page_id }}",
+            "date_added": "={{ $now }}",
+            "page_name": "={{ $('Loop Over Image Ads').item.json.snapshot.page_name }}",
+            "summary": "={{ $json.message.content.summary }}",
+            "rewritten_ad_copy": "={{ $json.message.content.rewrittenAdCopy }}",
+            "page_url": "={{ $('Loop Over Image Ads').item.json.snapshot.page_profile_uri }}",
+            "image_prompt": "={{ $('Analyze Image').item.json.content }}",
+            "type": "image"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ad_archive_id",
+              "displayName": "ad_archive_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_id",
+              "displayName": "page_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_added",
+              "displayName": "date_added",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_name",
+              "displayName": "page_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_url",
+              "displayName": "page_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rewritten_ad_copy",
+              "displayName": "rewritten_ad_copy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "image_prompt",
+              "displayName": "image_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "video_prompt",
+              "displayName": "video_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1120,
+        480
+      ],
+      "id": "7ad215b8-c49d-4ced-84fd-1769d6368562",
+      "name": "Add as Type = Image"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You're a helpful, intelligent advertisement analysis bot. You analyze advertisements.",
+              "role": "system"
+            },
+            {
+              "content": "Your task is to take as input a scraped javascript object from an advertisement in the FB ad library, and then summarize it + spin (repurpose, rewrite) the ad copy. \n\nYou're doing this for strategic intelligence. We run an advertising agency and we're always looking at what our competitor advertisers are doing.\n\nOutput your results in this JSON format:\n\n{\"summary\":\"\",\"rewrittenAdCopy\":\"\"}\n\nRules:\n- The intended style and attitude is generally analytical, inquisitive, and precise, despite exploring complex topics, in the “classic style” of Western writing.\nthe level of formality should be inverse to the topic’s novelty: the weirder something is, the more formal. For ‘safer’ topics, one should cut loose with the humor, epigraphs, typographical stunts and experiments, etc.\n- Avoid hedging and qualifying, even at the risk of making overly-strong claims. It is a slippery slope.\n- Use casual abbreviations (like San Francisco -> SF, thanks -> thx, question -> q ), casual contractions (like \"I've\"), shortened forms of common nouns (like \"info\", \"vid\", \"app\") as this signals more human written speech. Do not use em dashes (eliminate — from your vocabulary completely!\n- No rhetorical questions.\n- Make your summary extremely comprehensive and analytical."
+            },
+            {
+              "content": "={{ $json.toJsonString() }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        96,
+        768
+      ],
+      "id": "b0324fbf-851a-404a-b7f5-df61a24d3185",
+      "name": "Output Text Summary"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM",
+          "mode": "list",
+          "cachedResultName": "FB ad spy",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {}
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        496,
+        768
+      ],
+      "id": "b8ba3fbf-26dd-48f9-8a8a-53ee82c969dd",
+      "name": "Add as Type = Text"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1568,
+        128
+      ],
+      "id": "e8002825-ef96-44d7-9de5-8c116ca3491c",
+      "name": "Wait3",
+      "webhookId": "2e99e086-62fe-4496-8599-a47f7701fa5f"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        4832,
+        128
+      ],
+      "id": "b971e10d-223e-45c6-8ebf-59f6e9992b6d",
+      "name": "Convert to File",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET1').item.json.API_ENDPOINT }}/v1/projects/{{ $('SET1').item.json.PROJECT_ID }}/locations/{{ $('SET1').item.json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4384,
+        64
+      ],
+      "id": "f251a8cd-ebe4-483f-b246-9e5218404059",
+      "name": "Fetch Status"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET1').item.json.API_ENDPOINT }}/v1/projects/{{ $('SET1').item.json.PROJECT_ID }}/locations/{{ $('SET1').item.json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET1').item.json.PROJECT_ID }}/locations/{{ $('SET1').item.json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": {{ JSON.stringify($('Make Prompt for Video Creation').item.json.message.content) }}\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true,\n    \"negativePrompt\": \"captions, subtitles, Transcriptions, Text overlays, Dialogue text, On-screen text, Title cards\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3936,
+        128
+      ],
+      "id": "c916e836-cd53-4a4f-a9f3-0868d7442197",
+      "name": "Generate Video1"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        3488,
+        128
+      ],
+      "id": "d361d439-6102-4a83-ac3d-9788c3d3e55f",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3712,
+        128
+      ],
+      "id": "208342e7-f9a7-4ef1-84d5-7d593657a13c",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.shotstack.io/v1/render/{{ $('Turn video to 9:16').item.json.response.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5728,
+        64
+      ],
+      "id": "5785c29b-9adf-4dc3-a483-ded6d9c88a71",
+      "name": "Done?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fc24d410-040a-4ca6-b70f-7473af617bd9",
+              "leftValue": "={{ $json.response.status }}",
+              "rightValue": "done",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5952,
+        128
+      ],
+      "id": "cfd9f72e-048d-4f28-b9cd-10e7c757bc41",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5504,
+        128
+      ],
+      "id": "18cc07eb-0188-48bf-bc81-0b213470cfa1",
+      "name": "Rendering...",
+      "webhookId": "11c7f086-d7b6-43fa-85eb-44d6d2e75f88"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Captions added?').item.json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        7088,
+        128
+      ],
+      "id": "c10a93ae-aeee-4116-a3fa-5d8b8a4f4f19",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "FB_AD_SPY",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        5056,
+        128
+      ],
+      "id": "938f5ed0-8b63-4e0c-8080-90c1f2f87a17",
+      "name": "Upload to GCS (To be accessible via URL)",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.shotstack.io/v1/render",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\t\"timeline\": {\n\t\t\"tracks\": [\n\t\t\t{\n\t\t\t\t\"clips\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"asset\": {\n\t\t\t\t\t\t\t\"type\": \"video\",\n\t\t\t\t\t\t\t\"src\": \"{{ $json.mediaLink }}\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"start\": 0,\n\t\t\t\t\t\t\"length\": 8,\n\t\t\t\t\t\t\"fit\": \"crop\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t]\n\t},\n\t\"output\": {\n\t\t\"format\": \"mp4\",\n\t\t\"aspectRatio\": \"9:16\",\n\t\t\"resolution\": \"hd\"\n\t}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5280,
+        128
+      ],
+      "id": "1a04d42e-f404-4b37-8941-797fb1bd8924",
+      "name": "Turn video to 9:16"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5107cf98-f4e2-4c99-813c-cceffabb1df8",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "succeeded",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        6848,
+        128
+      ],
+      "id": "2f9c42e0-1431-496a-9f28-d6af0619cc8b",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"template_id\": \"51f14913-150a-4de6-9c0f-84cf61ff230d\",\n  \"modifications\": {\n    \"Video-655.source\": \"{{ $('Done?').item.json.response.url }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6176,
+        128
+      ],
+      "id": "86afa794-8067-47a0-8b74-299c4bf62b4f",
+      "name": "Add Captions"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        6400,
+        128
+      ],
+      "id": "9d8b9af3-70a4-4ba5-91b8-6862b0a50d74",
+      "name": "Rendering....",
+      "webhookId": "a32dd98b-b8d7-4d4e-a0e9-7005ecb296b2"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6624,
+        64
+      ],
+      "id": "182f9362-4c4d-4534-97c9-393e2286a125",
+      "name": "Captions added?"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4608,
+        128
+      ],
+      "id": "0805f011-78dc-49c1-bac3-34a839bd5c48",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4160,
+        128
+      ],
+      "id": "5ddf0e9c-4cb7-4553-a9c2-447c99dab461",
+      "name": "Wait4",
+      "webhookId": "b0eedb02-8d47-42a7-9fe0-a930aae223f0"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM",
+          "mode": "list",
+          "cachedResultName": "FB ad spy",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12fOAoNnVp3UP_4ImnO1FsZkrnPhA1_67dpdpnmfaBmM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "veo_video": "={{ $('Upload to GCS (To be accessible via URL)1').item.json.mediaLink }}",
+            "ad_archive_id": "={{ $('Add as Type = Video').item.json.ad_archive_id }}"
+          },
+          "matchingColumns": [
+            "ad_archive_id"
+          ],
+          "schema": [
+            {
+              "id": "ad_archive_id",
+              "displayName": "ad_archive_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_id",
+              "displayName": "page_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date_added",
+              "displayName": "date_added",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "page_name",
+              "displayName": "page_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "page_url",
+              "displayName": "page_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rewritten_ad_copy",
+              "displayName": "rewritten_ad_copy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "image_prompt",
+              "displayName": "image_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "video_prompt",
+              "displayName": "video_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "veo_video",
+              "displayName": "veo_video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        7520,
+        208
+      ],
+      "id": "b72278d4-16b6-485b-a6a2-a2841ff94f31",
+      "name": "Update row in sheet"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "FB_AD_SPY_2",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        7296,
+        128
+      ],
+      "id": "519ff968-1937-48a6-aa74-eb12ea9e479c",
+      "name": "Upload to GCS (To be accessible via URL)1",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3264,
+        128
+      ],
+      "id": "706c704d-9bca-4d8f-ac45-a5fe7f5f3156",
+      "name": "SET1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "## IDENTITY\nYou are an expert cinematic prompt writer for Google Veo. Your purpose is to convert business context and a script into a high-quality, single-shot Veo prompt. The final output will be a video clip for a 9:16 vertical ad.\n\n## CONTEXT PROVIDED\nYou will be given the following information:\n- `AD_TRANSCRIPT`: The exact dialogue the subject will speak.\n- `SCENE_CONTEXT`: Details about the subject, their action, and the environment.\n\n## CORE TASK\n[cite_start]Your task is to synthesize the provided context into a single, cohesive, and cinematic Veo prompt of 120-180 words, describing one continuous shot[cite: 40].\n\n## CRITICAL RULES & STRUCTURE\nYou must follow these rules without deviation to ensure a successful output.\n\n1.  **CENTERED COMPOSITION FOR 9:16 CROPPING:** The final 16:9 video will be cropped to a vertical 9:16 aspect ratio. Therefore, you MUST use compositional terms to ensure the subject and all key actions remain in the center of the frame.\n    * [cite_start]Begin the prompt with a shot type and framing instruction like \"**A cinematic medium shot with center framing...**\" or \"**A professional-looking close-up, placing the subject directly in the middle...**\". [cite: 50]\n    * This is the most important rule to prevent key details from being cut off.\n\n2.  **PERFECT LIP-SYNC & NO SUBTITLES:** To ensure perfect lip-sync without generating broken text overlays or captions, you must handle the dialogue with a specific format.\n    * NEVER use quotation marks (\" \") around the transcript.\n    * You MUST integrate the `AD_TRANSCRIPT` into the prompt using this exact syntax: **The subject says: [the full ad transcript]**.\n    * This is the correct technical method to request lip-syncing while preventing the AI from adding its own text.\n\n3.  **MAINTAIN A SINGLE, CONTINUOUS SHOT:** The prompt must describe a single, continuous action in one location.\n    * [cite_start]DO NOT describe multiple background changes, a sequence of different actions, camera cuts, or events that happen \"during\" or \"after\" another event[cite: 45]. The entire description must exist within one moment.\n\n4.  **USE CINEMATIC LANGUAGE:** You must enrich the prompt by incorporating at least ONE specific term from each of the following categories, using the provided context to make an appropriate choice.\n    * [cite_start]**[Mood/Energy]:** (e.g., Energetic, Tense, Dreamlike, Serene, Gritty, Romantic) [cite: 112]\n    * **[Lighting]:** (e.g., Soft Light, High-Key Lighting, Backlight, Golden Hour, Practical Lighting)\n    * [cite_start]**[Color Grading]:** (e.g., Warm Tone, Cool Tone, High Contrast, Desaturated, Cinematic Teal & Orange) [cite: 63]\n\n5.  **EXPLICITLY FORBID TEXT (FINAL COMMAND):** As a final failsafe, you must end the *entire* generated prompt with the exact phrase on a new line: **Do NOT add ANY text to the video.**\n\n## FINAL OUTPUT EXAMPLE (STRUCTURE)\nYour final generated Veo prompt should follow this narrative structure:\n`[Mood/Energy] and [Style] [Shot Type] with [Composition] of [Subject] with [Subject Details] in [Environment] with [Environment Details]. The scene is illuminated by [Lighting] with a [Color Grading] color palette. The camera remains focused on the subject as [Action is described]. The subject says: [AD_TRANSCRIPT].`\n`Do NOT add ANY text to the video.`",
+              "role": "system"
+            },
+            {
+              "content": "=Ad script: \"{{ $json.message.content.rewrittenAdCopy }}\"\n\nContext of the scene: {{ $('Analyze Video with Gemini').item.json.candidates[0].content.parts[0].text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        2416,
+        128
+      ],
+      "id": "6dc67a05-a4ca-44e6-b30a-66f35c865840",
+      "name": "Make Prompt for Video Creation"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "={{ $json.image_prompt }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1568,
+        544
+      ],
+      "id": "22c24d7f-ae93-4447-8f3b-9c94bdb5eb9d",
+      "name": "Generate an image"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9b6f6ed3-a471-4d66-8da3-7de27a132512",
+              "leftValue": "={{ $('Split Out1').item.json['snapshot.videos'].video_sd_url }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -352,
+        208
+      ],
+      "id": "18d4eda8-f686-40ea-a616-40e5c963c85c",
+      "name": "Filter for videos"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a692f1fe-2fbb-4d38-b81e-1de156f658c3",
+              "leftValue": "={{ $json['snapshot.cards'].original_image_url }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -352,
+        544
+      ],
+      "id": "f2bc0740-09b8-44d9-b1b5-77d9727b25ac",
+      "name": "Filter for Images"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e8b8cd9b-bd57-4a80-9016-b77753498162",
+              "leftValue": "={{ $('Run Ad Library Scraper').item.json.snapshot.cards[0].original_image_url }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "e6be7ea2-b489-4822-b46e-eca709424a11",
+              "leftValue": "={{ $('Run Ad Library Scraper').item.json.snapshot.cards[0].original_image_url }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -352,
+        832
+      ],
+      "id": "f214ae38-2763-48a4-8131-0c48f8085b22",
+      "name": "Filter for Text"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "snapshot.cards",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        544
+      ],
+      "id": "a65d5a09-18c7-4da6-b7ff-8ed5c534e19e",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "snapshot.videos",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        208
+      ],
+      "id": "fe47dd8c-2bda-4469-9bfd-d176fbfbf9b9",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json['snapshot.cards'].resized_image_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        480
+      ],
+      "id": "5d5fea86-0f79-4271-ae3c-c9e97e2d319d",
+      "name": "Convert Image to File"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "snapshot.cards",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        832
+      ],
+      "id": "55c7dd00-d975-40d3-9867-d0de4897846a",
+      "name": "Split Out2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1d74591-13e8-4c79-9a34-117cc6816dfb",
+              "leftValue": "={{ $json.advertiser.ad_library_page_info.page_info.likes }}",
+              "rightValue": 1000,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -576,
+        832
+      ],
+      "id": "040d2221-8792-419b-81d7-c12489b7a822",
+      "name": "Filter For Likes1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1d74591-13e8-4c79-9a34-117cc6816dfb",
+              "leftValue": "={{ $json.advertiser.ad_library_page_info.page_info.likes }}",
+              "rightValue": 1000,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -576,
+        208
+      ],
+      "id": "2edd236a-1f26-4fad-91c6-6d932db9990b",
+      "name": "Filter For Likes2"
+    },
+    {
+      "parameters": {
+        "content": "## Run FB ad Scrape\n\n- Runs a scrape using Apify to get FB ads",
+        "height": 336,
+        "width": 272,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1104,
+        416
+      ],
+      "id": "cbb2951c-c0a5-4f56-9c23-6efffb3e8fe1",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Filter Data\n\n- Filters the returned data from the scrape. Such as if over 1000 likes, and if it's a video/photo/text",
+        "height": 896,
+        "width": 832,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -832,
+        96
+      ],
+      "id": "facfab1d-22bf-489d-b165-cc105472365d",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Upload video to Gemini\n\n- This uploads the video from the ad to our Gemini account so we can then analyze it",
+        "height": 336,
+        "width": 1504
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5157210a-5141-4c65-adae-cddfcfc4cf47",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Preparing Video Generation\n\n- This section analyzes the video, writes a summary, then writes a prompt for VEO",
+        "height": 336,
+        "width": 1680,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1504,
+        0
+      ],
+      "id": "fbeab756-5f68-46cb-9759-81871a2c6ef0",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS\nSame authenticating steps from every workflow",
+        "height": 336,
+        "width": 704,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3184,
+        0
+      ],
+      "id": "55d5b2b5-8617-4bc4-9255-b9f4cae8b9c3",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Generate Video\n\n- This section generates the video, and uploads it to our bucket",
+        "height": 336,
+        "width": 1328,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3904,
+        0
+      ],
+      "id": "d1ae57d9-848c-49cf-b4e9-911a572ecd75",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Turn Video to 9:16\n\n- This section turns the video generated from VEO to 9:16 format and checks the status until complete",
+        "height": 336,
+        "width": 928,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5216,
+        0
+      ],
+      "id": "75020d41-7b54-4431-9147-47d6b004c69b",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Add Captions\n\n- This section adds captions to our video using the rewritten ad copy",
+        "height": 336,
+        "width": 880
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6144,
+        0
+      ],
+      "id": "f54e0e26-c080-4c11-bce8-a260a0dcdc1b",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## Finalize\n\n- This section downloads the final video, uploads to a bucket, and adds it to our google sheet",
+        "height": 336,
+        "width": 672,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        7024,
+        0
+      ],
+      "id": "8a328ae3-971a-4203-abe3-edccca6b5824",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## Image analysis \n\n- Analysis of the image ad",
+        "height": 272,
+        "width": 1504
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        416
+      ],
+      "id": "ab2b0e34-670a-4280-a4a0-642e5bc49d32",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "content": "## Image Generation\n\n- Generates an image using the analysis and a prompt",
+        "height": 272,
+        "width": 256,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1504,
+        416
+      ],
+      "id": "5ea7bba8-80c8-4647-916a-5b8bf241742f",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "content": "## Rewrite Text ad\n\n- Analyze text ad and rewrite the copy",
+        "height": 352,
+        "width": 1024
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        736
+      ],
+      "id": "2561b7b7-87e0-43fc-94de-2f7d0e193098",
+      "name": "Sticky Note12"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:25:45.444Z",
+      "updatedAt": "2025-11-10T16:25:45.444Z",
+      "role": "workflow:owner",
+      "workflowId": "mHqqtJAuIyDHIV2q",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:25:45.000Z",
+  "versionId": "743b8c8e-f9e6-4e85-8195-1fc729b7023e"
+}
