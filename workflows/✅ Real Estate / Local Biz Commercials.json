@@ -1,0 +1,1839 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Planning the ad",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Planning the ad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Part_1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Planning the ad": {
+      "main": [
+        [
+          {
+            "node": "Part_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Part_1": {
+      "main": [
+        [
+          {
+            "node": "SET",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Part_2": {
+      "main": [
+        [
+          {
+            "node": "Generate Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Part_2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Part_2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "vid1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "vid2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Planning the ad",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Part_1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to Drive": {
+      "main": [
+        [
+          {
+            "node": "Begin Gemini Upload Session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Begin Gemini Upload Session": {
+      "main": [
+        [
+          {
+            "node": "Redownload Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redownload Video": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to Gemini": {
+      "main": [
+        [
+          {
+            "node": "Waiting...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Video with Gemini": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Part_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Part_2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shotstack HTTP Body": {
+      "main": [
+        [
+          {
+            "node": "Merge - Creatomate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vid1": {
+      "main": [
+        [
+          {
+            "node": "Downloading Part 1 (Binary)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vid2": {
+      "main": [
+        [
+          {
+            "node": "Shotstack HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge - Creatomate": {
+      "main": [
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering....": {
+      "main": [
+        [
+          {
+            "node": "done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "done?": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Shotstack HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Downloading Part 1 (Binary)": {
+      "main": [
+        [
+          {
+            "node": "Upload Video to Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Waiting...": {
+      "main": [
+        [
+          {
+            "node": "Analyze Video with Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:29:01.872Z",
+  "id": "QUVmW8z88lSrV2gn",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ Real Estate / Local Biz Commercials",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        64,
+        208
+      ],
+      "id": "6d65e6c9-01b4-4a31-82c7-96cf84a60790",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c8de92f6-8827-4442-8c41-7fe4a324c159",
+              "name": "BusinessName",
+              "value": "iTech",
+              "type": "string"
+            },
+            {
+              "id": "f29f257d-b68f-4274-95d4-50ede4d381d0",
+              "name": "BusinessDescription",
+              "value": "iTech is a professional smartphone and tablet repair shop based in New York. We specialize in fast, high-quality repairs for iPhones, Samsungs, iPads, and more. Our certified technicians ensure customer satisfaction with reliable service and original parts. Walk-ins are welcome, and most repairs are completed within 30 minutes.",
+              "type": "string"
+            },
+            {
+              "id": "71dc3deb-37e1-4fdc-9af7-2bdae942a4cd",
+              "name": "Services",
+              "value": "iPhone repair, Samsung repair, screen replacement, battery replacement, tablet repair, software troubleshooting.",
+              "type": "string"
+            },
+            {
+              "id": "f129953d-8afa-4412-8a4f-762b8f2ea6b9",
+              "name": "AdvertizedService",
+              "value": "iPhone screen repair",
+              "type": "string"
+            },
+            {
+              "id": "6321f6a9-4b31-4572-94a2-db50b57f8da3",
+              "name": "Offer",
+              "value": "Get your iPhone screen fixed in 30 minutes – no appointment needed.",
+              "type": "string"
+            },
+            {
+              "id": "0d16fd82-1dce-46db-bc2b-b327b1e44fec",
+              "name": "CTA",
+              "value": "Visit us today in New York",
+              "type": "string"
+            },
+            {
+              "id": "b38011ba-c483-4a4d-8545-b1619e2db0b3",
+              "name": "BusinessLocation",
+              "value": "Wall street 134, 44137 New York",
+              "type": "string"
+            },
+            {
+              "id": "c1b56ade-6ea6-4a70-b228-da5d044a5717",
+              "name": "TargetAudience",
+              "value": "Students and working professionals in New York",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        208
+      ],
+      "id": "8bd3b558-e9f8-4347-8c1e-d5b702850c51",
+      "name": "Form"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        512,
+        432
+      ],
+      "id": "3ad24ea8-ba16-4906-bb65-31850c5afc7c",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3008,
+        208
+      ],
+      "id": "2a08b4d9-5ea7-4e29-8ae4-2956d642cda2",
+      "name": "Convert to File",
+      "notesInFlow": false,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dcfdf153-2ffe-4605-864d-42c55bebdb17",
+                    "leftValue": "={{ $json.response.raiMediaFilteredCount }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2784,
+        192
+      ],
+      "id": "28c61c1f-ecf8-4529-a4dc-e96ce8234345",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $('Generate Video').item.json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2560,
+        64
+      ],
+      "id": "1111e637-ba4c-4a5f-bc86-350c546c5d40",
+      "name": "Fetch Status",
+      "alwaysOutputData": false,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2336,
+        144
+      ],
+      "id": "5d123c06-0cc9-4e02-a017-353eae2420f2",
+      "name": "Wait",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1440,
+        144
+      ],
+      "id": "291425b0-ab72-484a-9f92-9894c462761a",
+      "name": "SET"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        1664,
+        144
+      ],
+      "id": "e0ae9877-88e1-4791-b3f1-060b26224cb1",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1888,
+        144
+      ],
+      "id": "35b35012-97a0-44e7-8856-7300e72c5477",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Part_1').item.json.text.replace(/\"/g, \"\").replace(/\\n/g, \"\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true,\n    \"negativePrompt\": \"kids, office, children\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2112,
+        144
+      ],
+      "id": "ba1bf4d5-4dd7-475d-bf5c-5abadbc6b337",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here are the business details:\n\n{\n  \"business_name\": \"{{ $json.BusinessName }}\",\n  \"description\": \"{{ $json.BusinessDescription }}\",\n  \"services\": \"{{ $json.Services }}\",\n  \"advertised_service\": \"{{ $json.AdvertizedService }}\",\n  \"offer\": \"{{ $json.Offer }}\",\n  \"cta\": \"{{ $json.CTA }}\",\n  \"location\": \"{{ $json.BusinessLocation }}\",\n  \"target_audience\": \"{{ $json.TargetAudience }}\"\n}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "**Role:** Creative Screenwriter for Micro-Commercials\n**Core Philosophy:** Your goal is to create micro-stories that feel authentic and relatable, not like direct advertisements. The solution or offer should emerge naturally from a believable character interaction.\n\n**Task:** Create a script for a 16-second, two-part micro-ad focusing on character interaction and dialogue. The output must be a single, valid JSON object that strictly follows the structure and content style of the `PERFECT OUTPUT EXAMPLE` provided below.\n\n**PERFECT OUTPUT EXAMPLE:**\n```json\n{\n  \"part1\": {\n    \"purpose\": \"To hook the viewer with a specific, high-stakes problem and introduce the solution through a concise, natural dialogue exchange.\",\n    \"visuals\": [\n      \"A medium shot of ANNA, a young professional with dark hair, looking stressed as she taps futilely on her badly cracked iPhone at her office desk.\",\n      \"She sighs in frustration. Her coworker, BEN, a man in a casual button-down, leans into the frame with a helpful expression.\"\n    ],\n    \"dialogue\": [\n      {\n        \"character\": \"Anna\",\n        \"line\": \"It's completely shattered. Now I can't even call the client back.\"\n      },\n      {\n        \"character\": \"Ben\",\n        \"line\": \"Don't panic. iTech fixes screens in 30 minutes, no appointment needed.\"\n      }\n    ],\n    \"mood\": \"Stressful, quickly shifting to hopeful relief.\",\n    \"pacing\": \"A quick, tense moment followed by a calm, clear solution.\",\n    \"audio_cues\": [\"A frustrated sigh\"],\n    \"transition_technique\": \"Whip pan\"\n  },\n  \"part2\": {\n    \"purpose\": \"To demonstrate the service's speed and professionalism, and to provide emotional closure by showing the customer's satisfaction before delivering a clear call-to-action.\",\n    \"visuals\": [\n      \"The whip pan resolves on a technician's hands skillfully locking a pristine new screen into the iPhone.\",\n      \"The technician, wearing a polo with a small 'iTech' logo, slides the repaired phone across a sleek counter to a now-relieved ANNA.\",\n      \"A close-up on Anna's face as her expression shifts from apprehension to delight while she swipes the new screen flawlessly.\"\n    ],\n    \"dialogue\": [\n      {\n        \"character\": \"Anna\",\n        \"line\": \"Wow, already? That was unbelievably fast. Thank you!\"\n      },\n      {\n        \"character\": \"Technician\",\n        \"line\": \"Of course. That's what we do. You can find us anytime at iTech on Wall Street.\"\n      }\n    ],\n    \"mood\": \"Professional and efficient, culminating in customer satisfaction and relief.\",\n    \"pacing\": \"Smooth and quick, with a pause on the customer's happy reaction.\",\n    \"audio_cues\": [\n      \"A crisp, satisfying 'click' as the screen seats\",\n      \"A genuine, happy sigh of relief from Anna\"\n    ],\n    \"transition_technique\": \"Hard cut to black\"\n  }\n}\n**Constraints & Requirements:**\n\n- **JSON Structure:** The output MUST strictly follow the JSON structure shown in the example.\n\n- **Part 1 Dialogue:** The total combined word count for all dialogue lines in Part 1 must not exceed 25 words. It must contain a dialogue exchange of 2 to 3 lines.\n\n- **Part 1 Narrative Arc:** The story must show a specific problem, the consequences of that problem, and a solution offered in response. The 'visuals' description must include a brief, clear description of each character's appearance.\n\n- **Part 2 Narrative:** The scene must show the customer from Part 1 receiving the solution for their problem (e.g. repaired device) and expressing satisfaction. The dialogue should be a brief, natural exchange between the customer and the business staff member that includes the business name and/or location.\n\n- **Assertive Service Dialogue:** The technician's dialogue in Part 2 must be confident and service-oriented, clearly responding to the customer's satisfaction. Use phrases like \"Of course,\" \"You're welcome,\" or \"That's what we're here for\" to establish an expert tone. Avoid ambiguous phrases like \"Happy to help.\"\n\n- **No On-Screen Text:** All information must be conveyed through visuals and dialogue.\n\n- **Two Characters Max:** Each part should include two characters maximum. For example part 1 should include a person with a problem, and a person recommending a business that offers a solution, then part 2 should have the business staff member and the person with a problem having their problem being solved."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        528,
+        208
+      ],
+      "id": "7edb3eb6-4b2d-4a26-ae72-6f8b76b5ceb7",
+      "name": "Planning the ad"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Based on the rules and principles mentioned, synthesize the following ad plan and persona details into a single, cinematic Veo 3 prompt.\n\n### Ad Plan (Part 1):\n> THIS IS WHAT YOU NEED TO FOCUS ON\n\n{{ JSON.stringify($('Planning the ad').item.json.output.part1, null, 2) }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "**Role:** Expert AI Prompt Engineer specializing in generating high-quality text-to-video prompts for Veo 3.\n\n**Task:**\nYour mission is to synthesize the provided ad script for **Part 1** into one single, cohesive, and descriptive paragraph prompt. This prompt must be ready for generating the first 8-second video clip.\n\n**Guiding Principles:**\n\n1.  **Center-Focused Composition for 9:16 Cropping:** This is the most important rule. The composition MUST keep all key characters and actions in the center of the frame to ensure they are visible when the 16:9 video is cropped to a 9:16 vertical aspect ratio. [cite_start]You **must use terms like \"Center Framing\" [cite: 4][cite_start], \"tight Two-Shot\" [cite: 6][cite_start], or \"Close-Up\" [cite: 6]** to achieve this. **AVOID** wide shots or any composition that places characters on the far left or right edges of the screen.\n\n2.  **Infer Character Details:** You must infer all character appearances and details directly from the `visuals` array in the provided Ad Plan. If no specific details are given, describe a relatable character fitting the context (e.g., 'a young professional').\n\n3.  **Dialogue Formatting:** The dialogue from the script **MUST** be placed at the very end of the prompt, formatted exactly as: `Character Name says: [line of dialogue]`.\n\n4.  **Length and Cohesion:** The final output must be a single, cohesive paragraph, ideally between 120 and 150 words."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1040,
+        208
+      ],
+      "id": "660ff85c-ceee-4087-a565-d904c7041758",
+      "name": "Part_1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=### Ad Plan (Part 2):\n> THIS IS WHAT YOU NEED TO FOCUS ON\n\n{{ JSON.stringify($('Planning the ad').item.json.output.part2, null, 2) }}\n\n### Ad Plan (Part 1):\n>> USE THIS FOR REFERENCE ONLY. DO NOT CREATE A PROMPT BASED ON IT!\n\n{{ JSON.stringify($('Planning the ad').item.json.output.part1, null, 2) }}\n\nPersona Details (Part 2 Characters):\n> This is a list of characters participating in the scenes. Character consistency is a top priority so you need to include a description of the persona(s) in your output.\n\n{{ JSON.stringify($('Basic LLM Chain').output) }}\n\nPrevious prompt for Part 1:\n> This was the prompt used to generate the video of part 1 of the Ad. Use if for reference to build something that goes with the flow.\n\n{{ JSON.stringify($('Part_1').item.json.text) }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "**Role:** Expert AI Prompt Engineer specializing in generating high-quality text-to-video prompts for Veo 3.\n\n**Task:**\nYour mission is to synthesize the ad script for **Part 2** and the detailed character persona(s) into one single, cohesive, and descriptive paragraph prompt.\n\n**Guiding Principles:**\n\n1.  **Link Dialogue to Action (Crucial for Accuracy):** For every line of dialogue, you **MUST** include a specific visual description of that character speaking. Use phrases like **\"her mouth moves as she speaks,\"** or **\"the camera cuts to the technician, who smiles as he replies.\"** This creates an undeniable visual link between the character and their line and is the most important rule for preventing dialogue mismatch.\n\n2.  **Center-Focused Composition for 9:16 Cropping:** The composition MUST keep all key characters and actions in the center of the frame. Use terms like \"Center Framing\", \"tight Two-Shot\", or \"Close-Up\". AVOID wide shots.\n\n3.  **Incorporate Persona Details:** You must use the hyper-detailed persona data to describe the returning character, ensuring absolute visual consistency. For new characters like the technician, describe a professional appearance.\n\n4.  **Dialogue Formatting:** The dialogue block **MUST** be placed at the very end of the prompt, formatted exactly as: `Character Name says: [line of dialogue]`."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        5552,
+        208
+      ],
+      "id": "b86b7feb-359b-423c-90e1-6ad3ce536ae2",
+      "name": "Part_2"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        6848,
+        208
+      ],
+      "id": "d1eef8ea-f299-4ea0-a971-8a613b95df12",
+      "name": "Convert to File1",
+      "notesInFlow": false,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dcfdf153-2ffe-4605-864d-42c55bebdb17",
+                    "leftValue": "={{ $json.response.raiMediaFilteredCount }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6ed7dca8-33b0-40d0-9d2c-bd3071d5b11a",
+                    "leftValue": "={{ $json.error.message }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        6624,
+        176
+      ],
+      "id": "0860685d-1526-4e91-840e-ab252e718d14",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $('Generate Video1').item.json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6400,
+        64
+      ],
+      "id": "4d3a3c1f-dc21-43f5-86e6-a21af4be0cf9",
+      "name": "Fetch Status1",
+      "alwaysOutputData": false,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        6176,
+        144
+      ],
+      "id": "e3d6210e-de55-4695-97ad-96cbe558f01e",
+      "name": "Wait1",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Part_2').item.json.text.replace(/\"/g, \"\").replace(/\\n/g, \"\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true,\n    \"negativePrompt\": \"kids, office, children\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5952,
+        144
+      ],
+      "id": "abc15c8f-f765-42a7-b6f5-438a0cf7eb72",
+      "name": "Generate Video1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"part1\": {\n    \"purpose\": \"To hook the viewer with a specific, high-stakes problem and introduce the solution through a natural, multi-line conversation.\",\n    \"visuals\": [\n      \"A medium shot of ANNA at her office desk, looking stressed as she tries to use her badly cracked iPhone.\",\n      \"Close-up on the phone screen, showing the spiderweb of cracks making it unusable.\",\n      \"Anna's coworker, BEN, leans over her shoulder with a look of concern, noticing her struggle.\"\n    ],\n    \"dialogue\": [\n      {\n        \"character\": \"Anna\",\n        \"line\": \"This is a disaster. The client presentation is on here and the screen won't even respond.\"\n      },\n      {\n        \"character\": \"Ben\",\n        \"line\": \"Oh, wow. That's bad. Can't you email it from your laptop?\"\n      },\n      {\n        \"character\": \"Anna\",\n        \"line\": \"The final version is only on the phone! I'm completely stuck.\"\n      },\n      {\n        \"character\": \"Ben\",\n        \"line\": \"Okay, don't panic. I know a place. iTech can fix that screen in 30 minutes, no appointment needed.\"\n      }\n    ],\n    \"mood\": \"Stressful and panicked, transitioning to hopeful relief.\",\n    \"pacing\": \"Starts tense, then shifts to a helpful, problem-solving pace.\",\n    \"audio_cues\": [\"Frustrated sighs\", \"Keyboard tapping stops abruptly\"],\n    \"transition_technique\": \"Whip pan\"\n  },\n  \"part2\": {\n    \"purpose\": \"To demonstrate the service's speed and professionalism, and deliver a clear call-to-action.\",\n    \"visuals\": [\n      \"The whip pan resolves on a technician's hands expertly snapping a new screen into place.\",\n      \"The technician slides the pristine, repaired phone across the counter to Anna, who looks amazed.\"\n    ],\n    \"dialogue\": [\n      {\n        \"character\": \"Technician\",\n        \"line\": \"Good as new. For any tech emergency, visit us at iTech on Wall Street in New York.\"\n      }\n    ],\n    \"mood\": \"Professional, efficient, and satisfying.\",\n    \"pacing\": \"Smooth and quick.\",\n    \"audio_cues\": [\"Satisfying 'click' of the screen\", \"Upbeat, subtle background ambience\"],\n    \"transition_technique\": \"Hard cut to black\"\n  }\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        640,
+        432
+      ],
+      "id": "9ee77c0d-9fb9-4ae2-b4f3-add2e8b3f8ea",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        736,
+        640
+      ],
+      "id": "e4010073-d98e-4bf1-ac17-268068d725e2",
+      "name": "DeepSeek Chat Model2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1136,
+        432
+      ],
+      "id": "d185ffc2-6ee2-41ea-a607-e7465943de39",
+      "name": "Google Gemini Chat Model2"
+    },
+    {
+      "parameters": {
+        "name": "Example File",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3680,
+        208
+      ],
+      "id": "bec11031-3dae-4e47-899b-5d329b93b3e8",
+      "name": "Upload Video to Drive"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/upload/v1beta/files",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Goog-Upload-Protocol",
+              "value": "resumable"
+            },
+            {
+              "name": "X-Goog-Upload-Command",
+              "value": "start"
+            },
+            {
+              "name": "X-Goog-Upload-Header-Content-Length",
+              "value": "={{ $json.size }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3904,
+        208
+      ],
+      "id": "598c452b-bd84-457d-9816-1c3c1ea4dc65",
+      "name": "Begin Gemini Upload Session"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Upload Video to Drive').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        4128,
+        208
+      ],
+      "id": "c18885af-7d17-4024-bfb6-66df2ca1ca96",
+      "name": "Redownload Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.headers['x-goog-upload-url'] }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Length",
+              "value": "={{ $('Upload Video to Drive').item.json.size }}"
+            },
+            {
+              "name": "X-Goog-Upload-Offset",
+              "value": "0"
+            },
+            {
+              "name": "X-Goog-Upload-Command",
+              "value": "upload, finalize"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4352,
+        208
+      ],
+      "id": "104ff1cf-1052-44d7-a005-4b20d77ca935",
+      "name": "Upload Video to Gemini"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Describe this video in excruciating detail, especially the characters present, their facial expressions, how they look, what they are wearing as if you were describing them to a blind person. Please describe their face, hair, length, size, all details that we might need if we were to generate an AI replica of them. Do not output anything but the description of the characters.\"\n        },\n        {\n          \"file_data\": {\n            \"mime_type\": \"{{ $json.file.mimeType }}\",\n            \"file_uri\": \"{{ $json.file.uri }}\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4800,
+        208
+      ],
+      "id": "e5c83e77-2603-4e1d-9b0e-7f969de0a8d7",
+      "name": "Analyze Video with Gemini",
+      "retryOnFail": true,
+      "waitBetweenTries": 15
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Analyze the provided video and ad script according to the rules I mentioned. Output a JSON file with a hyper-detailed description of only the characters from the video who also participate in Part 2 of the script.\n\ncharacters description:\n\n{{ JSON.stringify($json.candidates[0].content.parts[0].text) }}\n\nAd script input:\n\n{{ JSON.stringify($('Planning the ad').item.json.output.part1) }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "**Role:** AI Video Character Analyzer\n\n**Core Task:**\nYour primary function is to analyze a provided video clip (Part 1 of an ad) and generate a hyper-detailed JSON description of specific characters who will reappear in the next scene (Part 2). The level of detail must be sufficient for absolute character consistency in a subsequent video generation.\n\n**Inputs:**\nYou will receive two inputs:\n1.  **A Video File:** The visual source material from Part 1.\n2.  **An Ad Script (JSON format):** Contains the plan for both Part 1 and Part 2, including character names and actions.\n\n**Step-by-Step Instructions:**\n\n1.  **Analyze Video:** First, identify all distinct characters visually present in the video file.\n2.  **Consult Script:** Next, read the provided Ad Script, specifically looking at the `visuals` and `dialogue` sections for **Part 2**.\n3.  **Cross-Reference:** Compare the characters you see in the video with the character names mentioned in the script for Part 2.\n4.  **Filter and Describe:** Generate a hyper-detailed description **only for the character(s) that appear in both the Part 1 video and the Part 2 script**.\n5.  **Format Output:** Structure the description(s) into the specified JSON format below, filling in every possible field based on clear visual evidence.\n\n**Critical Constraints:**\n\n* **Filter Strictly:** If a character is visible in the video but is NOT mentioned in the Part 2 script, they **MUST be ignored and excluded** from the final JSON output.\n* **Visual-Based Descriptions:** All descriptions must be based strictly on the visual information present in the video. If a detail is not visible (e.g., footwear), state \"Not visible\".\n* **Empty Output:** If no characters from the video reappear in the Part 2 script, output an empty JSON object: `{}`.\n\n**JSON Output Structure (Hyper-Detailed):**\n\nYou must output a single JSON object. The root of the object should be a `characters` array, where each object represents one character who meets the filtering criteria.\n\n{\n  \"characters\": [\n    {\n      \"name\": \"Character's Name (from script)\",\n      \"role\": \"Character's Role (from script)\",\n      \"description\": \"A brief, one-sentence summary of the character's overall appearance, mood, and actions in the video.\",\n      \"visual_anchors\": {\n        \"identity\": {\n          \"sex\": \"Male or Female\",\n          \"age_approximation\": \"e.g., late 20s, early 40s\",\n          \"core_demographics\": \"e.g., Caucasian, East Asian, African American\"\n        },\n        \"face\": {\n          \"face_shape\": \"e.g., Oval, Square, Round, Heart\",\n          \"eye_color\": \"e.g., Blue, Dark Brown, Hazel\",\n          \"eye_shape\": \"e.g., Almond, Round, Hooded\",\n          \"eyebrow_style\": \"e.g., Arched, Straight, Thin\",\n          \"nose_shape\": \"e.g., Straight, Button, Aquiline\",\n          \"lip_shape\": \"e.g., Full, Thin\",\n          \"skin_details\": \"e.g., Smooth, Light freckles, Clear\"\n        },\n        \"hair\": {\n          \"hair_color\": \"e.g., Dark Brown, Blonde, Black, Red\",\n          \"hair_length\": \"e.g., Short, Shoulder-length, Long\",\n          \"hair_texture\": \"e.g., Straight, Wavy, Curly\",\n          \"hairstyle\": \"e.g., Sleek professional bun, Messy side-part\"\n        },\n        \"body\": {\n          \"height_approximation\": \"e.g., 5'7\\\", 6'0\\\"\",\n          \"body_type\": \"e.g., Slim, Athletic, Average\",\n          \"posture\": \"e.g., Upright, Stressed and slightly slouched\"\n        },\n        \"attire\": {\n          \"clothing_style_summary\": \"e.g., Business casual, Smart-casual\",\n          \"top_wear\": \"e.g., A stylish blazer over a white shell top\",\n          \"bottom_wear\": \"e.g., Tailored black trousers\",\n          \"footwear\": \"e.g., Black leather loafers (if visible)\",\n          \"accessories\": [\"e.g., Small gold hoop earrings\", \"A silver watch on left wrist\"]\n        }\n      }\n    }\n  ]\n}"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        5040,
+        208
+      ],
+      "id": "4885360a-d300-4b15-8602-7f0cafb0c117",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-reasoner",
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        5024,
+        432
+      ],
+      "id": "5df43d59-48d9-4da3-8b20-aba920350525",
+      "name": "DeepSeek Chat Model"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"characters\": [\n    {\n      \"name\": \"Character's Name (from script)\",\n      \"role\": \"Character's Role (from script)\",\n      \"description\": \"A brief, one-sentence summary of the character's overall appearance, mood, and actions in the video.\",\n      \"visual_anchors\": {\n        \"identity\": {\n          \"sex\": \"Male or Female\",\n          \"age_approximation\": \"e.g., late 20s, early 40s\",\n          \"core_demographics\": \"e.g., Caucasian, East Asian, African American\"\n        },\n        \"face\": {\n          \"face_shape\": \"e.g., Oval, Square, Round, Heart\",\n          \"eye_color\": \"e.g., Blue, Dark Brown, Hazel\",\n          \"eye_shape\": \"e.g., Almond, Round, Hooded\",\n          \"eyebrow_style\": \"e.g., Arched, Straight, Thin\",\n          \"nose_shape\": \"e.g., Straight, Button, Aquiline\",\n          \"lip_shape\": \"e.g., Full, Thin\",\n          \"skin_details\": \"e.g., Smooth, Light freckles, Clear\"\n        },\n        \"hair\": {\n          \"hair_color\": \"e.g., Dark Brown, Blonde, Black, Red\",\n          \"hair_length\": \"e.g., Short, Shoulder-length, Long\",\n          \"hair_texture\": \"e.g., Straight, Wavy, Curly\",\n          \"hairstyle\": \"e.g., Sleek professional bun, Messy side-part\"\n        },\n        \"body\": {\n          \"height_approximation\": \"e.g., 5'7\\\", 6'0\\\"\",\n          \"body_type\": \"e.g., Slim, Athletic, Average\",\n          \"posture\": \"e.g., Upright, Stressed and slightly slouched\"\n        },\n        \"attire\": {\n          \"clothing_style_summary\": \"e.g., Business casual, Smart-casual\",\n          \"top_wear\": \"e.g., A stylish blazer over a white shell top\",\n          \"bottom_wear\": \"e.g., Tailored black trousers\",\n          \"footwear\": \"e.g., Black leather loafers (if visible)\",\n          \"accessories\": [\"e.g., Small gold hoop earrings\", \"A silver watch on left wrist\"]\n        }\n      }\n    }\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        5152,
+        432
+      ],
+      "id": "48a4cd55-7dc5-4e03-bd1f-952b2ac8a35d",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        5248,
+        640
+      ],
+      "id": "c1a53168-662a-4519-92ae-b849a4191b6c",
+      "name": "DeepSeek Chat Model3"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        5648,
+        432
+      ],
+      "id": "a6839788-6cc7-4a15-b916-4aef9e66eb19",
+      "name": "Google Gemini Chat Model1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const vid1 = \"https://res.cloudinary.com/dgm45sdjb/video/fetch/ar_9:16,c_fill,g_auto:person/\"+$('vid1').first().json.mediaLink.replace(\"?\", \"%3F\").replace(\"&\", \"%26\");\nconst vid2 = \"https://res.cloudinary.com/dgm45sdjb/video/fetch/ar_9:16,c_fill,g_auto:person/\"+$('vid2').first().json.mediaLink.replace(\"?\", \"%3F\").replace(\"&\", \"%26\");\n\nconst requestBody = {\n  \"template_id\": \"7445eee3-f8c6-48d9-82be-255e30fcebeb\",\n  \"modifications\": {\n    \"Music.source\": \"\",\n    \"Video.source\": vid1,\n    \"Video2.source\": vid2\n  }\n};\n\nreturn [{ json: requestBody }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7296,
+        208
+      ],
+      "id": "a6338e05-3b17-44cb-88e8-624003b4f283",
+      "name": "Shotstack HTTP Body",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "partOne",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3232,
+        208
+      ],
+      "id": "c0e2b475-2200-4565-ab75-b25553c18432",
+      "name": "vid1"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "partTwo",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        7072,
+        208
+      ],
+      "id": "ccb7bdb2-aba3-4a02-8497-ef8d8f779a04",
+      "name": "vid2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        7520,
+        144
+      ],
+      "id": "6c342b9c-d126-4a1f-a1d8-07ec996bf9b3",
+      "name": "Merge - Creatomate"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('done?').item.json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        8416,
+        208
+      ],
+      "id": "3daba03b-590c-4c35-ad34-9511cd382504",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        7744,
+        144
+      ],
+      "id": "e99724db-9e38-4fde-9a48-ad8823fc9779",
+      "name": "Rendering....",
+      "webhookId": "f14aa999-1900-4a3f-8068-033f6a7aa762"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        7968,
+        64
+      ],
+      "id": "1ae3bf2c-60c9-41f8-bfd5-cf54431f2415",
+      "name": "done?"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "1231587611",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        8640,
+        208
+      ],
+      "id": "f8ea94d3-1371-4d3a-9d58-6891d5d33d7f",
+      "name": "Send a video",
+      "webhookId": "6b771dd9-7e73-49fe-b5f3-6f0bc45f925a"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "succeeded",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "58389d5b-1c90-49a1-bb14-9d9331ac7607"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "97d4d7cc-9e2c-48dc-ab57-6e20dd6d50c4",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "failed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "483a5006-5097-4946-bdd9-2b320102f095",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "rendering",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        8192,
+        192
+      ],
+      "id": "a650ae68-13cb-4cc7-a39d-518e5b714e22",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "content": "# Planning the Ad",
+        "height": 784,
+        "width": 496,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "be28992f-f296-4592-821e-27e30bb0a876",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Veo prompt for Part 1 of the video",
+        "height": 784,
+        "width": 416,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        960,
+        0
+      ],
+      "id": "90a49521-e379-4144-8ef5-c24cc949ba35",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS",
+        "height": 784,
+        "width": 656,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1392,
+        0
+      ],
+      "id": "2f62d976-8ae4-45e3-8d7d-285e219b00b4",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Generating Part 1 (The problem + Offer)",
+        "height": 784,
+        "width": 1312,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2064,
+        0
+      ],
+      "id": "eb40eb26-2de7-4ddb-954f-0ee13ff2a243",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Analyzing Part 1 characters (using Gemini)",
+        "height": 784,
+        "width": 1568,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3392,
+        0
+      ],
+      "id": "d74ac3a2-6fd3-46d7-abcb-b658831e28b6",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Identifying key qualities of the personas",
+        "height": 784,
+        "width": 464,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4976,
+        0
+      ],
+      "id": "30045439-5f2b-44a4-8357-a99c6ca37ca7",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Veo prompt for Part 2 of the video",
+        "height": 784,
+        "width": 416,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5456,
+        0
+      ],
+      "id": "d2e64979-6868-49cd-a915-31a0076a6d34",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# Merging videos & Adding captions",
+        "height": 784,
+        "width": 1136,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        7216,
+        0
+      ],
+      "id": "9e5ad879-a767-4031-a3c6-a29fb1fa78ad",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "# Sending the Final Video",
+        "height": 784,
+        "width": 480,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        8368,
+        0
+      ],
+      "id": "ba4151d8-8351-426f-9bc2-554465fbe944",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## Securing the input variables",
+        "height": 784,
+        "width": 432,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d006fd7f-5107-4275-8218-be1b0368e0dc",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "# Generating Part 2 (Solution + CTA)",
+        "height": 784,
+        "width": 1312,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5888,
+        0
+      ],
+      "id": "2fe63907-eea2-459b-b138-56c978d6c45b",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.mediaLink }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3456,
+        208
+      ],
+      "id": "b1894545-77ab-4dc1-b708-1e2b5ad609e8",
+      "name": "Downloading Part 1 (Binary)"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4576,
+        208
+      ],
+      "id": "a3e058f8-f888-4b10-9303-96945224e50e",
+      "name": "Waiting...",
+      "webhookId": "ac11c85a-5b73-4a29-9667-615e811a5ad8"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:29:01.888Z",
+      "updatedAt": "2025-11-10T16:29:01.888Z",
+      "role": "workflow:owner",
+      "workflowId": "QUVmW8z88lSrV2gn",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:29:01.000Z",
+  "versionId": "92be6c4e-f10e-489a-b600-6c0bfbd6d434"
+}
