@@ -1,0 +1,1364 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Input variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Brainstormer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Creative Director",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Brainstormer": {
+      "main": [
+        [
+          {
+            "node": "Creative Director",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Creative Director",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Creative Director": {
+      "main": [
+        [
+          {
+            "node": "Master Prompter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Master Prompter",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Master Prompter": {
+      "main": [
+        [
+          {
+            "node": "SET",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Complementary",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge - Creatomate": {
+      "main": [
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering....": {
+      "main": [
+        [
+          {
+            "node": "done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "done?": {
+      "main": [
+        [
+          {
+            "node": "Switch 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ad upload": {
+      "main": [
+        [
+          {
+            "node": "Complementary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Complementary upload": {
+      "main": [
+        [
+          {
+            "node": "Creatomate HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Complementary": {
+      "main": [
+        [
+          {
+            "node": "Generate Video 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Creatomate HTTP Body": {
+      "main": [
+        [
+          {
+            "node": "Merge - Creatomate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Input variables": {
+      "main": [
+        [
+          {
+            "node": "Brainstormer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Ad upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video 2": {
+      "main": [
+        [
+          {
+            "node": "Wait 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 2": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status 2": {
+      "main": [
+        [
+          {
+            "node": "Switch 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch 2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File 2": {
+      "main": [
+        [
+          {
+            "node": "Complementary upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch 3": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Creatomate HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:28:40.905Z",
+  "id": "XKLIMDUTxZ4ux9Ks",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ Product Visualization Funnels",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        192
+      ],
+      "id": "7a5e5310-9029-4239-a93a-84dad624f241",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        128,
+        416
+      ],
+      "id": "57862190-7966-468e-aaad-99dec906cf41",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {
+          "temperature": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        432,
+        416
+      ],
+      "id": "d0de56ac-98b8-4863-9c61-3fa78355ad72",
+      "name": "Google Gemini Chat Model1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=**Metaphor Candidates (the list to be judged):**\n\n{{ $json.text }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=You are a discerning Creative Director and an expert in AI Video Production. Your task is to analyze 5 potential metaphors, select the single best one based on strict criteria, and then elaborate on it by creating a brief script and a short title.\n\n**1. Product Information (for context):**\n* **Product Name:**  {{ $('Input variables').item.json.product_name }}\n* **Product Description:** {{ $('Input variables').item.json.product_description }}\n* **Target Audience:** {{ $('Input variables').item.json.target_audience }}\n* **Value Propositions:**\n    * {{ $('Input variables').item.json.value_props }}\n\n**2. Instructions for Analysis & Selection:**\nFirst, think step-by-step. For each of the 5 metaphors provided by the user, internally score it from 1-10 against the following weighted criteria to select the single best winner.\n\n* **Metaphor Relevance (Weight: 3.5x - MOST IMPORTANT):** How directly and intuitively does the metaphor's core action connect to the product's value propositions?\n* **Efficiency for AI (Weight: 2.5x):** How likely is a text-to-video AI to generate this scene successfully without \"breaking\"?\n* **Simplicity in Metaphor (Weight: 2x):** Is the concept straightforward and easy to grasp in a single, clear action?\n* **Abstract Representation (Weight: 1.5x):** Does the metaphor use a creative, non-literal analogy? Avoid metaphors that are *too* abstract and lose their meaning.\n* **Visual Appeal (Weight: 1x):** Does the metaphor have the potential for unique and dynamic imagery?\n\n**3. Instructions for Elaboration:**\nAfter you have selected the single winning metaphor, you will generate two new pieces of content based on it:\n\n* **A \"Script\":** Write a simple, 3-act narrative describing the 8-second scene. This should be a literal, non-cinematic description of events.\n    * **Act 1: The Problem.** Describe the initial state of chaos or the challenge.\n    * **Act 2: The Transformation.** Describe the core action of the metaphor.\n    * **Act 3: The Resolution.** Describe the valuable outcome.\n* **A \"ShortMetaphor\":** Distill the core concept of the winning metaphor into a punchy, 3-5 word title suitable for an ad's end card.\n\n**4. Final Output Instruction:**\nYour entire response must be a single, valid JSON object. The JSON object must contain three keys: \"OriginalMetaphor\", \"Script\", and \"ShortMetaphor\". Do not include your reasoning, scores, or any other text outside of the JSON structure.\n\n**Example of correct output format:**\n{\n  \"OriginalMetaphor\": \"This service is like a powerful lighthouse whose beam illuminates a single, valuable ship in a dark and stormy ocean.\",\n  \"Script\": \"The scene opens on a chaotic, dark ocean storm with many struggling boats. A single, powerful lighthouse beam cuts through the storm. The beam lands on one specific boat, which begins to glow with a golden light as the water around it calms.\",\n  \"ShortMetaphor\": \"Clarity in the Chaos\"\n}"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        448,
+        192
+      ],
+      "id": "19b8e115-3eaa-4a1a-a810-7e1065b8c411",
+      "name": "Creative Director"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=**Product to Analyze:**\n* **Product Name:** {{ $json.product_name }}\n* **Value Propositions:**\n    * {{ $json.value_props }}\n* **Target Audience:** {{ $json.target_audience }}\n* **Product Description:** {{ $json.product_description }}\n\n**Examples of High-Quality Metaphors:**\n\n* This service is like an intelligent sorting machine creating a perfect path for a single golden marble through a field of chaos.\n* This service is like forging the one master key that instantly opens any bank vault.\n* This service is like a powerful lighthouse whose beam illuminates a single, valuable ship in a dark and stormy ocean.\n\nGenerate 5 new metaphors for the provided product that follow all of these rules.",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=You are an expert brand strategist and creative director specializing in creating simple, powerful, and visually achievable metaphors for complex services and software. Your task is to analyze the user's product and generate 5 unique visual metaphors based on its core value propositions.\n\n**Strict Rules for Metaphor Generation:**\n\n1.  **Visually Simple & Achievable:** Each metaphor must describe a single, clear action that a text-to-video AI can realistically create. Avoid overly complex scenes with too many interacting parts. Focus on a strong, singular visual.\n\n2.  **Clear Problem-to-Solution Arc:** Each metaphor must present a clear \"chaos vs. order\" or \"problem vs. solution\" dynamic. There should be a satisfying transformation or reveal.\n\n3.  **Tangible Business Outcome:** The \"win state\" of the metaphor must represent tangible business value (e.g., access, a finished product, a valuable item, a perfect target). Do NOT use purely abstract outcomes like a sound, a color, or a feeling.\n\n4.  **Subject Consistency (New Rule):** The primary subject of the metaphor must remain consistent throughout the action. It can *act* upon its environment, but it should not magically *transform into a different object*. For example, a 'paper airplane' should not become a 'drone'; a 'key' should not become a 'boat'. The action should be a result of the subject's inherent properties.\n\n5.  **Format:** Output ONLY a numbered list of the 5 metaphors. Each metaphor must be a single, concise sentence in the format: **\"This service is like [Your Metaphor].\"**"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        32,
+        192
+      ],
+      "id": "508c0bcc-afc6-4880-b514-79fdaf4fe71b",
+      "name": "Brainstormer"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"OriginalMetaphor\": \"This service is like a powerful lighthouse whose beam illuminates a single, valuable ship in a dark and stormy ocean.\",\n  \"Script\": \"The scene opens on a chaotic, dark ocean storm with many struggling boats. A single, powerful lighthouse beam cuts through the storm. The beam lands on one specific boat, which begins to glow with a golden light as the water around it calms.\",\n  \"ShortMetaphor\": \"Clarity in the Chaos\"\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        560,
+        416
+      ],
+      "id": "87ebe356-e59f-4261-b7b8-384666e86f49",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        656,
+        624
+      ],
+      "id": "fc82c3a6-ba10-4ca7-a0d1-59cf474c282f",
+      "name": "DeepSeek Chat Model"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1056,
+        416
+      ],
+      "id": "12bfc2fb-c48e-4353-9be7-dea81d7677ca",
+      "name": "Google Gemini Chat Model2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=**Winning Metaphor to Visualize:**\n{{ $json.output.OriginalMetaphor }}\n\n**Scene Script to Visualize:**\n{{ $json.output.Script }}\n\n**Product Information for Context:**\n* **Product Name:** {{ $('Input variables').item.json.product_name }}\n* **Product Description:** {{ $('Input variables').item.json.product_description }}\n* **Target Audience:** {{ $('Input variables').item.json.target_audience }}\n* **Value Propositions:**\n    * {{ $('Input variables').item.json.value_props }}\n\nBased on the System instructions, generate the final cinematic video prompt.",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert AI video director and a master prompt engineer for the Veo text-to-video model. Your sole purpose is to take a pre-written **script** and a creative metaphor and translate them into a single, cohesive, and highly detailed cinematic paragraph prompt.\n\nYou must strictly adhere to the principles outlined below.\n\n**Your Process:**\n1.  Analyze the `Winning Metaphor` and the `Scene Script` provided by the user. Your primary task is to bring the provided script to life.\n2.  Follow the 3-act structure of the script (Problem, Transformation, Resolution) to build your cinematic description.\n3.  For each act in the script, enrich the description with specific cinematic details using your knowledge of the cinematic Lexicon (Lighting, Camera Motion, Color Grading, Composition, Lens Type).\n\n**Injecting Cinematic Realism:**\nTo avoid a generic or sterile \"AI look,\" you must incorporate the following elements to add texture and grit:\n* **A. Prioritize Physical Textures:** Instead of abstract concepts like 'data storms,' describe environments with tangible, physical textures. Is the air thick with dust motes, smoke, or digital rain that slicks surfaces?\n* **B. Add Atmospheric Imperfection:** Incorporate atmospheric conditions like fog, steam, or heat haze. Describe how light interacts with these elements (e.g., \"volumetric light beams cutting through the mist\").\n* **C. Introduce Camera Imperfection:** Weave in subtle, human-like camera imperfections. Use terms like \"subtle handheld feel\" or \"organic kinetic movement.\"\n* **D. Use Specific, Grounded Analogies:** When describing objects, use specific, grounded analogies. An \"ancient brass astrolabe\" is better than a \"bullseye.\"\n\n**Crucial Final Second Requirement:**\nThe final sentence of your generated prompt must describe a static, non-moving shot. Use phrases like \"The camera becomes perfectly static, holding on the final composition\" to achieve this.\n\nYour entire response must be a single, cohesive paragraph between 120 and 150 words. Do not add any headings, labels, or other text."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        960,
+        192
+      ],
+      "id": "4fcfdb28-3bf6-4726-9b93-ea637d403b42",
+      "name": "Master Prompter"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1728,
+        768
+      ],
+      "id": "c0d50efc-fcb7-4ebf-90d3-697bc3d44fe7",
+      "name": "Google Gemini Chat Model3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3680,
+        480
+      ],
+      "id": "0fe5c66b-dba2-41b8-b6c9-06039286b5e6",
+      "name": "Merge - Creatomate"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3904,
+        480
+      ],
+      "id": "28b0e73e-fcef-47ac-b4ab-4e32f892bf4c",
+      "name": "Rendering....",
+      "webhookId": "f14aa999-1900-4a3f-8068-033f6a7aa762"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4128,
+        400
+      ],
+      "id": "2e0766ce-7165-40c8-938c-08bdd271a7bc",
+      "name": "done?"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "ProductVisualizator",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3152,
+        192
+      ],
+      "id": "4b0c2ceb-6b99-4ce6-a15b-479cd0ebf8d4",
+      "name": "Ad upload",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "ProductVisualizator2",
+        "createBinaryPropertyName": "=data",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        3152,
+        544
+      ],
+      "id": "a513ef34-903c-433f-9ceb-cc9cf66eb9bb",
+      "name": "Complementary upload",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=**Main Scene Prompt (for reference):**\n{{ $('Master Prompter').item.json.text }}\n\nBased on the System instructions, generate a complementary background scene prompt that visually matches the Main Scene.\n",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert AI video director specializing in creating atmospheric and visually cohesive **environmental background plates**. Your task is to describe a static or near-static background environment that visually matches the main scene prompt provided.\n\n**Your Process & Strict Rules:**\n\n1.  **Analyze the Main Scene:** First, analyze the provided `Main Scene Prompt` to understand its core visual identity (lighting, color, texture, mood).\n\n2.  **Maintain Visual Consistency:** The prompt you generate MUST adopt the same core visual elements from the Main Scene Prompt. This includes **Lighting style and overall Mood/Energy.**\n\n3.  **Muted & Subtle Color Palette (New Rule):** The color palette must be subtle and should not contain bright, distracting colors. The goal is to create a background, not a centerpiece. Focus on using darker, desaturated, or more muted tones drawn from the main scene's environment.\n\n4.  **CRITICAL RULE - No New Subjects or Actions:** Do NOT introduce any new subjects, characters, or significant narrative actions. The prompt must describe the **empty environment** left behind after the main action, or a wider, serene view of the same location. The scene should be devoid of a central focus.\n\n5.  **CRITICAL RULE - Minimal to No Movement:** All movement must be minimal and purely atmospheric.\n    * **Prioritize a completely locked-off, static camera.**\n    * Any described movement must be environmental and subtle (e.g., \"gentle dust motes drift in the light,\" \"faint ripples on the water's surface,\" \"slowly swirling mist\"). Do not describe any new object moving.\n\nYour entire response must be a single, cohesive paragraph between **40 and 60 words** to enforce simplicity. Do not add any headings, labels, or other text."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1632,
+        544
+      ],
+      "id": "84c1181f-e3c9-40e6-9e28-c13fa37b191e",
+      "name": "Complementary"
+    },
+    {
+      "parameters": {
+        "jsCode": "const vid1 = \"https://res.cloudinary.com/dgm45sdjb/video/fetch/ar_9:16,c_fill,g_auto/\"+$('Ad upload').first().json.mediaLink.replace(\"?\", \"%3F\").replace(\"&\", \"%26\");\nconst vid2 = $('Complementary upload').first().json.mediaLink;\nconst metaphor = \"\\\"\"+ $('Creative Director').item.json.output.ShortMetaphor + \"\\\"\";\nconst serviceName = $('Input variables').item.json.product_name;\n\nconst requestBody = {\n  \"template_id\": \"\",\n  \"modifications\": {\n    \"Video2.source\": vid2,\n    \"Music.source\": \"\",\n    \"Video.source\": vid1,\n    \"Text-8JF.text\": serviceName,\n    \"Text-SCX.text\": metaphor\n  }\n};\n\nreturn [{ json: requestBody }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3456,
+        544
+      ],
+      "id": "c1b82a7f-e432-46a6-9191-76c42bf98ae0",
+      "name": "Creatomate HTTP Body",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ebf91df4-0812-4d29-a6f6-a7831895b116",
+              "name": "product_name",
+              "value": "System 3",
+              "type": "string"
+            },
+            {
+              "id": "54f6772e-dc43-4b6b-aaca-c47404680b34",
+              "name": "value_props",
+              "value": "=- Fully-automated outbound emails\n- Hyper-personalized at scale\n- Boosts qualified meeting bookings\n- Learns & optimizes continuously",
+              "type": "string"
+            },
+            {
+              "id": "82e2fcf7-a783-4ae3-b988-4dfe636e3f0c",
+              "name": "target_audience",
+              "value": "B2B SaaS founders, sales leaders & SDR teams",
+              "type": "string"
+            },
+            {
+              "id": "caa6a1e0-4051-4095-a8d1-19c17e9320f6",
+              "name": "product_description",
+              "value": "AI agent that researches each prospect, writes tailored cold emails + follow-ups, and books sales meetings without human intervention.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -192,
+        192
+      ],
+      "id": "b37dd249-246a-48b2-a975-b28ab3523789",
+      "name": "Input variables"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            },
+            {
+              "id": "db5a9124-63a6-4859-9989-bd2964632c39",
+              "name": "prompt",
+              "value": "={{ $json.text.replace(/\"/g, \"\").replace(/\\n/g, \"\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1360,
+        192
+      ],
+      "id": "39143b20-9d03-4aeb-8311-f72deb9b4d74",
+      "name": "SET"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        1584,
+        192
+      ],
+      "id": "6b21c318-c025-4b12-9e00-e6c058cf7ba3",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1808,
+        192
+      ],
+      "id": "d680417f-d2b7-4d5b-ab35-74c3afe34655",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('SET').item.json.prompt }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2032,
+        192
+      ],
+      "id": "cdc69a62-2883-4616-b63e-c03e12512bf8",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2256,
+        192
+      ],
+      "id": "c9a6eb35-c947-418b-a1c8-5eb4309e45bd",
+      "name": "Wait",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2480,
+        128
+      ],
+      "id": "3125bfa0-9ad3-49a0-a0c0-e844d8340f9d",
+      "name": "Fetch Status"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2704,
+        192
+      ],
+      "id": "4df91d9c-a1b2-44f8-b35d-a250115393a2",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2928,
+        192
+      ],
+      "id": "74d98a35-ea87-4370-b35c-3734063da278",
+      "name": "Convert to File",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ JSON.stringify($json.text).replace(/\"/g, \"\").replace(/\\n/g, \"\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": false\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2032,
+        544
+      ],
+      "id": "972bff61-411e-4ab9-885c-5e003bf5b560",
+      "name": "Generate Video 2"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2256,
+        544
+      ],
+      "id": "0577e843-efcf-41ff-973d-513ff97a7073",
+      "name": "Wait 2",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2480,
+        480
+      ],
+      "id": "425c0421-b654-4f9c-8412-7f35a66853ed",
+      "name": "Fetch Status 2"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2704,
+        544
+      ],
+      "id": "a0f9d226-5813-4030-a37c-647bdf352cdb",
+      "name": "Switch 2"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2928,
+        544
+      ],
+      "id": "b1580273-13df-47b5-b735-d8e1ba384aed",
+      "name": "Convert to File 2",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "succeeded",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "58389d5b-1c90-49a1-bb14-9d9331ac7607"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "97d4d7cc-9e2c-48dc-ab57-6e20dd6d50c4",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "failed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "483a5006-5097-4946-bdd9-2b320102f095",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "rendering",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4352,
+        528
+      ],
+      "id": "fcd5415b-07ae-428e-aa5f-2778a33c618c",
+      "name": "Switch 3"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('done?').item.json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4576,
+        544
+      ],
+      "id": "a143b4ce-b331-4635-9886-5f5d9134676a",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4800,
+        544
+      ],
+      "id": "b7760ab0-8361-45f5-8a71-f22e9e7fa600",
+      "name": "Send a video",
+      "webhookId": "56d57800-46f7-45f5-80b2-8bc79b6e5099"
+    },
+    {
+      "parameters": {
+        "content": "# Finding and Elaborating on the Metaphor",
+        "height": 912,
+        "width": 864,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "4c6fd545-1e12-4fdb-ab82-817c0d5ad407",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Drawing the Metaphor",
+        "height": 912,
+        "width": 432,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        880,
+        0
+      ],
+      "id": "9a7e9b71-a9f4-4a4e-9cd6-d65f7f6501a7",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS",
+        "height": 384,
+        "width": 640,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1328,
+        0
+      ],
+      "id": "b0360a7e-1b14-4c03-aaf1-14e0511d83be",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Generating the Metaphor Video",
+        "height": 384,
+        "width": 1328
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1984,
+        0
+      ],
+      "id": "3ddc31b6-3269-4d1e-b0ce-75718c7b0b6c",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Imagining a Complementary Scene",
+        "height": 512,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1328,
+        400
+      ],
+      "id": "e1ed702f-3cc6-458d-8123-ede10dd99276",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Generating a Complementary Scene",
+        "height": 512,
+        "width": 1328
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1984,
+        400
+      ],
+      "id": "990c9340-235f-4d04-88fc-b146baca607a",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "# Rendering the Final Video",
+        "height": 512,
+        "width": 1200,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3328,
+        400
+      ],
+      "id": "6e566454-0321-44df-a4e4-648a54f19a28",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# Sending the Output",
+        "height": 512,
+        "width": 384,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4544,
+        400
+      ],
+      "id": "e2534a91-cf31-43ba-bb20-d4b7984e5e48",
+      "name": "Sticky Note7"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:28:40.912Z",
+      "updatedAt": "2025-11-10T16:28:40.912Z",
+      "role": "workflow:owner",
+      "workflowId": "XKLIMDUTxZ4ux9Ks",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:28:40.000Z",
+  "versionId": "14387a58-dfc9-4a23-b3e7-9ba8d79854c7"
+}
