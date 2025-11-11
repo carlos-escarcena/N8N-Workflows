@@ -1,0 +1,1587 @@
+{
+  "active": false,
+  "connections": {
+    "SET": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "HTTP Body 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Create an object",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean up transcript & Parse it": {
+      "main": [
+        [
+          {
+            "node": "Script writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Song Mood Analysis": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP Body 2": {
+      "main": [
+        [
+          {
+            "node": "Song Mood Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Clean up transcript & Parse it",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge - Shotstack": {
+      "main": [
+        [
+          {
+            "node": "Rendering...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Done?": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an object": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shotstack HTTP Body": {
+      "main": [
+        [
+          {
+            "node": "Merge - Shotstack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering...": {
+      "main": [
+        [
+          {
+            "node": "Done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Shotstack HTTP Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit Transcription": {
+      "main": [
+        [
+          {
+            "node": "Waiting for transcript...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Waiting for transcript...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Waiting for transcript...": {
+      "main": [
+        [
+          {
+            "node": "Check Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat Memory Manager": {
+      "main": [
+        [
+          {
+            "node": "Story Writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "Chat Memory Manager1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat Memory Manager1": {
+      "main": [
+        [
+          {
+            "node": "Creating GCS Object Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Story Writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Story Writer": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Script writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script writer": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Script writer",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Creating GCS Object Name": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Audio URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audio URL": {
+      "main": [
+        [
+          {
+            "node": "SET",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Submit Transcription",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:26:28.407Z",
+  "id": "ToYdtXhnIxroQeAn",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ AI-Powered Music Videos copy",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3424,
+        544
+      ],
+      "id": "78f439f5-dbae-4ead-b48b-b67f0b378d95",
+      "name": "SET"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        -3200,
+        544
+      ],
+      "id": "a47e329e-945a-4ddb-aafa-e3e4a811046f",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2976,
+        544
+      ],
+      "id": "c84f7402-6ba8-4175-a2ba-ef17c3756ff0",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -2080,
+        688
+      ],
+      "id": "5e51c2f4-6ed7-4936-980b-aafb5938de38",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2688,
+        544
+      ],
+      "id": "74e11409-53d5-48cf-b10f-8c6c16d717a3",
+      "name": "Convert to File",
+      "notesInFlow": false,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dcfdf153-2ffe-4605-864d-42c55bebdb17",
+                    "leftValue": "={{ $json.response.raiMediaFilteredCount }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2464,
+        528
+      ],
+      "id": "8f0bdfce-fb15-4438-83e9-e9e8f2d64f92",
+      "name": "Switch",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ $('Story Writer').item.json.text.replace(/\"/g, \"\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": false\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1792,
+        432
+      ],
+      "id": "050dce8f-bea4-4eba-9dbb-f0856cfbf507",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $('Generate Video').item.json.name }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2240,
+        352
+      ],
+      "id": "8b630592-ee4d-47c3-9bbf-495c750f5e27",
+      "name": "Fetch Status",
+      "alwaysOutputData": false,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2016,
+        432
+      ],
+      "id": "08403a67-3a62-4163-8f53-f94ef8761771",
+      "name": "Wait",
+      "webhookId": "f7456d59-9ba4-44c4-98b3-1f013c8f03b1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        48,
+        544
+      ],
+      "id": "6c7ed979-7326-4aaa-9429-48ea7bffe18f",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to split words into 8-second sections\nfunction splitWordsIntoSections(words, sectionDuration = 8000) {\n    const sections = {};\n    \n    // First, determine the range of sections we need\n    const maxTime = Math.max(...words.map(word => word.end));\n    const totalSections = Math.ceil(maxTime / sectionDuration);\n    \n    // Initialize all sections, including empty ones\n    for (let i = 0; i < totalSections; i++) {\n        const sectionKey = `Section ${i + 1}`;\n        sections[sectionKey] = {\n            timeRange: `${i * sectionDuration / 1000}-${(i + 1) * sectionDuration / 1000}s`,\n            words: []\n        };\n    }\n    \n    // Add words to their appropriate sections\n    words.forEach(word => {\n        const sectionIndex = Math.floor(word.start / sectionDuration);\n        const sectionKey = `Section ${sectionIndex + 1}`;\n        \n        if (sections[sectionKey]) {\n            sections[sectionKey].words.push(word);\n        }\n    });\n    \n    // For sections with no words, add music placeholder\n    Object.keys(sections).forEach(sectionKey => {\n        if (sections[sectionKey].words.length === 0) {\n            const sectionIndex = parseInt(sectionKey.split(' ')[1]) - 1;\n            const startTime = sectionIndex * sectionDuration;\n            const endTime = (sectionIndex + 1) * sectionDuration;\n            \n            sections[sectionKey].words.push({\n                text: \"*music playing in the background*\",\n                start: startTime,\n                end: endTime,\n                confidence: 1.0,\n                speaker: null\n            });\n        }\n    });\n    \n    return sections;\n}\n\n// Get the word list from n8n input\nconst wordList = $input.first().json.words;\n\n// Process the words into sections\nconst sections = splitWordsIntoSections(wordList);\n\n// Convert to the desired format with sections array and add transcript sections\nconst sectionsArray = Object.keys(sections).map(sectionKey => ({\n    sectionName: sectionKey,\n    timeRange: sections[sectionKey].timeRange,\n    sectionTranscript: sections[sectionKey].words.map(word => word.text).join(' '),\n    words: sections[sectionKey].words\n}));\n\n// Return as a single JSON object containing all sections\nreturn [{\n    totalSections: sectionsArray.length,\n    sections: sectionsArray,\n    processedAt: new Date().toISOString()\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        544
+      ],
+      "id": "d731e689-bbd9-420b-ab71-20aa858d610c",
+      "name": "Clean up transcript & Parse it"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET').first().json.API_ENDPOINT }}/v1/projects/{{ $('SET').first().json.PROJECT_ID }}/locations/{{ $('SET').first().json.LOCATION_ID }}/publishers/google/models/gemini-2.5-flash:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1632,
+        688
+      ],
+      "id": "5b014554-d955-4e1b-9e13-44fc4eabae61",
+      "name": "Song Mood Analysis"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the base64 string from the previous node's output.\nconst audioBase64 = $input.first().json.data;\nconst prompt = `\nYou are “Song Interpreter,” an advanced AI that deconstructs a song's lyrical and musical components to generate a rich, structured analysis for creative video scripting.\n\nYour task is to analyze the following song and produce a single, raw JSON object.\n\n**CRITICAL OUTPUT INSTRUCTION:**\nIt is imperative that you adhere to these output rules STRICTLY:\n- Your ENTIRE response must be ONLY the JSON object itself.\n- Do NOT include the word \"JSON\" or markdown backticks.\n- Do NOT include ANY explanatory text, labels, apologies, or conversational filler before or after the JSON object.\n\nThe JSON object must use exactly these keys:\n{\n  \"mood_and_vibe\": string,\n  \"dynamic_mood_shift\": string,\n  \"tempo_and_rhythm\": string,\n  \"instrumentation\": [string],\n  \"narrative_arc\": {\n    \"setup\": string,\n    \"confrontation\": string,\n    \"resolution\": string\n  },\n  \"overall_theme\": string,\n  \"message\": string,\n  \"core_conflict\": string,\n  \"key_symbolism_and_imagery\": [string],\n  \"potential_settings\": [string],\n  \"persona\": [\n    {\n      \"name\": string,\n      \"role\": string,\n      \"description\": string,\n      \"visual_anchors\": {\n        \"core_demographics\": string,\n        \"hairstyle_and_color\": string,\n        \"eye_style_and_color\": string,\n        \"clothing_style\": string,\n        \"distinguishing_marks\": string,\n        \"sex\": string, // Should be either Male or Female\n        \"age\": number, // Strictly equal or above 21\n        \"height\": string,\n        \"weight\": string\n      }\n    }\n  ]\n}\n\nINSTRUCTIONS:\n1.  Listen to or read the song carefully.\n2.  For “mood_and_vibe,” summarize the emotional atmosphere in 2–5 words.\n3.  For “dynamic_mood_shift,” describe how the mood evolves from the beginning to the end of the song (e.g., \"Starts with melancholic solitude, builds to defiant hope\").\n4.  For “tempo_and_rhythm,” describe speed and rhythmic style.\n5.  For “instrumentation,” list all prominent instruments.\n6.  For “narrative_arc,” outline a simple three-act story based on the song's progression: Setup (the initial situation), Confrontation (the central challenge), and Resolution (the outcome).\n7.  For “overall_theme,” state the primary creative or narrative concept.\n8.  For “message,” capture the core lyrical or emotional takeaway.\n9.  For “core_conflict,” identify the main struggle or obstacle, whether internal (e.g., \"self-doubt\") or external (e.g., \"societal pressure\").\n10. For “key_symbolism_and_imagery,” list specific, potent visual symbols or metaphors mentioned or implied in the lyrics (e.g., \"a broken mirror,\" \"a single flower in concrete,\" \"rain turning into sun\").\n11. For “potential_settings,” suggest 2-3 distinct environments or locations that would visually complement the song's theme and narrative.\n12. For “persona,” create a detailed profile for one main character who fits the song's narrative.\n`\n\n// Construct the complete JSON body for the Google API call.\nconst finalBody = {\n  \"contents\": [\n    {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"text\": prompt\n        },\n        {\n          \"inlineData\": {\n            \"mimeType\": \"audio/mp3\",\n            \"data\": audioBase64\n          }\n        }\n      ]\n    }\n  ],\n  // This block explicitly tells the model what to do.\n  \"generationConfig\": {\n    \"responseMimeType\": \"text/plain\"\n  }\n};\n\n// Return the complete body object for the final HTTP Request node.\nreturn {\n  json: finalBody\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1856,
+        688
+      ],
+      "id": "e395c9aa-64dc-4a25-b6b0-4c380085fddd",
+      "name": "HTTP Body 2"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1408,
+        544
+      ],
+      "id": "f2e1bc20-b8d3-498c-be96-114e86e30cf4",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.shotstack.io/stage/render",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        768,
+        112
+      ],
+      "id": "d58b9e85-20fa-466f-b2c3-64579423d133",
+      "name": "Merge - Shotstack"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.shotstack.io/stage/render/{{ $('Merge - Shotstack').item.json.response.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1440,
+        32
+      ],
+      "id": "b85d4954-e612-4de8-9a91-dab3e62a57d1",
+      "name": "Done?"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "veo_courses",
+        "objectName": "={{ $('Creating GCS Object Name').item.json.File_Name }}",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        2912,
+        752
+      ],
+      "id": "bbe3a89c-05bc-4c66-97ee-70725432bdbd",
+      "name": "Create an object",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fc24d410-040a-4ca6-b70f-7473af617bd9",
+              "leftValue": "={{ $json.response.status }}",
+              "rightValue": "done",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1696,
+        112
+      ],
+      "id": "62d57bcc-164e-4186-90fc-593610050880",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "=",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2144,
+        112
+      ],
+      "id": "fab4a661-6bed-4d8c-ac99-82afd0f35619",
+      "name": "Send a video",
+      "webhookId": "dca562d0-39b1-4a6a-a25d-b8beb4d0531e"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the single item from the Aggregate node.\nconst aggregatedData = $('Aggregate').first().json;\n\nconst audioDuration = 30; // CHANGE ME TO THE ACTUAL AUDIO DURATION\nconst audioUrl = $('Audio URL').item.json.AUDIO_URL\n\n// The URLs are expected to be in the 'data' array.\n// Assuming 'mediaLink' is the key holding the URL string within each object in 'data'.\nconst collectedUrls = aggregatedData.data.map(item => item.mediaLink); // Use .map(item => item.mediaLink) for safety\n\n// Initialize the base structure of your HTTP request body\nconst requestBody = {\n  \"timeline\": {\n    \"tracks\": [\n      // Track 0: This will be the VIDEO track (to match your working example)\n      {\n        \"clips\": [] // This is where we'll dynamically add video clips\n      },\n      // Track 1: This will be the AUDIO track (to match your working example)\n      {\n        \"clips\": [\n          {\n            \"asset\": {\n              \"type\": \"audio\", // This must be 'audio' for tracks[1]\n              \"src\": audioUrl\n            },\n            \"start\": 0,\n            \"length\": audioDuration // Reverting to your static example's audio length\n          }\n        ]\n      }\n    ]\n  },\n  \"output\": {\n    \"format\": \"mp4\",\n    \"resolution\": \"hd\"\n  }\n};\n\n// Populate the 'clips' array for the VIDEO track (now tracks[0]) dynamically\nlet currentStartTime = 0;\nconst defaultClipLength = 8; // Assuming each video clip is 8 seconds long\n\ncollectedUrls.forEach(url => {\n  requestBody.timeline.tracks[0].clips.push({ // <--- Pushing to tracks[0] now\n    \"asset\": {\n      \"type\": \"video\",\n      \"src\": url\n    },\n    \"start\": currentStartTime,\n    \"length\": defaultClipLength,\n    \"fit\": \"crop\",\n    \"scale\": 1.4\n  });\n  currentStartTime += defaultClipLength; // Increment start time for the next clip\n});\n\n// Reverting audio length to static example: 18\n// If your total video length exceeds 18 seconds, you might still want to\n// dynamically set requestBody.timeline.tracks[1].clips[0].length = collectedUrls.length * defaultClipLength;\n// based on your actual requirement for the audio duration.\n// For now, I'm keeping it as 18 to align with your working static example.\n\n// Return the constructed JSON body as a single item\nreturn [{ json: requestBody }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        112
+      ],
+      "id": "25630926-6e4c-44dd-be88-305a1cafebe7",
+      "name": "Shotstack HTTP Body",
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1168,
+        112
+      ],
+      "id": "7e095cd4-dd2f-4871-8d3b-4d3b9b4efe7d",
+      "name": "Rendering...",
+      "webhookId": "3d558130-d078-4d45-8289-4581c569ebf0"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.response.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1920,
+        112
+      ],
+      "id": "75e069b4-ac51-4335-92a1-3635ea6f5c75",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "include": "specifiedFields",
+        "fieldsToInclude": "mediaLink",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        128,
+        112
+      ],
+      "id": "47a0e4ac-41e4-4e1b-a2d3-43374c1c088c",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.assemblyai.com/v2/transcript",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\t\"audio_url\": \"{{ $('Audio URL').item.json.AUDIO_URL }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2304,
+        448
+      ],
+      "id": "9cd76a48-58a1-40fa-b1cb-fe6d7bff938a",
+      "name": "Submit Transcription"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6b5540e7-29b1-4966-a441-34ad79a57be2",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1632,
+        448
+      ],
+      "id": "751ef20e-f00c-4f91-8c95-3178ae343ee8",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2080,
+        448
+      ],
+      "id": "cf0518f7-58fb-4d45-9bf9-6a19c346f428",
+      "name": "Waiting for transcript...",
+      "webhookId": "3904c37f-846a-4dac-88a8-785e23fa6f0d"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.assemblyai.com/v2/transcript/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1840,
+        384
+      ],
+      "id": "cbd4bffb-74dd-415f-8007-7f4797e1b452",
+      "name": "Check Status"
+    },
+    {
+      "parameters": {
+        "options": {
+          "groupMessages": ""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        272,
+        544
+      ],
+      "id": "d97d8c93-3599-48e5-9482-dd765159c39f",
+      "name": "Chat Memory Manager"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=1234",
+        "contextWindowLength": 2
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        368,
+        784
+      ],
+      "id": "27180627-72f6-4faf-b4b4-03107e977d29",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "messages": {
+          "messageValues": [
+            {
+              "type": "ai",
+              "message": "={{ $json.text }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        1168,
+        432
+      ],
+      "id": "49138d96-a28b-465f-b35a-358802e07486",
+      "name": "Chat Memory Manager1"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-reasoner",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        864,
+        656
+      ],
+      "id": "943de6ae-31e9-4856-84f8-8dc50365fb1e",
+      "name": "DeepSeek Chat Model"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=**INPUT DATA:**\n\n## 1. Overall Song Analysis\n{{ $('Song Mood Analysis').item.json.candidates[0].content.parts[0].text }}\n\n## 2. Full Video Script (from the Scriptwriter)\n{{ JSON.stringify($('Script writer').first().json.output.script, null, 2) }}\n\n## 3. Full Song Transcript\n{{ $('Check Status').item.json.text }}\n\n## 4. Recent Prompt History\n{{ JSON.stringify($json.messages, null, 2) }}\n\n## 5. >> Scene to Visualize << (Your Primary Focus)\nScene number: {{ $('Loop Over Items').item.json.scene_number }}\nTime range: {{ $('Loop Over Items').item.json.time_range }}\nLyrics in segment: {{ $('Loop Over Items').item.json.lyrics_in_segment }}\nSetting: {{ $('Loop Over Items').item.json.setting }}\nProtagonist action: {{ $('Loop Over Items').item.json.protagonist_action }}\nSupporting visuals: {{ $('Loop Over Items').item.json.supporting_visuals }}\nNarrative beat: {{ $('Loop Over Items').item.json.narrative_beat }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are \"The Translator,\" a specialized AI that synthesizes a comprehensive set of creative inputs into a single, rich, descriptive video prompt.|Your Task:Based on the provided input data, your primary focus is the single \"Scene to Visualize.\" You must translate its contents into one continuous, descriptive video prompt paragraph (120-180 words).**CRITICAL RULES & HIERARCHY:**1.  **Framing and Composition Mandate:** Your prompt **must** begin by defining the shot type based on the subject (e.g., \"A vibrant medium close-up,\" \"An energetic tracking shot,\" \"A revealing close-up\"). **Do not use \"wide shot\"** as the opening shot type. Instead, describe the scale of the environment through its details. Crucially, you **must conclude the entire prompt** with an explicit phrase defining the aspect ratio, such as \"all composed within a cinematic widescreen frame\" or \"captured in a single anamorphic shot.\"2.  **Core Task:** Your primary job is to translate the provided `protagonist_action` and `supporting_visuals` into a fluid, descriptive paragraph. Embellish the scene with details on lighting, color, and specific camera movements.3.  **Character Consistency:** You must use the `visual_anchors` from the \"Overall Song Analysis\" to describe the character's appearance. Re-establish these details precisely.4.  **Narrative & Thematic Context:** Use the \"Full Video Script\" and \"Overall Song Analysis\" to understand the scene's place in the larger story. Ensure your descriptions of mood and pacing match the scene's `narrative_beat`.5.  **Continuity:** Review the \"Recent Prompt History\" to ensure your camera movements and scene energy flow logically from the previous scene.6.  **Output Format:** Your entire response must be a single paragraph. Do not use markdown, explanations, or any other formatting. Do not include dialogue or technical specifications."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        768,
+        432
+      ],
+      "id": "278d37d8-eb2d-42f1-86cd-4eea931aa611",
+      "name": "Story Writer"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-reasoner",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        -896,
+        768
+      ],
+      "id": "7a9dfe07-5bcd-4149-8c31-60c331525512",
+      "name": "DeepSeek Chat Model1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a creative Music Video Scriptwriter and Scene Director AI.\n\nYour task is to take a detailed song analysis AND a segmented transcript, and write a structured video script in JSON format. The script must create a visual narrative that is tightly synchronized with the specific lyrics being sung in each 8-second segment.\n\n**CRITICAL OUTPUT INSTRUCTION:**\n- Your ENTIRE response must be ONLY the JSON object itself.\n- Do NOT include the word \"JSON\" or markdown backticks.\n- Do NOT include ANY explanatory text or conversational filler before or after the JSON object.\n\nThe output JSON must follow this exact structure. Even if there's only music playing in the background, you should still follow this exact format:\n{\n  \"script\": [\n    {\n      \"scene_number\": number,\n      \"time_range\": string, // e.g., \"0-8s\", \"8-16s\", etc.\n      \"lyrics_in_segment\": string, // The lyrics for this specific 8-second chunk. If music is just playing in the background write *music playing in the background*.\n      \"setting\": string, // The location of this scene.\n      \"protagonist_action\": string, // A clear, visual action the main character performs, inspired by the lyrics.\n      \"supporting_visuals\": string, // Background action or symbolic imagery related to the lyrics.\n      \"narrative_beat\": string // The story purpose of this scene.\n    }\n  ]\n}\n\n\n**INSTRUCTIONS:**\n\n1.  **Synchronize with Lyrics:** Your primary task is to create one scene object in the \"script\" array for each 8-second chunk of the provided transcript. The `protagonist_action` and `supporting_visuals` for each scene must directly reflect or creatively interpret the specific lyrics sung during that time range.\n2.  **Maintain the Overall Arc:** While each scene is tied to its specific lyrics, ensure the sequence of scenes follows the overall `narrative_arc` (setup, confrontation, resolution) provided in the song analysis.\n3.  **Construct Each Scene:** For each scene object in the JSON array, you must:\n    a.  **Lyrics:** Copy the corresponding lyrics for the segment into the `lyrics_in_segment` key.\n    b.  **Setting:** Choose a location from the `potential_settings` that fits the scene's lyrics and its place in the narrative.\n    c.  **Protagonist Action:** Describe a concise and visual action for the `persona` that is directly inspired by the lyrics in that segment.\n    d.  **Supporting Visuals:** Weave in elements from the `key_symbolism_and_imagery` that relate to the segment's lyrics. Describe how the environment reflects the `dynamic_mood_shift`.\n    e.  **Narrative Beat:** Briefly state the specific purpose of this 8-second clip in advancing the story.\n4.  **Vary the Scenes:** As instructed in the song analysis, some scenes may not contain the protagonist. For these, use the `protagonist_action` field to describe the main action of the scene (e.g., \"A photograph slowly burns in a fire pit.\") while focusing on symbolism and atmosphere.\n5. Handling Instrumental Segments: If a transcript segment contains no lyrics (e.g., it says '*music playing*' or is empty), treat this as an opportunity for an establishing shot or a purely atmospheric scene. For these scenes, set the \"protagonist_action\" to null and use the \"supporting_visuals\" to introduce the \"setting,\" establish the initial \"mood_and_vibe,\" and introduce a key visual from the \"key_symbolism_and_imagery\" list.\n6. Grounded Symbolism Mandate: When translating key_symbolism_and_imageryinto thesupporting_visuals for a scene, you must use subtle and grounded metaphors that are believable in a realistic world. Do NOT generate surreal or physically impossible visuals (e.g., no floating objects that defy gravity, no words appearing in the sky).\n\n**INPUT DATA:**\nYou will be provided with two pieces of information:\n1.  A JSON object containing the overall song analysis from the \"Song Interpreter\" AI.\n2.  The song's transcript devided into sections of 8 seconds.\n\nSong Interpreter output:\n{{ $('Song Mood Analysis').item.json.candidates[0].content.parts[0].text }}\n\nSong transcript:\n{{ JSON.stringify($json.sections, null, 2) }}",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        -880,
+        544
+      ],
+      "id": "af3edf20-3e9f-4bb0-a0bd-86eab6791555",
+      "name": "Script writer",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"script\": [\n    {\n      \"scene_number\": 1,\n      \"time_range\": \"0-8s\",\n      \"lyrics_in_segment\": \"hello\",\n      \"setting\": \"hello\",\n      \"protagonist_action\": \"hello\",\n      \"supporting_visuals\": \"hello\", \n      \"narrative_beat\": \"hello\" \n    },\n    {\n      \"scene_number\": 2,\n      \"time_range\": \"hello\",\n      \"lyrics_in_segment\": \"hello\",\n      \"setting\": \"hello\",\n      \"protagonist_action\": \"hello\",\n      \"supporting_visuals\": \"hello\", \n      \"narrative_beat\": \"hello\" \n    },\n    {\n      \"scene_number\": 3,\n      \"time_range\": \"hello\",\n      \"lyrics_in_segment\": \"hello\",\n      \"setting\": \"hello\",\n      \"protagonist_action\": \"hello\",\n      \"supporting_visuals\": \"hello\", \n      \"narrative_beat\": \"hello\" \n    }\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -768,
+        768
+      ],
+      "id": "2f681abe-07d4-47d0-ab47-e87146543fed",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "jsCode": "const script = $input.first().json.output.script;\n\nreturn script;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        544
+      ],
+      "id": "925aeb05-7d23-40a4-9dfe-825a61a8f1ff",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-reasoner",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        -672,
+        976
+      ],
+      "id": "146ace0f-8e6a-4a93-bd57-805c4792a9d3",
+      "name": "DeepSeek Chat Model2"
+    },
+    {
+      "parameters": {
+        "content": "# Authenticating with GCS\nSame authenticating steps from every workflow",
+        "height": 512,
+        "width": 672,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3472,
+        336
+      ],
+      "id": "b1bb460f-774f-4ae8-981a-48231cf26145",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Downloading the MP3\nDownloads the MP3 file that the user sent to us",
+        "height": 512,
+        "width": 192,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2784,
+        336
+      ],
+      "id": "4165e520-53b9-4e33-80f4-9e587c3a8e60",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Mood analysis\nWe analyze the mood, vibe, instrumentation \nand specify a main character for the video \nclip for character consistency",
+        "height": 176,
+        "width": 1104,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2576,
+        672
+      ],
+      "id": "ad09fb29-066d-4335-9c28-9b0f9ca92b18",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Transcribing\nWe submit the MP3 file URL to [**AssemblyAI**](https://www.assemblyai.com/) to get the \nword-by-word Transcription",
+        "height": 320,
+        "width": 880,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2352,
+        336
+      ],
+      "id": "b708ff07-3dd3-427f-9d58-46cc5ba7bc0d",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "### Upload MP3 to GCS\nWe need to have the MP3 accessible via a public URL for: \"Transcribing\" and \"Merging\"",
+        "height": 320,
+        "width": 208,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2576,
+        336
+      ],
+      "id": "c08177b7-40b2-4a17-be99-32984e02df13",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Merge\nWe only continue the flow once all input fields have arived",
+        "height": 512,
+        "width": 192,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1456,
+        336
+      ],
+      "id": "aab5a745-3d81-4ae1-b27b-9158798b491f",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Split transcript\nWe take the word-by-word transcript and split it into a bunch of 8 seconds sections",
+        "height": 512,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1248,
+        336
+      ],
+      "id": "f60894d6-5996-487a-ab0e-a6311f80725a",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# Script writer\nThis will take each 8 second section of the transcript + the whole transcript + the Song mood analysis output and will write the scenes of the video clip.\nThe output will be a JSON object with each 8-second scene.",
+        "height": 784,
+        "width": 528,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -992,
+        336
+      ],
+      "id": "d9ca097f-ac5b-423e-89a6-3ae64ed4c34a",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Preparing to process each clip on its own\nReturning each 8-second clip script as a separate item for \"Loop over item\" to process them",
+        "height": 560,
+        "width": 432,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -448,
+        336
+      ],
+      "id": "3656068f-bbe3-4cf8-a2d9-6b1d399cbf5a",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "# Writing the Veo prompts\n- This step will take the current scene script, main character description, specific section transcript, overall mood analysis, the previous prompt that generated the previous clip as an input.\n- It will translate the input to a production ready Veo 3 prompt.\n- We use DeepSeek here to be able to handle all inputs accurately and give\n an output without hallucinating.",
+        "height": 560,
+        "width": 1280,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        336
+      ],
+      "id": "f2e319eb-0a7b-4e92-925f-de70b4dcc715",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dca07b9f-ba29-4378-bee0-f6bde42e4167",
+              "name": "File_Name",
+              "value": "=file{{ Date.now() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1568,
+        432
+      ],
+      "id": "98557ba7-85d7-4156-926c-931a3cdd773b",
+      "name": "Creating GCS Object Name"
+    },
+    {
+      "parameters": {
+        "content": "## GCS Object Name\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe need a unique object name for each file we upload to GCS, so here where we'll specify it",
+        "height": 560,
+        "width": 224,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        336
+      ],
+      "id": "f9eab449-5825-4686-9730-614c3afa48d7",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "content": "# Creating the Veo clip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is where we generate the Veo music clip (with no sound) and upload it to GCS using the Object Name created in the previous step",
+        "height": 560,
+        "width": 1344,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1536,
+        336
+      ],
+      "id": "78271aba-ef8e-4662-b5f0-55a6e573b1de",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "content": "## Getting all GCS Media URLs\nAfter generating all video clips, we collect them all in this node before moving forward",
+        "height": 320,
+        "width": 336,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "31e33673-aa2c-459d-a32a-115d95668001",
+      "name": "Sticky Note12"
+    },
+    {
+      "parameters": {
+        "content": "# Merging everything\nIn this step, we merge all videos we generated with Veo with the MP3 file that we have accessible via URL from the \"Upload MP3 to GCS\" step",
+        "height": 320,
+        "width": 1520,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        352,
+        0
+      ],
+      "id": "f2ad373c-2d3b-438c-9a3d-2e0599a5430c",
+      "name": "Sticky Note13"
+    },
+    {
+      "parameters": {
+        "content": "# Send back the output\nAfter the video is done rendering, we send it back to the same Telegram channel where we got the MP3 file.",
+        "height": 320,
+        "width": 480,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1888,
+        0
+      ],
+      "id": "8b1e9acf-c75b-4c62-9cc8-42f56f37eb41",
+      "name": "Sticky Note14"
+    },
+    {
+      "parameters": {
+        "content": "# Trigger\nGets the file ID and the chat ID from the user",
+        "height": 512,
+        "width": 416,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3904,
+        336
+      ],
+      "id": "614fdc78-48ff-481d-997f-6b96b81ec1c5",
+      "name": "Sticky Note15"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3840,
+        544
+      ],
+      "id": "a46e97af-d3df-4284-804f-c19e97e308c3",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "15339c5d-8c77-4431-a750-3405cc237294",
+              "name": "AUDIO_URL",
+              "value": "https://iwoo2wf63x.ufs.sh/f/xsgjYGzQTOqeVhaIHuBCSFEbHu4I5eR17JavL6ZVk8ThyM3q",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3632,
+        544
+      ],
+      "id": "bd858e2f-6f05-4308-9f2d-27f74922d3a8",
+      "name": "Audio URL"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Audio URL').item.json.AUDIO_URL }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2736,
+        544
+      ],
+      "id": "82b5654d-b0e3-4ab5-8b18-722b1efae6b1",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:26:28.413Z",
+      "updatedAt": "2025-11-10T16:26:28.413Z",
+      "role": "workflow:owner",
+      "workflowId": "ToYdtXhnIxroQeAn",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:26:28.000Z",
+  "versionId": "33a46e45-1610-49ce-a47a-d555643bf962"
+}
