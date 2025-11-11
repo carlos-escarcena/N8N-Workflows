@@ -1,0 +1,989 @@
+{
+  "active": false,
+  "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "VeoPrompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Fetch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload to GCS (To be accessible via URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "GET TOKEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET1": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET TOKEN": {
+      "main": [
+        [
+          {
+            "node": "Generate Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Product Image Describing": {
+      "main": [
+        [
+          {
+            "node": "VeoPrompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VeoPrompt": {
+      "main": [
+        [
+          {
+            "node": "SET1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to GCS (To be accessible via URL)": {
+      "main": [
+        [
+          {
+            "node": "Add Captions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Captions": {
+      "main": [
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rendering....": {
+      "main": [
+        [
+          {
+            "node": "Captions added?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Captions added?": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Product Image Describing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Captions",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendering....",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-10T16:27:47.675Z",
+  "id": "DBSDmx0CeYiI4jpi",
+  "isArchived": false,
+  "meta": null,
+  "name": "✅ Auto-VSL Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2640,
+        208
+      ],
+      "id": "a8382837-c038-49e6-b73e-2d97f65213e3",
+      "name": "Convert to File",
+      "notesInFlow": true,
+      "notes": "At this step, the video should be generated and ready to convert to 9:16 aspect ratio"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "4642d47b-fafc-4487-8799-1f1e0e544ef1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fc0cefae-09e6-491b-b580-708c97743656",
+                    "leftValue": "={{ $json.response.raiMediaFilteredCount }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2416,
+        192
+      ],
+      "id": "6c814247-8dab-4460-9639-40b08095bf42",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET1').item.json.API_ENDPOINT }}/v1/projects/{{ $('SET1').item.json.PROJECT_ID }}/locations/{{ $('SET1').item.json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "operationName",
+              "value": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2192,
+        64
+      ],
+      "id": "19bb9b53-2a70-4c2a-b739-36fdfdd51a92",
+      "name": "Fetch Status"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1968,
+        128
+      ],
+      "id": "346c4c25-f5e6-4af1-ae82-9db54e77cfa0",
+      "name": "Wait",
+      "webhookId": "59528177-3bd5-4113-a61c-55c42a3bb52d"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('SET1').item.json.API_ENDPOINT }}/v1/projects/{{ $('SET1').item.json.PROJECT_ID }}/locations/{{ $('SET1').item.json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview:predictLongRunning ",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('GET TOKEN').item.json.access_token }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"endpoint\": \"projects/{{ $('SET1').item.json.PROJECT_ID }}/locations/{{ $('SET1').item.json.LOCATION_ID }}/publishers/google/models/veo-3.0-generate-preview\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ JSON.stringify($('VeoPrompt').item.json.message.content).replace(/\"/g, \"\").replace(/```/g, \"\").replace(/\\\\n/g, \"\").replace(/\\\\/g, \"\") }}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"sampleCount\": 1,\n    \"durationSeconds\": \"8\",\n    \"personGeneration\": \"allow_all\",\n    \"addWatermark\": false,\n    \"includeRaiReason\": true,\n    \"generateAudio\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1744,
+        128
+      ],
+      "id": "496cdf8c-6e97-4579-8405-91c2f4a821f8",
+      "name": "Generate Video1"
+    },
+    {
+      "parameters": {
+        "useJson": true,
+        "claimsJson": "={\n    \"iss\": \"{{ $json.CLIENT_EMAIL }}\",\n    \"scope\": \"https://www.googleapis.com/auth/cloud-platform\",\n    \"aud\": \"https://www.googleapis.com/oauth2/v4/token\",\n    \"exp\": {{ Math.floor(Date.now() / 1000) + 3500 }},\n    \"iat\": {{ Math.floor(Date.now() / 1000) }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.jwt",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        128
+      ],
+      "id": "72ad50b3-fe95-4f2b-a5ad-846cbc5682f3",
+      "name": "JWT"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/oauth2/v4/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "name": "assertion",
+              "value": "={{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1520,
+        128
+      ],
+      "id": "d22691b4-ee02-44bc-a92f-55f1201ec12b",
+      "name": "GET TOKEN"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
+              "name": "PROJECT_ID",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
+              "name": "CLIENT_EMAIL",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "d2e61510-9510-46e7-9025-82b3e5825ed7",
+              "name": "LOCATION_ID",
+              "value": "us-central1",
+              "type": "string"
+            },
+            {
+              "id": "050b1715-4fb9-4c60-9e14-ef07da4cd3e9",
+              "name": "API_ENDPOINT",
+              "value": "us-central1-aiplatform.googleapis.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        128
+      ],
+      "id": "e2cdaeef-5e58-4aa8-be1e-67a97c93b9dc",
+      "name": "SET1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Captions added?').item.json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3984,
+        208
+      ],
+      "id": "4f78a6ce-51e5-4e13-af19-53e436766bb1",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "=",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4208,
+        208
+      ],
+      "id": "6966101e-a222-434f-b137-c961b06fcdcd",
+      "name": "Send a video",
+      "webhookId": "a50bbfeb-a38c-4057-b38b-1bf03f76a65e"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "text": "You are an intelligent product analyzer. Your job is to describe the product in the image. Please include all details on how it visually looks as if you're describing it to a blind person.",
+        "imageUrls": "={{ $('Form').item.json.ProductImageURL }}",
+        "simplify": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        448,
+        208
+      ],
+      "id": "dbc190d0-86b7-41f2-bbb2-56e8e9c9355c",
+      "name": "Product Image Describing"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "### Your Role and Goal\nYou are an expert VEO Prompt Engineer. Your goal is to analyze a descriptive `videoPrompt` containing multiple scenes. You will create a compliant, single-shot VEO prompt based on the VISUALS of the FIRST scene, but with a consolidated SCRIPT from ALL scenes. The final output should be a single paragraph between 120 and 180 words.\n\nYou will receive two inputs: `{{videoPrompt}}` and `{{productDescription}}`.\n\n### CRITICAL WORKFLOW & RULES\n\n**Step 1: Analyze Visuals (From Scene 1 Only)**\nFirst, read the `{{videoPrompt}}` and identify the visual cinematic variables (Mood, Style, Shot Type, Subject, Environment, Action, Camera Movement, etc.) from the **first scene only**. Disregard the visual descriptions from all subsequent scenes.\n\n**Step 2: Consolidate Dialogue (From ALL Scenes)**\nNext, read the `{{videoPrompt}}` again and extract the dialogue from **ALL scenes**. Combine these lines into a single, cohesive script. Based on the context, prefix each part of the script with a tonal or emotional cue in angle brackets (e.g., `<excited>`, `<informative>`).\n\n**Step 3: Construct the Final VEO Prompt**\nUsing the visuals from Step 1 and the consolidated script from Step 2, you must now construct the final output following these strict rules:\n\n1.  **Single Paragraph Output:** The output must be one single, cohesive paragraph.\n2.  **Frame-Bound / Single Shot:** The paragraph's visual description must be for one continuous shot based on the first scene.\n3.  **Cinematic Language:** Weave the extracted visual keywords into natural, descriptive prose, using professional terminology from the **AI VARIABLE LEXICON**.\n4.  **Dialogue with Pacing:** **When writing the script, you must intersperse actions between each line of dialogue to create natural pauses and emphasize the performance. For each line from the consolidated script, first describe a small, corresponding action, and then provide the `says:` line. For example: \"She holds the product up. The woman says: <cue> First line. She then touches her hair. The woman says: <cue> Second line.\"**\n5.  **Product Centering:** **The prompt's Action description must specify that the subject holds the product with \"both hands in the center of the frame\" to make it the primary visual focus.**\n6.  **Dialogue Format:** You **MUST** format the dialogue as: `The woman says: <cue> [line of dialogue]`. You must **NEVER** use quotation marks.\n7.  **Banned Words:** The words \"teen,\" \"teenage,\" and \"teenager\" are forbidden. Refer to the subject as \"a young woman\" or \"a young person.\"",
+              "role": "system"
+            },
+            {
+              "content": "=VIDEO_PROMPT: {{ $json.choices[0].message.content }}\n\nPRODUCT_DESCRIPTION: {{ $json.choices[0].message.content }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        672,
+        208
+      ],
+      "id": "ae0e1dc4-686c-4d62-abcd-76312ab417c8",
+      "name": "VeoPrompt"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "objectName": "VSL",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        2864,
+        208
+      ],
+      "id": "d94f6b0f-905a-4c43-9ecf-8d276e9ae4ec",
+      "name": "Upload to GCS (To be accessible via URL)",
+      "retryOnFail": true,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"template_id\": \"\",\n  \"modifications\": {\n    \"Video-655.source\": \"{{ $json.mediaLink  }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3088,
+        208
+      ],
+      "id": "d4178cba-bef0-428d-b707-a19c19768b7b",
+      "name": "Add Captions"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3312,
+        208
+      ],
+      "id": "46f1a756-53d4-41b3-a124-21375180b620",
+      "name": "Rendering....",
+      "webhookId": "f14aa999-1900-4a3f-8068-033f6a7aa762"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3536,
+        128
+      ],
+      "id": "97898d55-b2cf-4a54-b067-1553dd5961cf",
+      "name": "Captions added?"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=User's message: {{ $json.ProductRawData }}"
+            },
+            {
+              "content": "### Identity\nYou are a UGC‑Agent, a concise creative director that chats with users on Telegram, gathers all missing details, and then returns **one single descriptive video prompt** as a paragraph of plain text.\n\n### Objective\nAfter collecting the necessary information and receiving user confirmation, output **only** the final video prompt so it can be used in the next step of a creative workflow.\n\n### Conversation Flow\n1.  **Read the user’s first Telegram message.** Parse any product, audience, or style clues.\n2.  **Generate the final video prompt.** Synthesize all gathered information into a single descriptive paragraph, following the Prompt Generation Guidelines. Send it as your entire reply, with no additional commentary.\n\n### Prompt Generation Guidelines\nSynthesize all answers from the user into a cohesive, descriptive paragraph. This paragraph should logically describe the video from start to finish, weaving in the product, audience, tone, and call to action.\n\nCrucially, the prompt must enforce the following technical and stylistic constraints:\n* **Framing:** The video is to be shot in 16:9. All important subjects, products, and visual elements must be kept in the center of the frame to allow for a clean crop to a 9:16 vertical aspect ratio.\n* **Subtitles:** Do not generate or mention on-screen subtitles; they will be added later in the production process.\n* **Style:** The video should feel like authentic UGC content, as if shot on a phone with natural lighting. Avoid studio backdrops or stock b-roll.\n\n### Output Rules\n- After user confirmation, **reply with only the final prompt as a single paragraph of plain text.**\n- **Do not** use double quotes or backticks in the final output.\n- No greetings, signatures, or extra text.\n- Do **not** use exclamation marks or emojis.\n- Keep verbs vivid and descriptions concrete.",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        48,
+        208
+      ],
+      "id": "dc99f562-be86-4461-9fc2-702526ca0ee8",
+      "name": "Message a model"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        208
+      ],
+      "id": "315b335a-48c3-457d-914b-25f958e21535",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ba2fdb90-dc03-4368-8bce-3cc26c42decb",
+              "name": "ProductRawData",
+              "value": "The product name is \\\"Centrum multivitamin\\\"\\n\\nThe length of the video should be 8 seconds\\n\\nThe target audience is young men\\n\\nThe tone should be energetic\\n\\nThe call to action should be the actor in the VSL saying \\\"Go check out Centrum multivitamin\\\"\\n\\nThe testimonial should be the actor saying that their energy levels are through the roof now.\\n\\nRed and white.\\n\\nNo music.\\n\\nNo camera moves.\\n\\nI have no images\\n\\n1. One-line benefit to highlight: Energy boost.\\n\\n2. Preferred voice-over gender: The actor should be a girl.\\n\\n3. Ambient sound effects or just voice-over only: Just voice.\\n\\nDo not ask me any more questions. Output only the prompt\\n\\nThe video should be of a white, blonde, girl. it should start with her holding the product and saying \\\"This absolutely changed my game!\\\". Then next scene of her saying \\\"My energy used to be so low, but not anymore!\\\" Next scene, \\\"Go get Centrum's multivitamin today!\\\"\\n\\nThe video should be filmed inside her room. It should be a natural looking room with normal teenage features",
+              "type": "string"
+            },
+            {
+              "id": "15915a85-7aa5-4141-ba53-f769fc08dac8",
+              "name": "ProductImageURL",
+              "value": "https://bjs.scene7.com/is/image/bjs/222994?$bjs-Initial600$",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -176,
+        208
+      ],
+      "id": "8a0e2f0f-bdf6-496b-9186-049ed71b66d4",
+      "name": "Form"
+    },
+    {
+      "parameters": {
+        "content": "## Formatting the input data",
+        "height": 528,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f1157b79-21b5-44dd-9010-a503d7087897",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Veo prompt",
+        "height": 528,
+        "width": 400,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        608,
+        0
+      ],
+      "id": "3575ac03-dc7d-4086-bbd2-12db3f72f7ba",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Authenticating with GCS",
+        "height": 528,
+        "width": 656,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        0
+      ],
+      "id": "c107cdbb-e260-4f75-9f33-8d1a4013a10f",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Generating the video",
+        "height": 528,
+        "width": 880,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        0
+      ],
+      "id": "34450176-fb00-4286-8d92-a42f3e82bcf5",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Making the video accessible",
+        "height": 528,
+        "width": 416,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2592,
+        0
+      ],
+      "id": "ddaef08f-73c2-48c2-9bdc-ba19e9a3ffa1",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Adding captions via Creatomate + 9:16 formatting",
+        "height": 528,
+        "width": 912,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3024,
+        0
+      ],
+      "id": "942ecd8b-6f7f-4701-9130-480fccc7d2a0",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "succeeded",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "2e16463c-3845-45cd-864c-224f6490d19b"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c0bc441e-928a-427e-9b27-8c7468e2451f",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "failed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d65bfe58-42b1-425f-b1a4-f530c7d41027",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "rendering",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "deb1e945-e2d6-4441-9aaf-f88acafa0d34",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "transcribing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6f316c24-4a65-48e1-84e0-d8b7c105128b",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "planned",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        3776,
+        208
+      ],
+      "id": "49a0490c-e46c-471f-93e1-7390f96f7dcf",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "content": "## Sending the output",
+        "height": 528,
+        "width": 400,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3952,
+        0
+      ],
+      "id": "0ac127fc-caf4-4915-927b-6d6271701008",
+      "name": "Sticky Note6"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-10T16:27:47.680Z",
+      "updatedAt": "2025-11-10T16:27:47.680Z",
+      "role": "workflow:owner",
+      "workflowId": "DBSDmx0CeYiI4jpi",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T16:27:47.000Z",
+  "versionId": "760fd36e-1fe4-4ab7-97c6-af6606db1c90"
+}
