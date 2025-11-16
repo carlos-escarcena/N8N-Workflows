@@ -372,7 +372,13 @@
         416
       ],
       "id": "c7954aa3-4c02-4356-a312-b1d6e4066818",
-      "name": "Get Past Objects"
+      "name": "Get Past Objects",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
     },
     {
       "parameters": {
@@ -487,7 +493,13 @@
         640
       ],
       "id": "121e00b5-d023-401c-a7cf-2ae4c285efdb",
-      "name": "OpenAI Chat Model"
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
     },
     {
       "parameters": {
@@ -1022,7 +1034,13 @@
         416
       ],
       "id": "1042c4e1-67c2-46a2-8762-3eb9352e02c5",
-      "name": "Schedule YouTube"
+      "name": "Schedule YouTube",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3LneOAseTkv0F0yE",
+          "name": "Header Auth account"
+        }
+      }
     },
     {
       "parameters": {
@@ -1042,7 +1060,13 @@
         224
       ],
       "id": "08afc869-6ad0-4162-a9de-bb04e01782f0",
-      "name": "Schedule TikTok"
+      "name": "Schedule TikTok",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3LneOAseTkv0F0yE",
+          "name": "Header Auth account"
+        }
+      }
     },
     {
       "parameters": {
@@ -1113,6 +1137,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-10T16:29:26.000Z",
-  "versionId": "1d5bc896-0664-4da0-b712-41895b657de1"
+  "updatedAt": "2025-11-15T23:34:57.000Z",
+  "versionId": "8628f222-6eff-439b-a703-e94b96c473da"
 }
