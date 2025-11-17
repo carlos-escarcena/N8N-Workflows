@@ -1509,7 +1509,13 @@
         64
       ],
       "id": "1ae3bf2c-60c9-41f8-bfd5-cf54431f2415",
-      "name": "done?"
+      "name": "done?",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "26BJ2fNpesHB2M0J",
+          "name": "SHOTSTACK API"
+        }
+      }
     },
     {
       "parameters": {
@@ -1834,6 +1840,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-10T16:29:01.000Z",
-  "versionId": "92be6c4e-f10e-489a-b600-6c0bfbd6d434"
+  "updatedAt": "2025-11-17T00:22:17.000Z",
+  "versionId": "99bccd37-6dd8-412d-a694-c7a10a44462d"
 }
