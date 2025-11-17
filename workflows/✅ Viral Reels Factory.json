@@ -215,7 +215,7 @@
       "main": [
         [
           {
-            "node": "Done?1",
+            "node": "done?",
             "type": "main",
             "index": 0
           }
@@ -253,13 +253,7 @@
     },
     "Done?1": {
       "main": [
-        [
-          {
-            "node": "Done?",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Download final video": {
@@ -319,12 +313,25 @@
           }
         ]
       ]
+    },
+    "done?": {
+      "main": [
+        [
+          {
+            "node": "Done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-11-10T16:29:26.753Z",
   "id": "hrOYzAlTlkKMlxv9",
   "isArchived": false,
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "✅ Viral Reels Factory",
   "nodes": [
     {
@@ -351,17 +358,17 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1hNzWblAWsI_5u4RUK7kC3tSbR9riex94ZUuslhhDb8o",
+          "value": "1BQK9LZ_4TT7CaaWWUCAys0uK_K5Dyn_TOG-RScmHPCU",
           "mode": "list",
           "cachedResultName": "VEO ASMR",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hNzWblAWsI_5u4RUK7kC3tSbR9riex94ZUuslhhDb8o/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQK9LZ_4TT7CaaWWUCAys0uK_K5Dyn_TOG-RScmHPCU/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hNzWblAWsI_5u4RUK7kC3tSbR9riex94ZUuslhhDb8o/edit#gid=0"
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BQK9LZ_4TT7CaaWWUCAys0uK_K5Dyn_TOG-RScmHPCU/edit#gid=0"
         },
         "options": {}
       },
@@ -508,13 +515,13 @@
             {
               "id": "84fea8d5-e7cc-4519-963f-d2ae988337b5",
               "name": "PROJECT_ID",
-              "value": "",
+              "value": "oceanic-nova-478322-m0",
               "type": "string"
             },
             {
               "id": "1c227cbf-eb4a-4cb6-b13a-64900385a0e8",
               "name": "CLIENT_EMAIL",
-              "value": "",
+              "value": "vertexai@oceanic-nova-478322-m0.iam.gserviceaccount.com",
               "type": "string"
             },
             {
@@ -555,7 +562,13 @@
         416
       ],
       "id": "7b1955f0-37cf-4ffb-bfcb-4797653ed98a",
-      "name": "JWT"
+      "name": "JWT",
+      "credentials": {
+        "jwtAuth": {
+          "id": "Ghf4mY2h3WhgEDC8",
+          "name": "JWT Auth account"
+        }
+      }
     },
     {
       "parameters": {
@@ -749,8 +762,8 @@
       "parameters": {
         "resource": "object",
         "operation": "create",
-        "bucketName": "veo_courses",
-        "objectName": "ViralReelz",
+        "bucketName": "n8n-content-creation-bucket",
+        "objectName": "ViralVideo",
         "createData": {},
         "createQuery": {},
         "encryptionHeaders": {},
@@ -765,17 +778,23 @@
       "id": "91fd159c-5bd2-47e6-a587-2d52217e0d01",
       "name": "Upload to GCS (To be accessible via URL)",
       "retryOnFail": true,
-      "waitBetweenTries": 2000
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleCloudStorageOAuth2Api": {
+          "id": "4MQe7lL4nZlPzwVc",
+          "name": "Google Cloud Storage account"
+        }
+      }
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.shotstack.io/v1/render",
+        "url": "https://api.creatomate.com/v2/renders",
         "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
+        "genericAuthType": "httpBearerAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n\t\"timeline\": {\n\t\t\"tracks\": [\n\t\t\t{\n\t\t\t\t\"clips\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"asset\": {\n\t\t\t\t\t\t\t\"type\": \"video\",\n\t\t\t\t\t\t\t\"src\": \"{{ $json.mediaLink }}\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"start\": 0,\n\t\t\t\t\t\t\"length\": 8,\n\t\t\t\t\t\t\"fit\": \"crop\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t]\n\t},\n\t\"output\": {\n\t\t\"format\": \"mp4\",\n\t\t\"aspectRatio\": \"9:16\",\n\t\t\"resolution\": \"hd\"\n\t}\n}",
+        "jsonBody": "={\n  \"template_id\": \"c460b42f-a6cb-402c-a64b-539aa18d7774\",\n  \"modifications\": {\n    \"Video.source\": \"{{ $json.mediaLink }}\"\n  }\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -785,7 +804,17 @@
         416
       ],
       "id": "5ea752f4-6c58-4327-8383-0684293e31d0",
-      "name": "Turn video to 9:16"
+      "name": "Turn video to 9:16",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3LneOAseTkv0F0yE",
+          "name": "Header Auth account"
+        },
+        "httpBearerAuth": {
+          "id": "O2la1Pq90tHUhdFE",
+          "name": "CREATOMATE BEARER"
+        }
+      }
     },
     {
       "parameters": {
@@ -868,7 +897,7 @@
     },
     {
       "parameters": {
-        "url": "=https://api.shotstack.io/v1/render/{{ $('Turn video to 9:16').item.json.response.id }}",
+        "url": "=https://api.shotstack.io/v1/render/{{ $('Turn video to 9:16').item.json.id }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "options": {}
@@ -876,11 +905,17 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4160,
-        336
+        4016,
+        32
       ],
       "id": "9ef22266-6e27-4e9c-8d31-39de79d47452",
-      "name": "Done?1"
+      "name": "Done?1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "26BJ2fNpesHB2M0J",
+          "name": "SHOTSTACK API"
+        }
+      }
     },
     {
       "parameters": {
@@ -1119,6 +1154,32 @@
       ],
       "id": "0e709123-97f0-4f2e-9cfd-abdc6d2417cd",
       "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4160,
+        320
+      ],
+      "id": "d684041e-98fe-47db-9a4e-87e95f7433d1",
+      "name": "done?",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3LneOAseTkv0F0yE",
+          "name": "Header Auth account"
+        },
+        "httpBearerAuth": {
+          "id": "O2la1Pq90tHUhdFE",
+          "name": "CREATOMATE BEARER"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -1137,6 +1198,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-15T23:34:57.000Z",
-  "versionId": "8628f222-6eff-439b-a703-e94b96c473da"
+  "updatedAt": "2025-11-17T00:26:49.000Z",
+  "versionId": "74fd1d51-6bf7-4427-9194-392dfeb36bd9"
 }
