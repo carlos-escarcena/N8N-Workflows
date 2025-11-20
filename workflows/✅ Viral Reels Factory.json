@@ -193,7 +193,7 @@
       "main": [
         [
           {
-            "node": "Turn video to 9:16",
+            "node": "Configure me",
             "type": "main",
             "index": 0
           }
@@ -215,7 +215,7 @@
       "main": [
         [
           {
-            "node": "done?",
+            "node": "Done?1",
             "type": "main",
             "index": 0
           }
@@ -224,13 +224,7 @@
     },
     "Done?": {
       "main": [
-        [
-          {
-            "node": "Configure me",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "Rendering...",
@@ -253,7 +247,13 @@
     },
     "Done?1": {
       "main": [
-        []
+        [
+          {
+            "node": "Done?",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Download final video": {
@@ -308,17 +308,6 @@
         [
           {
             "node": "Schedule Instagram",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "done?": {
-      "main": [
-        [
-          {
-            "node": "Done?",
             "type": "main",
             "index": 0
           }
@@ -738,7 +727,7 @@
       "typeVersion": 1.1,
       "position": [
         3936,
-        416
+        208
       ],
       "id": "c340a574-565c-4dcb-a629-c081496ced6f",
       "name": "Rendering...",
@@ -746,7 +735,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $('Done?').item.json.response.url }}",
+        "url": "={{ $('Upload to GCS (To be accessible via URL)').item.json.mediaLink }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -790,31 +779,28 @@
       "parameters": {
         "method": "POST",
         "url": "https://api.creatomate.com/v2/renders",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 48ee1fe4d5214a15b4e40ad24e565c38851c68a44ccd1a5be2ae5c98d34b59078ab6360866f2c129ea770f69a4fd3078"
+            }
+          ]
+        },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"template_id\": \"c460b42f-a6cb-402c-a64b-539aa18d7774\",\n  \"modifications\": {\n    \"Video.source\": \"{{ $json.mediaLink }}\"\n  }\n}",
+        "jsonBody": "={\n  \"template_id\": \"a38ecc48-703b-464e-9f76-c27c1f8a85ae\",\n  \"modifications\": {\n    \"Video.source\": \"{{ $json.mediaLink }}\"\n  }\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         3712,
-        416
+        208
       ],
       "id": "5ea752f4-6c58-4327-8383-0684293e31d0",
-      "name": "Turn video to 9:16",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "3LneOAseTkv0F0yE",
-          "name": "Header Auth account"
-        },
-        "httpBearerAuth": {
-          "id": "O2la1Pq90tHUhdFE",
-          "name": "CREATOMATE BEARER"
-        }
-      }
+      "name": "Turn video to 9:16"
     },
     {
       "parameters": {
@@ -828,8 +814,8 @@
           "conditions": [
             {
               "id": "fc24d410-040a-4ca6-b70f-7473af617bd9",
-              "leftValue": "={{ $json.response.status }}",
-              "rightValue": "done",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "succeeded",
               "operator": {
                 "type": "string",
                 "operation": "equals"
@@ -845,7 +831,7 @@
       "typeVersion": 2.2,
       "position": [
         4384,
-        416
+        208
       ],
       "id": "d19c381b-b6e7-4b62-b5a7-997611a4dd13",
       "name": "Done?"
@@ -897,23 +883,23 @@
     },
     {
       "parameters": {
-        "url": "=https://api.shotstack.io/v1/render/{{ $('Turn video to 9:16').item.json.id }}",
+        "url": "=https://api.creatomate.com/v1/renders/{{ $('Turn video to 9:16').item.json.id }}",
         "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
+        "genericAuthType": "httpBearerAuth",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4016,
-        32
+        4160,
+        144
       ],
       "id": "9ef22266-6e27-4e9c-8d31-39de79d47452",
       "name": "Done?1",
       "credentials": {
-        "httpHeaderAuth": {
-          "id": "26BJ2fNpesHB2M0J",
-          "name": "SHOTSTACK API"
+        "httpBearerAuth": {
+          "id": "O2la1Pq90tHUhdFE",
+          "name": "CREATOMATE BEARER"
         }
       }
     },
@@ -921,8 +907,15 @@
       "parameters": {
         "method": "POST",
         "url": "=https://api.postiz.com/public/v1/upload",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "f9ebe777f47dc87545e6098c0e29ee5e818f500ef76d5d3b29b2a9ee1a439a74"
+            }
+          ]
+        },
         "sendBody": true,
         "contentType": "multipart-form-data",
         "bodyParameters": {
@@ -948,8 +941,15 @@
     {
       "parameters": {
         "url": "=https://api.postiz.com/public/v1/integrations",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "f9ebe777f47dc87545e6098c0e29ee5e818f500ef76d5d3b29b2a9ee1a439a74"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -1081,8 +1081,15 @@
       "parameters": {
         "method": "POST",
         "url": "=https://api.postiz.com/public/v1/posts",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "f9ebe777f47dc87545e6098c0e29ee5e818f500ef76d5d3b29b2a9ee1a439a74"
+            }
+          ]
+        },
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"privacy_level\": \"PUBLIC_TO_EVERYONE\",\n        \"duet\": \"false\",\n        \"stitch\": \"false\",\n        \"comment\": \"true\",\n        \"autoAddMusic\": \"no\",\n        \"brand_content_toggle\": \"false\",\n        \"brand_organic_toggle\": \"false\",\n        \"content_posting_method\": \"DIRECT_POST\"\n      }\n    }\n  ]\n}",
@@ -1095,13 +1102,7 @@
         224
       ],
       "id": "08afc869-6ad0-4162-a9de-bb04e01782f0",
-      "name": "Schedule TikTok",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "3LneOAseTkv0F0yE",
-          "name": "Header Auth account"
-        }
-      }
+      "name": "Schedule TikTok"
     },
     {
       "parameters": {
@@ -1154,32 +1155,6 @@
       ],
       "id": "0e709123-97f0-4f2e-9cfd-abdc6d2417cd",
       "name": "Sticky Note8"
-    },
-    {
-      "parameters": {
-        "url": "=https://api.creatomate.com/v1/renders/{{ $json.id }}",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBearerAuth",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        4160,
-        320
-      ],
-      "id": "d684041e-98fe-47db-9a4e-87e95f7433d1",
-      "name": "done?",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "3LneOAseTkv0F0yE",
-          "name": "Header Auth account"
-        },
-        "httpBearerAuth": {
-          "id": "O2la1Pq90tHUhdFE",
-          "name": "CREATOMATE BEARER"
-        }
-      }
     }
   ],
   "pinData": {},
@@ -1198,6 +1173,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-17T00:26:49.000Z",
-  "versionId": "74fd1d51-6bf7-4427-9194-392dfeb36bd9"
+  "updatedAt": "2025-11-20T05:06:53.000Z",
+  "versionId": "e69bc09e-3478-4dbe-a57f-f8b8cd3b3b4d"
 }
