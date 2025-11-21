@@ -69,13 +69,7 @@
     },
     "When clicking ‘Execute workflow’": {
       "main": [
-        [
-          {
-            "node": "Get Past Objects",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "OpenAI Chat Model": {
@@ -313,6 +307,66 @@
           }
         ]
       ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Past Objects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a video": {
+      "main": [
+        []
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule TikTok": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule YouTube": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Instagram": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-11-10T16:29:26.753Z",
@@ -329,7 +383,7 @@
           "interval": [
             {
               "field": "hours",
-              "hoursInterval": 8
+              "hoursInterval": 6
             }
           ]
         }
@@ -727,7 +781,7 @@
       "typeVersion": 1.1,
       "position": [
         3936,
-        208
+        0
       ],
       "id": "c340a574-565c-4dcb-a629-c081496ced6f",
       "name": "Rendering...",
@@ -797,7 +851,7 @@
       "typeVersion": 4.2,
       "position": [
         3712,
-        208
+        0
       ],
       "id": "5ea752f4-6c58-4327-8383-0684293e31d0",
       "name": "Turn video to 9:16"
@@ -831,7 +885,7 @@
       "typeVersion": 2.2,
       "position": [
         4384,
-        208
+        0
       ],
       "id": "d19c381b-b6e7-4b62-b5a7-997611a4dd13",
       "name": "Done?"
@@ -892,7 +946,7 @@
       "typeVersion": 4.2,
       "position": [
         4160,
-        144
+        -64
       ],
       "id": "9ef22266-6e27-4e9c-8d31-39de79d47452",
       "name": "Done?1",
@@ -1122,7 +1176,13 @@
         608
       ],
       "id": "9407be13-eb0a-4362-acee-71edc9d86f80",
-      "name": "Schedule Instagram"
+      "name": "Schedule Instagram",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "26BJ2fNpesHB2M0J",
+          "name": "SHOTSTACK API SANDBOX"
+        }
+      }
     },
     {
       "parameters": {
@@ -1155,11 +1215,50 @@
       ],
       "id": "0e709123-97f0-4f2e-9cfd-abdc6d2417cd",
       "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "6834483413",
+        "file": "={{ $('Upload to GCS (To be accessible via URL)').item.json.mediaLink }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        6256,
+        416
+      ],
+      "id": "2c7dbb97-45d7-4fde-bdb9-b2cde28fb925",
+      "name": "Send a video",
+      "webhookId": "00a539ea-9131-45dc-8e71-26a62906ff55",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        6032,
+        416
+      ],
+      "id": "760b11c8-4c97-44b8-9f3e-a7891d309913",
+      "name": "Limit"
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "EYX2BC4I0DolsgK7",
+    "timeSavedPerExecution": 120
   },
   "shared": [
     {
@@ -1170,9 +1269,15 @@
       "projectId": "1hPYqGN0htWyJ6V9"
     }
   ],
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": [
+        18
+      ]
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-11-20T05:06:53.000Z",
-  "versionId": "e69bc09e-3478-4dbe-a57f-f8b8cd3b3b4d"
+  "triggerCount": 1,
+  "updatedAt": "2025-11-21T10:43:04.000Z",
+  "versionId": "83a6cdad-3d08-46f5-b0f9-d26382571dfd"
 }
