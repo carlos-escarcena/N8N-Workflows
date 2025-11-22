@@ -1,0 +1,396 @@
+{
+  "active": false,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Google Calendar - Check Availability",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Calendar - Check Availability": {
+      "main": [
+        [
+          {
+            "node": "Switch (Intent Rules)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code 2": {
+      "main": [
+        [
+          {
+            "node": "Google Calendar - Create Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Incoming Call": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain2": {
+      "main": [
+        [
+          {
+            "node": "Code 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch (Intent Rules)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Calendar - Create Event": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-22T09:49:45.182Z",
+  "id": "Tgc0FChj8QxzIqMW",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "PRUEBA BLAND AI",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f4fe52fa-20e2-44f2-9ad9-0868da9c2b36",
+        "options": {}
+      },
+      "name": "Webhook - Incoming Call",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -1568,
+        848
+      ],
+      "id": "537544f6-edaa-4c40-aaba-670ed192b3c0",
+      "webhookId": "f4fe52fa-20e2-44f2-9ad9-0868da9c2b36"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -992,
+        848
+      ],
+      "id": "166d76c4-ab35-4ef4-a04b-3a286e7c8552"
+    },
+    {
+      "parameters": {
+        "resource": "calendar",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "timeMin": "={{ $now }}",
+        "timeMax": "={{ $now.plus(1,'month')}}",
+        "options": {}
+      },
+      "name": "Google Calendar - Check Availability",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [
+        -768,
+        848
+      ],
+      "id": "3b696de2-a182-4309-9a8a-83795f43f309",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Switch (Intent Rules)",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        -544,
+        816
+      ],
+      "id": "2de09d7c-97e1-4081-84a3-e15dd07eef8b"
+    },
+    {
+      "parameters": {},
+      "name": "Code 2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        1232
+      ],
+      "id": "03467646-3a8b-4231-b582-bf1e5af6beca"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "start": "2025-11-29T00:00:00",
+        "end": "2025-11-29T00:00:00",
+        "additionalFields": {
+          "description": "Call scheduled automatically by Bland AI"
+        }
+      },
+      "name": "Google Calendar - Create Event",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [
+        -736,
+        1232
+      ],
+      "id": "7be9e5f9-7c3b-42f9-a1fa-8073e2050aa5",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        -1344,
+        848
+      ],
+      "id": "28e264b1-2a63-4b98-9df1-bb7041ae7a4c",
+      "name": "Basic LLM Chain1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -320,
+        752
+      ],
+      "id": "a12931b1-169b-49f4-a094-84ade36f1040",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -320,
+        944
+      ],
+      "id": "70887958-a406-45c4-b660-b3e3ff7d0ded",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -512,
+        1232
+      ],
+      "id": "270ddd16-4bc3-45fc-9770-ae5f6433dde7",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "path": "8482a5e4-c817-4554-9621-d55a4431d835",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        1232
+      ],
+      "id": "9c72ece2-46db-44d9-b23b-551095733016",
+      "webhookId": "8482a5e4-c817-4554-9621-d55a4431d835"
+    },
+    {
+      "parameters": {
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        -1312,
+        1232
+      ],
+      "id": "b5c441ed-1355-4334-81df-255cb7a6c105",
+      "name": "Basic LLM Chain2"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1248,
+        1456
+      ],
+      "id": "cdcac301-1caf-49dc-b63c-5c5bf39c62b2",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1264,
+        1072
+      ],
+      "id": "aaae8f49-5d27-4799-93f7-4a0bb7b83f65",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-22T09:49:45.187Z",
+      "createdAt": "2025-11-22T09:49:45.187Z",
+      "role": "workflow:owner",
+      "workflowId": "Tgc0FChj8QxzIqMW",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-22T10:17:32.000Z",
+  "versionId": "40ae8099-c834-4b44-bc6b-cc6dd1549656"
+}
