@@ -1,0 +1,301 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Analyze image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Get a file1": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze image": {
+      "main": [
+        [
+          {
+            "node": "Get a file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-03T09:08:40.094Z",
+  "id": "zy74ypey7FianT4f",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "AUTOGUARDADO DE FACTURAS",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        16,
+        368
+      ],
+      "id": "e8b6ae6b-b940-437f-a189-32ebdc28d523",
+      "name": "Telegram Trigger1",
+      "webhookId": "21ca16b6-99a5-4cef-8228-e8fc01b12120",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.photo[3].file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        368
+      ],
+      "id": "5ce524b0-4018-4a25-a03e-f16c073ddb2f",
+      "name": "Get a file",
+      "webhookId": "b4e08727-db6d-4dbd-9d7d-914f9a56739f",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "=data",
+        "name": "=FACTURA {{ $('Analyze image').item.json.candidates[0].content.parts[0].text.substring(0, 20) }} {{ $now.toISO() }}",
+        "driveId": {
+          "__rl": true,
+          "value": "0APQLRfZjcjPJUk9PVA",
+          "mode": "list",
+          "cachedResultName": "Helion Core",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/0APQLRfZjcjPJUk9PVA"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1_P3-iyIruw_gO27YKu_NCMcf9i189liE",
+          "mode": "list",
+          "cachedResultName": "FACTURAS GASTOS",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1_P3-iyIruw_gO27YKu_NCMcf9i189liE"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        912,
+        368
+      ],
+      "id": "bfa9eca6-7953-4d25-af6f-b1a51e745be3",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "t9DR8YFZKECz0KPS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo",
+          "mode": "list",
+          "cachedResultName": "FACTURAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ACCESO A FACTURA ": "={{ $json.webViewLink }}",
+            "DATOS DE LA FACTURA": "={{ $('Analyze image').item.json.candidates[0].content.parts[0].text }}",
+            "FECHA": "={{ $today.format('yyyy-MM-dd') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "FECHA",
+              "displayName": "FECHA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATOS DE LA FACTURA",
+              "displayName": "DATOS DE LA FACTURA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ACCESO A FACTURA ",
+              "displayName": "ACCESO A FACTURA ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1136,
+        368
+      ],
+      "id": "60b04677-fdae-433f-b705-ed5b5e886fa5",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram Trigger1').item.json.message.photo[0].file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        368
+      ],
+      "id": "bd62bad0-a595-4ae2-b07d-1dade7da4d0f",
+      "name": "Get a file1",
+      "webhookId": "b4e08727-db6d-4dbd-9d7d-914f9a56739f",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Esta imagen es una factura/ticket.\n\nNecesito que cojas todo el texto de la imagen y me lo devuelvas con el siguiente formato:\n\n\"\"\"\n[NOMBRE DEL SITIO DONDE SE HA GASTADO EL DINERO]\n\n-----------------------------\n\n[LISTA DE PRODUCTOS COMPRADOS:]\n- PRODUCTO 1\n- PRODUCTO 2\n- PRODUCTO 3\n- ...\n\n-----------------------------\n\n[INFORMACIÓN EXTRA (SOLO INCLUYE LOS SIGUIENTES):]\n- TOTAL PAGADO:\n- FECHA: \n- HORA: \n- GST incluido en el total:\n\"\"\"\n \n\nSolo devuelve el contenido y lo que te he pedido, nada mas\n\nEl texto que se encuentra entre [] es un texto descriptivo, no lo incluyas en la repuesta, ese texto solo describe lo que tienes que incluir en esa parte de la factura.",
+        "inputType": "binary",
+        "simplify": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        464,
+        368
+      ],
+      "id": "97b64e3c-ded3-40d2-88da-b4c438fdd538",
+      "name": "Analyze image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-03T09:08:40.098Z",
+      "createdAt": "2025-12-03T09:08:40.098Z",
+      "role": "workflow:owner",
+      "workflowId": "zy74ypey7FianT4f",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-03T11:07:31.000Z",
+  "versionId": "ba738db2-2be5-4688-93c2-64e3349bef5f"
+}
