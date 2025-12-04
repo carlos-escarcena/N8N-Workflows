@@ -1,0 +1,292 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Call 'Back Up Workflows'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "node": "Call 'AUTOGUARDADO DE FACTURAS'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-03T22:41:35.861Z",
+  "id": "k8RzBRKIFdFYeGru",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "RE-RUN WORKFLOW CON ERROR",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -64
+      ],
+      "id": "6a209de1-43dc-4f56-9064-b93dbb686ace",
+      "name": "Telegram Trigger",
+      "webhookId": "c2159625-d91c-4d10-9413-b90addb7cbd9",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "Back Up Workflows",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "05d2e282-f38a-4f72-8fa7-354d48029707"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "X WORKFLOW"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "61c45c66-5203-407d-9e5a-718b3d10b772",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "Y",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Y WORKFLOW"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3c9bf1d6-d298-4d9f-b1b4-bf758bab2775",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "Z",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Z WORKFLOW"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0e885151-87e3-41da-a710-c6c9d9cd1f24",
+                    "leftValue": "={{ $json.message }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        224,
+        -80
+      ],
+      "id": "c4a80e2d-3d06-42ab-9fc3-b03dc9a8bda9",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        -64
+      ],
+      "id": "cbea08e3-e0f5-465e-9e37-507924c5d7f2",
+      "name": "Execute Workflow1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        128
+      ],
+      "id": "f01ef61e-4f9a-4dff-b6f9-2b260674b3f3",
+      "name": "Execute Workflow2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "yU6WDslddBKEM8j4",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/yU6WDslddBKEM8j4",
+          "cachedResultName": "Back Up Workflows"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {}
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        -256
+      ],
+      "id": "0921a3f0-6963-4286-94bd-19ceeab02acb",
+      "name": "Call 'Back Up Workflows'"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zy74ypey7FianT4f",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zy74ypey7FianT4f",
+          "cachedResultName": "AUTOGUARDADO DE FACTURAS"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "message": "={{ $json.message }}"
+          },
+          "matchingColumns": [
+            "data"
+          ],
+          "schema": [
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        464,
+        304
+      ],
+      "id": "67fd5c24-ff52-4ecc-a593-ea6f243894c1",
+      "name": "Call 'AUTOGUARDADO DE FACTURAS'"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-03T22:41:35.864Z",
+      "createdAt": "2025-12-03T22:41:35.864Z",
+      "role": "workflow:owner",
+      "workflowId": "k8RzBRKIFdFYeGru",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-03T23:04:03.000Z",
+  "versionId": "39e449a4-275a-41ad-8c35-e786f58af11b"
+}
