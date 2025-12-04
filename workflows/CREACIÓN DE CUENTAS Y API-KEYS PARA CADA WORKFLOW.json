@@ -1,0 +1,1041 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Variables": {
+      "main": [
+        [
+          {
+            "node": "Get many workflows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many workflows": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OneAtATime": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        []
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search files and folders": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Create file from text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Search files and folders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isDiffOrNew": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "same",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "different",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "new",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "isDiffOrNew",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-12-03T18:11:49.715Z",
+  "id": "xKwa0Tl5HVRKL8b6",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "CREACIÓN DE CUENTAS Y API-KEYS PARA CADA WORKFLOW",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        1400
+      ],
+      "id": "5f18b9dd-cfa2-4266-81bd-6d17be5f2348",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 23
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -48,
+        1592
+      ],
+      "id": "25e451de-59b3-43b1-ad47-382e2a43ea2f",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7d4907f1-fcfe-47eb-b442-d53065c7dcab",
+              "name": "repo.owner",
+              "value": "carlos-escarcena",
+              "type": "string"
+            },
+            {
+              "id": "38071e91-fb1e-4172-913a-a99a797da8b3",
+              "name": "repo.name",
+              "value": "N8N-Workflows",
+              "type": "string"
+            },
+            {
+              "id": "29798405-9a41-4848-b023-995ef65c18cf",
+              "name": "repo.path",
+              "value": "workflows/",
+              "type": "string"
+            },
+            {
+              "id": "0aa2ab93-36e2-4073-b281-da183191e373",
+              "name": "url",
+              "value": "https://github.com/",
+              "type": "string"
+            },
+            {
+              "id": "a0643924-ba27-4ab0-a9ee-796ba09342bf",
+              "name": "uniqueStrings",
+              "value": "[]",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        1520
+      ],
+      "id": "969cd780-0823-4f79-9e45-70cc45e0c31d",
+      "name": "Variables"
+    },
+    {
+      "parameters": {
+        "filters": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        400,
+        1520
+      ],
+      "id": "9998fb13-db92-44b3-b5ed-e2a582e5e564",
+      "name": "Get many workflows",
+      "credentials": {
+        "n8nApi": {
+          "id": "vFzxSxyoIxlIFw7v",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        624,
+        1520
+      ],
+      "id": "cdb933df-8f48-4a4b-89c1-a04456bf1a4e",
+      "name": "OneAtATime"
+    },
+    {
+      "parameters": {
+        "chatId": "6834483413",
+        "text": "✅ LOS TUTORIALES DE LAS CREDENCIALES Y LAS API-KEYS ESTÁN ACTUALIZADOS!",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1072,
+        1328
+      ],
+      "id": "5491a707-acf2-44d0-a59f-bb7fde5b774c",
+      "name": "Send a text message",
+      "webhookId": "e3bdeff0-bff3-4de0-91be-dadfbc7861b0",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        848,
+        1328
+      ],
+      "id": "0cf353a5-43be-4e8d-b55a-4aa10736b0f9",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1psPCj16oPb_PIdP-8y8Bv9cPwOoCS7k0kmf7r5KTG4E",
+          "mode": "list",
+          "cachedResultName": "CREACIÓN DE CUENTAS Y API-KEY SEGÚN WORKFLOW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1psPCj16oPb_PIdP-8y8Bv9cPwOoCS7k0kmf7r5KTG4E/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1psPCj16oPb_PIdP-8y8Bv9cPwOoCS7k0kmf7r5KTG4E/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "WORKFLOW": "={{ $('OneAtATime').item.json.name }}",
+            "NODOS EN EL WORKFLOW": "={{ $json.nodeTypes }}",
+            "CUENTAS Y API-KEYS NECESARIAS": "={{ $json.credentialTypes }}"
+          },
+          "matchingColumns": [
+            "WORKFLOW"
+          ],
+          "schema": [
+            {
+              "id": "WORKFLOW",
+              "displayName": "WORKFLOW",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DESCRIPCIÓN DEL WORKFLOW",
+              "displayName": "DESCRIPCIÓN DEL WORKFLOW",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NODOS EN EL WORKFLOW",
+              "displayName": "NODOS EN EL WORKFLOW",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CUENTAS Y API-KEYS NECESARIAS",
+              "displayName": "CUENTAS Y API-KEYS NECESARIAS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NOMBRE DEL DOCUMENTO",
+              "displayName": "NOMBRE DEL DOCUMENTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1296,
+        1592
+      ],
+      "id": "8a125bb2-6ce1-468a-b23c-be9c9c93567d",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const nodeArray = $input.first().json.nodes;\n\n// Use Sets to store only unique values\nconst uniqueCredentialKeys = new Set();\nconst uniqueNodeTypes = new Set();\n\nfor (const node of nodeArray) {\n    // 1. Extract the Node Type and add it to the Set\n    if (node.type) {\n        uniqueNodeTypes.add(node.type);\n    }\n\n    // 2. Extract the Credential Type (unique key under 'credentials')\n    // Check if credentials exist\n    if (node.credentials && Object.keys(node.credentials).length > 0) {\n        const credentialType = Object.keys(node.credentials)[0];\n        // Add the credential type to the Set\n        uniqueCredentialKeys.add(credentialType);\n    }\n}\n\n// Convert Sets back to Arrays and format the Outputs\nconst credentialOutput = Array.from(uniqueCredentialKeys).map(key => `- ${key}`).join('\\n');\nconst typeOutput = Array.from(uniqueNodeTypes).map(type => `- ${type}`).join('\\n');\n\n// Return the required output format for n8n\nreturn [\n  {\n    json: {\n      credentialTypes: credentialOutput, // Contains only unique keys\n      nodeTypes: typeOutput             // Contains only unique types\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1072,
+        1520
+      ],
+      "id": "7f0a4dff-a5f0-4ffd-b464-37ec4cf25b8c",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        848,
+        1520
+      ],
+      "id": "b0b304bd-1f8b-47ca-bcb2-e5a46669d51c",
+      "name": "Wait",
+      "webhookId": "505d437d-4abb-4127-9312-c50981196b7e"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Define the mapping here: 'oldKeyName': 'newKeyName'\n// Add all the headers you want to change to this map.\nconst headerMap = {\n    '$input.first().json.WORKFLOW': 'name'\n};\n\n// Array to store the new items\nconst newItems = [];\n\n// Iterate over every item received by this node\nfor (const item of $input.all()) {\n    const originalJson = item.json;\n    const newJson = {};\n\n    // Iterate over the keys (headers) in the original item\n    for (const oldKey in originalJson) {\n        if (originalJson.hasOwnProperty(oldKey)) {\n            // Check if the old key is in our map\n            if (headerMap.hasOwnProperty(oldKey)) {\n                const newKey = headerMap[oldKey];\n                newJson[newKey] = originalJson[oldKey];\n            } else {\n                // If not in the map, keep the original key and value\n                newJson[oldKey] = originalJson[oldKey];\n            }\n        }\n    }\n\n    // Push the item with the new keys to the newItems array\n    newItems.push({ json: newJson });\n}\n\n// Return the array of items with the new headers\nreturn newItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -48,
+        496
+      ],
+      "id": "1bb38b0e-9202-424e-8af7-5b85d8e4a44b",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cc49874d-d0a7-4b7d-b251-0ca859a41552",
+              "name": "WORKFLOW",
+              "value": "name",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        496
+      ],
+      "id": "4418e6b6-f73e-4fb7-8d62-0ca9d0f05f05",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "={{ $json.credentialType }} - CREACIÓN DE CUENTA Y API-KEY",
+        "filter": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -48,
+        2560
+      ],
+      "id": "ce567418-c0fa-49d1-a194-bc752a2d4e9c",
+      "name": "Search files and folders",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "t9DR8YFZKECz0KPS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        176,
+        2488
+      ],
+      "id": "44d24781-b727-40f9-b11c-c3e9bb034620",
+      "name": "Loop Over Items",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// The input item contains the text with credential types separated by '\\n'.\n// We assume this string is passed to the Code node in a property called 'textData'.\n// Adjust '$input.first().json.textData' if your property name is different.\n\nconst inputString = $input.first().json['CUENTAS Y API-KEYS NECESARIAS']; \n\n// 1. Split the string by the newline character ('\\n').\n// This creates an array of strings, where each element is a credential type.\nconst lines = inputString.split('\\n');\n\n// 2. Process each line to create the required n8n output array structure.\nconst outputItems = [];\n\nfor (const line of lines) {\n    // Clean up the line by removing leading/trailing spaces and the hyphen ('-')\n    const cleanedLine = line.trim().replace(/^-/, '').trim();\n\n    // Only process non-empty lines\n    if (cleanedLine) {\n        // Create an item object with the desired key (e.g., 'credentialType')\n        outputItems.push({\n            json: {\n                credentialType: cleanedLine\n            }\n        });\n    }\n}\n\n// 3. Return the array of objects.\n// n8n will process each object in this array as a separate item (row).\nreturn outputItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -48,
+        2264
+      ],
+      "id": "b87894b1-2e01-4d8b-be0e-a273c9523fc9",
+      "name": "Code in JavaScript2",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "92f11751-f37a-4426-861b-dee96d59e31b",
+              "leftValue": "={{ $json.name }}",
+              "rightValue": "={{ $json.name }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "d06015a9-8721-435e-8ea7-0ebddcbdbdc1",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -48,
+        1816
+      ],
+      "id": "6d7ed0f7-31ef-417c-80a2-0560c6e90bbf",
+      "name": "If",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un experto en n8n, en API KEYS y en creación de las mismas para conectar softwares con n8n.\n\nSabes como crear cualquier cuenta de cualquier software y cualquier api key para conectar con n8n. \n\nAdemás sabes cómo conectar todo con n8n.",
+              "role": "model"
+            },
+            {
+              "content": "=\nCrea una guía especializada sobre:\n- Como crear una cuenta \n- Como crear una API Key\n- Como conectar con n8n\n\nCon [tipo de api key]\n\nDebes asegurarte de que esté actualizado y la estructura debe parecerse al ejemplo:\n\n\"\n\n\n🔑 Crear una Cuenta de Google AI Studio / Google Cloud\nPara obtener una clave de API de Gemini, necesitas una cuenta de Google, y luego acceder a Google AI Studio o, si lo vas a usar a nivel empresarial, a la plataforma de Google Cloud.\nRequisito Básico: Necesitas una cuenta de Google existente (Gmail).\nIr a Google AI Studio: Navega directamente a la plataforma de Google AI Studio: ai.google.dev.\nIniciar Sesión: Haz clic en \"Sign in\" (Iniciar sesión) y accede con tu cuenta de Google.\nAceptar Términos: Si es la primera vez que accedes, se te pedirá que aceptes los Términos de Servicio y la Política de Privacidad de Google.\nAcceder al Panel: Una vez que inicies sesión, serás dirigido al panel de Google AI Studio, desde donde podrás gestionar tus claves de API y probar los modelos de Gemini.\n\n📝 Generar la Clave API de Gemini\nEsta clave será el secreto que usarás dentro de n8n para autenticar tus flujos de trabajo con los modelos de Gemini.\nNavegar a la Creación de Claves: En el panel de Google AI Studio, busca la opción que dice \"Get API key\" (Obtener clave API) o \"API keys\" en la navegación lateral.\nCrear Nueva Clave: Haz clic en el botón \"+ Create API key\" (+ Crear clave API).\nVisualizar y Copiar la Clave (Paso Crucial):\nLa plataforma generará y mostrará tu clave API completa.\n¡Cópiala inmediatamente! Esta clave solo se mostrará una vez por razones de seguridad. Si cierras la ventana sin copiarla, tendrás que generar una nueva.\nGuárdala en un lugar seguro (como un gestor de contraseñas).\n\n🛠️ Configurar Gemini en n8n\nUna vez que tengas tu clave, puedes integrarla en tu instancia de n8n.\nAbrir tu n8n: Inicia sesión en tu instancia de n8n.\nAgregar el Nodo de Gemini:\nCrea un nuevo flujo de trabajo (workflow).\nBusca el nodo \"Gemini\" (a veces listado como Google AI o Google Gemini) y agrégalo a tu canvas.\nConfigurar la Credencial (Authentication):\nEn la configuración del nodo Gemini, localiza la sección de \"Credentials\" (Credenciales).\nHaz clic en \"Create New\" (Crear nueva credencial).\nIntroducir la Clave API:\nEl campo te pedirá la \"API Key\".\nPega la clave API de Gemini que copiaste en el paso anterior.\nAsígnale un nombre a esta credencial (ej: Mi_Gemini_Key).\nHaz clic en \"Save\" (Guardar).\nUsar el Nodo:\nAhora, tu nodo de Gemini está autenticado. Puedes configurarlo para usar diferentes modelos (como gemini-2.5-flash o gemini-2.5-pro), especificar tu prompt y ejecutar el flujo de trabajo.\n\"\n\nAsegurate que el formato sea óptimo para Copiar y pegar a un Google Docs."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        176,
+        1816
+      ],
+      "id": "4b92c3bb-3ef4-4098-bc1f-ee7ff392353f",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "createFromText",
+        "name": "={{ $('Loop Over Items').item.json.credentialType }} - CREACIÓN DE CUENTA Y API-KEY",
+        "driveId": {
+          "__rl": true,
+          "value": "0APQLRfZjcjPJUk9PVA",
+          "mode": "list",
+          "cachedResultName": "Helion Core",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/0APQLRfZjcjPJUk9PVA"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1qBTHPg-XD14og49MJ-gMz7aHmg2vwObv",
+          "mode": "list",
+          "cachedResultName": "CREACIÓN DE CUENTAS Y API-KEYS",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1qBTHPg-XD14og49MJ-gMz7aHmg2vwObv"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        528,
+        1816
+      ],
+      "id": "6144f386-600a-46d8-9f18-025c60014563",
+      "name": "Create file from text",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "t9DR8YFZKECz0KPS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e686002b-1a5c-42d5-8572-bc1fdc6f9269",
+              "leftValue": "={{ $json.credentialType }}",
+              "rightValue": "undefined",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        400,
+        2536
+      ],
+      "id": "034a2662-e0d2-4ac5-ba02-2c0ff525cc33",
+      "name": "If1",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "55899e7b-86cb-4eaa-8f9c-91ccf372760a",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -48,
+        2040
+      ],
+      "id": "c5eedb70-ab49-45a2-b0d7-147f1868e1b0",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1psPCj16oPb_PIdP-8y8Bv9cPwOoCS7k0kmf7r5KTG4E",
+          "mode": "list",
+          "cachedResultName": "CREACIÓN DE CUENTAS Y API-KEY SEGÚN WORKFLOW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1psPCj16oPb_PIdP-8y8Bv9cPwOoCS7k0kmf7r5KTG4E/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1psPCj16oPb_PIdP-8y8Bv9cPwOoCS7k0kmf7r5KTG4E/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "WORKFLOW",
+              "lookupValue": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -48,
+        912
+      ],
+      "id": "92ff56cf-229a-4576-9393-9f29d7e03a3d",
+      "name": "Get row(s) in sheet",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const orderJsonKeys = (jsonObj) => {\n  const ordered = {};\n  Object.keys(jsonObj).sort().forEach(key => {\n    ordered[key] = jsonObj[key];\n  });\n  return ordered;\n}\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Decode base64 content and parse JSON\n  const origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString());\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify($input.last().json.nodes) === JSON.stringify($input.first().json.nodes)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n// No file returned / new workflow\n} else if (Object.keys($input.all()[0].json).includes(\"data\")) {\n  const origWorkflow = JSON.parse($input.all()[0].json.data);\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n\n} else {\n  // Order JSON object\n  const n8nWorkflow = $input.all()[1].json;\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return items\nreturn $input.all();\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        912
+      ],
+      "id": "cf5057d0-1752-4901-bcfe-f245668daa41",
+      "name": "isDiffOrNew"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        848,
+        1104
+      ],
+      "id": "8fff2fbd-c3f3-4de2-a864-2a8a8563f4ce",
+      "name": "new"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        848,
+        912
+      ],
+      "id": "3126db9c-cf61-44d1-91d9-3bd93deccb21",
+      "name": "different"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        848,
+        720
+      ],
+      "id": "79b784b1-c60d-4222-9d2e-be019a65a030",
+      "name": "same"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.github_status }}",
+                    "rightValue": "same",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "095cf813-c4fe-459e-a24f-f7cc6e5912df"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "0"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4f8edb63-36c4-4957-9ac4-0299998b4ac0",
+                    "leftValue": "={{ $json.github_status }}",
+                    "rightValue": "different",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "bee5400a-3afe-4518-893d-86cb16968290",
+                    "leftValue": "={{ $json.github_status }}",
+                    "rightValue": "new",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        624,
+        896
+      ],
+      "id": "7236b965-9d14-4ea1-9d86-d9bc70098b7b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        176,
+        912
+      ],
+      "id": "7bdac540-4f53-4650-94e4-c1c99bda8dba",
+      "name": "Merge"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        176,
+        2264
+      ],
+      "id": "3a191732-ff58-4500-8740-64b9500a1bba",
+      "name": "Code in JavaScript3"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "EYX2BC4I0DolsgK7",
+    "timeSavedPerExecution": 15
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-03T18:11:49.722Z",
+      "createdAt": "2025-12-03T18:11:49.722Z",
+      "role": "workflow:owner",
+      "workflowId": "xKwa0Tl5HVRKL8b6",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-03T21:21:54.000Z",
+  "versionId": "9dc4da0b-dd71-41e9-8df6-1ee631e819cb"
+}
