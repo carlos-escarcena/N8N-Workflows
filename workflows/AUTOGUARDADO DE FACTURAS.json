@@ -1,13 +1,15 @@
 {
   "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
   "connections": {
     "Telegram Trigger1": {
       "main": [
         [
           {
-            "node": "Get a file",
+            "node": "Merge",
             "type": "main",
-            "index": 0
+            "index": 1
           }
         ]
       ]
@@ -60,6 +62,28 @@
           }
         ]
       ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-03T09:08:40.094Z",
@@ -80,8 +104,8 @@
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1.2,
       "position": [
-        16,
-        368
+        -112,
+        192
       ],
       "id": "e8b6ae6b-b940-437f-a189-32ebdc28d523",
       "name": "Telegram Trigger1",
@@ -102,8 +126,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        240,
-        368
+        336,
+        96
       ],
       "id": "5ce524b0-4018-4a25-a03e-f16c073ddb2f",
       "name": "Get a file",
@@ -138,8 +162,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        912,
-        368
+        1008,
+        96
       ],
       "id": "bfa9eca6-7953-4d25-af6f-b1a51e745be3",
       "name": "Upload file",
@@ -215,8 +239,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1136,
-        368
+        1232,
+        96
       ],
       "id": "60b04677-fdae-433f-b705-ed5b5e886fa5",
       "name": "Append row in sheet",
@@ -230,14 +254,14 @@
     {
       "parameters": {
         "resource": "file",
-        "fileId": "={{ $('Telegram Trigger1').item.json.message.photo[0].file_id }}",
+        "fileId": "={{ $('Merge').item.json.message.photo[3].file_id }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        688,
-        368
+        784,
+        96
       ],
       "id": "bd62bad0-a595-4ae2-b07d-1dade7da4d0f",
       "name": "Get a file1",
@@ -267,8 +291,8 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        464,
-        368
+        560,
+        96
       ],
       "id": "97b64e3c-ded3-40d2-88da-b4c438fdd538",
       "name": "Analyze image",
@@ -278,9 +302,92 @@
           "name": "Google Gemini(PaLM) Api account"
         }
       }
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "message",
+              "type": "any"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -112,
+        0
+      ],
+      "id": "e558c071-38ed-426b-87c1-8f3d27be78f3",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        112,
+        96
+      ],
+      "id": "57efad4f-ad4d-48db-ad8a-6e30f9b597c4",
+      "name": "Merge"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "message": {
+            "message_id": 85,
+            "from": {
+              "id": 6834483413,
+              "is_bot": false,
+              "first_name": "Carlos",
+              "language_code": "en"
+            },
+            "chat": {
+              "id": 6834483413,
+              "first_name": "Carlos",
+              "type": "private"
+            },
+            "date": 1764802841,
+            "photo": [
+              {
+                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAANzAAM2BA",
+                "file_unique_id": "AQADaQxrG1sTgVV4",
+                "file_size": 930,
+                "width": 51,
+                "height": 90
+              },
+              {
+                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAANtAAM2BA",
+                "file_unique_id": "AQADaQxrG1sTgVVy",
+                "file_size": 13546,
+                "width": 180,
+                "height": 320
+              },
+              {
+                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAAN4AAM2BA",
+                "file_unique_id": "AQADaQxrG1sTgVV9",
+                "file_size": 57400,
+                "width": 450,
+                "height": 800
+              },
+              {
+                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAAN5AAM2BA",
+                "file_unique_id": "AQADaQxrG1sTgVV-",
+                "file_size": 99383,
+                "width": 720,
+                "height": 1280
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
@@ -296,6 +403,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-03T11:07:31.000Z",
-  "versionId": "ba738db2-2be5-4688-93c2-64e3349bef5f"
+  "updatedAt": "2025-12-03T23:01:14.000Z",
+  "versionId": "77d4aab2-2929-427d-86b0-fe7f483d5df6"
 }
