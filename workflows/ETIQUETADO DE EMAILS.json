@@ -1,0 +1,664 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a label in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many labels in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add label to message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'AUTOGUARDADO DE FACTURAS'1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Analyze document",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Call 'AUTOGUARDADO DE FACTURAS'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze document": {
+      "main": [
+        [
+          {
+            "node": "Message a model1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model1": {
+      "main": [
+        [
+          {
+            "node": "Call 'AUTOGUARDADO DE FACTURAS'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-24T13:50:06.568Z",
+  "id": "onI7ZOkHFUzLGRMi",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "ETIQUETADO DE EMAILS",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 15,
+              "unit": "minutes"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        -352
+      ],
+      "id": "1d3391b6-1a56-4980-a885-0f79006251e3",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        -352
+      ],
+      "id": "a3f6c6d4-c18f-44f5-adf6-3fd5756f172b",
+      "name": "Wait",
+      "webhookId": "b5472354-d91e-4f86-9c83-f19b87a3a6f7"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Etiqueta el correo electrónico según los detalles a continuación:\n{{ JSON.stringify($json) }}\n\nQuiero que me devuelvas solo el nombre de la etiqueta la cual has usado, sin backticks ni ningún otro caracter.",
+        "options": {
+          "systemMessage": "#ROL\nEres mi asistente administrativo inteligente (180IQ).\n\n#Objetivo:\nCategorizar automáticamente los correos entrantes según las etiquetas de Gmail existentes o crear una nueva si ninguna coincide.\n\n#Herramientas:\n- Obtener mensaje\n- Leer todas las etiquetas\n- Crear etiqueta\n- Asignar etiqueta al mensaje\n\n#Instrucciones:\n\n- Coincidencia de etiquetas:\nAnaliza el asunto, el remitente, el destinatario, las palabras clave y el contenido del correo.\nCompara con las etiquetas de Gmail existentes para encontrar la coincidencia más relevante.\n\n- Asignación de etiquetas:\nAsigna al correo la etiqueta existente más adecuada.\nElimina la etiqueta de la bandeja de entrada si el correo es menos importante (como anuncios, promociones, o \"Reclamar\") y mantén los correos normales e importantes en la bandeja de entrada.\nSi no existe una etiqueta adecuada, crea una nueva basada en las existentes. Intenta reutilizar las etiquetas existentes siempre que sea posible. Cree siempre una etiqueta como subetiqueta. Si no hay ninguna etiqueta aplicable, si la etiqueta principal ya existe, cree la nueva etiqueta debajo de la etiqueta existente. Si no hay ninguna etiqueta principal, cree la etiqueta AI y cree la nueva etiqueta debajo de esta.\n\n- Creación de etiquetas:\nAsegúrese de que las nuevas etiquetas se ajusten a la estructura de las existentes, incluyendo mayúsculas y minúsculas, delimitadores y prefijos.",
+          "maxIterations": 5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        696,
+        -352
+      ],
+      "id": "6bd17f86-0be2-47ed-b7bc-1106e57b39ad",
+      "name": "AI Agent",
+      "onError": "continueErrorOutput",
+      "notes": "Objetivo:\nCategorizar automáticamente los correos electrónicos entrantes según las etiquetas de Gmail existentes o crear una nueva si ninguna coincide.\n\nHerramientas:\n- Obtener mensaje\n- Leer todas las etiquetas\n- Crear etiqueta\n- Asignar etiqueta al mensaje\n\nInstrucciones:\n\nCoincidencia de etiquetas:\n\nAnalice el asunto, el remitente, el destinatario, las palabras clave y el contenido del correo electrónico.\nCompárelo con las etiquetas de Gmail existentes para encontrar la coincidencia más relevante.\nAsignación de etiquetas:\n\nAsigne el correo electrónico a la etiqueta existente más adecuada.\nElimine la etiqueta de la bandeja de entrada si el correo electrónico es menos importante (como anuncios, promociones, o \"Reclamar\") y mantenga los correos electrónicos normales e importantes en la bandeja de entrada.\nSi no existe una etiqueta adecuada, cree una nueva etiqueta basada en las existentes. Intente reutilizar las etiquetas existentes siempre que sea posible. Cree siempre una etiqueta como subetiqueta. Si no hay ninguna etiqueta aplicable, si la etiqueta principal ya existe, cree la nueva etiqueta debajo de la etiqueta existente. Si no existe una etiqueta principal, cree la etiqueta AI y cree la nueva etiqueta debajo de esta. Creación de etiquetas:\n\nAsegúrese de que las nuevas etiquetas se ajusten a la estructura de las existentes, incluyendo el uso de mayúsculas y minúsculas, los delimitadores y los prefijos.\nEjemplos:\n\nSi el asunto del correo electrónico es \"Actualización del Proyecto Alfa\", asígnelo a [Proyecto Alfa] si existe.\nPara \"Consulta a un nuevo proveedor\", cree \"Consulta a un proveedor\" si no existe una etiqueta relevante.\nResultado:\nLos correos electrónicos se categorizan de forma coherente bajo las etiquetas adecuadas o recién creadas, manteniendo así la estructura organizativa de Gmail."
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.id }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        576,
+        -128
+      ],
+      "id": "714ab76a-cfc0-4fa8-be88-bab5025ef914",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Herramienta para crear una nueva etiqueta, usar solo si la etiqueta aún no existe.",
+        "resource": "label",
+        "operation": "create",
+        "name": "={{ $fromAI('new_label_name', 'new label name', 'string' ) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        704,
+        -128
+      ],
+      "id": "d717eb10-c27b-45b3-affc-3ec90b9a08cd",
+      "name": "Create a label in Gmail",
+      "webhookId": "b04586da-6d59-4c47-9659-b37185889703",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Herramienta para leer todas las etiquetas de Gmail existentes.",
+        "resource": "label",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        832,
+        -128
+      ],
+      "id": "14a99403-f059-422f-b0c9-97e4f0d188b2",
+      "name": "Get many labels in Gmail",
+      "webhookId": "58fe59a5-b5cd-4ff7-8a49-f893fcd7af5c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Herramienta para leer un mensaje especiífico según el ID del mensaje.",
+        "operation": "get",
+        "messageId": "={{ $json.id }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        -128
+      ],
+      "id": "70dc43c5-b340-49c2-a679-3f0026b68d69",
+      "name": "Get a message in Gmail",
+      "webhookId": "f8b283f4-7738-4f5d-8645-4d1d596b1a7b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Herramienta para asignar etiqueta a los emails.",
+        "operation": "addLabels",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', ``, 'string') }}",
+        "labelIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Label_Names_or_IDs', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1088,
+        -128
+      ],
+      "id": "7c241e70-f3e5-404c-a81e-2c17a02a3f33",
+      "name": "Add label to message in Gmail",
+      "webhookId": "78fc02ee-c3ff-40c9-b9eb-26bef153a51c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "FACTURAS INGRESOS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9eba5640-228f-403c-a302-8cf129dbb0f8"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "FACTURAS INGRESOS"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "85fb184d-38d8-4558-85b2-c96645d33042",
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "FACTURAS EGRESOS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "FACTURAS EGRESOS"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        1296,
+        -368
+      ],
+      "id": "c1c14c73-e9ca-4bee-879e-64077a47dc60",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        448,
+        -128
+      ],
+      "id": "7870ee27-eaa4-49ac-b458-636c4560a5a3",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zy74ypey7FianT4f",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zy74ypey7FianT4f",
+          "cachedResultName": "AUTOGUARDADO DE FACTURAS"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "message"
+          ],
+          "schema": [
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2320,
+        -448
+      ],
+      "id": "31348330-e5b6-4265-a968-5410004e9598",
+      "name": "Call 'AUTOGUARDADO DE FACTURAS'"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zy74ypey7FianT4f",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zy74ypey7FianT4f",
+          "cachedResultName": "AUTOGUARDADO DE FACTURAS"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "message"
+          ],
+          "schema": [
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1520,
+        -256
+      ],
+      "id": "873f87a8-aed7-46a7-946b-9a96a5219968",
+      "name": "Call 'AUTOGUARDADO DE FACTURAS'1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        1968,
+        -352
+      ],
+      "id": "beaaeaad-0e45-4fdf-b35b-09f3b967b58a",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9ccc7a01-2867-4796-bd3b-4158c866190a",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        -448
+      ],
+      "id": "4f3033d1-1345-460c-8a2d-330cb1c6b5d3",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "resource": "document",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        1744,
+        -544
+      ],
+      "id": "59726ade-eb87-4ae1-be8b-0e9fdd039935",
+      "name": "Analyze document",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        1968,
+        -544
+      ],
+      "id": "26143ff2-2365-4997-979d-e7d7cd186ed0",
+      "name": "Message a model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "EYX2BC4I0DolsgK7"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-24T13:50:06.571Z",
+      "createdAt": "2025-10-24T13:50:06.571Z",
+      "role": "workflow:owner",
+      "workflowId": "onI7ZOkHFUzLGRMi",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": {
+    "node:Gmail Trigger": {
+      "Gmail Trigger": {
+        "lastTimeChecked": 1761316568
+      }
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-09T08:27:45.000Z",
+  "versionId": "3a16e8fc-0acf-47db-9cb3-3670a1857742"
+}
