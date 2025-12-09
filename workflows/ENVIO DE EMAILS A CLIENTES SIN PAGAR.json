@@ -170,6 +170,40 @@
           }
         ]
       ]
+    },
+    "Get many workflows": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Deactivate a workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deactivate a workflow": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-07T15:20:59.451Z",
@@ -191,10 +225,8 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 625506620,
-          "mode": "list",
-          "cachedResultName": "PRESUPUESTO 2025",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit#gid=625506620"
+          "mode": "name",
+          "value": "=PRESUPUESTO {{ $json['año'] }}"
         },
         "filtersUI": {
           "values": [
@@ -230,6 +262,12 @@
               "id": "7d6ff967-3617-41fa-a753-13b2cf111484",
               "name": "mes",
               "value": "={{ $now.format('LLLL').toUpperCase()}}",
+              "type": "string"
+            },
+            {
+              "id": "ffb09d6c-10a8-418b-85e3-2b49188ca1d3",
+              "name": "año",
+              "value": "={{ $now.format('yyyy') }}",
               "type": "string"
             }
           ]
@@ -343,10 +381,8 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 625506620,
-          "mode": "list",
-          "cachedResultName": "PRESUPUESTO 2025",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit#gid=625506620"
+          "value": "=PRESUPUESTO {{ $json['año'] }}",
+          "mode": "name"
         },
         "filtersUI": {
           "values": [
@@ -382,6 +418,12 @@
               "id": "7d6ff967-3617-41fa-a753-13b2cf111484",
               "name": "mes",
               "value": "={{ $now.format('LLLL').toUpperCase()}}",
+              "type": "string"
+            },
+            {
+              "id": "06e6ddc7-5b52-4a53-a005-62bba9427fa6",
+              "name": "año",
+              "value": "={{ $now.format('yyyy') }}",
               "type": "string"
             }
           ]
@@ -497,7 +539,7 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        0,
+        448,
         640
       ],
       "id": "cf17bac1-4467-4f63-8232-5a0752db40dc",
@@ -550,6 +592,41 @@
       ],
       "id": "c896883b-b08a-40e8-9ad5-1bf43ecf5c84",
       "name": "AVISO SUSPENSIÓN SERVICIO"
+    },
+    {
+      "parameters": {
+        "filters": {
+          "name": "={{ $json.CLIENTE }} - {{ $json.SERVICIO }}"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        0,
+        640
+      ],
+      "id": "2495714f-7f25-4724-b931-9c661ff2fac3",
+      "name": "Get many workflows",
+      "credentials": {
+        "n8nApi": {
+          "id": "vFzxSxyoIxlIFw7v",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        224,
+        640
+      ],
+      "id": "3690e1db-b54c-4322-9032-028d8f3fca2e",
+      "name": "Loop Over Items2"
     }
   ],
   "pinData": {},
@@ -568,6 +645,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-07T16:38:12.000Z",
-  "versionId": "0828793f-b16c-4dc1-bc37-00a4399d3e3e"
+  "updatedAt": "2025-12-08T18:50:23.000Z",
+  "versionId": "b7fa6b88-98cd-4395-aea1-c5b6c1ce0ffb"
 }
