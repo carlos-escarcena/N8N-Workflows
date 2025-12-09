@@ -285,7 +285,6 @@
         },
         "text": "Esta imagen es una factura/ticket.\n\nNecesito que cojas todo el texto de la imagen y me lo devuelvas con el siguiente formato:\n\n\"\"\"\n[NOMBRE DEL SITIO DONDE SE HA GASTADO EL DINERO]\n\n-----------------------------\n\n[LISTA DE PRODUCTOS COMPRADOS:]\n- PRODUCTO 1\n- PRODUCTO 2\n- PRODUCTO 3\n- ...\n\n-----------------------------\n\n[INFORMACIÓN EXTRA (SOLO INCLUYE LOS SIGUIENTES):]\n- TOTAL PAGADO:\n- FECHA: \n- HORA: \n- GST incluido en el total:\n\"\"\"\n \n\nSolo devuelve el contenido y lo que te he pedido, nada mas\n\nEl texto que se encuentra entre [] es un texto descriptivo, no lo incluyas en la repuesta, ese texto solo describe lo que tienes que incluir en esa parte de la factura.",
         "inputType": "binary",
-        "simplify": false,
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
@@ -403,6 +402,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-03T23:01:14.000Z",
-  "versionId": "77d4aab2-2929-427d-86b0-fe7f483d5df6"
+  "updatedAt": "2025-12-09T08:30:02.000Z",
+  "versionId": "a1a80732-fa6f-43b2-a4b3-b5f8d338464c"
 }
