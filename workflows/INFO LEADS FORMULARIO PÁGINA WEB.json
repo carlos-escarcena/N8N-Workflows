@@ -35,6 +35,33 @@
           }
         ]
       ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-07T17:57:36.888Z",
@@ -144,7 +171,8 @@
             "Empresa": "={{ $json.parsed_data[2] }}",
             "Teléfono": "='{{ $json.parsed_data[3].replaceAll(' ',' ') }}",
             "Mensaje": "={{ $json.parsed_data[4] }}",
-            "Fecha/Hora": "={{ $('Gmail Trigger').item.json.date.toDateTime().format('yyyy/MM/dd - t') }}"
+            "Fecha/Hora": "={{ $('Gmail Trigger').item.json.date.toDateTime().format('yyyy/MM/dd - t') }}",
+            "PRIMER EMAIL": "={{ $('Gmail Trigger').item.json.date.add(1, 'hour').toDateTime().format('yyyy/MM/dd - t') }}"
           },
           "matchingColumns": [
             "Fecha/Hora"
@@ -205,6 +233,26 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "PRIMER EMAIL",
+              "displayName": "PRIMER EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RESERVA EN CALENDLY",
+              "displayName": "RESERVA EN CALENDLY",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -226,9 +274,134 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        544,
+        240
+      ],
+      "id": "1cf4ee23-498c-495f-bcd0-b28ad1d01df0",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        896,
+        240
+      ],
+      "id": "c1cce78c-ce43-4997-a76d-d44d8c12e7d4",
+      "name": "Send a message",
+      "webhookId": "9a1ae5c4-1fa6-4c44-8a58-7534edefe54a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        240
+      ],
+      "id": "9c125d69-0cbd-4428-8f09-c7cb10a33adc",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1jKA8D3rp2aPxubdrlLpvprhpd6iaY73bc2W3RWXYlw4",
+          "mode": "list",
+          "cachedResultName": "Info Forms Pagina Web",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jKA8D3rp2aPxubdrlLpvprhpd6iaY73bc2W3RWXYlw4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jKA8D3rp2aPxubdrlLpvprhpd6iaY73bc2W3RWXYlw4/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "PRIMER EMAIL"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        240
+      ],
+      "id": "758c666e-ed58-4e43-9ffe-45e1b0c2b6a6",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Append or update row in sheet": [
+      {
+        "json": {
+          "Nombre": "Carlos Escarcena Sospedra",
+          "Email": "carlos@helioncoreai.com",
+          "Empresa": "EMPRESA DE PRUEBA",
+          "Teléfono": "'+34 000000000",
+          "Mensaje": "Eato es una prueba",
+          "Fecha/Hora": "2025/12/07 - 6:33 PM",
+          "PRIMER EMAIL": "2025/12/07 - 7:33PM"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1",
     "timezone": "Australia/Perth",
@@ -255,6 +428,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-07T19:08:51.000Z",
-  "versionId": "9ccf2adb-e4ba-434e-bab1-53694f03776b"
+  "updatedAt": "2025-12-08T20:07:53.000Z",
+  "versionId": "cff99e1f-2f52-45da-8389-bf80f6f6c145"
 }
