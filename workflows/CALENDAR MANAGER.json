@@ -1,0 +1,566 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CREAR": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ELIMINAR": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "COGER": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "COGER VARIOS": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTUALIZAR": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get availability in a calendar": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Delete an event",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update an event",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get availability in a calendar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Create an event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T07:15:17.212Z",
+  "id": "ZnZIwAxaXNYHGlP4",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "CALENDAR MANAGER",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "information"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        -198.5
+      ],
+      "id": "c8435271-2997-458c-a18c-1bd7547081a6",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        472,
+        -102.5
+      ],
+      "id": "51427c10-862e-4c48-bfac-3e0d72ad7fcc",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-lite-001",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        224,
+        121.5
+      ],
+      "id": "81583e0e-57b1-4211-9613-abe1bbbf23fe",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        352,
+        121.5
+      ],
+      "id": "696e2a7e-d6b3-4079-905c-e9a99fa5711c",
+      "name": "CREAR",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "eventId": ".",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        480,
+        121.5
+      ],
+      "id": "8722f278-c93a-4d6d-9577-a6343ab4b1a6",
+      "name": "ELIMINAR",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "eventId": ".",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        121.5
+      ],
+      "id": "8fc1ab8a-96d9-4aa7-a973-e01c7c947ff4",
+      "name": "COGER",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        736,
+        121.5
+      ],
+      "id": "2c69d0c8-f005-4d22-bd2f-231ccf1f92ac",
+      "name": "COGER VARIOS",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "eventId": ".",
+        "updateFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        864,
+        121.5
+      ],
+      "id": "22307cae-5c98-4b37-b418-99ce78919334",
+      "name": "ACTUALIZAR",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "calendar",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        -162.5
+      ],
+      "id": "44e077b4-d7bc-4a5c-94e3-e882fede67eb",
+      "name": "Get availability in a calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "60047b5d-b79c-4a59-b134-74dd50381f72"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "8e81026b-39c4-4c90-86cf-b1a907f92dd4",
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "85ef52eb-ef1d-46bb-bcab-005364de9ed2",
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        536,
+        -430.5
+      ],
+      "id": "21d57532-a2b3-4718-9217-f1e73b60ee47",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "eventId": ".",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        -546.5
+      ],
+      "id": "8d728aa5-16d4-44bb-b1ba-c29c3f0a6853",
+      "name": "Delete an event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "eventId": ".",
+        "updateFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        -354.5
+      ],
+      "id": "90dbcc1f-f0f4-4691-8acd-ede824856558",
+      "name": "Update an event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "f690cd0f-58c8-4c89-8593-4b2d365af2a2",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1296,
+        -162.5
+      ],
+      "id": "f839d862-ff8f-4a29-8776-02475b283997",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
+        },
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        1520,
+        -162.5
+      ],
+      "id": "d1077b71-b3a8-473b-a7d4-bdc3c59ebacd",
+      "name": "Create an event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T07:15:17.216Z",
+      "createdAt": "2025-12-11T07:15:17.216Z",
+      "role": "workflow:owner",
+      "workflowId": "ZnZIwAxaXNYHGlP4",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-11T07:46:27.501Z",
+  "versionId": "7279d837-3938-4497-9b36-3f119da5ca70"
+}
