@@ -1,0 +1,332 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "MIRAR EVENTO": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTUALIZAR EVENTO": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECKEO DISPONIBILIDAD": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AGENDAR EL EVENTO": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ELIMINAR EL EVENTO": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BUSCAR CLIENTE": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CRM CLIENTE NUEVO": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T08:12:38.681Z",
+  "id": "cf6i7kJ2PeeZ1AUY",
+  "isArchived": false,
+  "meta": null,
+  "name": "VAPI SERVIDOR MCP",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "a3239194-4b2f-41fe-92c5-e0c261464c35"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        320,
+        0
+      ],
+      "id": "1c5d032d-2f38-409a-b196-7dac023726e4",
+      "name": "MCP Server Trigger",
+      "webhookId": "a3239194-4b2f-41fe-92c5-e0c261464c35"
+    },
+    {
+      "parameters": {
+        "description": "Llama esta herramienta para buscar un evento.",
+        "workflowId": {
+          "__rl": true,
+          "value": "kuRPALCtLeQXZZaV",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/kuRPALCtLeQXZZaV",
+          "cachedResultName": "MIRAR EVENTO"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        128,
+        224
+      ],
+      "id": "c4411ab5-8dd2-4922-b5ef-33b8d6528faf",
+      "name": "MIRAR EVENTO"
+    },
+    {
+      "parameters": {
+        "description": "Llama esta herramienta para actualizar un evento.",
+        "workflowId": {
+          "__rl": true,
+          "value": "J6aykVEsERZgqsem",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/J6aykVEsERZgqsem",
+          "cachedResultName": "ACTUALIZAR EVENTO"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        256,
+        224
+      ],
+      "id": "48bb237a-2699-48c8-8ec0-e2c1c90ae83f",
+      "name": "ACTUALIZAR EVENTO"
+    },
+    {
+      "parameters": {
+        "description": "Llama esta herramienta para checkear la disponibilidad.",
+        "workflowId": {
+          "__rl": true,
+          "value": "BtXRbnqmyL0oDa2o",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/BtXRbnqmyL0oDa2o",
+          "cachedResultName": "CHECKEO DISPONIBILIDAD"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        384,
+        224
+      ],
+      "id": "c3a1cd68-c241-4b24-86e2-c2e4bfde095d",
+      "name": "CHECKEO DISPONIBILIDAD"
+    },
+    {
+      "parameters": {
+        "description": "Llama esta herramienta para agendar el evento. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "L0d9mpgl47vOaRp9",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/L0d9mpgl47vOaRp9",
+          "cachedResultName": "AGENDAR EVENTO"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        224
+      ],
+      "id": "56b3b512-7ee3-4aaa-b851-9fc47c0f5085",
+      "name": "AGENDAR EL EVENTO"
+    },
+    {
+      "parameters": {
+        "description": "LLama esta herramienta para eliminar un evento.",
+        "workflowId": {
+          "__rl": true,
+          "value": "DwXrESE3AnPfZfGB",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/DwXrESE3AnPfZfGB",
+          "cachedResultName": "ELIMINAR EVENTO"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        224
+      ],
+      "id": "be920ed9-597f-43f8-bcfe-cd1f51e27038",
+      "name": "ELIMINAR EL EVENTO"
+    },
+    {
+      "parameters": {
+        "description": "Llama esta herramienta para buscar un email en el CRM.",
+        "workflowId": {
+          "__rl": true,
+          "value": "RoRTwgENIjerM6zd",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/RoRTwgENIjerM6zd",
+          "cachedResultName": "BUSCAR CLIENTE"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "email"
+          ],
+          "schema": [
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        768,
+        224
+      ],
+      "id": "5d8260a9-df20-4fc9-a6b1-f41c3431c7df",
+      "name": "BUSCAR CLIENTE"
+    },
+    {
+      "parameters": {
+        "description": "Llama esta herramienta para crear una nueva entrada para un cliente nuevo en el CRM.",
+        "workflowId": {
+          "__rl": true,
+          "value": "UhyFe7OagJo8I8bQ",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/UhyFe7OagJo8I8bQ",
+          "cachedResultName": "CLIENTE NUEVO CRM"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        640,
+        224
+      ],
+      "id": "37856774-f799-4438-abaa-1700f5bd4abd",
+      "name": "CRM CLIENTE NUEVO"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T08:12:38.686Z",
+      "createdAt": "2025-12-11T08:12:38.686Z",
+      "role": "workflow:owner",
+      "workflowId": "cf6i7kJ2PeeZ1AUY",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-11T11:00:45.095Z",
+  "versionId": "484727aa-9fbf-45ee-97d9-e219952485d8"
+}
