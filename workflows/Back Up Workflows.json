@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-01T13:50:14.823Z",
-    "createdAt": "2025-12-01T13:50:14.823Z",
-    "versionId": "6ab67513-b6da-43fe-a9fb-bcccf7ae88e8",
+    "updatedAt": "2025-12-11T12:29:28.053Z",
+    "createdAt": "2025-12-11T12:29:28.053Z",
+    "versionId": "5466a09e-71ab-46a7-9bb4-8877cd714094",
     "workflowId": "yU6WDslddBKEM8j4",
     "nodes": [
       {
@@ -103,7 +103,7 @@
         "typeVersion": 3.2,
         "position": [
           1120,
-          520
+          528
         ],
         "id": "f69bb5e7-2881-44bb-babb-1fac6addb3b4",
         "name": "Merge"
@@ -194,7 +194,7 @@
         "typeVersion": 3.3,
         "position": [
           1568,
-          504
+          512
         ],
         "id": "e15c6d90-b4da-4def-8d08-fc4611b0d749",
         "name": "Switch"
@@ -253,7 +253,7 @@
         "typeVersion": 1.1,
         "position": [
           2016,
-          952
+          960
         ],
         "id": "0925d2df-e9d1-43e5-a0a2-6758dc6ee872",
         "name": "Create a file",
@@ -273,7 +273,7 @@
         "typeVersion": 2,
         "position": [
           1344,
-          520
+          528
         ],
         "id": "f62253e8-02b5-4252-98a8-93bf5e133d50",
         "name": "isDiffOrNew"
@@ -350,7 +350,7 @@
         "type": "n8n-nodes-base.github",
         "position": [
           2016,
-          760
+          768
         ],
         "typeVersion": 1,
         "webhookId": "b86e690b-299a-4457-ad39-8aa578140e50",
@@ -595,11 +595,11 @@
         ]
       }
     },
-    "authors": "system migration",
+    "authors": "Carlos Escarcena",
     "name": null,
     "description": null
   },
-  "activeVersionId": "6ab67513-b6da-43fe-a9fb-bcccf7ae88e8",
+  "activeVersionId": "5466a09e-71ab-46a7-9bb4-8877cd714094",
   "connections": {
     "Schedule Trigger": {
       "main": [
@@ -903,7 +903,7 @@
       "typeVersion": 3.2,
       "position": [
         1120,
-        520
+        528
       ],
       "id": "f69bb5e7-2881-44bb-babb-1fac6addb3b4",
       "name": "Merge"
@@ -994,7 +994,7 @@
       "typeVersion": 3.3,
       "position": [
         1568,
-        504
+        512
       ],
       "id": "e15c6d90-b4da-4def-8d08-fc4611b0d749",
       "name": "Switch"
@@ -1053,7 +1053,7 @@
       "typeVersion": 1.1,
       "position": [
         2016,
-        952
+        960
       ],
       "id": "0925d2df-e9d1-43e5-a0a2-6758dc6ee872",
       "name": "Create a file",
@@ -1073,7 +1073,7 @@
       "typeVersion": 2,
       "position": [
         1344,
-        520
+        528
       ],
       "id": "f62253e8-02b5-4252-98a8-93bf5e133d50",
       "name": "isDiffOrNew"
@@ -1150,7 +1150,7 @@
       "type": "n8n-nodes-base.github",
       "position": [
         2016,
-        760
+        768
       ],
       "typeVersion": 1,
       "webhookId": "b86e690b-299a-4457-ad39-8aa578140e50",
@@ -1222,6 +1222,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-29T14:24:42.000Z",
-  "versionId": "6ab67513-b6da-43fe-a9fb-bcccf7ae88e8"
+  "updatedAt": "2025-12-11T12:29:28.052Z",
+  "versionId": "5466a09e-71ab-46a7-9bb4-8877cd714094"
 }
