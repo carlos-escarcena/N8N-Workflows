@@ -10,6 +10,11 @@
             "node": "Send a text message",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -26,7 +31,7 @@
     {
       "parameters": {
         "chatId": "=6834483413",
-        "text": "=Error: Ha habido un error en el nodo \"{{ $json.execution.lastNodeExecuted }}\" del workflow \"{{ $json.workflow.name }}\".",
+        "text": "=Workflow Error: {{ $json.workflow.name }}\n\n{{ $json.execution.error.node.name }} falló a las {{  $now.format(\"HH:mm\") }}\n\nEl mensaje del error ha sido: {{ $json.execution.error.message }}\n\nEsta ha sido la ejecución: {{ $json.execution.url }}",
         "additionalFields": {
           "appendAttribution": false
         }
@@ -34,8 +39,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        320,
-        0
+        352,
+        -176
       ],
       "id": "edc84db4-2581-4e77-b1c3-d9ae1402ba2e",
       "name": "Send a text message",
@@ -57,11 +62,109 @@
       ],
       "id": "584d75de-b12b-4df9-b5e9-8383cfc8b0fe",
       "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1f2lAV2AAaUdMGwLOQqne356wjUu1WpCDQ8X0i9NoPhA",
+          "mode": "list",
+          "cachedResultName": "REGISTRO DE ERRORES",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1f2lAV2AAaUdMGwLOQqne356wjUu1WpCDQ8X0i9NoPhA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1f2lAV2AAaUdMGwLOQqne356wjUu1WpCDQ8X0i9NoPhA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "FECHA Y HORA": "={{ $now.format(\"yyyy/MM/dd HH:mm\")}}",
+            "WORKFLOW": "={{ $json.workflow.name }}",
+            "URL": "={{ $json.execution.url }}",
+            "NODO": "={{ $json.execution.error.node.name }}",
+            "MENSAJE DEL ERROR": "={{ $json.execution.error.message }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "FECHA Y HORA",
+              "displayName": "FECHA Y HORA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "WORKFLOW",
+              "displayName": "WORKFLOW",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NODO",
+              "displayName": "NODO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MENSAJE DEL ERROR",
+              "displayName": "MENSAJE DEL ERROR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        352,
+        144
+      ],
+      "id": "f90643ca-ed62-44ca-bba7-abe55bf8cbc9",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
   "shared": [
     {
@@ -75,6 +178,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-29T09:58:51.000Z",
-  "versionId": "114dd5c0-d544-48df-98d1-fdd4eb86be39"
+  "updatedAt": "2025-12-11T12:00:33.068Z",
+  "versionId": "cb9cfd77-c047-4c30-8d23-028cd7c78bef"
 }
