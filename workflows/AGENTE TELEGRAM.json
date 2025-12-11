@@ -1,0 +1,768 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Analyze an image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DESCARGA AUDIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DESCARGA AUDIO": {
+      "main": [
+        [
+          {
+            "node": "Transcribe a recording",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe a recording": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze an image": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Call 'AUTOGUARDADO DE FACTURAS'1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'AUTOGUARDADO DE FACTURAS'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'CALENDAR MANAGER'": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T06:04:49.131Z",
+  "id": "xm5uJ4ecF8E81pdn",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "AGENTE TELEGRAM",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {
+          "download": true
+        }
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        452
+      ],
+      "id": "f2e5c477-e9a9-4d1f-bcd2-07e7e8b32f0a",
+      "name": "Telegram Trigger",
+      "webhookId": "352a3427-a383-48dc-a784-f4ceb6624b5d",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.photo[3] }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    },
+                    "id": "e740197c-57fe-4fd2-94fc-bc3642f9ac30"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "FOTO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "0216515e-1c1d-4215-a337-3e872c794b9a",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "audio/ogg",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TEXTO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "32b207d7-015a-45a2-8ff0-b7e27af1e3c2",
+                    "leftValue": "={{ $json.message.voice.mime_type }}",
+                    "rightValue": "audio/ogg",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "AUDIO"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        144,
+        436
+      ],
+      "id": "02a49c4e-47a1-4d66-b275-16a6d9838f01",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Actúa como un algoritmo de extracción de datos experto, preciso y eficiente. Tu única tarea es analizar la imagen proporcionada y extraer toda la información que se ajuste estrictamente a las siguientes categorías y formato.\n\n**DIRECTRICES DE EXTRACCIÓN:**\n\n1.  **Enfoque de la Tarea:** Extrae únicamente los valores solicitados que estén presentes en el contenido visual de la imagen.\n2.  **Omisión:** Si el valor de un atributo solicitado no se encuentra claramente en la imagen, **debes omitir completamente ese atributo** en el resultado final. No inventes, infieras ni uses valores predeterminados.\n3.  **Tono:** El resultado debe ser puramente la información extraída, sin explicaciones, preámbulos ni texto adicional.\n4.  **Formato de Salida:** Debes adherirte rigurosamente al siguiente formato de salida:\n\n**[formato]**\n\n**(Si en el formato no pone nada simplemente devuelve el texto que se vea en la imagen lo mas parecido estructuralmente a como se ve en la imagen.)**",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        368,
+        136
+      ],
+      "id": "f875e881-9874-42cf-bb60-1c320cd1ecd1",
+      "name": "Analyze an image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.0-flash-lite-001",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.0-flash-lite-001"
+        },
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        656,
+        596
+      ],
+      "id": "7ebd8ee0-0bfe-4b1a-9bc6-59bbd257a6b3",
+      "name": "Transcribe a recording",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        368,
+        596
+      ],
+      "id": "5c86dcae-e74a-4237-a5e9-68f2dc4c4bdf",
+      "name": "DESCARGA AUDIO",
+      "webhookId": "39f45275-0578-41f0-aef5-ce4d57750712",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Ayudame con la siguiente tarea:\n\n{{ $json.content.parts[0].text }}",
+        "options": {
+          "systemMessage": "Eres un asistente que me ayuda con todas mis tareas. \n\nTu labor es asegurarte de que todo lo que te pido sale como es debido.\n\nSi algo no sale como yo espero necesito que me dejes saber cual es el problema con lenguage natural, dandome toda la información del problema.\n\nPara acceder a la información de contactos deberás usar la herramienta de google sheets.\n\nEn el caso de que te pida que hagas algo con una reunión deberás acceder a la herramienta de google calendar.\nEl input para esa herramienta debe tener el nombre de la persona, el email, el día, la hora de inicio, la hora de fin.\nTodo en un json ordenado con el nombre de las variables igual que te he dicho ahora.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        104,
+        1028
+      ],
+      "id": "fc8e76bc-5899-440e-ac00-20cc5b70a7b1",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "prueba"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        48,
+        1252
+      ],
+      "id": "6c5e4e68-fa60-4c38-ba94-2eca6c087207",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1mPh8JaUgtxTM3mCyRlutGhgFxL_Hfdzc41SSs6tsFSU",
+          "mode": "list",
+          "cachedResultName": "PRUEBA AGENTE N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mPh8JaUgtxTM3mCyRlutGhgFxL_Hfdzc41SSs6tsFSU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mPh8JaUgtxTM3mCyRlutGhgFxL_Hfdzc41SSs6tsFSU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        176,
+        1252
+      ],
+      "id": "e0f03c26-a3ae-43b7-819b-88a1ac93dee0",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6834483413",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        800,
+        1028
+      ],
+      "id": "10db4b64-84fc-4f7d-a605-c8096f1b3782",
+      "name": "Send a text message",
+      "webhookId": "38d9d210-f887-4901-9773-1eff4401b405",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.content.parts[0].text }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "Factura de venta",
+              "description": "El texto tiene los datos de una factura de venta de un producto/servicio"
+            },
+            {
+              "category": "Factura de compra",
+              "description": "El texto tiene los datos de una factura de compra de un producto/servicio"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        592,
+        136
+      ],
+      "id": "98e86e48-6d73-404c-9f57-718f761faef4",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        664,
+        360
+      ],
+      "id": "f229c5a6-a00e-4261-adb9-845b33f722c6",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zy74ypey7FianT4f",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zy74ypey7FianT4f",
+          "cachedResultName": "AUTOGUARDADO DE FACTURAS"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "message": "={{ $json.content.parts[0].text }}"
+          },
+          "matchingColumns": [
+            "message"
+          ],
+          "schema": [
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        944,
+        232
+      ],
+      "id": "c95adef8-3a86-4bdc-a225-fa4f8e27e8cd",
+      "name": "Call 'AUTOGUARDADO DE FACTURAS'"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zy74ypey7FianT4f",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zy74ypey7FianT4f",
+          "cachedResultName": "AUTOGUARDADO DE FACTURAS"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "message": "={{ $json.content.parts[0].text }}"
+          },
+          "matchingColumns": [
+            "message"
+          ],
+          "schema": [
+            {
+              "id": "message",
+              "displayName": "message",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        944,
+        40
+      ],
+      "id": "5d44e661-434e-4640-a16f-61243a7b7a9c",
+      "name": "Call 'AUTOGUARDADO DE FACTURAS'1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        384,
+        1460
+      ],
+      "id": "8503f79a-53e3-46bf-bce0-33ac7757f414",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Almacena datos sobre clientes",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "prueba-n8n-udia",
+          "mode": "list",
+          "cachedResultName": "prueba-n8n-udia"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        304,
+        1252
+      ],
+      "id": "c62dfcb4-e7f3-4ae3-b791-95ace4355326",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "hKEjnLBSlIPm7yEr",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "llama a esta herramienta cuando tengas que actualizar, eliminar o crear un evento en google calendar. \n\nEl input tiene que ser un código json que incluya el nombre de la persona con la que se va a hacer la reunión o evento, el email de esa persona, la hora a la que empieza, la hora a la que acaba y el dia de la reunión o evento.",
+        "workflowId": {
+          "__rl": true,
+          "value": "ZnZIwAxaXNYHGlP4",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/ZnZIwAxaXNYHGlP4",
+          "cachedResultName": "CALENDAR MANAGER"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "information"
+          ],
+          "schema": [
+            {
+              "id": "information",
+              "displayName": "information",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        1252
+      ],
+      "id": "f7f867e4-9e26-4179-82ed-bc76e7188349",
+      "name": "Call 'CALENDAR MANAGER'"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        1252
+      ],
+      "id": "fa496e50-4e01-4820-96d8-5a0e818f1228",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://proyecto-de-prueba-n8n.tlqyj4.easypanel.host/mcp-test/57f117a0-83c2-4041-8553-46fc0c7adf1e",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpBearerAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        944,
+        524
+      ],
+      "id": "80a2fb6d-466a-4acc-bd26-abeff347c4e8",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "AH1M6vB9KvXEffBf",
+          "name": "MCP PRUEBA"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "57f117a0-83c2-4041-8553-46fc0c7adf1e"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        -192
+      ],
+      "id": "390db71a-c592-40ab-84ca-4c1d7dfa8e95",
+      "name": "MCP Server Trigger",
+      "webhookId": "57f117a0-83c2-4041-8553-46fc0c7adf1e"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T06:04:49.142Z",
+      "createdAt": "2025-12-11T06:04:49.142Z",
+      "role": "workflow:owner",
+      "workflowId": "xm5uJ4ecF8E81pdn",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-11T08:12:06.667Z",
+  "versionId": "43c0e02e-37ac-4f9e-b5de-c9d019ccee65"
+}
