@@ -1,0 +1,632 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "RECOGER DATOS DE ACTIVOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RECOGER DATOS DE ACTIVOS": {
+      "main": [
+        [
+          {
+            "node": "ACTIVOS LARGO PLAZO",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ACTIVOS CORTO PLAZO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EFECTIVO (CAJA Y BANCOS)": {
+      "main": [
+        [
+          {
+            "node": "RECOGER DATOS DE PASIVOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CUENTAS POR COBRAR": {
+      "main": [
+        [
+          {
+            "node": "RECOGER DATOS DE PASIVOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "INVENTARIO (SI APLICA": {
+      "main": [
+        [
+          {
+            "node": "RECOGER DATOS DE PASIVOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RECOGER DATOS DE PASIVOS": {
+      "main": [
+        [
+          {
+            "node": "PASIVOS CORTO PLAZO",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "PASIVOS LARGO PLAZO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PASIVOS CORTO PLAZO": {
+      "main": [
+        [
+          {
+            "node": "CUENTAS POR PAGAR A PROVEEDORES",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "DEUDA A CORTO PLAZO (<1AÑO)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IMPUESTOS POR PAGAR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTIVOS CORTO PLAZO": {
+      "main": [
+        [
+          {
+            "node": "EFECTIVO (CAJA Y BANCOS)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "CUENTAS POR COBRAR",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "INVENTARIO (SI APLICA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTIVOS LARGO PLAZO": {
+      "main": [
+        [
+          {
+            "node": "ACTIVOS FIJOS NETOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PASIVOS LARGO PLAZO": {
+      "main": [
+        [
+          {
+            "node": "DEUDA LARGO PLAZO (>1AÑO)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMPUESTOS POR PAGAR": {
+      "main": [
+        [
+          {
+            "node": "PATRIMONIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEUDA LARGO PLAZO (>1AÑO)": {
+      "main": [
+        [
+          {
+            "node": "PATRIMONIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEUDA A CORTO PLAZO (<1AÑO)": {
+      "main": [
+        [
+          {
+            "node": "PATRIMONIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CUENTAS POR PAGAR A PROVEEDORES": {
+      "main": [
+        [
+          {
+            "node": "PATRIMONIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PATRIMONIO": {
+      "main": [
+        [
+          {
+            "node": "UTILIDAD O PÉRDIDA NETA DEL PERIODO",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "UTILIDADES RETENIDAS (GANANCIAS HISTÓRICAS NO DISTRIBUIDAS)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "CAPITAL SOCIAL (APORTACION SOCIOS)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CAPITAL SOCIAL (APORTACION SOCIOS)": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UTILIDADES RETENIDAS (GANANCIAS HISTÓRICAS NO DISTRIBUIDAS)": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UTILIDAD O PÉRDIDA NETA DEL PERIODO": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTIVOS FIJOS NETOS": {
+      "main": [
+        [
+          {
+            "node": "RECOGER DATOS DE PASIVOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-10T09:02:13.947Z",
+  "id": "tcRmOREkBEuUBd7O",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "GENERACIÓN REPORTE CONTABILIDAD MENSUAL",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        128
+      ],
+      "id": "85657026-cc21-408c-a27d-92ca685c0361",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY",
+          "mode": "list",
+          "cachedResultName": "PRESUPUESTO BÁSICO 2025-2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 744064419,
+          "mode": "list",
+          "cachedResultName": "BALANCE GENERAL",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit#gid=744064419"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "FECHA/HORA",
+              "displayName": "FECHA/HORA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ACTIVOS",
+              "displayName": "ACTIVOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "PASIVOS",
+              "displayName": "PASIVOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "PATRIMONIO",
+              "displayName": "PATRIMONIO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "OTROS  DATOS",
+              "displayName": "OTROS  DATOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2016,
+        -64
+      ],
+      "id": "7d3dc0df-4dd0-4c2f-84f2-fc4541045787",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        224,
+        128
+      ],
+      "id": "a79f9a53-b455-4d6d-95ee-97482f7a911c",
+      "name": "RECOGER DATOS DE ACTIVOS"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        672,
+        -352
+      ],
+      "id": "d8177a81-f22b-4833-a1dd-77695065afcc",
+      "name": "EFECTIVO (CAJA Y BANCOS)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        672,
+        -160
+      ],
+      "id": "155d05e5-bc8a-41c0-90c0-3921239e8ed8",
+      "name": "CUENTAS POR COBRAR"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        672,
+        32
+      ],
+      "id": "0881e937-9470-4fe8-94e0-bc4dab733d9d",
+      "name": "INVENTARIO (SI APLICA"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        896,
+        32
+      ],
+      "id": "6a5a1d9d-c33a-4221-8a34-51937ce01b15",
+      "name": "RECOGER DATOS DE PASIVOS"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -160
+      ],
+      "id": "779fb6d6-190e-4520-bf4d-c92509a0c643",
+      "name": "PASIVOS CORTO PLAZO"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        448,
+        -64
+      ],
+      "id": "5d23c1db-4568-493f-9979-1ae9f8965b81",
+      "name": "ACTIVOS CORTO PLAZO"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        448,
+        224
+      ],
+      "id": "c0e7c0d0-1ddb-4f29-81f6-263bdc8350cb",
+      "name": "ACTIVOS LARGO PLAZO"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        224
+      ],
+      "id": "006dc7ac-771e-4ffd-9fb5-8603fc4b038a",
+      "name": "PASIVOS LARGO PLAZO"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        -352
+      ],
+      "id": "89089f44-5de4-4c9a-a236-7bd33531ddca",
+      "name": "CUENTAS POR PAGAR A PROVEEDORES"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        -160
+      ],
+      "id": "f6f4d77f-237f-40f9-9535-7874f8c4d3b6",
+      "name": "DEUDA A CORTO PLAZO (<1AÑO)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        32
+      ],
+      "id": "328a43fd-ec8b-4ab8-9735-d4a26c3de572",
+      "name": "IMPUESTOS POR PAGAR"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        224
+      ],
+      "id": "c8fc3635-1165-489c-bfe6-159054a380ed",
+      "name": "DEUDA LARGO PLAZO (>1AÑO)"
+    },
+    {
+      "parameters": {
+        "content": "## RECOGIDA DE DATOS DE ACTIVOS\n",
+        "height": 816,
+        "width": 656
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        176,
+        -432
+      ],
+      "typeVersion": 1,
+      "id": "c13f4f34-b6c9-4085-80dd-15dcf96bfc2d",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## RECOGIDA DE DATOS DE PASIVOS\n\n",
+        "height": 816,
+        "width": 640,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        848,
+        -432
+      ],
+      "typeVersion": 1,
+      "id": "397bd8f4-8fd1-4900-a63f-445acea80e40",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        -64
+      ],
+      "id": "fce3f5f6-3ecf-41ad-b7e9-7edbe3e00f55",
+      "name": "PATRIMONIO"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        -256
+      ],
+      "id": "cd8b2228-99ba-4b96-a81f-2b235127d2fc",
+      "name": "CAPITAL SOCIAL (APORTACION SOCIOS)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        -64
+      ],
+      "id": "0e55ed43-5c45-451f-917c-fbd463de9317",
+      "name": "UTILIDADES RETENIDAS (GANANCIAS HISTÓRICAS NO DISTRIBUIDAS)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        128
+      ],
+      "id": "7f46bba3-2632-4ce6-91b3-cc2e0a007696",
+      "name": "UTILIDAD O PÉRDIDA NETA DEL PERIODO"
+    },
+    {
+      "parameters": {
+        "content": "## RECOGIDA DE DATOS DE PATRIMONIO\n",
+        "height": 816,
+        "width": 432
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1504,
+        -432
+      ],
+      "typeVersion": 1,
+      "id": "abd7cf11-68fb-422b-bc36-516e30aac6f4",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        672,
+        224
+      ],
+      "id": "e6e8da76-13d4-46bb-9f6d-380365f8b96b",
+      "name": "ACTIVOS FIJOS NETOS"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-10T09:02:13.952Z",
+      "createdAt": "2025-12-10T09:02:13.952Z",
+      "role": "workflow:owner",
+      "workflowId": "tcRmOREkBEuUBd7O",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-10T09:20:46.000Z",
+  "versionId": "45645c14-3b8b-4722-aa4b-f74a365a56c0"
+}
