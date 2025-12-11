@@ -1,0 +1,903 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "VARIABLES": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VARIABLES1": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AVISO DE IMPAGO": {
+      "main": [
+        [
+          {
+            "node": "VARIABLES",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AVISO SUSPENSIÓN SERVICIO": {
+      "main": [
+        [
+          {
+            "node": "VARIABLES1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many workflows": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Deactivate a workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deactivate a workflow": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VARIABLES2": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [
+          {
+            "node": "Limit2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AVISO MAÑANA PAGO": {
+      "main": [
+        [
+          {
+            "node": "VARIABLES2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-07T15:20:59.451Z",
+  "id": "NLFYarKTlmf8B5j1",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "ENVIO DE EMAILS A CLIENTES PAGOS MENSUALES",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY",
+          "mode": "list",
+          "cachedResultName": "PRESUPUESTO BÁSICO 2025-2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "=PRESUPUESTO {{ $json['año'] }}"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "={{ $json.mes }}",
+              "lookupValue": "false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        -48
+      ],
+      "id": "f26c7f30-a56e-4de3-aa4d-1750f39ae5c9",
+      "name": "Get row(s) in sheet",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7d6ff967-3617-41fa-a753-13b2cf111484",
+              "name": "mes",
+              "value": "={{ $now.format('LLLL').toUpperCase()}}",
+              "type": "string"
+            },
+            {
+              "id": "ffb09d6c-10a8-418b-85e3-2b49188ca1d3",
+              "name": "año",
+              "value": "={{ $now.format('yyyy') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        -48
+      ],
+      "id": "f27a9649-ccfa-4052-afd1-f7684f924669",
+      "name": "VARIABLES"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "=CLIENTE, NOMBRE, EMAIL, SERVICIO, {{ $now.format('LLL').toUpperCase() }} CANTIDAD",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        672,
+        -48
+      ],
+      "id": "48ddd0aa-bbc0-428c-8358-19fa57e862d1",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        896,
+        -48
+      ],
+      "id": "393036ea-55ab-4095-8d09-242d610d5f34",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.EMAIL }}",
+        "subject": "=Recordatorio : Tu Servicio {{ $json.SERVICIO }} Está Pendiente de Pago ",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Recordatorio Amable</title>\n</head>\n<body>\n    <p>Hola <strong>{{ $json.NOMBRE }}</strong>,</p>\n\n    <p>Esperamos que estés teniendo un excelente día.</p>\n\n    <p>Te escribimos este breve y amable mensaje desde Helion Core como un <strong>recordatorio sobre tu mensualidad pendiente</strong>. Parece que el pago de tu servicio {{ $json.SERVICIO }} aún no se ha completado.</p>\n\n    <p>Sabemos que a veces estos detalles pueden pasar desapercibidos, por lo que queríamos asegurarnos de informarte a tiempo.</p>\n\n    <hr style=\"border: 0; height: 1px; background: #ddd;\">\n\n    <h3>⚠️ Aviso Importante sobre la Continuidad del Servicio</h3>\n\n    <p>Para evitar cualquier interrupción y asegurar que tu servicio {{ $json.SERVICIO }} continúe funcionando sin problemas, te pedimos que completes el pago <strong>antes de que finalice el día de hoy, {{ $now.format('dd/MM/yyyy') }}</strong>.</p>\n\n    <p>Si el pago no se procesa antes de la medianoche de hoy, nuestro sistema automáticamente suspenderá el servicio.</p>\n\n    <h3>✅ ¿Cómo realizar el pago?</h3>\n\n    <p>Puedes liquidar tu mensualidad de forma rápida y sencilla utilizando cualquiera de estas opciones:</p>\n    <ul>\n        <li><strong>Pagar Ahora (Recomendado):</strong> <a href=\"[Enlace a la Pasarela de Pago]\" style=\"color: #007bff; text-decoration: none;\">[Enlace a la Pasarela de Pago]</a></li>\n        <li><strong>Revisar Factura:</strong> <a href=\"[Enlace a tu Portal de Cliente/Factura]\" style=\"color: #007bff; text-decoration: none;\">[Enlace a tu Portal de Cliente/Factura]</a></li>\n        <li><strong>Monto Pendiente:</strong> {{ $json['DEC CANTIDAD'] }} euros</li>\n    </ul>\n\n    <p>Si ya realizaste el pago en las últimas horas, por favor, <strong>ignora este correo</strong>. ¡Agradecemos mucho tu puntualidad!</p>\n\n    <p>Si tienes alguna pregunta o necesitas asistencia, nuestro equipo de soporte está listo para ayudarte. No dudes en contactarnos directamente respondiendo a este correo o llamando al [Número de Teléfono de Soporte].</p>\n\n    <p>Gracias por ser un valioso miembro de la comunidad de Helion Core.</p>\n\n    <p style=\"margin-top: 30px;\">Atentamente,</p>\n    <p>El equipo de Helion Core<br>\n    <a href=\"www.helioncoreai.com\" style=\"color: #007bff; text-decoration: none;\">www.helioncoreai.com</a></p>\n\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        0
+      ],
+      "id": "791aca6f-ed34-49cc-a5bf-201b1d81a6f7",
+      "name": "Send a message",
+      "webhookId": "1a2bfd4d-cd2f-4c96-b306-2e6513fe6fa8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6834483413",
+        "text": "prueba finalizada",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1344,
+        -192
+      ],
+      "id": "2dbafcab-4a49-43ba-89b5-c19547c5617f",
+      "name": "Send a text message",
+      "webhookId": "d1245f49-5382-43f0-95c6-d5a4e9af0ff1",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -192
+      ],
+      "id": "b575f444-52b7-4d13-90c9-5d0a8b7630a1",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY",
+          "mode": "list",
+          "cachedResultName": "PRESUPUESTO BÁSICO 2025-2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=PRESUPUESTO {{ $json['año'] }}",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "={{ $json.mes }}",
+              "lookupValue": "false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        368
+      ],
+      "id": "db6814ab-8b93-4f37-9a6b-2b90e9225380",
+      "name": "Get row(s) in sheet1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7d6ff967-3617-41fa-a753-13b2cf111484",
+              "name": "mes",
+              "value": "={{ $now.format('LLLL').toUpperCase()}}",
+              "type": "string"
+            },
+            {
+              "id": "06e6ddc7-5b52-4a53-a005-62bba9427fa6",
+              "name": "año",
+              "value": "={{ $now.format('yyyy') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        368
+      ],
+      "id": "db6f754c-9a24-4965-95ab-2e3437b9269d",
+      "name": "VARIABLES1"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "=CLIENTE, NOMBRE, EMAIL, SERVICIO, {{ $now.format('LLL').toUpperCase() }} CANTIDAD",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        672,
+        368
+      ],
+      "id": "330aac64-ec84-4c3c-a94f-0e558d998a20",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        896,
+        368
+      ],
+      "id": "5eec6b17-de64-469c-b13a-4c89a0fb6aa5",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.EMAIL }}",
+        "subject": "=Aviso Importante: Tu Servicio {{ $json.SERVICIO }} ha sido Suspendido",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Actualización Importante sobre tu Servicio</title>\n</head>\n<body>\n    <p>Hola <strong>{{ $json.NOMBRE }}</strong>,</p>\n\n    <p>Esperamos que este mensaje te encuentre bien.</p>\n\n    <p>Te escribimos con respecto a tu servicio <strong>{{ $json.SERVICIO }}</strong>. Tras no registrar el pago correspondiente a la mensualidad de [Mes/Período] en la fecha límite, lamentamos informarte que <strong>tu servicio ha sido suspendido automáticamente por nuestro sistema</strong>.</p>\n\n    <p>Comprendemos que esto puede ser un inconveniente, y queremos asegurarte que <strong>reactivar tu servicio es un proceso rápido y sencillo</strong>.</p>\n\n    <hr style=\"border: 0; height: 1px; background: #FFC107;\">\n\n    <h3>🚀 Reactiva tu Servicio de Inmediato</h3>\n\n    <p>Para recuperar el acceso completo a tu servicio {{ $json.SERVICIO }} sin demoras, solo necesitas abonar el monto pendiente de <strong>{{ $json['DEC CANTIDAD'] }} euros</strong>.</p>\n\n    <p>Tan pronto como el pago sea procesado, nuestro sistema detectará la transacción y <strong>tu servicio se reactivará de forma inmediata (normalmente en menos de 5 minutos)</strong>, sin necesidad de que nos contactes.</p>\n\n    <h3>✅ Opciones de Pago</h3>\n\n    <p>Puedes completar tu pago a través de los siguientes enlaces:</p>\n    <ul>\n        <li><strong>Pagar Ahora y Reactivar:</strong> <a href=\"[Enlace a la Pasarela de Pago]\" style=\"color: #007bff; text-decoration: none;\">Acceder a la Pasarela de Pago</a></li>\n        <li><strong>Revisar Factura:</strong> <a href=\"[Enlace a tu Portal de Cliente/Factura]\" style=\"color: #007bff; text-decoration: none;\">Ir a mi Portal de Cliente</a></li>\n    </ul>\n\n    <p>Si consideras que esta suspensión es un error, o si necesitas un plazo adicional para realizar el pago, por favor, no dudes en contactar a nuestro equipo inmediatamente. Estamos aquí para ayudarte a encontrar una solución.</p>\n\n    <p>Gracias por tu pronta atención a este asunto. Esperamos verte disfrutando de tu servicio nuevamente muy pronto.</p>\n\n    <p style=\"margin-top: 30px;\">Atentamente,</p>\n    <p>El equipo de Helion Core<br>\n    <a href=\"www.helioncoreai.com\" style=\"color: #007bff; text-decoration: none;\">www.helioncoreai.com</a></p>\n\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        416
+      ],
+      "id": "7addae4e-6873-4176-892a-ea9744216c81",
+      "name": "Send a message1",
+      "webhookId": "1a2bfd4d-cd2f-4c96-b306-2e6513fe6fa8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6834483413",
+        "text": "prueba finalizada",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1344,
+        224
+      ],
+      "id": "123467c5-8983-47aa-965f-af9f334607e9",
+      "name": "Send a text message1",
+      "webhookId": "d1245f49-5382-43f0-95c6-d5a4e9af0ff1",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        224
+      ],
+      "id": "07b26271-8554-4380-aac2-66c15797e959",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "operation": "deactivate",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{ $('Loop Over Items1').item.json.CLIENTE }} - {{ $('Loop Over Items1').item.json.SERVICIO }}",
+          "mode": "id"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        448,
+        640
+      ],
+      "id": "cf17bac1-4467-4f63-8232-5a0752db40dc",
+      "name": "Deactivate a workflow",
+      "credentials": {
+        "n8nApi": {
+          "id": "vFzxSxyoIxlIFw7v",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "triggerAtDayOfMonth": 2,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        -48
+      ],
+      "id": "d8b3f613-9b16-4a54-ac55-e4396b121e57",
+      "name": "AVISO DE IMPAGO"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "triggerAtDayOfMonth": 3,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        368
+      ],
+      "id": "c896883b-b08a-40e8-9ad5-1bf43ecf5c84",
+      "name": "AVISO SUSPENSIÓN SERVICIO"
+    },
+    {
+      "parameters": {
+        "filters": {
+          "name": "={{ $json.CLIENTE }} - {{ $json.SERVICIO }}"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        0,
+        640
+      ],
+      "id": "2495714f-7f25-4724-b931-9c661ff2fac3",
+      "name": "Get many workflows",
+      "credentials": {
+        "n8nApi": {
+          "id": "vFzxSxyoIxlIFw7v",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        224,
+        640
+      ],
+      "id": "3690e1db-b54c-4322-9032-028d8f3fca2e",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY",
+          "mode": "list",
+          "cachedResultName": "PRESUPUESTO BÁSICO 2025-2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1hHEvfHALatN_41RC68cyNwqllI_YpVPee378caf5bEY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "=PRESUPUESTO {{ $json['año'] }}"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        -464
+      ],
+      "id": "7269ef43-3cad-4ff4-a86b-ef12f56799cd",
+      "name": "Get row(s) in sheet2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7d6ff967-3617-41fa-a753-13b2cf111484",
+              "name": "mes",
+              "value": "={{ $now.format('LLLL').toUpperCase()}}",
+              "type": "string"
+            },
+            {
+              "id": "ffb09d6c-10a8-418b-85e3-2b49188ca1d3",
+              "name": "año",
+              "value": "={{ $now.format('yyyy') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        -464
+      ],
+      "id": "64c09868-2fbe-4b53-b208-0291a4b2163f",
+      "name": "VARIABLES2"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "=CLIENTE, NOMBRE, EMAIL, SERVICIO, {{ $now.format('LLL').toUpperCase() }} CANTIDAD",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        672,
+        -464
+      ],
+      "id": "818de226-a6f4-48b9-a49d-86176ad65561",
+      "name": "Split Out2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        896,
+        -464
+      ],
+      "id": "b3edfea0-cf91-4ee5-9816-fcafe700f0ec",
+      "name": "Loop Over Items3"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.EMAIL }}",
+        "subject": "=Recordatorio : Tu Servicio {{ $json.SERVICIO }} Está Pendiente de Pago ",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Recordatorio Amable</title>\n</head>\n<body>\n    <p>Hola <strong>{{ $json.NOMBRE }}</strong>,</p>\n\n    <p>Esperamos que estés teniendo un excelente día.</p>\n\n    <p>Te escribimos este breve y amable mensaje desde Helion Core como un <strong>recordatorio sobre tu mensualidad pendiente</strong>. Parece que el pago de tu servicio {{ $json.SERVICIO }} aún no se ha completado.</p>\n\n    <p>Sabemos que a veces estos detalles pueden pasar desapercibidos, por lo que queríamos asegurarnos de informarte a tiempo.</p>\n\n    <hr style=\"border: 0; height: 1px; background: #ddd;\">\n\n    <h3>⚠️ Aviso Importante sobre la Continuidad del Servicio</h3>\n\n    <p>Para evitar cualquier interrupción y asegurar que tu servicio {{ $json.SERVICIO }} continúe funcionando sin problemas, te pedimos que completes el pago <strong>antes de que finalice el día de hoy, {{ $now.format('dd/MM/yyyy') }}</strong>.</p>\n\n    <p>Si el pago no se procesa antes de la medianoche de hoy, nuestro sistema automáticamente suspenderá el servicio.</p>\n\n    <h3>✅ ¿Cómo realizar el pago?</h3>\n\n    <p>Puedes liquidar tu mensualidad de forma rápida y sencilla utilizando cualquiera de estas opciones:</p>\n    <ul>\n        <li><strong>Pagar Ahora (Recomendado):</strong> <a href=\"[Enlace a la Pasarela de Pago]\" style=\"color: #007bff; text-decoration: none;\">[Enlace a la Pasarela de Pago]</a></li>\n        <li><strong>Revisar Factura:</strong> <a href=\"[Enlace a tu Portal de Cliente/Factura]\" style=\"color: #007bff; text-decoration: none;\">[Enlace a tu Portal de Cliente/Factura]</a></li>\n        <li><strong>Monto Pendiente:</strong> {{ $json['DEC CANTIDAD'] }} euros</li>\n    </ul>\n\n    <p>Si ya realizaste el pago en las últimas horas, por favor, <strong>ignora este correo</strong>. ¡Agradecemos mucho tu puntualidad!</p>\n\n    <p>Si tienes alguna pregunta o necesitas asistencia, nuestro equipo de soporte está listo para ayudarte. No dudes en contactarnos directamente respondiendo a este correo o llamando al [Número de Teléfono de Soporte].</p>\n\n    <p>Gracias por ser un valioso miembro de la comunidad de Helion Core.</p>\n\n    <p style=\"margin-top: 30px;\">Atentamente,</p>\n    <p>El equipo de Helion Core<br>\n    <a href=\"www.helioncoreai.com\" style=\"color: #007bff; text-decoration: none;\">www.helioncoreai.com</a></p>\n\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        -416
+      ],
+      "id": "49e78d29-bf6f-4d57-afd4-d764f92c486f",
+      "name": "Send a message2",
+      "webhookId": "1a2bfd4d-cd2f-4c96-b306-2e6513fe6fa8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6834483413",
+        "text": "prueba finalizada",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1344,
+        -608
+      ],
+      "id": "712c306b-f025-4721-961a-862510cbf6d1",
+      "name": "Send a text message2",
+      "webhookId": "d1245f49-5382-43f0-95c6-d5a4e9af0ff1",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -608
+      ],
+      "id": "1655226a-ee05-471b-9491-8d291aaa4e90",
+      "name": "Limit2"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "triggerAtDayOfMonth": "={{ $now.endOf('month').format('dd') }}",
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        -464
+      ],
+      "id": "fb95b33a-d477-4964-925c-4e8b5995e709",
+      "name": "AVISO MAÑANA PAGO"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-07T15:20:59.457Z",
+      "createdAt": "2025-12-07T15:20:59.457Z",
+      "role": "workflow:owner",
+      "workflowId": "NLFYarKTlmf8B5j1",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-10T08:16:00.000Z",
+  "versionId": "05f6065c-c248-4aa3-b802-b6fa0a993006"
+}
