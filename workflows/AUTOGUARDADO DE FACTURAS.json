@@ -3,82 +3,133 @@
   "activeVersion": null,
   "activeVersionId": null,
   "connections": {
-    "Telegram Trigger1": {
+    "FACTURA ENTRANTE": {
       "main": [
         [
           {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Get a file": {
-      "main": [
-        [
-          {
-            "node": "Analyze image",
+            "node": "DESCARGA IMAGEN",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Upload file": {
+    "DESCARGA IMAGEN": {
       "main": [
         [
           {
-            "node": "Append row in sheet",
+            "node": "EXTRACCIÓN DE TEXTO",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Append row in sheet": {
+    "EXTRACCIÓN DE TEXTO": {
+      "main": [
+        [
+          {
+            "node": "PARSEADO DE RESPUESTA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PARSEADO DE RESPUESTA": {
+      "main": [
+        [
+          {
+            "node": "ES UN INGRESO?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ES UN INGRESO?": {
+      "main": [
+        [
+          {
+            "node": "DESCARGA IMAGEN2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DESCARGA IMAGEN1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEPARACIÓN DE DATOS EGRESOS": {
+      "main": [
+        [
+          {
+            "node": "ACTUALIZAMOS EGRESOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEPARACIÓN DE DATOS INGRESOS": {
+      "main": [
+        [
+          {
+            "node": "ACTUALIZAMOS INGRESOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTUALIZAMOS INGRESOS": {
       "main": [
         []
       ]
     },
-    "Get a file1": {
+    "SUBIR ARCHIVO EGRESO": {
       "main": [
         [
           {
-            "node": "Upload file",
+            "node": "SEPARACIÓN DE DATOS EGRESOS",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Analyze image": {
+    "DESCARGA IMAGEN1": {
       "main": [
         [
           {
-            "node": "Get a file1",
+            "node": "SUBIR ARCHIVO EGRESO",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "When Executed by Another Workflow": {
+    "DESCARGA IMAGEN2": {
       "main": [
         [
           {
-            "node": "Merge",
+            "node": "SUBIR ARCHIVO INGRESO",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Merge": {
+    "SUBIR ARCHIVO INGRESO": {
       "main": [
         [
           {
-            "node": "Get a file",
+            "node": "SEPARACIÓN DE DATOS INGRESOS",
             "type": "main",
             "index": 0
           }
@@ -104,16 +155,16 @@
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1.2,
       "position": [
-        -112,
-        192
+        0,
+        0
       ],
-      "id": "e8b6ae6b-b940-437f-a189-32ebdc28d523",
-      "name": "Telegram Trigger1",
-      "webhookId": "21ca16b6-99a5-4cef-8228-e8fc01b12120",
+      "id": "b8fbd14a-715c-467e-be07-785dd1c1afdc",
+      "name": "FACTURA ENTRANTE",
+      "webhookId": "2619eaa8-05ef-4fde-a2ca-65a1b7eb2d48",
       "credentials": {
         "telegramApi": {
           "id": "siGay3O6aJkHIJfz",
-          "name": "Telegram account"
+          "name": "BOT DE PRUEBAS"
         }
       }
     },
@@ -126,53 +177,103 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        336,
-        96
+        224,
+        0
       ],
-      "id": "5ce524b0-4018-4a25-a03e-f16c073ddb2f",
-      "name": "Get a file",
-      "webhookId": "b4e08727-db6d-4dbd-9d7d-914f9a56739f",
+      "id": "37148e9e-6c3c-4146-a01e-8643c64b6d64",
+      "name": "DESCARGA IMAGEN",
+      "webhookId": "861b0844-02d2-41dc-9d94-e8354c6198b6",
       "credentials": {
         "telegramApi": {
           "id": "siGay3O6aJkHIJfz",
-          "name": "Telegram account"
+          "name": "BOT DE PRUEBAS"
         }
       }
     },
     {
       "parameters": {
-        "inputDataFieldName": "=data",
-        "name": "=FACTURA {{ $('Analyze image').item.json.candidates[0].content.parts[0].text.substring(0, 20) }} {{ $now.toISO() }}",
-        "driveId": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
           "__rl": true,
-          "value": "0APQLRfZjcjPJUk9PVA",
+          "value": "gpt-4o",
           "mode": "list",
-          "cachedResultName": "Helion Core",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/0APQLRfZjcjPJUk9PVA"
+          "cachedResultName": "GPT-4O"
         },
-        "folderId": {
-          "__rl": true,
-          "value": "1_P3-iyIruw_gO27YKu_NCMcf9i189liE",
-          "mode": "list",
-          "cachedResultName": "FACTURAS GASTOS",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1_P3-iyIruw_gO27YKu_NCMcf9i189liE"
+        "text": "### ROL\nEres un experto extrayendo texto de imágenes.\n\n### INSTRUCCIONES\nNecesito que cojas todo el texto de la imagen y me devuelvas la información formateada. El nombre de la variable será cada dato que te pida en mayusculas, es decir, si te pido la \"razón social (nombre)\" el nombre de la variable debe ser \"RAZÓN SOCIAL (NOMBRE)\". \n\n### FORMATO\nDato a sacar de la imagen//dato real\n\nNO PUEDEN HABER ESPACIOS O NINGÚN CARACTER EXTRA NI AL PRINCIPIO NI AL FINAL DE LAS VARIABLES O DE LOS DATOS REALES.\n\nEse es el formato y cada dato se divide con una linea nueva.\nSi un dato no eres capaz de sacarlo simplemente di \"DATO NO ENCONTRADO\"\nDebes devolver todas las variables que te pido aunque estén vacías.\n\nEn \"TIPO DE FACTURA\" debes simplemente poner \"INGRESO\" o \"EGRESO\" dependiendo de si la factura es de un pago de un cliente a nosotros o un gasto nuestro.\n\nSi el tipo de factura es un egreso devuelve los datos pedidos para los egresos.\nSi el tipo de factura es un ingreso devuelve los datos pedidos para los ingresos.\n\n### DATOS A DEVOLVER\n\nEgresos:\nTIPO DE FACTURA\nRAZÓN SOCIAL (NOMBRE)\t\nIDENTIFICACIÓN FISCAL\t\nDOMICILIO FISCAL\t\t\nNÚMERO DE FACTURA DEL PROVEEDOR\t\nFECHA DE EMISIÓN\t\nFECHA DE RECEPCIÓN/REGISTRO\t\nCONCEPTO DE BIEN/SERVICIO ADQUIRIDO\t\nIMPORTE TOTAL\t\nIMPORTE NETO\t\nIMPUESTOS\t\t\nNÚMERO DE ORDEN DE COMPRA (SI APLICA)\t\nFECHA DE PAGO\t\nCLAVE DE CENTRO DE COSTO (SI APLICA)\t\nMEDIO DE PAGO\t\nTIPO\n\nIngresos:\nTIPO DE FACTURA\nRAZÓN SOCIAL\t\nIDENTIFICACIÓN FISCAL\t\nDOMICILIO FISCAL\t\nCLAVE DE USO FISCAL (SI APLICA)\t\t\nNÚMERO DE LA FACTURA\t\nFECHA DE EMISIÓN\t\nCONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS\t\nCANTIDAD Y UNIDAD\t\nPRECIO UNITARIO\t\nIMPORTE NETO O SUBTOTAL\t\nTIPO IMPOSITIVO (IVA/IMPUESTOS)\t\nIMPORTE TOTAL\t\nMÉTODO DE PAGO\t\nCONDICIONES DE PAGO\n\n\n\n### IMPORTANTE\nNo incluyas ningún tipo de comillas ni back ticks ni nada por el estilo .\nSolo devuelve el contenido en el formato que te he pedido.\nSi no estás seguro de que valor asignar para cada variable simplemente dejala en blanco.\n\n\n",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "75d9a2ae-b586-4583-b0e0-d8e781367bcf",
+      "name": "EXTRACCIÓN DE TEXTO",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b2b5e4e7-c94f-4019-8993-335b8b549e2a",
+              "name": "variables",
+              "value": "={{ $json['0'].content[0].text.split(\"\\n\") }}",
+              "type": "array"
+            }
+          ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        1008,
-        96
+        672,
+        0
       ],
-      "id": "bfa9eca6-7953-4d25-af6f-b1a51e745be3",
-      "name": "Upload file",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "t9DR8YFZKECz0KPS",
-          "name": "Google Drive account"
-        }
-      }
+      "id": "b60492b5-0e4a-4d4a-bf01-4e6524da2f08",
+      "name": "PARSEADO DE RESPUESTA"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "42c8a02c-0aca-4daf-94d0-04616026242f",
+              "leftValue": "={{ $json.variables[0] }}",
+              "rightValue": "TIPO DE FACTURA//INGRESO",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        896,
+        0
+      ],
+      "id": "5031b600-f0be-432f-9f37-e6f345b1ad40",
+      "name": "ES UN INGRESO?"
     },
     {
       "parameters": {
@@ -186,43 +287,198 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "gid=0",
+          "value": 401596887,
           "mode": "list",
-          "cachedResultName": "Hoja 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=0"
+          "cachedResultName": "FACTURA EGRESOS 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=401596887"
         },
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "ACCESO A FACTURA ": "={{ $json.webViewLink }}",
-            "DATOS DE LA FACTURA": "={{ $('Analyze image').item.json.candidates[0].content.parts[0].text }}",
-            "FECHA": "={{ $today.format('yyyy-MM-dd') }}"
+            "RAZÓN SOCIAL (NOMBRE)": "={{ $json['RAZÓN SOCIAL (NOMBRE)'] }}",
+            "IDENTIFICACIÓN FISCAL": "={{ $json['IDENTIFICACIÓN FISCAL'] }}",
+            "DOMICILIO FISCAL": "={{ $json['DOMICILIO FISCAL'] }}",
+            "NÚMERO DE FACTURA DEL PROVEEDOR": "={{ $json['NÚMERO DE FACTURA DEL PROVEEDOR'] }}",
+            "FECHA DE EMISIÓN": "={{ $json['FECHA DE EMISIÓN'] }}",
+            "FECHA DE RECEPCIÓN/REGISTRO": "={{ $json['FECHA DE RECEPCIÓN/REGISTRO'] }}",
+            "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO": "={{ $json['CONCEPTO DE BIEN/SERVICIO ADQUIRIDO'] }}",
+            "IMPORTE TOTAL": "={{ $json['IMPORTE TOTAL'] }}",
+            "IMPORTE NETO": "={{ $json['IMPORTE NETO'] }}",
+            "IMPUESTOS": "={{ $json['IMPUESTOS'] }}",
+            "NÚMERO DE ORDEN DE COMPRA (SI APLICA)": "={{ $json['NÚMERO DE ORDEN DE COMPRA (SI APLICA)'] }}",
+            "FECHA DE PAGO": "={{ $json['FECHA DE PAGO'] }}",
+            "CLAVE DE CENTRO DE COSTO (SI APLICA)": "={{ $json['CLAVE DE CENTRO DE COSTO (SI APLICA)'] }}",
+            "MEDIO DE PAGO": "={{ $json['MEDIO DE PAGO'] }}",
+            "TIPO": "={{ $json['TIPO'] }}",
+            "VISUALIZACIÓN DE FACTURA": "={{ $('SUBIR ARCHIVO EGRESO').item.json.webViewLink }}"
           },
           "matchingColumns": [],
           "schema": [
             {
-              "id": "FECHA",
-              "displayName": "FECHA",
+              "id": "DATOS DEL PROVEEDOR (EMISOR)",
+              "displayName": "DATOS DEL PROVEEDOR (EMISOR)",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
-              "id": "DATOS DE LA FACTURA",
-              "displayName": "DATOS DE LA FACTURA",
+              "id": "RAZÓN SOCIAL (NOMBRE)",
+              "displayName": "RAZÓN SOCIAL (NOMBRE)",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
-              "id": "ACCESO A FACTURA ",
-              "displayName": "ACCESO A FACTURA ",
+              "id": "IDENTIFICACIÓN FISCAL",
+              "displayName": "IDENTIFICACIÓN FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DOMICILIO FISCAL",
+              "displayName": "DOMICILIO FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DATOS DE LA FACTURA RECIBIDA",
+              "displayName": "DATOS DE LA FACTURA RECIBIDA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO DE FACTURA DEL PROVEEDOR",
+              "displayName": "NÚMERO DE FACTURA DEL PROVEEDOR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE EMISIÓN",
+              "displayName": "FECHA DE EMISIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE RECEPCIÓN/REGISTRO",
+              "displayName": "FECHA DE RECEPCIÓN/REGISTRO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO",
+              "displayName": "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPORTE TOTAL",
+              "displayName": "IMPORTE TOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPORTE NETO",
+              "displayName": "IMPORTE NETO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPUESTOS",
+              "displayName": "IMPUESTOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DATOS DE CONTROL ITERNO",
+              "displayName": "DATOS DE CONTROL ITERNO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO DE ORDEN DE COMPRA (SI APLICA)",
+              "displayName": "NÚMERO DE ORDEN DE COMPRA (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE PAGO",
+              "displayName": "FECHA DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CLAVE DE CENTRO DE COSTO (SI APLICA)",
+              "displayName": "CLAVE DE CENTRO DE COSTO (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MEDIO DE PAGO",
+              "displayName": "MEDIO DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIPO",
+              "displayName": "TIPO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "VISUALIZACIÓN DE FACTURA",
+              "displayName": "VISUALIZACIÓN DE FACTURA",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -239,11 +495,11 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1232,
+        1792,
         96
       ],
-      "id": "60b04677-fdae-433f-b705-ed5b5e886fa5",
-      "name": "Append row in sheet",
+      "id": "10b79210-dc7f-4456-b5a0-791f416c36a4",
+      "name": "ACTUALIZAMOS EGRESOS",
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "4DcHwvHnkspHfFaI",
@@ -253,93 +509,562 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5e709a2-b5b7-46de-bdee-f2f2d861214c",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[0].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[0].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "16552d45-b4cf-4819-91ed-04038dd804b9",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[1].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[1].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "f58779b9-dd73-44e0-a851-2302ee8c2177",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[2].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[2].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "a69eecec-4b23-4b33-8e15-b77e721c7bb7",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[3].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[3].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "b984582a-1232-45c0-a37c-1dd4ed977178",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[4].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[4].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "425dcde5-9f3e-4729-9e44-abb6a53c32da",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[5].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[5].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "d7e72ad3-800f-48d6-9eee-484309812ed0",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[6].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[6].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "61c96458-45de-419a-9f1b-e0bbe7732ee7",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[7].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[7].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a941634-c596-45e9-8b80-1f6d1c341351",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[8].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[8].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "fb2254b4-18b3-469f-b6e4-8377ebbdbc64",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[9].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[9].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "c529f628-f0d2-4610-b0b4-f6b21d979210",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[10].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[10].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a947959-1b14-498f-91c3-3f421b4178c1",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[11].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[11].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5d7f8873-4e7d-48bd-b62e-aa380ecbacb0",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[12].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[12].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "30c71395-4977-40ee-8bb6-244f9ee165f4",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[13].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[13].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "2990dece-d343-4d64-9236-c8e33ac096ff",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[14].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[14].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "3e81aa4b-00eb-45b5-b044-5ac8f4ae3401",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[15].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[15].split(\"//\")[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1568,
+        96
+      ],
+      "id": "5716db92-549b-4ad1-9ee0-0ef47a67f60f",
+      "name": "SEPARACIÓN DE DATOS EGRESOS"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5e709a2-b5b7-46de-bdee-f2f2d861214c",
+              "name": "={{ $json.variables[0].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[0].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "16552d45-b4cf-4819-91ed-04038dd804b9",
+              "name": "={{ $json.variables[1].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[1].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "f58779b9-dd73-44e0-a851-2302ee8c2177",
+              "name": "={{ $json.variables[2].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[2].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "a69eecec-4b23-4b33-8e15-b77e721c7bb7",
+              "name": "={{ $json.variables[3].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[3].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "b984582a-1232-45c0-a37c-1dd4ed977178",
+              "name": "={{ $json.variables[4].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[4].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "425dcde5-9f3e-4729-9e44-abb6a53c32da",
+              "name": "={{ $json.variables[5].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[5].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "d7e72ad3-800f-48d6-9eee-484309812ed0",
+              "name": "={{ $json.variables[6].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[6].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "61c96458-45de-419a-9f1b-e0bbe7732ee7",
+              "name": "={{ $json.variables[7].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[7].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a941634-c596-45e9-8b80-1f6d1c341351",
+              "name": "={{ $json.variables[8].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[8].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "fb2254b4-18b3-469f-b6e4-8377ebbdbc64",
+              "name": "={{ $json.variables[9].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[9].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "c529f628-f0d2-4610-b0b4-f6b21d979210",
+              "name": "={{ $json.variables[10].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[10].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a947959-1b14-498f-91c3-3f421b4178c1",
+              "name": "={{ $json.variables[11].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[11].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5d7f8873-4e7d-48bd-b62e-aa380ecbacb0",
+              "name": "={{ $json.variables[12].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[12].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "30c71395-4977-40ee-8bb6-244f9ee165f4",
+              "name": "={{ $json.variables[13].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[13].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "2990dece-d343-4d64-9236-c8e33ac096ff",
+              "name": "={{ $json.variables[14].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[14].split(\"//\")[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1568,
+        -96
+      ],
+      "id": "31c4931a-5834-4c01-b337-0bd227332a26",
+      "name": "SEPARACIÓN DE DATOS INGRESOS"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo",
+          "mode": "list",
+          "cachedResultName": "FACTURAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "FACTURA INGRESOS 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "RAZÓN SOCIAL": "={{ $json['RAZÓN SOCIAL'] }}",
+            "IDENTIFICACIÓN FISCAL": "={{ $json['IDENTIFICACIÓN FISCAL'] }}",
+            "DOMICILIO FISCAL": "={{ $json['DOMICILIO FISCAL'] }}",
+            "CLAVE DE USO FISCAL (SI APLICA)": "={{ $json['CLAVE DE USO FISCAL (SI APLICA)'] }}",
+            "NÚMERO DE LA FACTURA": "={{ $json['NÚMERO DE LA FACTURA'] }}",
+            "FECHA DE EMISIÓN": "={{ $json['FECHA DE EMISIÓN'] }}",
+            "CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS": "={{ $json['CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS'] }}",
+            "CANTIDAD Y UNIDAD": "={{ $json['CANTIDAD Y UNIDAD'] }}",
+            "PRECIO UNITARIO": "={{ $json['PRECIO UNITARIO'] }}",
+            "IMPORTE NETO O SUBTOTAL": "={{ $json['IMPORTE NETO O SUBTOTAL'] }}",
+            "TIPO IMPOSITIVO (IVA/IMPUESTOS)": "={{ $json['TIPO IMPOSITIVO (IVA/IMPUESTOS)'] }}",
+            "IMPORTE TOTAL": "={{ $json['IMPORTE TOTAL'] }}",
+            "MÉTODO DE PAGO": "={{ $json['MÉTODO DE PAGO'] }}",
+            "CONDICIONES DE PAGO": "={{ $json['CONDICIONES DE PAGO'] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DATOS DEL CLIENTE (RECEPTOR)",
+              "displayName": "DATOS DEL CLIENTE (RECEPTOR)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RAZÓN SOCIAL",
+              "displayName": "RAZÓN SOCIAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "IDENTIFICACIÓN FISCAL",
+              "displayName": "IDENTIFICACIÓN FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DOMICILIO FISCAL",
+              "displayName": "DOMICILIO FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CLAVE DE USO FISCAL (SI APLICA)",
+              "displayName": "CLAVE DE USO FISCAL (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATOS DE LA TRANSACCIÓN",
+              "displayName": "DATOS DE LA TRANSACCIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NÚMERO DE LA FACTURA",
+              "displayName": "NÚMERO DE LA FACTURA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FECHA DE EMISIÓN",
+              "displayName": "FECHA DE EMISIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS",
+              "displayName": "CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CANTIDAD Y UNIDAD",
+              "displayName": "CANTIDAD Y UNIDAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PRECIO UNITARIO",
+              "displayName": "PRECIO UNITARIO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "IMPORTE NETO O SUBTOTAL",
+              "displayName": "IMPORTE NETO O SUBTOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIPO IMPOSITIVO (IVA/IMPUESTOS)",
+              "displayName": "TIPO IMPOSITIVO (IVA/IMPUESTOS)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "IMPORTE TOTAL",
+              "displayName": "IMPORTE TOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "MÉTODO DE PAGO",
+              "displayName": "MÉTODO DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CONDICIONES DE PAGO",
+              "displayName": "CONDICIONES DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1792,
+        -96
+      ],
+      "id": "78f72fe1-64c4-44b7-a226-ccc776a5e3b1",
+      "name": "ACTUALIZAMOS INGRESOS",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{ $now.format(\"yyyy/MM/dd HH:mm\") }} - {{ $json.variables[1].split(\"//\")[1] }}",
+        "driveId": {
+          "__rl": true,
+          "value": "0APQLRfZjcjPJUk9PVA",
+          "mode": "list",
+          "cachedResultName": "Helion Core",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/0APQLRfZjcjPJUk9PVA"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "15vAyp6-K5UaojNQdKy-qdb223AcnOIz-",
+          "mode": "list",
+          "cachedResultName": "FACTURAS EGRESOS",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/15vAyp6-K5UaojNQdKy-qdb223AcnOIz-"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1344,
+        96
+      ],
+      "id": "84710f0b-bf7f-4ec1-ac2f-a4368747b06d",
+      "name": "SUBIR ARCHIVO EGRESO",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "t9DR8YFZKECz0KPS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
         "resource": "file",
-        "fileId": "={{ $('Merge').item.json.message.photo[3].file_id }}",
+        "fileId": "={{ $('FACTURA ENTRANTE').item.json.message.photo[3].file_id }}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        784,
+        1120,
         96
       ],
-      "id": "bd62bad0-a595-4ae2-b07d-1dade7da4d0f",
-      "name": "Get a file1",
-      "webhookId": "b4e08727-db6d-4dbd-9d7d-914f9a56739f",
+      "id": "95ff366f-93cc-4a61-8a26-98096f90e50e",
+      "name": "DESCARGA IMAGEN1",
+      "webhookId": "861b0844-02d2-41dc-9d94-e8354c6198b6",
       "credentials": {
         "telegramApi": {
           "id": "siGay3O6aJkHIJfz",
-          "name": "Telegram account"
+          "name": "BOT DE PRUEBAS"
         }
       }
     },
     {
       "parameters": {
-        "resource": "image",
-        "operation": "analyze",
-        "modelId": {
+        "resource": "file",
+        "fileId": "={{ $('FACTURA ENTRANTE').item.json.message.photo[3].file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        -96
+      ],
+      "id": "5558ebd4-032b-483f-9af2-babc49ebb755",
+      "name": "DESCARGA IMAGEN2",
+      "webhookId": "861b0844-02d2-41dc-9d94-e8354c6198b6",
+      "credentials": {
+        "telegramApi": {
+          "id": "siGay3O6aJkHIJfz",
+          "name": "BOT DE PRUEBAS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{ $now.format(\"yyyy/MM/dd HH:mm\") }} - {{ $json.variables[1].split(\"//\")[1] }}",
+        "driveId": {
           "__rl": true,
-          "value": "models/gemini-2.5-flash",
+          "value": "0APQLRfZjcjPJUk9PVA",
           "mode": "list",
-          "cachedResultName": "models/gemini-2.5-flash"
+          "cachedResultName": "Helion Core",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/0APQLRfZjcjPJUk9PVA"
         },
-        "text": "Esta imagen es una factura/ticket.\n\nNecesito que cojas todo el texto de la imagen y me lo devuelvas con el siguiente formato:\n\n\"\"\"\n[NOMBRE DEL SITIO DONDE SE HA GASTADO EL DINERO]\n\n-----------------------------\n\n[LISTA DE PRODUCTOS COMPRADOS:]\n- PRODUCTO 1\n- PRODUCTO 2\n- PRODUCTO 3\n- ...\n\n-----------------------------\n\n[INFORMACIÓN EXTRA (SOLO INCLUYE LOS SIGUIENTES):]\n- TOTAL PAGADO:\n- FECHA: \n- HORA: \n- GST incluido en el total:\n\"\"\"\n \n\nSolo devuelve el contenido y lo que te he pedido, nada mas\n\nEl texto que se encuentra entre [] es un texto descriptivo, no lo incluyas en la repuesta, ese texto solo describe lo que tienes que incluir en esa parte de la factura.",
-        "inputType": "binary",
+        "folderId": {
+          "__rl": true,
+          "value": "1EbGoSwV5Xm4N11WW1qRexGqnuc1y4svc",
+          "mode": "list",
+          "cachedResultName": "FACTURAS INGRESOS",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1EbGoSwV5Xm4N11WW1qRexGqnuc1y4svc"
+        },
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.googleGemini",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
       "position": [
-        560,
-        96
+        1344,
+        -96
       ],
-      "id": "97b64e3c-ded3-40d2-88da-b4c438fdd538",
-      "name": "Analyze image",
+      "id": "95e1d149-e33e-4c9c-a4db-1be4b29f0587",
+      "name": "SUBIR ARCHIVO INGRESO",
       "credentials": {
-        "googlePalmApi": {
-          "id": "aysQ2I97HS75Kccc",
-          "name": "Google Gemini(PaLM) Api account"
+        "googleDriveOAuth2Api": {
+          "id": "t9DR8YFZKECz0KPS",
+          "name": "Google Drive account"
         }
       }
-    },
-    {
-      "parameters": {
-        "workflowInputs": {
-          "values": [
-            {
-              "name": "message",
-              "type": "any"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -112,
-        0
-      ],
-      "id": "e558c071-38ed-426b-87c1-8f3d27be78f3",
-      "name": "When Executed by Another Workflow"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.2,
-      "position": [
-        112,
-        96
-      ],
-      "id": "57efad4f-ad4d-48db-ad8a-6e30f9b597c4",
-      "name": "Merge"
     }
   ],
   "pinData": {
-    "When Executed by Another Workflow": [
+    "FACTURA ENTRANTE": [
       {
         "json": {
+          "update_id": 679583799,
           "message": {
-            "message_id": 85,
+            "message_id": 139,
             "from": {
               "id": 6834483413,
               "is_bot": false,
@@ -351,44 +1076,68 @@
               "first_name": "Carlos",
               "type": "private"
             },
-            "date": 1764802841,
+            "date": 1765539480,
+            "forward_origin": {
+              "type": "user",
+              "sender_user": {
+                "id": 6834483413,
+                "is_bot": false,
+                "first_name": "Carlos",
+                "language_code": "en"
+              },
+              "date": 1765435688
+            },
+            "forward_from": {
+              "id": 6834483413,
+              "is_bot": false,
+              "first_name": "Carlos",
+              "language_code": "en"
+            },
+            "forward_date": 1765435688,
             "photo": [
               {
-                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAANzAAM2BA",
-                "file_unique_id": "AQADaQxrG1sTgVV4",
-                "file_size": 930,
+                "file_id": "AgACAgUAAxkBAAN3aTppKA03C19cIPdlYWL_81sWG50AAm0Laxt2ONhVq5LGq5fJjTYBAAMCAANzAAM2BA",
+                "file_unique_id": "AQADbQtrG3Y42FV4",
+                "file_size": 884,
                 "width": 51,
                 "height": 90
               },
               {
-                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAANtAAM2BA",
-                "file_unique_id": "AQADaQxrG1sTgVVy",
-                "file_size": 13546,
+                "file_id": "AgACAgUAAxkBAAN3aTppKA03C19cIPdlYWL_81sWG50AAm0Laxt2ONhVq5LGq5fJjTYBAAMCAANtAAM2BA",
+                "file_unique_id": "AQADbQtrG3Y42FVy",
+                "file_size": 17145,
                 "width": 180,
                 "height": 320
               },
               {
-                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAAN4AAM2BA",
-                "file_unique_id": "AQADaQxrG1sTgVV9",
-                "file_size": 57400,
-                "width": 450,
+                "file_id": "AgACAgUAAxkBAAN3aTppKA03C19cIPdlYWL_81sWG50AAm0Laxt2ONhVq5LGq5fJjTYBAAMCAAN4AAM2BA",
+                "file_unique_id": "AQADbQtrG3Y42FV9",
+                "file_size": 94067,
+                "width": 451,
                 "height": 800
               },
               {
-                "file_id": "AgACAgUAAxkBAANDaTAGb4FNZ1KnS7zzCYvsMSnmSnsAAmkMaxtbE4FVqlMqRlKNYqUBAAMCAAN5AAM2BA",
-                "file_unique_id": "AQADaQxrG1sTgVV-",
-                "file_size": 99383,
-                "width": 720,
+                "file_id": "AgACAgUAAxkBAAN3aTppKA03C19cIPdlYWL_81sWG50AAm0Laxt2ONhVq5LGq5fJjTYBAAMCAAN5AAM2BA",
+                "file_unique_id": "AQADbQtrG3Y42FV-",
+                "file_size": 184704,
+                "width": 721,
                 "height": 1280
               }
             ]
           }
+        },
+        "pairedItem": {
+          "item": 0
         }
       }
     ]
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
   "shared": [
     {
@@ -402,6 +1151,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-09T08:30:02.000Z",
-  "versionId": "a1a80732-fa6f-43b2-a4b3-b5f8d338464c"
+  "updatedAt": "2025-12-12T12:21:16.518Z",
+  "versionId": "2aade52b-acff-416f-b929-9696bb47ed02"
 }
