@@ -1,0 +1,587 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "INFO DE LEADS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "INFO DE LEADS": {
+      "main": [
+        [
+          {
+            "node": "SOLO ESPAÑOLES",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SOLO ESPAÑOLES": {
+      "main": [
+        [
+          {
+            "node": "MÁXIMO 100",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MÁXIMO 100": {
+      "main": [
+        [
+          {
+            "node": "DATOS IMPORTANTES",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DATOS IMPORTANTES": {
+      "main": [
+        [
+          {
+            "node": "TIENEN LINKEDIN EMPRESA?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TIENEN LINKEDIN EMPRESA?": {
+      "main": [
+        [
+          {
+            "node": "JUNTAMOS DATOS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "LINKEDIN EMPRESA = PERSONAL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LINKEDIN EMPRESA = PERSONAL": {
+      "main": [
+        [
+          {
+            "node": "JUNTAMOS DATOS",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "JUNTAMOS DATOS": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WEB SCRAPE": {
+      "main": [
+        [
+          {
+            "node": "HTML -> TEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML -> TEXTO": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model1": {
+      "main": [
+        [
+          {
+            "node": "Search files and folders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search files and folders": {
+      "main": [
+        [
+          {
+            "node": "Update a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Message a model1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WEB SCRAPE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T20:55:03.565Z",
+  "id": "jxJRAoeuPW5Bk9mG",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "EMAIL OUTREACH TO PROSPECTS",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -96,
+        -464
+      ],
+      "id": "602a5cde-9ce7-40aa-aa7f-cfbe273fe69a",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JaZWAVbGND-huMVe3oOHAxdJKZPoLzqC1sDLj4fwnE4",
+          "mode": "list",
+          "cachedResultName": "LEADS Y PROSPECTOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JaZWAVbGND-huMVe3oOHAxdJKZPoLzqC1sDLj4fwnE4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 741812786,
+          "mode": "list",
+          "cachedResultName": "LEADS PRUEBA 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JaZWAVbGND-huMVe3oOHAxdJKZPoLzqC1sDLj4fwnE4/edit#gid=741812786"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        128,
+        -464
+      ],
+      "id": "b70331a8-0851-4c96-aa33-5b21ad747d3e",
+      "name": "INFO DE LEADS",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "ff2cabfc-47be-4fd3-a605-7a1c50106020",
+              "leftValue": "={{ $json.location }}",
+              "rightValue": "=Spain",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        352,
+        -464
+      ],
+      "id": "fc2c926d-0fb3-4db6-af02-1fbf8f71058f",
+      "name": "SOLO ESPAÑOLES"
+    },
+    {
+      "parameters": {
+        "maxItems": 100
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        576,
+        -464
+      ],
+      "id": "9dceaddb-9e63-4225-9190-d2ad47adea17",
+      "name": "MÁXIMO 100"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "847cb464-414e-43d5-a2c4-b7568093f758",
+              "name": "nombre",
+              "value": "={{ $json.firstName }}",
+              "type": "string"
+            },
+            {
+              "id": "cd0ff7f5-3ab1-4a11-abc9-2e6a9504b845",
+              "name": "empresa",
+              "value": "={{ $json.companyName }}",
+              "type": "string"
+            },
+            {
+              "id": "b88b6765-e303-4037-b712-c1fdb72d99ab",
+              "name": "linkedin personal",
+              "value": "={{ $json.profileUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "7cbb20ec-624f-4960-8eff-84947f399caf",
+              "name": "linkedin de empresa",
+              "value": "={{ $json.companyUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "f8b09c72-9806-4842-823a-38cc697a713d",
+              "name": "ciudad",
+              "value": "={{ $json.companyLocation }}",
+              "type": "string"
+            },
+            {
+              "id": "0f2ae101-7111-45eb-9808-b4e08e5c2d08",
+              "name": "info",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "4dcf70ba-86df-45db-aa3a-5eff44f41809",
+              "name": "body",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        -464
+      ],
+      "id": "ff0778e3-488a-49c8-a287-e798633f192d",
+      "name": "DATOS IMPORTANTES"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "b8b4869b-84eb-4f31-b5f0-0f667bc433d6",
+              "leftValue": "={{ $json['linkedin de empresa'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1024,
+        -464
+      ],
+      "id": "b911c91e-7b6a-43fc-ae8c-2c06a62907e2",
+      "name": "TIENEN LINKEDIN EMPRESA?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d10f4428-bed9-47c8-94c5-f29ea61e2d98",
+              "name": "linkedin de empresa",
+              "value": "={{ $json['linkedin personal'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1248,
+        -392
+      ],
+      "id": "452b1952-b8ff-45aa-8735-32f4c4eb6cbd",
+      "name": "LINKEDIN EMPRESA = PERSONAL"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1472,
+        -464
+      ],
+      "id": "7155158b-ea10-43c7-a629-9a40dcd33f23",
+      "name": "JUNTAMOS DATOS"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://scrapeninja.p.rapidapi.com/scrape",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-RapidAPI-Key",
+              "value": "42c7a6716amsh092e6b51e81aa2ep18bbdejsn33ea7c432b1e"
+            },
+            {
+              "name": "X-RapidAPI-Host",
+              "value": "scrapeninja.p.rapidapi.com"
+            },
+            {
+              "name": "X-Rapidapi-Key",
+              "value": "42c7a6716amsh092e6b51e81aa2ep18bbdejsn33ea7c432b1e"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json['linkedin de empresa'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1984,
+        -464
+      ],
+      "id": "419dedfd-24d1-410d-8d3c-dabe30223061",
+      "name": "WEB SCRAPE",
+      "alwaysOutputData": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "dataPropertyName": "body",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "body",
+              "cssSelector": "html"
+            }
+          ]
+        },
+        "options": {
+          "cleanUpText": true
+        }
+      },
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        2272,
+        -392
+      ],
+      "id": "e12130ad-809a-45f5-beb2-7f754179c4c5",
+      "name": "HTML -> TEXTO"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "# Role\nAct as a Cold Email Outreach Personalisation Creator, designed to craft personalized icebreakers for automated cold email outreach based on data scraped from LinkedIn.\n\n# Task\nGenerate personalized icebreaker sentences for cold emails that highlight a specific achievement, initiative, or standout quality of the recipient or their company. This personalization should be based on one key post from the scraped LinkedIn data. If the recipient is from a Spanish-speaking country, compose the message in Spanish; otherwise, use English. The personalization should also make a connection back to the sender, indicating a shared interest or value.\n\n## Specifics\n- Focus on creating a personalized message that mentions one specific, well-defined aspect from the LinkedIn data.\n- Ensure the personalization ties back to the sender by finding a common ground or shared interest.\n- Choose the language based on the recipient's country: Spanish for Spanish-speaking countries and English for others.\n- Aim for a message that feels genuine and tailored, avoiding generic or broad statements.\n\n# Tools\nThere are no external tools or knowledge documents provided for this task.\n\n# Examples\nIcebreaker: Love your podcast, I'd consider myself at the intersection of AI and VR as well -- figured I'd reach out.\nIcebreaker: Read through your bio and you have such an interesting background. AI and quantum computing and even working with the government is pretty sick. I think we have similar interests so I figured I'd reach out.\nIcebreaker: Love to see your company's passion to and advancements in EdTech. It really stuck out to me so I figured I'd reach out.\nRemember the key is to craft a message that feels personal and sincere, using the information available from LinkedIn data\n\n# Notes\n- Maintain a clear, concise, informal, and sincere tone throughout the message. The goal is to make the recipient feel like the message was crafted specifically for them, not generated by a bot.\n- You should use casual language, as if you're talking with a friend.\n- Only use first person pronouns \"I\"\nFocus on sincerity and specificity in the personalization. Avoid making the message feel automated or generic.\nDo not include any personal opinions or assumptions beyond the information provided by the LinkedIn data.\n- Remember, the effectiveness of the personalization lies in its ability to resonate with the recipient on a personal level, encouraging them to engage further.\n- Relate back to sender personal interests, and end with some variation of \"so I figured I'd reach out\"\n- Avoid saying any variation of \"I'd love to connect\"\n- Focus on unique details about the company or person to ensure the personalization feels genuine and sincere.\n- Avoid using overly formal language or complex jargon that might detract from the personal touch of the message.\n- Be mindful of cultural nuances, especially when crafting messages in Spanish, to ensure the tone and expressions are appropriate.\n- One sentence maximum"
+            },
+            {
+              "content": "=Keep response as concise as possible. Here is the web scraped data from the company's/personal LinkedIn that we are reaching out to:\n\n {{ $json.body }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        1920,
+        -656
+      ],
+      "id": "7b4b0153-45f1-46b8-81a0-c091c3809eef",
+      "name": "Message a model1",
+      "notesInFlow": false,
+      "retryOnFail": false,
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "insertSegment": "header",
+              "text": "=\n\n-------------------------------------------------------------------------------------------\n{{ $('JUNTAMOS DATOS').item.json.empresa }}\n\nIcebreaker: {{ $('Message a model1').item.json.output[0].content[0].text }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        2496,
+        -656
+      ],
+      "id": "3164534d-ee75-4165-b3d1-9ea05dbee149",
+      "name": "Update a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "nry40PTGxmZ2E62x",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "EMAILS PROVISIONALES",
+        "filter": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2272,
+        -656
+      ],
+      "id": "c841f553-5454-49c0-b1ab-3c743e72b813",
+      "name": "Search files and folders",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "t9DR8YFZKECz0KPS",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1696,
+        -464
+      ],
+      "id": "8802ab8a-1a43-428b-92a4-43050efaeb12",
+      "name": "Loop Over Items"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T20:55:03.571Z",
+      "createdAt": "2025-12-11T20:55:03.571Z",
+      "role": "workflow:owner",
+      "workflowId": "jxJRAoeuPW5Bk9mG",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-12T00:04:01.318Z",
+  "versionId": "736ec885-2f22-4947-9a49-6c3e6e6d7ad4"
+}
