@@ -24,7 +24,18 @@
   "name": "MIRAR EVENTO",
   "nodes": [
     {
-      "parameters": {},
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "afterTime"
+            },
+            {
+              "name": "beforeTime"
+            }
+          ]
+        }
+      },
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
@@ -39,9 +50,13 @@
         "operation": "getAll",
         "calendar": {
           "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
         },
+        "returnAll": true,
+        "timeMin": "={{ $json.afterTime }}",
+        "timeMax": "={{ $json.beforeTime }}",
         "options": {}
       },
       "type": "n8n-nodes-base.googleCalendar",
@@ -76,6 +91,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-11T08:21:32.915Z",
-  "versionId": "fa9e8270-f514-46a1-874b-83af19b4533b"
+  "updatedAt": "2025-12-12T17:46:23.119Z",
+  "versionId": "18374ba1-d7b7-401e-a781-9a3c1c545a91"
 }
