@@ -24,7 +24,21 @@
   "name": "CLIENTE NUEVO CRM",
   "nodes": [
     {
-      "parameters": {},
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "email"
+            },
+            {
+              "name": "fullName"
+            },
+            {
+              "name": "phoneNumber"
+            }
+          ]
+        }
+      },
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
@@ -39,14 +53,59 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
+          "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
+          "value": "gid=0",
           "mode": "list",
-          "value": ""
-        }
+          "cachedResultName": "CLIENTES",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "EMAIL": "={{ $json.email }}",
+            "NOMBRE ": "={{ $json.fullName }}",
+            "NÚMERO": "={{ $json.phoneNumber }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "EMAIL",
+              "displayName": "EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NOMBRE ",
+              "displayName": "NOMBRE ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO",
+              "displayName": "NÚMERO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -80,6 +139,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-11T08:16:22.696Z",
-  "versionId": "a5f330cb-e327-4a3a-a42c-b716749dd618"
+  "updatedAt": "2025-12-12T17:39:38.480Z",
+  "versionId": "3d6b4580-5fa1-411c-a110-946fb13da4e9"
 }
