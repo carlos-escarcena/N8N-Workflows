@@ -47,7 +47,18 @@
   "name": "CHECKEO DISPONIBILIDAD",
   "nodes": [
     {
-      "parameters": {},
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "afterTime"
+            },
+            {
+              "name": "beforeTime"
+            }
+          ]
+        }
+      },
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
@@ -62,9 +73,13 @@
         "operation": "getAll",
         "calendar": {
           "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
         },
+        "returnAll": true,
+        "timeMin": "={{ $json.afterTime }}",
+        "timeMax": "={{ $json.beforeTime }}",
         "options": {}
       },
       "type": "n8n-nodes-base.googleCalendar",
@@ -75,6 +90,7 @@
       ],
       "id": "42b5ed5e-0e46-49dd-9b0e-0bf5f2f1ff14",
       "name": "Get many events",
+      "alwaysOutputData": true,
       "credentials": {
         "googleCalendarOAuth2Api": {
           "id": "nmKxQwjkO1uFUTkd",
@@ -94,12 +110,12 @@
           "conditions": [
             {
               "id": "379e1d86-90af-4c96-9d43-83eb43ccb32b",
-              "leftValue": "",
+              "leftValue": "={{ $json.summary }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
+                "operation": "exists",
+                "singleValue": true
               }
             }
           ],
@@ -118,6 +134,16 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e41f9298-b2a0-4797-a043-7c9df923545d",
+              "name": "message",
+              "value": "The entire day is available",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.set",
@@ -146,6 +172,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-11T08:18:58.968Z",
-  "versionId": "808baa6e-6322-462f-809a-300830cfadd7"
+  "updatedAt": "2025-12-12T17:23:08.540Z",
+  "versionId": "e4257dc7-e912-4ef9-9280-9a7bbf210308"
 }
