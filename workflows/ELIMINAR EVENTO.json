@@ -35,7 +35,15 @@
   "name": "ELIMINAR EVENTO",
   "nodes": [
     {
-      "parameters": {},
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "eventID"
+            }
+          ]
+        }
+      },
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
@@ -50,9 +58,11 @@
         "operation": "delete",
         "calendar": {
           "__rl": true,
+          "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "CALENDARIO PRUEBA N8N"
         },
+        "eventId": "={{ $json.eventID }}",
         "options": {}
       },
       "type": "n8n-nodes-base.googleCalendar",
@@ -75,14 +85,93 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
+          "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
+          "value": 1223733225,
           "mode": "list",
-          "value": ""
-        }
+          "cachedResultName": "REGISTRO DE CITAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=1223733225"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "NOTES": "Canceled",
+            "DATE": "={{ $json.originalStartTime }}",
+            "ID": "={{ $('When Executed by Another Workflow').item.json.eventID }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "EMAIL",
+              "displayName": "EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "APPOINTMENT TYPE",
+              "displayName": "APPOINTMENT TYPE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "DATE",
+              "displayName": "DATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NOTES",
+              "displayName": "NOTES",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -116,6 +205,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-11T08:22:13.343Z",
-  "versionId": "1d75f761-b13c-421e-ac8d-35fd471b7371"
+  "updatedAt": "2025-12-12T17:36:04.299Z",
+  "versionId": "4dd06ed3-a835-4be2-8b2a-e1a7ae993656"
 }
