@@ -1,0 +1,253 @@
+{
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-12T18:07:38.246Z",
+    "createdAt": "2025-12-12T18:07:38.246Z",
+    "versionId": "b3878459-19a8-4acd-974b-a0a1a3a24cef",
+    "workflowId": "zkCLAoTj432fVAkZ",
+    "nodes": [
+      {
+        "parameters": {
+          "path": "3bfe56c1-89ff-4323-9e38-b7cc2e754830",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2.1,
+        "position": [
+          0,
+          0
+        ],
+        "id": "cc9263a1-2025-40c2-8db4-659a02585ac5",
+        "name": "Webhook",
+        "webhookId": "3bfe56c1-89ff-4323-9e38-b7cc2e754830"
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
+            "mode": "list",
+            "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
+          },
+          "sheetName": {
+            "__rl": true,
+            "value": 901622535,
+            "mode": "list",
+            "cachedResultName": "REGISTRO DE LLAMADAS",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=901622535"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "DÍA": "={{ $now.format(\"yyyy/MM/dd hh:mm\") }}",
+              "RESUMEN": "={{ $json.body.message.analysis.summary }}",
+              "RESULTADO": "={{ $json.body.message.analysis.structuredData.Outcome }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "DÍA",
+                "displayName": "DÍA",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "RESUMEN",
+                "displayName": "RESUMEN",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "RESULTADO",
+                "displayName": "RESULTADO",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          208,
+          0
+        ],
+        "id": "f04da65f-ffae-4ab4-8d18-ae57d1882b04",
+        "name": "Append row in sheet",
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4DcHwvHnkspHfFaI",
+            "name": "Google Sheets account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Webhook": {
+        "main": [
+          [
+            {
+              "node": "Append row in sheet",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Carlos Escarcena",
+    "name": null,
+    "description": null
+  },
+  "activeVersionId": "b3878459-19a8-4acd-974b-a0a1a3a24cef",
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-12T18:06:34.479Z",
+  "id": "zkCLAoTj432fVAkZ",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "VAPI AGENTE EOC REPORT",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "3bfe56c1-89ff-4323-9e38-b7cc2e754830",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cc9263a1-2025-40c2-8db4-659a02585ac5",
+      "name": "Webhook",
+      "webhookId": "3bfe56c1-89ff-4323-9e38-b7cc2e754830"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
+          "mode": "list",
+          "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 901622535,
+          "mode": "list",
+          "cachedResultName": "REGISTRO DE LLAMADAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=901622535"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "DÍA": "={{ $now.format(\"yyyy/MM/dd hh:mm\") }}",
+            "RESUMEN": "={{ $json.body.message.analysis.summary }}",
+            "RESULTADO": "={{ $json.body.message.analysis.structuredData.Outcome }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DÍA",
+              "displayName": "DÍA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESUMEN",
+              "displayName": "RESUMEN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RESULTADO",
+              "displayName": "RESULTADO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f04da65f-ffae-4ab4-8d18-ae57d1882b04",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "EYX2BC4I0DolsgK7"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-12T18:06:34.487Z",
+      "createdAt": "2025-12-12T18:06:34.487Z",
+      "role": "workflow:owner",
+      "workflowId": "zkCLAoTj432fVAkZ",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-12T18:07:38.245Z",
+  "versionId": "b3878459-19a8-4acd-974b-a0a1a3a24cef"
+}
