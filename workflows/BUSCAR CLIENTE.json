@@ -98,17 +98,17 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1mPh8JaUgtxTM3mCyRlutGhgFxL_Hfdzc41SSs6tsFSU",
+          "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
           "mode": "list",
-          "cachedResultName": "PRUEBA AGENTE N8N",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mPh8JaUgtxTM3mCyRlutGhgFxL_Hfdzc41SSs6tsFSU/edit?usp=drivesdk"
+          "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "Hoja 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1mPh8JaUgtxTM3mCyRlutGhgFxL_Hfdzc41SSs6tsFSU/edit#gid=0"
+          "cachedResultName": "CLIENTES",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=0"
         },
         "filtersUI": {
           "values": [
@@ -118,9 +118,7 @@
             }
           ]
         },
-        "options": {
-          "returnFirstMatch": false
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -150,12 +148,12 @@
           "conditions": [
             {
               "id": "27c4350d-8ada-4add-a6fc-c54da16c4c2f",
-              "leftValue": "",
+              "leftValue": "={{ $json.name }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
+                "operation": "exists",
+                "singleValue": true
               }
             }
           ],
@@ -176,14 +174,27 @@
       "parameters": {
         "documentId": {
           "__rl": true,
+          "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
+          "value": 1223733225,
           "mode": "list",
-          "value": ""
-        }
+          "cachedResultName": "REGISTRO DE CITAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=1223733225"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "EMAIL",
+              "lookupValue": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
@@ -193,6 +204,7 @@
       ],
       "id": "e402d319-6b2a-4028-aa7d-e497c8345900",
       "name": "Get row(s) in sheet1",
+      "alwaysOutputData": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "4DcHwvHnkspHfFaI",
@@ -236,6 +248,16 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "36383e4b-e01f-4cd0-b3d5-157e9debe61b",
+              "name": "message",
+              "value": "This client exists in the CRM. However, he or she has no previous appointments with Helion Core.",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.set",
@@ -295,6 +317,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-11T10:56:34.275Z",
-  "versionId": "3b893841-72d0-4a70-a972-c5f4f3e30cba"
+  "updatedAt": "2025-12-12T17:19:29.108Z",
+  "versionId": "7aea900a-7b5c-4422-b43f-632ecccf8fed"
 }
