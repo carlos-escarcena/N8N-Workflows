@@ -135,6 +135,17 @@
           }
         ]
       ]
+    },
+    "ACTUALIZAMOS EGRESOS": {
+      "main": [
+        [
+          {
+            "node": "ACTUALIZAMOS EGRESOS1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-03T09:08:40.094Z",
@@ -1056,6 +1067,238 @@
           "name": "Google Drive account"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo",
+          "mode": "list",
+          "cachedResultName": "FACTURAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 401596887,
+          "mode": "list",
+          "cachedResultName": "FACTURA EGRESOS 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=401596887"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "RAZÓN SOCIAL (NOMBRE)": "={{ $json['RAZÓN SOCIAL (NOMBRE)'] }}",
+            "IDENTIFICACIÓN FISCAL": "={{ $json['IDENTIFICACIÓN FISCAL'] }}",
+            "DOMICILIO FISCAL": "={{ $json['DOMICILIO FISCAL'] }}",
+            "NÚMERO DE FACTURA DEL PROVEEDOR": "={{ $json['NÚMERO DE FACTURA DEL PROVEEDOR'] }}",
+            "FECHA DE EMISIÓN": "={{ $json['FECHA DE EMISIÓN'] }}",
+            "FECHA DE RECEPCIÓN/REGISTRO": "={{ $json['FECHA DE RECEPCIÓN/REGISTRO'] }}",
+            "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO": "={{ $json['CONCEPTO DE BIEN/SERVICIO ADQUIRIDO'] }}",
+            "IMPORTE TOTAL": "={{ $json['IMPORTE TOTAL'] }}",
+            "IMPORTE NETO": "={{ $json['IMPORTE NETO'] }}",
+            "IMPUESTOS": "={{ $json['IMPUESTOS'] }}",
+            "NÚMERO DE ORDEN DE COMPRA (SI APLICA)": "={{ $json['NÚMERO DE ORDEN DE COMPRA (SI APLICA)'] }}",
+            "FECHA DE PAGO": "={{ $json['FECHA DE PAGO'] }}",
+            "CLAVE DE CENTRO DE COSTO (SI APLICA)": "={{ $json['CLAVE DE CENTRO DE COSTO (SI APLICA)'] }}",
+            "MEDIO DE PAGO": "={{ $json['MEDIO DE PAGO'] }}",
+            "TIPO": "={{ $json['TIPO'] }}",
+            "VISUALIZACIÓN DE FACTURA": "={{ $('SUBIR ARCHIVO EGRESO').item.json.webViewLink }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DATOS DEL PROVEEDOR (EMISOR)",
+              "displayName": "DATOS DEL PROVEEDOR (EMISOR)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RAZÓN SOCIAL (NOMBRE)",
+              "displayName": "RAZÓN SOCIAL (NOMBRE)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IDENTIFICACIÓN FISCAL",
+              "displayName": "IDENTIFICACIÓN FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DOMICILIO FISCAL",
+              "displayName": "DOMICILIO FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DATOS DE LA FACTURA RECIBIDA",
+              "displayName": "DATOS DE LA FACTURA RECIBIDA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO DE FACTURA DEL PROVEEDOR",
+              "displayName": "NÚMERO DE FACTURA DEL PROVEEDOR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE EMISIÓN",
+              "displayName": "FECHA DE EMISIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE RECEPCIÓN/REGISTRO",
+              "displayName": "FECHA DE RECEPCIÓN/REGISTRO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO",
+              "displayName": "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPORTE TOTAL",
+              "displayName": "IMPORTE TOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPORTE NETO",
+              "displayName": "IMPORTE NETO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPUESTOS",
+              "displayName": "IMPUESTOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DATOS DE CONTROL ITERNO",
+              "displayName": "DATOS DE CONTROL ITERNO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO DE ORDEN DE COMPRA (SI APLICA)",
+              "displayName": "NÚMERO DE ORDEN DE COMPRA (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE PAGO",
+              "displayName": "FECHA DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CLAVE DE CENTRO DE COSTO (SI APLICA)",
+              "displayName": "CLAVE DE CENTRO DE COSTO (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MEDIO DE PAGO",
+              "displayName": "MEDIO DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIPO",
+              "displayName": "TIPO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "VISUALIZACIÓN DE FACTURA",
+              "displayName": "VISUALIZACIÓN DE FACTURA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2000,
+        96
+      ],
+      "id": "93478e6b-6054-44e4-8bb7-915ebe6e712e",
+      "name": "ACTUALIZAMOS EGRESOS1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {
@@ -1151,6 +1394,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-12T12:21:16.518Z",
-  "versionId": "2aade52b-acff-416f-b929-9696bb47ed02"
+  "updatedAt": "2025-12-15T02:08:32.041Z",
+  "versionId": "c0d8867f-1db8-4a8e-b6bd-e3b760250647"
 }
