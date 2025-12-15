@@ -171,40 +171,6 @@
         ]
       ]
     },
-    "Get many workflows": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Loop Over Items2": {
-      "main": [
-        [],
-        [
-          {
-            "node": "Deactivate a workflow",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Deactivate a workflow": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get row(s) in sheet2": {
       "main": [
         [
@@ -439,7 +405,7 @@
       "credentials": {
         "telegramApi": {
           "id": "siGay3O6aJkHIJfz",
-          "name": "Telegram account"
+          "name": "BOT DE PRUEBAS"
         }
       }
     },
@@ -595,7 +561,7 @@
       "credentials": {
         "telegramApi": {
           "id": "siGay3O6aJkHIJfz",
-          "name": "Telegram account"
+          "name": "BOT DE PRUEBAS"
         }
       }
     },
@@ -609,31 +575,6 @@
       ],
       "id": "07b26271-8554-4380-aac2-66c15797e959",
       "name": "Limit1"
-    },
-    {
-      "parameters": {
-        "operation": "deactivate",
-        "workflowId": {
-          "__rl": true,
-          "value": "={{ $('Loop Over Items1').item.json.CLIENTE }} - {{ $('Loop Over Items1').item.json.SERVICIO }}",
-          "mode": "id"
-        },
-        "requestOptions": {}
-      },
-      "type": "n8n-nodes-base.n8n",
-      "typeVersion": 1,
-      "position": [
-        448,
-        640
-      ],
-      "id": "cf17bac1-4467-4f63-8232-5a0752db40dc",
-      "name": "Deactivate a workflow",
-      "credentials": {
-        "n8nApi": {
-          "id": "vFzxSxyoIxlIFw7v",
-          "name": "n8n account"
-        }
-      }
     },
     {
       "parameters": {
@@ -676,41 +617,6 @@
       ],
       "id": "c896883b-b08a-40e8-9ad5-1bf43ecf5c84",
       "name": "AVISO SUSPENSIÓN SERVICIO"
-    },
-    {
-      "parameters": {
-        "filters": {
-          "name": "={{ $json.CLIENTE }} - {{ $json.SERVICIO }}"
-        },
-        "requestOptions": {}
-      },
-      "type": "n8n-nodes-base.n8n",
-      "typeVersion": 1,
-      "position": [
-        0,
-        640
-      ],
-      "id": "2495714f-7f25-4724-b931-9c661ff2fac3",
-      "name": "Get many workflows",
-      "credentials": {
-        "n8nApi": {
-          "id": "vFzxSxyoIxlIFw7v",
-          "name": "n8n account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [
-        224,
-        640
-      ],
-      "id": "3690e1db-b54c-4322-9032-028d8f3fca2e",
-      "name": "Loop Over Items2"
     },
     {
       "parameters": {
@@ -845,7 +751,7 @@
       "credentials": {
         "telegramApi": {
           "id": "siGay3O6aJkHIJfz",
-          "name": "Telegram account"
+          "name": "BOT DE PRUEBAS"
         }
       }
     },
@@ -898,6 +804,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-10T08:16:00.000Z",
-  "versionId": "05f6065c-c248-4aa3-b802-b6fa0a993006"
+  "updatedAt": "2025-12-15T09:32:14.813Z",
+  "versionId": "dbc180ee-b8b0-47d3-b73a-1932d72ab4fc"
 }
