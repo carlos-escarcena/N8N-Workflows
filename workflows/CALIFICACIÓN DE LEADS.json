@@ -1,0 +1,196 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ORDENAR DATOS": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-12-28T09:07:52.026Z",
+  "id": "3KslpFXAH8Yr8pco",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "CALIFICACIÓN DE LEADS",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "CALIFICACIÓN DE LEADS",
+        "formDescription": "Este form recibe datos de un lead para el negocio.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "What is your name?",
+              "placeholder": "E.g. Tony Roberts",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What is your email?",
+              "placeholder": "example@gmail.com",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What is your business' name?",
+              "placeholder": "E.g. Monsters INC.",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -352,
+        16
+      ],
+      "id": "69f82068-3275-4639-a885-8ad3ca0372ce",
+      "name": "On form submission",
+      "webhookId": "c61d8515-8ab6-418a-b565-230a6ff49a8d"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        -176
+      ],
+      "id": "fb892d5f-1d46-4899-97cd-68e5586019e0",
+      "name": "ORDENAR DATOS"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1CDKn20lrRzhYmHcRkiVks2kj6rwaMf-pcSCmsyNSifk",
+          "mode": "list",
+          "cachedResultName": "CALIFICACIÓN DE LEADS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CDKn20lrRzhYmHcRkiVks2kj6rwaMf-pcSCmsyNSifk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CDKn20lrRzhYmHcRkiVks2kj6rwaMf-pcSCmsyNSifk/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "NOMBRE": "={{ $json['What is your name?'].split(\" \")[0] }}",
+            "EMAIL": "={{ $json['What is your email?'] }}",
+            "EMPRESA": "={{ $json['What is your business\\' name?'] }}",
+            "APELLIDO": "={{ $json['What is your name?'].split(\" \")[1] }}"
+          },
+          "matchingColumns": [
+            "EMAIL"
+          ],
+          "schema": [
+            {
+              "id": "NOMBRE",
+              "displayName": "NOMBRE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "APELLIDO",
+              "displayName": "APELLIDO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "EMPRESA",
+              "displayName": "EMPRESA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "EMAIL",
+              "displayName": "EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CALIDAD",
+              "displayName": "CALIDAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -144,
+        16
+      ],
+      "id": "4f874fd5-952c-4332-bdbd-56c207de5a90",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-28T09:07:52.031Z",
+      "createdAt": "2025-12-28T09:07:52.031Z",
+      "role": "workflow:owner",
+      "workflowId": "3KslpFXAH8Yr8pco",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-28T09:21:46.990Z",
+  "versionId": "6c06c90b-5f1f-4d35-a51f-d3d6275fb2b7"
+}
