@@ -1,0 +1,952 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "EXTRACCIÓN DE TEXTO": {
+      "main": [
+        [
+          {
+            "node": "PARSEADO DE RESPUESTA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PARSEADO DE RESPUESTA": {
+      "main": [
+        [
+          {
+            "node": "ES UN INGRESO?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ES UN INGRESO?": {
+      "main": [
+        [
+          {
+            "node": "SEPARACIÓN DE DATOS INGRESOS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SEPARACIÓN DE DATOS EGRESOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEPARACIÓN DE DATOS EGRESOS": {
+      "main": [
+        [
+          {
+            "node": "ACTUALIZAMOS EGRESOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEPARACIÓN DE DATOS INGRESOS": {
+      "main": [
+        [
+          {
+            "node": "ACTUALIZAMOS INGRESOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ACTUALIZAMOS INGRESOS": {
+      "main": [
+        []
+      ]
+    },
+    "ACTUALIZAMOS EGRESOS": {
+      "main": [
+        []
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "EXTRACCIÓN DE TEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-29T06:34:35.144Z",
+  "id": "gKT82y4sxCzvGJOE",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "FACTURAS EMAIL AUTOGUARDADO",
+  "nodes": [
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "### ROL\nEres un experto extrayendo texto de imágenes.\n\n### INSTRUCCIONES\nNecesito que cojas todo el texto y me devuelvas la información formateada. El nombre de la variable será cada dato que te pida en mayusculas, es decir, si te pido la \"razón social (nombre)\" el nombre de la variable debe ser \"RAZÓN SOCIAL (NOMBRE)\". \n\n### FORMATO\nDato a sacar de la imagen//dato real\n\nNO PUEDEN HABER ESPACIOS O NINGÚN CARACTER EXTRA NI AL PRINCIPIO NI AL FINAL DE LAS VARIABLES O DE LOS DATOS REALES.\n\nEse es el formato y cada dato se divide con una linea nueva.\nSi un dato no eres capaz de sacarlo simplemente di \"DATO NO ENCONTRADO\"\nDebes devolver todas las variables que te pido aunque estén vacías.\n\nEn \"TIPO DE FACTURA\" debes simplemente poner \"INGRESO\" o \"EGRESO\" dependiendo de si la factura es de un pago de un cliente a nosotros o un gasto nuestro.\n\nSi el tipo de factura es un egreso devuelve los datos pedidos para los egresos.\nSi el tipo de factura es un ingreso devuelve los datos pedidos para los ingresos.\n\n### DATOS A DEVOLVER\n\nEgresos:\nTIPO DE FACTURA\nRAZÓN SOCIAL (NOMBRE)\t\nIDENTIFICACIÓN FISCAL\t\nDOMICILIO FISCAL\t\t\nNÚMERO DE FACTURA DEL PROVEEDOR\t\nFECHA DE EMISIÓN\t\nFECHA DE RECEPCIÓN/REGISTRO\t\nCONCEPTO DE BIEN/SERVICIO ADQUIRIDO\t\nIMPORTE TOTAL\t\nIMPORTE NETO\t\nIMPUESTOS\t\t\nNÚMERO DE ORDEN DE COMPRA (SI APLICA)\t\nFECHA DE PAGO\t\nCLAVE DE CENTRO DE COSTO (SI APLICA)\t\nMEDIO DE PAGO\t\nTIPO\n\nIngresos:\nTIPO DE FACTURA\nRAZÓN SOCIAL\t\nIDENTIFICACIÓN FISCAL\t\nDOMICILIO FISCAL\t\nCLAVE DE USO FISCAL (SI APLICA)\t\t\nNÚMERO DE LA FACTURA\t\nFECHA DE EMISIÓN\t\nCONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS\t\nCANTIDAD Y UNIDAD\t\nPRECIO UNITARIO\t\nIMPORTE NETO O SUBTOTAL\t\nTIPO IMPOSITIVO (IVA/IMPUESTOS)\t\nIMPORTE TOTAL\t\nMÉTODO DE PAGO\t\nCONDICIONES DE PAGO\n\n\n\n### IMPORTANTE\nNo incluyas ningún tipo de comillas ni back ticks ni nada por el estilo .\nSolo devuelve el contenido en el formato que te he pedido.\nSi no estás seguro de que valor asignar para cada variable simplemente dejala en blanco."
+            },
+            {
+              "content": "=SUBJECT: {{ $json.Subject }}\nFROM: {{ $json.From }}\nSNIPPET: {{ $json.snippet }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        224,
+        -192
+      ],
+      "id": "cf302dac-7cb4-448f-8005-88405e9f3c48",
+      "name": "EXTRACCIÓN DE TEXTO",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b2b5e4e7-c94f-4019-8993-335b8b549e2a",
+              "name": "variables",
+              "value": "={{ $json.output[0].content[0].text.split(\"\\n\") }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        -192
+      ],
+      "id": "ae863b1e-c321-46b2-b989-9e0016e81487",
+      "name": "PARSEADO DE RESPUESTA"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "42c8a02c-0aca-4daf-94d0-04616026242f",
+              "leftValue": "={{ $json.variables[0] }}",
+              "rightValue": "TIPO DE FACTURA//INGRESO",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        800,
+        -192
+      ],
+      "id": "56947b53-8a11-47db-a4ef-029351c24c6d",
+      "name": "ES UN INGRESO?"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo",
+          "mode": "list",
+          "cachedResultName": "FACTURAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 401596887,
+          "mode": "list",
+          "cachedResultName": "FACTURA EGRESOS 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=401596887"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "RAZÓN SOCIAL (NOMBRE)": "={{ $json['RAZÓN SOCIAL (NOMBRE)'] }}",
+            "IDENTIFICACIÓN FISCAL": "={{ $json['IDENTIFICACIÓN FISCAL'] }}",
+            "DOMICILIO FISCAL": "={{ $json['DOMICILIO FISCAL'] }}",
+            "NÚMERO DE FACTURA DEL PROVEEDOR": "={{ $json['NÚMERO DE FACTURA DEL PROVEEDOR'] }}",
+            "FECHA DE EMISIÓN": "={{ $json['FECHA DE EMISIÓN'] }}",
+            "FECHA DE RECEPCIÓN/REGISTRO": "={{ $json['FECHA DE RECEPCIÓN/REGISTRO'] }}",
+            "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO": "={{ $json['CONCEPTO DE BIEN/SERVICIO ADQUIRIDO'] }}",
+            "IMPORTE TOTAL": "={{ $json['IMPORTE TOTAL'] }}",
+            "IMPORTE NETO": "={{ $json['IMPORTE NETO'] }}",
+            "IMPUESTOS": "={{ $json['IMPUESTOS'] }}",
+            "NÚMERO DE ORDEN DE COMPRA (SI APLICA)": "={{ $json['NÚMERO DE ORDEN DE COMPRA (SI APLICA)'] }}",
+            "FECHA DE PAGO": "={{ $json['FECHA DE PAGO'] }}",
+            "CLAVE DE CENTRO DE COSTO (SI APLICA)": "={{ $json['CLAVE DE CENTRO DE COSTO (SI APLICA)'] }}",
+            "MEDIO DE PAGO": "={{ $json['MEDIO DE PAGO'] }}",
+            "TIPO": "={{ $json['TIPO'] }}",
+            "VISUALIZACIÓN DE FACTURA": "={{ $('When Executed by Another Workflow').item.json.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DATOS DEL PROVEEDOR (EMISOR)",
+              "displayName": "DATOS DEL PROVEEDOR (EMISOR)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RAZÓN SOCIAL (NOMBRE)",
+              "displayName": "RAZÓN SOCIAL (NOMBRE)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IDENTIFICACIÓN FISCAL",
+              "displayName": "IDENTIFICACIÓN FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DOMICILIO FISCAL",
+              "displayName": "DOMICILIO FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DATOS DE LA FACTURA RECIBIDA",
+              "displayName": "DATOS DE LA FACTURA RECIBIDA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO DE FACTURA DEL PROVEEDOR",
+              "displayName": "NÚMERO DE FACTURA DEL PROVEEDOR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE EMISIÓN",
+              "displayName": "FECHA DE EMISIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE RECEPCIÓN/REGISTRO",
+              "displayName": "FECHA DE RECEPCIÓN/REGISTRO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO",
+              "displayName": "CONCEPTO DE BIEN/SERVICIO ADQUIRIDO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPORTE TOTAL",
+              "displayName": "IMPORTE TOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPORTE NETO",
+              "displayName": "IMPORTE NETO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "IMPUESTOS",
+              "displayName": "IMPUESTOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DATOS DE CONTROL ITERNO",
+              "displayName": "DATOS DE CONTROL ITERNO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NÚMERO DE ORDEN DE COMPRA (SI APLICA)",
+              "displayName": "NÚMERO DE ORDEN DE COMPRA (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHA DE PAGO",
+              "displayName": "FECHA DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CLAVE DE CENTRO DE COSTO (SI APLICA)",
+              "displayName": "CLAVE DE CENTRO DE COSTO (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "MEDIO DE PAGO",
+              "displayName": "MEDIO DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIPO",
+              "displayName": "TIPO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "VISUALIZACIÓN DE FACTURA",
+              "displayName": "VISUALIZACIÓN DE FACTURA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1248,
+        -96
+      ],
+      "id": "967428e3-1f69-49ad-b796-807e89165e79",
+      "name": "ACTUALIZAMOS EGRESOS",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5e709a2-b5b7-46de-bdee-f2f2d861214c",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[0].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[0].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "16552d45-b4cf-4819-91ed-04038dd804b9",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[1].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[1].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "f58779b9-dd73-44e0-a851-2302ee8c2177",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[2].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[2].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "a69eecec-4b23-4b33-8e15-b77e721c7bb7",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[3].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[3].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "b984582a-1232-45c0-a37c-1dd4ed977178",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[4].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[4].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "425dcde5-9f3e-4729-9e44-abb6a53c32da",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[5].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[5].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "d7e72ad3-800f-48d6-9eee-484309812ed0",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[6].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[6].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "61c96458-45de-419a-9f1b-e0bbe7732ee7",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[7].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[7].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a941634-c596-45e9-8b80-1f6d1c341351",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[8].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[8].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "fb2254b4-18b3-469f-b6e4-8377ebbdbc64",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[9].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[9].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "c529f628-f0d2-4610-b0b4-f6b21d979210",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[10].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[10].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a947959-1b14-498f-91c3-3f421b4178c1",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[11].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[11].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5d7f8873-4e7d-48bd-b62e-aa380ecbacb0",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[12].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[12].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "30c71395-4977-40ee-8bb6-244f9ee165f4",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[13].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[13].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "2990dece-d343-4d64-9236-c8e33ac096ff",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[14].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[14].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "3e81aa4b-00eb-45b5-b044-5ac8f4ae3401",
+              "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[15].split(\"//\")[0] }}",
+              "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[15].split(\"//\")[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1024,
+        -96
+      ],
+      "id": "a8029548-bf29-4214-b1a1-015825fe266e",
+      "name": "SEPARACIÓN DE DATOS EGRESOS"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5e709a2-b5b7-46de-bdee-f2f2d861214c",
+              "name": "={{ $json.variables[0].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[0].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "16552d45-b4cf-4819-91ed-04038dd804b9",
+              "name": "={{ $json.variables[1].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[1].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "f58779b9-dd73-44e0-a851-2302ee8c2177",
+              "name": "={{ $json.variables[2].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[2].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "a69eecec-4b23-4b33-8e15-b77e721c7bb7",
+              "name": "={{ $json.variables[3].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[3].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "b984582a-1232-45c0-a37c-1dd4ed977178",
+              "name": "={{ $json.variables[4].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[4].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "425dcde5-9f3e-4729-9e44-abb6a53c32da",
+              "name": "={{ $json.variables[5].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[5].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "d7e72ad3-800f-48d6-9eee-484309812ed0",
+              "name": "={{ $json.variables[6].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[6].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "61c96458-45de-419a-9f1b-e0bbe7732ee7",
+              "name": "={{ $json.variables[7].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[7].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a941634-c596-45e9-8b80-1f6d1c341351",
+              "name": "={{ $json.variables[8].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[8].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "fb2254b4-18b3-469f-b6e4-8377ebbdbc64",
+              "name": "={{ $json.variables[9].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[9].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "c529f628-f0d2-4610-b0b4-f6b21d979210",
+              "name": "={{ $json.variables[10].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[10].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5a947959-1b14-498f-91c3-3f421b4178c1",
+              "name": "={{ $json.variables[11].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[11].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5d7f8873-4e7d-48bd-b62e-aa380ecbacb0",
+              "name": "={{ $json.variables[12].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[12].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "30c71395-4977-40ee-8bb6-244f9ee165f4",
+              "name": "={{ $json.variables[13].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[13].split(\"//\")[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "2990dece-d343-4d64-9236-c8e33ac096ff",
+              "name": "={{ $json.variables[14].split(\"//\")[0] }}",
+              "value": "={{ $json.variables[14].split(\"//\")[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1024,
+        -288
+      ],
+      "id": "1a664bf4-ed84-411a-8cfd-50e5d2a8dbd9",
+      "name": "SEPARACIÓN DE DATOS INGRESOS"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo",
+          "mode": "list",
+          "cachedResultName": "FACTURAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "FACTURA INGRESOS 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oDGQgyIr6R3A_cCM7LW_7yekjA-NtMDo4cirw0xcTZo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "RAZÓN SOCIAL": "={{ $json['RAZÓN SOCIAL'] }}",
+            "IDENTIFICACIÓN FISCAL": "={{ $json['IDENTIFICACIÓN FISCAL'] }}",
+            "DOMICILIO FISCAL": "={{ $json['DOMICILIO FISCAL'] }}",
+            "CLAVE DE USO FISCAL (SI APLICA)": "={{ $json['CLAVE DE USO FISCAL (SI APLICA)'] }}",
+            "NÚMERO DE LA FACTURA": "={{ $json['NÚMERO DE LA FACTURA'] }}",
+            "FECHA DE EMISIÓN": "={{ $json['FECHA DE EMISIÓN'] }}",
+            "CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS": "={{ $json['CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS'] }}",
+            "CANTIDAD Y UNIDAD": "={{ $json['CANTIDAD Y UNIDAD'] }}",
+            "PRECIO UNITARIO": "={{ $json['PRECIO UNITARIO'] }}",
+            "IMPORTE NETO O SUBTOTAL": "={{ $json['IMPORTE NETO O SUBTOTAL'] }}",
+            "TIPO IMPOSITIVO (IVA/IMPUESTOS)": "={{ $json['TIPO IMPOSITIVO (IVA/IMPUESTOS)'] }}",
+            "IMPORTE TOTAL": "={{ $json['IMPORTE TOTAL'] }}",
+            "MÉTODO DE PAGO": "={{ $json['MÉTODO DE PAGO'] }}",
+            "CONDICIONES DE PAGO": "={{ $json['CONDICIONES DE PAGO'] }}",
+            "VISUALIZACIÓN DE FACTURA": "={{ $('When Executed by Another Workflow').item.json.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DATOS DEL CLIENTE (RECEPTOR)",
+              "displayName": "DATOS DEL CLIENTE (RECEPTOR)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RAZÓN SOCIAL",
+              "displayName": "RAZÓN SOCIAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "IDENTIFICACIÓN FISCAL",
+              "displayName": "IDENTIFICACIÓN FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DOMICILIO FISCAL",
+              "displayName": "DOMICILIO FISCAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CLAVE DE USO FISCAL (SI APLICA)",
+              "displayName": "CLAVE DE USO FISCAL (SI APLICA)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATOS DE LA TRANSACCIÓN",
+              "displayName": "DATOS DE LA TRANSACCIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NÚMERO DE LA FACTURA",
+              "displayName": "NÚMERO DE LA FACTURA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FECHA DE EMISIÓN",
+              "displayName": "FECHA DE EMISIÓN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS",
+              "displayName": "CONCEPTO/DESCRIPCIÓN DE BIENES/SERVICIOS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CANTIDAD Y UNIDAD",
+              "displayName": "CANTIDAD Y UNIDAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PRECIO UNITARIO",
+              "displayName": "PRECIO UNITARIO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "IMPORTE NETO O SUBTOTAL",
+              "displayName": "IMPORTE NETO O SUBTOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIPO IMPOSITIVO (IVA/IMPUESTOS)",
+              "displayName": "TIPO IMPOSITIVO (IVA/IMPUESTOS)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "IMPORTE TOTAL",
+              "displayName": "IMPORTE TOTAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "MÉTODO DE PAGO",
+              "displayName": "MÉTODO DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CONDICIONES DE PAGO",
+              "displayName": "CONDICIONES DE PAGO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "VISUALIZACIÓN DE FACTURA",
+              "displayName": "VISUALIZACIÓN DE FACTURA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1248,
+        -288
+      ],
+      "id": "d4280a11-30cb-4f7f-a90c-23c1ad83ef0d",
+      "name": "ACTUALIZAMOS INGRESOS",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        -192
+      ],
+      "id": "7db19bc3-e1da-46c3-804d-f9ade926ec46",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "id": "19b5c596e7fe91be",
+          "threadId": "19b5c596e7fe91be",
+          "snippet": "Hey Carlos, Your trial ended yesterday and your automations are now paused. The good news? Everything you built is safely stored and ready to restart in just one click. Continue finding leads → While",
+          "payload": {
+            "mimeType": "multipart/alternative"
+          },
+          "sizeEstimate": 59986,
+          "historyId": "78751",
+          "internalDate": "1766780922000",
+          "labels": [
+            {
+              "id": "INBOX",
+              "name": "INBOX"
+            },
+            {
+              "id": "IMPORTANT",
+              "name": "IMPORTANT"
+            },
+            {
+              "id": "CATEGORY_UPDATES",
+              "name": "CATEGORY_UPDATES"
+            },
+            {
+              "id": "UNREAD",
+              "name": "UNREAD"
+            },
+            {
+              "id": "Label_488400991090751721",
+              "name": "02_OPERACIONES"
+            }
+          ],
+          "To": "<carlos@helioncoreai.com>",
+          "From": "John at PhantomBuster <support@phantombuster.com>",
+          "Subject": "Your PhantomBuster trial has ended"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Australia/Perth",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-29T06:34:35.151Z",
+      "createdAt": "2025-12-29T06:34:35.151Z",
+      "role": "workflow:owner",
+      "workflowId": "gKT82y4sxCzvGJOE",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-29T06:59:25.617Z",
+  "versionId": "12c535d5-a2ca-4cf2-99a0-8ce377ce5975"
+}
