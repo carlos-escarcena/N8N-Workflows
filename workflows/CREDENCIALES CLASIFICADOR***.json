@@ -1,0 +1,30 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {},
+  "createdAt": "2025-12-16T12:33:58.144Z",
+  "id": "TUBcFEE8P7UTwqWb",
+  "isArchived": false,
+  "meta": null,
+  "name": "CREDENCIALES CLASIFICADOR***",
+  "nodes": [],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-16T12:33:58.148Z",
+      "createdAt": "2025-12-16T12:33:58.148Z",
+      "role": "workflow:owner",
+      "workflowId": "TUBcFEE8P7UTwqWb",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-29T04:35:57.054Z",
+  "versionId": "db799f62-73c8-45f3-a263-fcf8f39c6081"
+}
