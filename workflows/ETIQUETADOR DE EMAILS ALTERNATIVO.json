@@ -1,0 +1,479 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "01_VENTAS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "02_OPERACIONES",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "03_FINANZAS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "04_ADMIN",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "05_RECURSOS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "05_RECURSOS1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "03_FINANZAS": {
+      "main": [
+        [
+          {
+            "node": "Get a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "02_OPERACIONES": {
+      "main": [
+        [
+          {
+            "node": "Get a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message": {
+      "main": [
+        [
+          {
+            "node": "Call 'FACTURAS EMAIL AUTOGUARDADO'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message1": {
+      "main": [
+        [
+          {
+            "node": "Call 'FACTURAS EMAIL AUTOGUARDADO'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-29T06:23:24.566Z",
+  "id": "Ls43ygqB3wy7jK7B",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "ETIQUETADOR DE EMAILS ALTERNATIVO",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -64,
+        1616
+      ],
+      "id": "59fff54f-7467-4d66-b94a-d975ee2483bf",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "=SUBJECT: {{ $json.Subject }}\nFROM: {{ $json.From }}\nSNIPPET: {{ $json.snippet }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "01_VENTAS",
+              "description": "Todo lo relacionado con la captación de negocio y nuevos ingresos. \n\n- Contactos nuevos que aún no han sido calificados. \n- Propuestas económicas enviadas en espera de cierre. \n- Colaboraciones con otras empresas o afiliados."
+            },
+            {
+              "category": "02_OPERACIONES",
+              "description": "Emails de proyectos que ya están en marcha y comunicación con clientes activos.\n\n- Entregables, correcciones y gestión diaria de servicios.\n- Incidencias técnicas o dudas de clientes actuales.\n- Comunicaciones con herramientas o servicios que tú contratas."
+            },
+            {
+              "category": "03_FINANZAS",
+              "description": "Movimientos de dinero, legal y fiscalidad.\n\n- Facturas emitidas a clientes y confirmaciones de cobro.\n- Facturas recibidas de proveedores, suscripciones y pagos. \n- Comunicación con gestoría, IVA, y documentos oficiales."
+            },
+            {
+              "category": "04_ADMIN",
+              "description": "Gestión de la estructura de la empresa y el equipo.\n\n- Comunicación interna, reuniones de equipo y avisos.\n- Currículums, contratos laborales, nóminas y talento.\n- Contratos de confidencialidad (NDA), términos y condiciones."
+            },
+            {
+              "category": "05_RECURSOS",
+              "description": "Emails que no requieren acción pero son útiles para consulta.\n\n- Credenciales, enlaces de registro y contraseñas.\n- Newsletters, cursos y tendencias del mercado. \n- Alertas de apps, registros de actividad y logs."
+            }
+          ]
+        },
+        "options": {
+          "multiClass": false,
+          "fallback": "other"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        1616
+      ],
+      "id": "9e540bef-e105-42dc-8e09-c3beb29446a1",
+      "name": "Text Classifier",
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1968
+      ],
+      "id": "9b3772c0-b0f9-45ac-a997-ec05835f9667",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_3742283167463047116"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1712
+      ],
+      "id": "d2feb429-c244-41e4-b8fe-7b99c03ea351",
+      "name": "04_ADMIN",
+      "webhookId": "cfb7484f-5e32-480b-925c-682473a96427",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_3537721277011477779"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1520
+      ],
+      "id": "b64da182-b038-4d57-86ed-aff54aa9af3e",
+      "name": "03_FINANZAS",
+      "webhookId": "cfb7484f-5e32-480b-925c-682473a96427",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_488400991090751721"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1328
+      ],
+      "id": "af9a7fdd-4ee9-4d1f-ad96-a75560f76996",
+      "name": "02_OPERACIONES",
+      "webhookId": "cfb7484f-5e32-480b-925c-682473a96427",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_8299581657459268980"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1136
+      ],
+      "id": "8bdac91f-d251-4304-8a4c-6ffd40a32a98",
+      "name": "01_VENTAS",
+      "webhookId": "cfb7484f-5e32-480b-925c-682473a96427",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_2555740425705284584"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1904
+      ],
+      "id": "c8283446-bb4b-42d9-aa69-d9a65ecad7c4",
+      "name": "05_RECURSOS",
+      "webhookId": "cfb7484f-5e32-480b-925c-682473a96427",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_5449086225331813185"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        2096
+      ],
+      "id": "32373a08-22d8-44d6-b9bf-d05fb4ef50c9",
+      "name": "05_RECURSOS1",
+      "webhookId": "cfb7484f-5e32-480b-925c-682473a96427",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "gKT82y4sxCzvGJOE",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/gKT82y4sxCzvGJOE",
+          "cachedResultName": "FACTURAS EMAIL AUTOGUARDADO"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        928,
+        1520
+      ],
+      "id": "93257b37-dd5c-46bb-a64b-d5d5b46d7212",
+      "name": "Call 'FACTURAS EMAIL AUTOGUARDADO'"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "messageId": "={{ $json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        1328
+      ],
+      "id": "93a61754-7636-49a2-ba39-de6f5f361c95",
+      "name": "Get a message",
+      "webhookId": "2d1c80fc-2ec0-4d7f-a807-6db66515e5c3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "messageId": "={{ $json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        1520
+      ],
+      "id": "5949cd1f-46c9-4e4e-921e-6fc66d7db49d",
+      "name": "Get a message1",
+      "webhookId": "2d1c80fc-2ec0-4d7f-a807-6db66515e5c3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "02_OPERACIONES": [
+      {
+        "json": {
+          "id": "19b5c596e7fe91be",
+          "threadId": "19b5c596e7fe91be",
+          "labelIds": [
+            "UNREAD",
+            "IMPORTANT",
+            "Label_488400991090751721",
+            "CATEGORY_UPDATES",
+            "INBOX"
+          ]
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-29T06:23:24.572Z",
+      "createdAt": "2025-12-29T06:23:24.572Z",
+      "role": "workflow:owner",
+      "workflowId": "Ls43ygqB3wy7jK7B",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-29T06:46:37.888Z",
+  "versionId": "3296591b-f4a1-44f8-813f-b36eae3da2fb"
+}
