@@ -1,0 +1,799 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "01_Pendiente",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "02_Urgente",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "03_Esperando",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "04_Agendado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10_Prospecto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "11_Presupuesto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "12_Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "20_Facturas",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "21_Bancos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "22_Contratos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "23_Impuestos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "30_Equipo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "31_RRHH",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "90_Histórico",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "91_Suscripciones",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "92_Accesos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Other",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-29T04:42:48.804Z",
+  "id": "l8mVs5EqVk1XQ2h2",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "ETIQUETADOR DE EMAILS",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -64,
+        1392
+      ],
+      "id": "0d9402d5-0f36-439d-93aa-6099edc0ff41",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "=SUBJECT: {{ $json.Subject }}\nFROM:{{ $json.From }}\nSNIPPET: {{ $json.snippet }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "01_Pendiente",
+              "description": "Emails que requieren una respuesta o tarea"
+            },
+            {
+              "category": "02_Urgente",
+              "description": "Prioridad máxima, responder hoy sí o sí"
+            },
+            {
+              "category": "03_Esperando",
+              "description": "Ya respondiste, pero dependes de que el otro conteste para seguir"
+            },
+            {
+              "category": "04_Agendado",
+              "description": "Tareas que ya tienen fecha en el calendario o reunión"
+            },
+            {
+              "category": "10_Prospecto",
+              "description": "Nuevos leads o posibles clientes"
+            },
+            {
+              "category": "11_Presupuesto",
+              "description": "Ofertas enviadas pendientes de aprobación"
+            },
+            {
+              "category": "12_Cliente",
+              "description": "Comunicaciones de proyectos activos pagados"
+            },
+            {
+              "category": "20_Facturas",
+              "description": "Facturas de proveedores o tickets de gasto"
+            },
+            {
+              "category": "21_Bancos",
+              "description": "Extractos, avisos de cobro o préstamos"
+            },
+            {
+              "category": "22_Contratos",
+              "description": "Documentos legales, firmas y acuerdos"
+            },
+            {
+              "category": "23_Impuestos",
+              "description": "Comunicaciones con la gestoría o Hacienda"
+            },
+            {
+              "category": "30_Equipo",
+              "description": "Comunicación interna entre empleados"
+            },
+            {
+              "category": "31_RRHH",
+              "description": "Nóminas, currículums o bajas"
+            },
+            {
+              "category": "90_Histórico",
+              "description": "Proyectos terminados con éxito"
+            },
+            {
+              "category": "91_Suscripciones",
+              "description": "Newsletters o noticias del sector"
+            },
+            {
+              "category": "92_Accesos",
+              "description": "Claves, usuarios y registros de plataformas"
+            }
+          ]
+        },
+        "options": {
+          "multiClass": false,
+          "fallback": "other"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        1392
+      ],
+      "id": "3633e40a-4c7b-4f21-bc9a-cac5572b9a5a",
+      "name": "Text Classifier",
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        0,
+        2128
+      ],
+      "id": "029f9ff9-88d5-4a84-824f-4eec9f605267",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "aysQ2I97HS75Kccc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_7652698481755165505"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        -144
+      ],
+      "id": "a3ab3b24-8f5c-4e0c-8fa6-e61b0a0da21b",
+      "name": "01_Pendiente",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_1624083747901957904"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        48
+      ],
+      "id": "b8971afe-5841-4b46-8ce6-42dea171d215",
+      "name": "02_Urgente",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_1531820271307114873"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        240
+      ],
+      "id": "b0c88dbc-74a1-46bc-a139-3060c0484eab",
+      "name": "03_Esperando",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_5684979177110111723"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        432
+      ],
+      "id": "50f4d1f3-2874-4e94-92e7-540bbdcaa55c",
+      "name": "04_Agendado",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_6538135310256136929"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        624
+      ],
+      "id": "1abbbfc2-2c50-4809-8330-aa18c262ee85",
+      "name": "10_Prospecto",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_9001282686458846533"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        816
+      ],
+      "id": "9f17270f-b08c-4e1e-bb6e-c000de6efdf7",
+      "name": "11_Presupuesto",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_1440773087457714169"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1008
+      ],
+      "id": "183b5f84-2310-4895-a196-39221db34d66",
+      "name": "12_Cliente",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_1295714272488018814"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1200
+      ],
+      "id": "db19ab85-0c21-4544-a379-14777fe5584f",
+      "name": "20_Facturas",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_1042749110206771366"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1392
+      ],
+      "id": "c15c5805-6097-4104-84c0-f04b995844c9",
+      "name": "21_Bancos",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_6478174160293003874"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1584
+      ],
+      "id": "8800a819-3ded-45bd-9b58-1d61f3e6c04d",
+      "name": "22_Contratos",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_4523284635095006670"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1776
+      ],
+      "id": "80ffd12a-da36-4359-b585-a10d50834720",
+      "name": "23_Impuestos",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_6582788086110911439"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        1968
+      ],
+      "id": "c0303773-691d-4814-9921-13928afbb08d",
+      "name": "30_Equipo",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_573990983752902488"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        2160
+      ],
+      "id": "e1e7f861-3bfb-4692-af1d-8859e150f41b",
+      "name": "31_RRHH",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_630484153095114311"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        2352
+      ],
+      "id": "a66de41f-4880-4242-bb07-f06ea5dba5c3",
+      "name": "90_Histórico",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_3963508747462765169"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        2544
+      ],
+      "id": "6cdd907d-83f0-44c3-9889-61ebdf30af93",
+      "name": "91_Suscripciones",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_1990164371157833571"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        2736
+      ],
+      "id": "b87a70a5-ab0a-455f-9141-132da56852a0",
+      "name": "92_Accesos",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_7912636745060633509"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        512,
+        2928
+      ],
+      "id": "2e345daf-5a80-40e4-a69d-e81ee633d617",
+      "name": "Other",
+      "webhookId": "f996132c-4619-41c4-9e0e-b961d328de6f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rdSzta5Y3PMIWpU8",
+          "name": "HELION CORE CARLOS API KEY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 1. Fase de Acción (El día a día) \nEstas etiquetas indican que \nel correo requiere trabajo activo.",
+        "height": 784,
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        192,
+        -192
+      ],
+      "typeVersion": 1,
+      "id": "3363f3ed-acc8-44f1-ac27-0af430d60dd6",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## 2. Fase de Clientes y Ventas\nPara separar el dinero del ruido.",
+        "height": 576,
+        "width": 448,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        192,
+        592
+      ],
+      "typeVersion": 1,
+      "id": "c1f42273-de76-4e77-9014-f735e657828c",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## 3. Fase Administrativa\nLo que mantiene la \nempresa legal y ordenada.",
+        "height": 768,
+        "width": 448,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        192,
+        1168
+      ],
+      "typeVersion": 1,
+      "id": "9e0ee951-eb0e-407e-8005-15be1aeace49",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n\n## 4. Fase Interna y Equipo\nPara la comunicación con tus \npropios trabajadores o socios.",
+        "height": 384,
+        "width": 448,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        192,
+        1936
+      ],
+      "typeVersion": 1,
+      "id": "94e807ab-e7cb-4f2e-8808-987cfbc62111",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## 5. Fase de Archivo (Final del camino)\nEmails que no requieren acción, \npero quieres guardar para siempre.",
+        "height": 576,
+        "width": 448,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        192,
+        2320
+      ],
+      "typeVersion": 1,
+      "id": "fb1f8809-8345-4023-8370-b057b8359e8a",
+      "name": "Sticky Note4"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-29T04:42:48.809Z",
+      "createdAt": "2025-12-29T04:42:48.809Z",
+      "role": "workflow:owner",
+      "workflowId": "l8mVs5EqVk1XQ2h2",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-29T06:08:18.614Z",
+  "versionId": "967fa574-b866-426b-860d-3440951fe235"
+}
