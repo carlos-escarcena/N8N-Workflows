@@ -1,0 +1,632 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "CADA X TIEMPO": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "DESARROLLO DE IDEA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "CREAR IMAGEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CREAR IMAGEN": {
+      "main": [
+        [
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a post": {
+      "main": [
+        [
+          {
+            "node": "ADAPTACIÓN DE CONTENIDO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final video": {
+      "main": [
+        [
+          {
+            "node": "Upload video to Postiz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure me": {
+      "main": [
+        [
+          {
+            "node": "Download final video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload video to Postiz": {
+      "main": [
+        [
+          {
+            "node": "Get Postiz integrations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Postiz integrations": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Schedule TikTok",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Schedule YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Schedule Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Configure me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DESARROLLO DE IDEA": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ADAPTACIÓN DE CONTENIDO": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-16T10:07:41.325Z",
+  "id": "uHYH5HMOTMeurQso",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "AUTOMATIZACIÓN REDES SOCIALES",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "725a1f56-b0cd-412c-a44e-f500979966a2",
+      "name": "CADA X TIEMPO"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c928a849-0582-4d57-8cd2-80c492b2c2b4",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4DcHwvHnkspHfFaI",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        0
+      ],
+      "id": "f5e260e1-6702-4952-a7e5-6e736a4a39c6",
+      "name": "Create a post"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        0
+      ],
+      "id": "59795193-4adf-4129-9d7b-08ffa1929a0c",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        0
+      ],
+      "id": "666bf57b-a4be-401a-9d7b-4d8ef4efe766",
+      "name": "CREAR IMAGEN"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Upload to GCS (To be accessible via URL)').item.json.mediaLink }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2272,
+        0
+      ],
+      "id": "91fe6c1d-bd39-4538-8cd5-bd2c1d9ba76e",
+      "name": "Download final video"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0f5772c0-1f84-45e9-b131-8be1c8dd6d85",
+              "name": "postiz_api",
+              "value": "https://api.postiz.com/public/v1",
+              "type": "string"
+            },
+            {
+              "id": "f3d9536a-3dc9-4673-b774-0434ca64575f",
+              "name": "share_title",
+              "value": "={{ $('Idea Agent').item.json.output.caption }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2048,
+        0
+      ],
+      "id": "eb8239a5-def3-4d10-9cbf-e94e2f24f745",
+      "name": "Configure me"
+    },
+    {
+      "parameters": {
+        "content": "# ❗ Config",
+        "height": 380,
+        "width": 220,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1986,
+        -220
+      ],
+      "id": "87f1aa7e-8913-4980-8149-a89f039faf52",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/upload",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "f9ebe777f47dc87545e6098c0e29ee5e818f500ef76d5d3b29b2a9ee1a439a74"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2496,
+        0
+      ],
+      "id": "44674d8f-7202-4543-99a0-a3252e00186a",
+      "name": "Upload video to Postiz"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.postiz.com/public/v1/integrations",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "f9ebe777f47dc87545e6098c0e29ee5e818f500ef76d5d3b29b2a9ee1a439a74"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2720,
+        0
+      ],
+      "id": "5e2cc109-bc4f-4346-8743-5c9347d50eb7",
+      "name": "Get Postiz integrations"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.identifier }}",
+                    "rightValue": "tiktok",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "3ff74ffe-3f82-437d-9218-bce4f7551211"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "tiktok"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2edc7f5f-18cf-45e2-9a10-03c6ee2a062f",
+                    "leftValue": "={{ $json.identifier }}",
+                    "rightValue": "youtube",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "youtube"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f461c331-7506-486b-ab4a-de03823f82f9",
+                    "leftValue": "={{ $json.identifier }}",
+                    "rightValue": "instagram",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "instagram"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2944,
+        -16
+      ],
+      "id": "d2d9eb32-4d7c-47be-a2fd-22d674225157",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"type\": \"public\"\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3168,
+        0
+      ],
+      "id": "3cab400c-840c-4d2f-b7ad-7b4377c2bdf9",
+      "name": "Schedule YouTube",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "3LneOAseTkv0F0yE",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "f9ebe777f47dc87545e6098c0e29ee5e818f500ef76d5d3b29b2a9ee1a439a74"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"privacy_level\": \"PUBLIC_TO_EVERYONE\",\n        \"duet\": \"false\",\n        \"stitch\": \"false\",\n        \"comment\": \"true\",\n        \"autoAddMusic\": \"no\",\n        \"brand_content_toggle\": \"false\",\n        \"brand_organic_toggle\": \"false\",\n        \"content_posting_method\": \"DIRECT_POST\"\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3168,
+        -192
+      ],
+      "id": "1eb28841-15be-4188-9d0c-4d195e770130",
+      "name": "Schedule TikTok"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.postiz.com/public/v1/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"type\": \"schedule\",\n  \"date\": \"{{ $now.plus(1, 'days').toISO() }}\",\n  \"tags\": [],\n  \"shortLink\": false,\n  \"posts\": [\n    {\n      \"integration\": {\n        \"id\": \"{{ $('Switch1').item.json.id }}\"\n      },\n      \"value\": [\n        {\n          \"content\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n          \"image\": [\n            {\n              \"id\": \"{{ $('Upload video to Postiz').item.json.id }}\",\n              \"path\": \"{{ $('Upload video to Postiz').item.json.path }}\"\n            }\n          ]\n        }\n      ],\n      \"settings\": {\n        \"title\": \"{{ $('Get Past Objects').first().json.quote.replace(/\"/g, \"\") }}\",\n        \"post_type\": \"post\"\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3168,
+        192
+      ],
+      "id": "251d2323-eb2d-48c7-90f2-731cabdd64b4",
+      "name": "Schedule Instagram",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "26BJ2fNpesHB2M0J",
+          "name": "SHOTSTACK API SANDBOX"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Checking the available channels",
+        "height": 496,
+        "width": 464,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2648,
+        -320
+      ],
+      "id": "496cf48f-b784-4490-adba-e1243830fba2",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Scheduling the posts",
+        "height": 656,
+        "width": 320,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3056,
+        -304
+      ],
+      "id": "40922af4-6f77-4745-a48b-1a561b5abd11",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1824,
+        0
+      ],
+      "id": "b77d2f5f-2780-4523-9df9-128b3ad9c07c",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        448,
+        0
+      ],
+      "id": "ad3c1e3a-2cb1-494e-84b5-21fbb93f81c7",
+      "name": "DESARROLLO DE IDEA"
+    },
+    {
+      "parameters": {
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        1472,
+        0
+      ],
+      "id": "bb826b11-b7c8-48e1-b4f2-a0c2dde09ad9",
+      "name": "ADAPTACIÓN DE CONTENIDO"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-16T10:07:41.330Z",
+      "createdAt": "2025-12-16T10:07:41.330Z",
+      "role": "workflow:owner",
+      "workflowId": "uHYH5HMOTMeurQso",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-16T10:57:49.096Z",
+  "versionId": "f73d7cd7-65c6-4a29-b0bf-e915d2c5f62c"
+}
