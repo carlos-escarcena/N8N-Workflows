@@ -1,0 +1,208 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Transcribe a recording",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe a recording": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Generate audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate audio": {
+      "main": [
+        [
+          {
+            "node": "Send an audio file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-01-05T10:39:56.155Z",
+  "id": "8l4sp7aVAaZV7MQ4",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "AGENTE TIPO ALEXA PARA MOVIL",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -672,
+        -16
+      ],
+      "id": "e8244819-49b1-4ece-9e89-a90c1d6a665f",
+      "name": "Telegram Trigger",
+      "webhookId": "c174961f-4ae9-4791-a1bd-1d1333af6752",
+      "credentials": {
+        "telegramApi": {
+          "id": "ca9USUdpJCsVplRI",
+          "name": "MONEY TRACKER CARLOS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        -16
+      ],
+      "id": "7e5f6b7f-efe1-4dbb-9d0b-5867a1579752",
+      "name": "Transcribe a recording",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -224,
+        -16
+      ],
+      "id": "19a2481f-4315-40ea-afd2-bdc1c3abeeec",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        128,
+        -16
+      ],
+      "id": "f7589a1e-de43-46f1-97bd-c7a90b81d5e3",
+      "name": "Generate audio",
+      "credentials": {
+        "openAiApi": {
+          "id": "txwMr6E1QaaA40BX",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAudio",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        352,
+        -16
+      ],
+      "id": "cd872704-2a3d-413f-8ed9-7becce4f059f",
+      "name": "Send an audio file",
+      "webhookId": "5003d07f-0b3c-43c3-b70e-ef4757d9e154",
+      "credentials": {
+        "telegramApi": {
+          "id": "ca9USUdpJCsVplRI",
+          "name": "MONEY TRACKER CARLOS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "calendarId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "triggerOn": "eventStarted",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTrigger",
+      "typeVersion": 1,
+      "position": [
+        -672,
+        -240
+      ],
+      "id": "a1d5270a-2571-4e9d-a7ec-3a92fd2756c3",
+      "name": "Google Calendar Trigger",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "nmKxQwjkO1uFUTkd",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2026-01-05T10:39:56.158Z",
+      "createdAt": "2026-01-05T10:39:56.158Z",
+      "role": "workflow:owner",
+      "workflowId": "8l4sp7aVAaZV7MQ4",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-01-05T10:46:40.647Z",
+  "versionId": "8e72b2c0-4809-4b7e-ae3e-bac1871b65ec"
+}
