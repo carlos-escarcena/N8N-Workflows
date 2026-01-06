@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T18:08:12.611Z",
-    "createdAt": "2025-12-12T18:08:12.611Z",
-    "versionId": "6f1800c9-c5d9-40a4-8ebd-862060a6e659",
+    "updatedAt": "2026-01-05T10:21:29.183Z",
+    "createdAt": "2026-01-05T10:21:29.183Z",
+    "versionId": "011b3168-2485-4d26-a702-3ee7b6dda654",
     "workflowId": "cf6i7kJ2PeeZ1AUY",
     "nodes": [
       {
@@ -13,7 +13,7 @@
         "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
         "typeVersion": 2,
         "position": [
-          152,
+          160,
           0
         ],
         "id": "1c5d032d-2f38-409a-b196-7dac023726e4",
@@ -32,9 +32,33 @@
           },
           "workflowInputs": {
             "mappingMode": "defineBelow",
-            "value": {},
+            "value": {
+              "beforeTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('beforeTime', ``, 'string') }}",
+              "afterTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('afterTime', ``, 'string') }}"
+            },
             "matchingColumns": [],
-            "schema": [],
+            "schema": [
+              {
+                "id": "afterTime",
+                "displayName": "afterTime",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "beforeTime",
+                "displayName": "beforeTime",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              }
+            ],
             "attemptToConvertTypes": false,
             "convertFieldsToString": false
           }
@@ -470,7 +494,7 @@
     "name": null,
     "description": null
   },
-  "activeVersionId": "6f1800c9-c5d9-40a4-8ebd-862060a6e659",
+  "activeVersionId": "011b3168-2485-4d26-a702-3ee7b6dda654",
   "connections": {
     "MIRAR EVENTO": {
       "ai_tool": [
@@ -563,7 +587,7 @@
       "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
       "typeVersion": 2,
       "position": [
-        152,
+        160,
         0
       ],
       "id": "1c5d032d-2f38-409a-b196-7dac023726e4",
@@ -582,9 +606,33 @@
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
-          "value": {},
+          "value": {
+            "beforeTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('beforeTime', ``, 'string') }}",
+            "afterTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('afterTime', ``, 'string') }}"
+          },
           "matchingColumns": [],
-          "schema": [],
+          "schema": [
+            {
+              "id": "afterTime",
+              "displayName": "afterTime",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "beforeTime",
+              "displayName": "beforeTime",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
         }
@@ -958,6 +1006,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-12T18:08:12.611Z",
-  "versionId": "6f1800c9-c5d9-40a4-8ebd-862060a6e659"
+  "updatedAt": "2026-01-05T10:21:29.182Z",
+  "versionId": "011b3168-2485-4d26-a702-3ee7b6dda654"
 }
