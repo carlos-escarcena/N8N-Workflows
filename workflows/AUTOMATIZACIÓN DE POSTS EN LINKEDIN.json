@@ -1,0 +1,61 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {},
+  "createdAt": "2026-01-05T10:47:41.392Z",
+  "id": "pvd44X6XenUwdbrX",
+  "isArchived": false,
+  "meta": null,
+  "name": "AUTOMATIZACIÓN DE POSTS EN LINKEDIN",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "7ece84b6-40a5-4083-83d3-c91092f7de70",
+      "name": "Google Sheets Trigger"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2026-01-05T10:47:41.395Z",
+      "createdAt": "2026-01-05T10:47:41.395Z",
+      "role": "workflow:owner",
+      "workflowId": "pvd44X6XenUwdbrX",
+      "projectId": "1hPYqGN0htWyJ6V9"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-01-05T10:52:39.260Z",
+  "versionId": "0f092627-fdef-43db-88da-1e154a119cb3"
+}
