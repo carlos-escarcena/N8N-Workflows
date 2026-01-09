@@ -2,7 +2,30 @@
   "active": false,
   "activeVersion": null,
   "activeVersionId": null,
-  "connections": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "createdAt": "2026-01-05T10:47:41.392Z",
   "id": "pvd44X6XenUwdbrX",
   "isArchived": false,
@@ -38,6 +61,68 @@
       ],
       "id": "7ece84b6-40a5-4083-83d3-c91092f7de70",
       "name": "Google Sheets Trigger"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8d9b9832-43cc-4bc9-a313-03abdc10a95a",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        192,
+        0
+      ],
+      "id": "786a2c6e-425d-4c3c-994b-1bc2dc6851ac",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "0aad75e7-57e1-40e8-94c0-babecf990163"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        0
+      ],
+      "id": "dfe8225b-bb46-466a-95fc-c3b93c8ca82c",
+      "name": "Switch"
     }
   ],
   "pinData": {},
@@ -56,6 +141,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-01-05T10:52:39.260Z",
-  "versionId": "0f092627-fdef-43db-88da-1e154a119cb3"
+  "updatedAt": "2026-01-08T09:34:49.360Z",
+  "versionId": "48632512-0a93-4a0d-8da7-518b29ecc6a0"
 }
