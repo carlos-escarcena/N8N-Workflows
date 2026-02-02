@@ -1,7 +1,196 @@
 {
-  "active": false,
-  "activeVersion": null,
-  "activeVersionId": null,
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-12T17:55:25.472Z",
+    "createdAt": "2025-12-12T17:55:25.472Z",
+    "versionId": "d16f9eed-0c94-4db9-b252-f87022834f72",
+    "workflowId": "L0d9mpgl47vOaRp9",
+    "nodes": [
+      {
+        "parameters": {
+          "workflowInputs": {
+            "values": [
+              {
+                "name": "startTime"
+              },
+              {
+                "name": "endTime"
+              },
+              {
+                "name": "email"
+              },
+              {
+                "name": "eventSummary"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          0,
+          0
+        ],
+        "id": "ac86e1a3-ae98-475b-ae63-58cdd3f3d400",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "parameters": {
+          "calendar": {
+            "__rl": true,
+            "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+            "mode": "list",
+            "cachedResultName": "CALENDARIO PRUEBA N8N"
+          },
+          "start": "={{ $json.startTime }}",
+          "end": "={{ $json.endTime }}",
+          "additionalFields": {
+            "attendees": [
+              "={{ $json.email }}"
+            ],
+            "summary": "={{ $json.eventSummary }}"
+          }
+        },
+        "type": "n8n-nodes-base.googleCalendar",
+        "typeVersion": 1.3,
+        "position": [
+          208,
+          0
+        ],
+        "id": "ad961c84-770b-4c8d-bf56-9433edff6f21",
+        "name": "Create an event",
+        "credentials": {
+          "googleCalendarOAuth2Api": {
+            "id": "nmKxQwjkO1uFUTkd",
+            "name": "Google Calendar account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
+            "mode": "list",
+            "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
+          },
+          "sheetName": {
+            "__rl": true,
+            "value": 1223733225,
+            "mode": "list",
+            "cachedResultName": "REGISTRO DE CITAS",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=1223733225"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "ID": "={{ $json.id }}",
+              "EMAIL": "={{ $json.attendees[0].email }}",
+              "DATE": "={{ $json.start.dateTime }}",
+              "APPOINTMENT TYPE": "={{ $json.summary }}",
+              "NOTES": "={{ $json.summary }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "ID",
+                "displayName": "ID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "EMAIL",
+                "displayName": "EMAIL",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "APPOINTMENT TYPE",
+                "displayName": "APPOINTMENT TYPE",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "DATE",
+                "displayName": "DATE",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "NOTES",
+                "displayName": "NOTES",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          416,
+          0
+        ],
+        "id": "70031c39-14ce-4bcf-af0e-e8480438517c",
+        "name": "Append row in sheet",
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4DcHwvHnkspHfFaI",
+            "name": "Google Sheets account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "When Executed by Another Workflow": {
+        "main": [
+          [
+            {
+              "node": "Create an event",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Create an event": {
+        "main": [
+          [
+            {
+              "node": "Append row in sheet",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Carlos Escarcena",
+    "name": null,
+    "description": null,
+    "autosaved": false
+  },
+  "activeVersionId": "d16f9eed-0c94-4db9-b252-f87022834f72",
   "connections": {
     "When Executed by Another Workflow": {
       "main": [
