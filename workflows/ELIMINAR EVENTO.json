@@ -1,7 +1,196 @@
 {
-  "active": false,
-  "activeVersion": null,
-  "activeVersionId": null,
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-12T17:36:04.300Z",
+    "createdAt": "2025-12-12T17:36:04.300Z",
+    "versionId": "4dd06ed3-a835-4be2-8b2a-e1a7ae993656",
+    "workflowId": "DwXrESE3AnPfZfGB",
+    "nodes": [
+      {
+        "parameters": {
+          "workflowInputs": {
+            "values": [
+              {
+                "name": "eventID"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          0,
+          0
+        ],
+        "id": "576f23bc-af30-4a91-a0ab-40accfdca386",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "parameters": {
+          "operation": "delete",
+          "calendar": {
+            "__rl": true,
+            "value": "c_6680a8c1a72a6970c40f88afd2b87ed069059864e256169776f2238e06aad681@group.calendar.google.com",
+            "mode": "list",
+            "cachedResultName": "CALENDARIO PRUEBA N8N"
+          },
+          "eventId": "={{ $json.eventID }}",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.googleCalendar",
+        "typeVersion": 1.3,
+        "position": [
+          208,
+          0
+        ],
+        "id": "604c1722-cff0-4136-ba6d-d0c9bd96ef13",
+        "name": "Delete an event",
+        "credentials": {
+          "googleCalendarOAuth2Api": {
+            "id": "nmKxQwjkO1uFUTkd",
+            "name": "Google Calendar account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "update",
+          "documentId": {
+            "__rl": true,
+            "value": "1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo",
+            "mode": "list",
+            "cachedResultName": "VAPI HELION CORE ASISTENTE AI",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit?usp=drivesdk"
+          },
+          "sheetName": {
+            "__rl": true,
+            "value": 1223733225,
+            "mode": "list",
+            "cachedResultName": "REGISTRO DE CITAS",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1s_0G_AXayLvEgbUZAHxFI-Qk6ztDGAsp1x1t8moj9Yo/edit#gid=1223733225"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "NOTES": "Canceled",
+              "DATE": "={{ $json.originalStartTime }}",
+              "ID": "={{ $('When Executed by Another Workflow').item.json.eventID }}"
+            },
+            "matchingColumns": [
+              "ID"
+            ],
+            "schema": [
+              {
+                "id": "ID",
+                "displayName": "ID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "EMAIL",
+                "displayName": "EMAIL",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": true
+              },
+              {
+                "id": "APPOINTMENT TYPE",
+                "displayName": "APPOINTMENT TYPE",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": true
+              },
+              {
+                "id": "DATE",
+                "displayName": "DATE",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "NOTES",
+                "displayName": "NOTES",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "row_number",
+                "displayName": "row_number",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "number",
+                "canBeUsedToMatch": true,
+                "readOnly": true,
+                "removed": true
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          416,
+          0
+        ],
+        "id": "87cc2c2c-815b-4949-a89b-d07f235579e5",
+        "name": "Update row in sheet",
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4DcHwvHnkspHfFaI",
+            "name": "Google Sheets account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "When Executed by Another Workflow": {
+        "main": [
+          [
+            {
+              "node": "Delete an event",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Delete an event": {
+        "main": [
+          [
+            {
+              "node": "Update row in sheet",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Carlos Escarcena",
+    "name": null,
+    "description": null,
+    "autosaved": false
+  },
+  "activeVersionId": "4dd06ed3-a835-4be2-8b2a-e1a7ae993656",
   "connections": {
     "When Executed by Another Workflow": {
       "main": [
