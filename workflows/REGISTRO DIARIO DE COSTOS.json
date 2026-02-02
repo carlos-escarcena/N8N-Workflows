@@ -1,7 +1,79 @@
 {
-  "active": false,
-  "activeVersion": null,
-  "activeVersionId": null,
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-12T11:54:11.305Z",
+    "createdAt": "2025-12-12T11:54:11.305Z",
+    "versionId": "6697a84b-e29b-42d7-9d41-b6fb5c27bef5",
+    "workflowId": "tV3QPdgokoiiXD7W",
+    "nodes": [
+      {
+        "parameters": {
+          "operation": "appendOrUpdate",
+          "documentId": {
+            "__rl": true,
+            "mode": "list",
+            "value": ""
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "list",
+            "value": ""
+          }
+        },
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          224,
+          0
+        ],
+        "id": "2d787132-2647-4be7-a3c9-c1b2449475aa",
+        "name": "Append or update row in sheet",
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4DcHwvHnkspHfFaI",
+            "name": "Google Sheets account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "workflowInputs": {
+            "values": [
+              {
+                "name": "data"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          0,
+          0
+        ],
+        "id": "22d8a193-c0ce-4631-9d42-a313bb704bae",
+        "name": "When Executed by Another Workflow"
+      }
+    ],
+    "connections": {
+      "When Executed by Another Workflow": {
+        "main": [
+          [
+            {
+              "node": "Append or update row in sheet",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Carlos Escarcena",
+    "name": null,
+    "description": null,
+    "autosaved": false
+  },
+  "activeVersionId": "6697a84b-e29b-42d7-9d41-b6fb5c27bef5",
   "connections": {
     "When Executed by Another Workflow": {
       "main": [
