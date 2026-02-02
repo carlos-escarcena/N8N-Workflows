@@ -1,7 +1,353 @@
 {
-  "active": false,
-  "activeVersion": null,
-  "activeVersionId": null,
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2026-02-02T10:43:23.052Z",
+    "createdAt": "2026-02-02T10:43:23.052Z",
+    "versionId": "3550de91-deb2-49d7-9b00-f41272314ca1",
+    "workflowId": "hJhZlYHR6YcsW9Ut",
+    "nodes": [
+      {
+        "parameters": {
+          "updates": [
+            "message"
+          ],
+          "additionalFields": {}
+        },
+        "type": "n8n-nodes-base.telegramTrigger",
+        "typeVersion": 1.2,
+        "position": [
+          0,
+          0
+        ],
+        "id": "6992622c-8244-4d9c-84d1-c31baf26135e",
+        "name": "Telegram Trigger",
+        "webhookId": "8aeb1c12-9037-4310-9804-7c54659316e1",
+        "credentials": {
+          "telegramApi": {
+            "id": "ca9USUdpJCsVplRI",
+            "name": "MONEY TRACKER CARLOS"
+          }
+        },
+        "disabled": true
+      },
+      {
+        "parameters": {},
+        "type": "n8n-nodes-base.executeWorkflowTrigger",
+        "typeVersion": 1.1,
+        "position": [
+          0,
+          -192
+        ],
+        "id": "867103e4-7129-4cc1-a555-6bf0b49ef776",
+        "name": "When Executed by Another Workflow"
+      },
+      {
+        "parameters": {
+          "resource": "image",
+          "operation": "analyze",
+          "modelId": {
+            "__rl": true,
+            "value": "gpt-4o",
+            "mode": "list",
+            "cachedResultName": "GPT-4O"
+          },
+          "text": "### ROL\nEres un experto extrayendo texto de imágenes.\n\n### INSTRUCCIONES\nNecesito que cojas todo el texto de la imagen y me devuelvas la información formateada. El nombre de la variable será cada dato que te pida en mayusculas, es decir, si te pido la \"razón social (nombre)\" el nombre de la variable debe ser \"RAZÓN SOCIAL (NOMBRE)\". \n\n### FORMATO\nDato a sacar de la imagen//dato real\n\nNO PUEDEN HABER ESPACIOS O NINGÚN CARACTER EXTRA NI AL PRINCIPIO NI AL FINAL DE LAS VARIABLES O DE LOS DATOS REALES.\n\nEse es el formato y cada dato se divide con una linea nueva.\nSi un dato no eres capaz de sacarlo simplemente di \"DATO NO ENCONTRADO\"\nDebes devolver todas las variables que te pido aunque estén vacías.\n\nEn \"CATEGORY\" debes simplemente poner \"INCOME\" o \"EXPENSES\" o \"SAVINGS\" dependiendo de si la factura es de un pago de un cliente a nosotros o un gasto nuestro.\n\nSi el tipo de factura es un egreso devuelve los datos pedidos para los egresos.\nSi el tipo de factura es un ingreso devuelve los datos pedidos para los ingresos.\n\n### DATOS A DEVOLVER\n\nDATE\nAMOUNT\nCATEGORY\nSUBCATEGORY\nDESCRIPTION\nDÍA DE LA SEMANA\n\n\n### CLASIFICACIÓN DE DATOS\n\n- Si \"CATEGORY\" es \"INCOME\" entonces \"SUBCATEGORY\" debe ser una de las siguientes opciones:\n    - Employment (Net)\n    - Side Huste (Net)\n    - Dividends\n    - Other\n\n- Si \"CATEGORY\" es \"EXPENSES\" entonces \"SUBCATEGORY\" debe ser una de las siguientes opciones:\n    - Housing\n    - Utilities\n    - Groceries\n    - Petrol\n    - Subscriptions\n    - Insurance\n    - Going out\n    - Phone\n    - Other\n\n- Si \"CATEGORY\" es \"SAVINGS\" entonces \"SUBCATEGORY\" debe ser una de las siguientes opciones:\n    - Emergency fund\n    - Day to day account\n    - Stock portfolio\n\n### IMPORTANTE\nNo incluyas ningún tipo de comillas ni back ticks ni nada por el estilo .\nSolo devuelve el contenido en el formato que te he pedido.\nSi no estás seguro de que valor asignar para cada variable simplemente dejala en blanco.\n\n\n",
+          "inputType": "base64",
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.openAi",
+        "typeVersion": 2.1,
+        "position": [
+          416,
+          0
+        ],
+        "id": "b0b147ea-111f-4bb0-b90c-7ea7a1216bd0",
+        "name": "EXTRACCIÓN DE TEXTO",
+        "credentials": {
+          "openAiApi": {
+            "id": "txwMr6E1QaaA40BX",
+            "name": "OpenAi account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "b2b5e4e7-c94f-4019-8993-335b8b549e2a",
+                "name": "variables",
+                "value": "={{ $json['0'].content[0].text.split(\"\\n\") }}",
+                "type": "array"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          640,
+          0
+        ],
+        "id": "f3dd596a-5747-4372-8abc-be2347acc913",
+        "name": "PARSEADO DE RESPUESTA"
+      },
+      {
+        "parameters": {
+          "resource": "file",
+          "fileId": "={{ $json.message.photo[3].file_id }}",
+          "additionalFields": {}
+        },
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1.2,
+        "position": [
+          208,
+          0
+        ],
+        "id": "d847ed21-6317-4aff-9bbc-2376b7e73880",
+        "name": "Get a file",
+        "webhookId": "dba3f1e0-70d7-4905-978f-121aff239dfe",
+        "credentials": {
+          "telegramApi": {
+            "id": "ca9USUdpJCsVplRI",
+            "name": "MONEY TRACKER CARLOS"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "d5e709a2-b5b7-46de-bdee-f2f2d861214c",
+                "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[0].split(\"//\")[0] }}",
+                "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[0].split(\"//\")[1] }}",
+                "type": "string"
+              },
+              {
+                "id": "16552d45-b4cf-4819-91ed-04038dd804b9",
+                "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[1].split(\"//\")[0] }}",
+                "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[1].split(\"//\")[1] }}",
+                "type": "number"
+              },
+              {
+                "id": "f58779b9-dd73-44e0-a851-2302ee8c2177",
+                "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[2].split(\"//\")[0] }}",
+                "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[2].split(\"//\")[1] }}",
+                "type": "string"
+              },
+              {
+                "id": "a69eecec-4b23-4b33-8e15-b77e721c7bb7",
+                "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[3].split(\"//\")[0] }}",
+                "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[3].split(\"//\")[1] }}",
+                "type": "string"
+              },
+              {
+                "id": "b984582a-1232-45c0-a37c-1dd4ed977178",
+                "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[4].split(\"//\")[0] }}",
+                "value": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[4].split(\"//\")[1] }}",
+                "type": "string"
+              },
+              {
+                "id": "425dcde5-9f3e-4729-9e44-abb6a53c32da",
+                "name": "={{ $('PARSEADO DE RESPUESTA').item.json.variables[5].split(\"//\")[0] }}",
+                "value": "={{ $now.weekdayLong.toUpperCase() }}",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          880,
+          0
+        ],
+        "id": "7d63fbfb-d845-44ee-b82b-fd251fa53de8",
+        "name": "SEPARACIÓN DE DATOS EGRESOS"
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "value": "19025mybY5BReHRWgER7jgWbhFb63D2DevVadsMRAi-s",
+            "mode": "list",
+            "cachedResultName": "BUDGET PERSONAL 2026",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19025mybY5BReHRWgER7jgWbhFb63D2DevVadsMRAi-s/edit?usp=drivesdk"
+          },
+          "sheetName": {
+            "__rl": true,
+            "value": 1487755970,
+            "mode": "list",
+            "cachedResultName": "BUDGET TRACKING 2026",
+            "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19025mybY5BReHRWgER7jgWbhFb63D2DevVadsMRAi-s/edit#gid=1487755970"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "DATE": "={{ $json.DATE }}",
+              "AMOUNT": "={{ $json.AMOUNT }}",
+              "CATEGORY": "={{ $json.CATEGORY }}",
+              "SUBCATEGORY": "={{ $json.SUBCATEGORY }}",
+              "DESCRIPTION": "={{ $json.DESCRIPTION }}",
+              "DIA DE LA SEMANA": "={{ $json['DÍA DE LA SEMANA'] }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "DATE",
+                "displayName": "DATE",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "AMOUNT",
+                "displayName": "AMOUNT",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "CATEGORY",
+                "displayName": "CATEGORY",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "SUBCATEGORY",
+                "displayName": "SUBCATEGORY",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "DESCRIPTION",
+                "displayName": "DESCRIPTION",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              },
+              {
+                "id": "DIA DE LA SEMANA",
+                "displayName": "DIA DE LA SEMANA",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true,
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {
+            "locationDefine": {
+              "values": {
+                "headerRow": 4
+              }
+            }
+          }
+        },
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          1088,
+          0
+        ],
+        "id": "aa089a99-3b27-4970-b20c-9889c658af04",
+        "name": "Append row in sheet",
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4DcHwvHnkspHfFaI",
+            "name": "Google Sheets account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "EXTRACCIÓN DE TEXTO": {
+        "main": [
+          [
+            {
+              "node": "PARSEADO DE RESPUESTA",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "PARSEADO DE RESPUESTA": {
+        "main": [
+          [
+            {
+              "node": "SEPARACIÓN DE DATOS EGRESOS",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Telegram Trigger": {
+        "main": [
+          [
+            {
+              "node": "Get a file",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get a file": {
+        "main": [
+          [
+            {
+              "node": "EXTRACCIÓN DE TEXTO",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "SEPARACIÓN DE DATOS EGRESOS": {
+        "main": [
+          [
+            {
+              "node": "Append row in sheet",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "system migration",
+    "name": null,
+    "description": null,
+    "autosaved": false
+  },
+  "activeVersionId": "3550de91-deb2-49d7-9b00-f41272314ca1",
   "connections": {
     "EXTRACCIÓN DE TEXTO": {
       "main": [
@@ -88,7 +434,8 @@
           "id": "ca9USUdpJCsVplRI",
           "name": "MONEY TRACKER CARLOS"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {},
@@ -435,5 +782,5 @@
   "tags": [],
   "triggerCount": 0,
   "updatedAt": "2025-12-16T13:04:53.488Z",
-  "versionId": "8ad2c9e9-9468-43a3-ad88-c9ce9f65b063"
+  "versionId": "3550de91-deb2-49d7-9b00-f41272314ca1"
 }
