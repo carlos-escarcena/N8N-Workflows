@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T18:07:38.246Z",
-    "createdAt": "2025-12-12T18:07:38.246Z",
     "versionId": "b3878459-19a8-4acd-974b-a0a1a3a24cef",
     "workflowId": "zkCLAoTj432fVAkZ",
     "nodes": [
@@ -114,7 +112,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T18:07:38.246Z",
+    "updatedAt": "2025-12-12T18:07:38.246Z"
   },
   "activeVersionId": "b3878459-19a8-4acd-974b-a0a1a3a24cef",
   "connections": {
@@ -137,6 +137,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "VAPI AGENTE EOC REPORT",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -240,11 +241,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-12T18:06:34.487Z",
-      "createdAt": "2025-12-12T18:06:34.487Z",
       "role": "workflow:owner",
       "workflowId": "zkCLAoTj432fVAkZ",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-12T18:06:34.487Z",
+      "updatedAt": "2025-12-12T18:06:34.487Z"
     }
   ],
   "staticData": null,
