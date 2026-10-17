@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-01T13:50:14.823Z",
-    "createdAt": "2025-12-01T13:50:14.823Z",
     "versionId": "633287e4-2f04-4c0e-8af2-6733e968bdd1",
     "workflowId": "172J3SbVCcjrJdAW",
     "nodes": [
@@ -111,7 +109,9 @@
     "authors": "system migration",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-01T13:50:14.823Z",
+    "updatedAt": "2025-12-01T13:50:14.823Z"
   },
   "activeVersionId": "633287e4-2f04-4c0e-8af2-6733e968bdd1",
   "connections": {
@@ -145,6 +145,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "REENVÍO DE EMAIL (CONTACTO)",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -234,11 +235,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-26T10:30:26.081Z",
-      "createdAt": "2025-11-26T10:30:26.081Z",
       "role": "workflow:owner",
       "workflowId": "172J3SbVCcjrJdAW",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-26T10:30:26.081Z",
+      "updatedAt": "2025-11-26T10:30:26.081Z"
     }
   ],
   "staticData": {
