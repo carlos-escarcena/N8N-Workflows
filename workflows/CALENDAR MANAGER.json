@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-11T07:46:27.502Z",
-    "createdAt": "2025-12-11T07:46:27.502Z",
     "versionId": "7279d837-3938-4497-9b36-3f119da5ca70",
     "workflowId": "ZnZIwAxaXNYHGlP4",
     "nodes": [
@@ -545,7 +543,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-11T07:46:27.502Z",
+    "updatedAt": "2025-12-11T07:46:27.502Z"
   },
   "activeVersionId": "7279d837-3938-4497-9b36-3f119da5ca70",
   "connections": {
@@ -681,6 +681,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "CALENDAR MANAGER",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -1097,11 +1098,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T07:15:17.216Z",
-      "createdAt": "2025-12-11T07:15:17.216Z",
       "role": "workflow:owner",
       "workflowId": "ZnZIwAxaXNYHGlP4",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T07:15:17.216Z",
+      "updatedAt": "2025-12-11T07:15:17.216Z"
     }
   ],
   "staticData": null,
