@@ -707,6 +707,7 @@
   "isArchived": false,
   "meta": null,
   "name": "✅ \"What If...\" Fictional Worlds Generator",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -2266,11 +2267,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-10T16:25:14.173Z",
-      "createdAt": "2025-11-10T16:25:14.173Z",
       "role": "workflow:owner",
       "workflowId": "wXml0lrdUFkyDrxV",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-10T16:25:14.173Z",
+      "updatedAt": "2025-11-10T16:25:14.173Z"
     }
   ],
   "staticData": null,
