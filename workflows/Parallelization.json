@@ -75,6 +75,7 @@
   "isArchived": false,
   "meta": null,
   "name": "Parallelization",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -367,20 +368,20 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T12:04:36.110Z",
-      "createdAt": "2025-12-11T12:04:36.110Z",
       "role": "workflow:owner",
       "workflowId": "aC95i8muJszni6Ih",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T12:04:36.110Z",
+      "updatedAt": "2025-12-11T12:04:36.110Z"
     }
   ],
   "staticData": null,
   "tags": [
     {
-      "updatedAt": "2025-12-11T12:04:18.130Z",
-      "createdAt": "2025-12-11T12:04:18.130Z",
       "id": "tWVTCwL2THiCEq1S",
-      "name": "Parallelization"
+      "name": "Parallelization",
+      "createdAt": "2025-12-11T12:04:18.130Z",
+      "updatedAt": "2025-12-11T12:04:18.130Z"
     }
   ],
   "triggerCount": 0,
