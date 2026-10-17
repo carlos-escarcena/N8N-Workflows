@@ -155,6 +155,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "AUTOGUARDADO DE FACTURAS",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -1384,11 +1385,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-03T09:08:40.098Z",
-      "createdAt": "2025-12-03T09:08:40.098Z",
       "role": "workflow:owner",
       "workflowId": "zy74ypey7FianT4f",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-03T09:08:40.098Z",
+      "updatedAt": "2025-12-03T09:08:40.098Z"
     }
   ],
   "staticData": null,
