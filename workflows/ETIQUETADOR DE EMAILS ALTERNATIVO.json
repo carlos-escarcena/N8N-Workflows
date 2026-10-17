@@ -134,6 +134,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "ETIQUETADOR DE EMAILS ALTERNATIVO",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -464,11 +465,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T06:23:24.572Z",
-      "createdAt": "2025-12-29T06:23:24.572Z",
       "role": "workflow:owner",
       "workflowId": "Ls43ygqB3wy7jK7B",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-29T06:23:24.572Z",
+      "updatedAt": "2025-12-29T06:23:24.572Z"
     }
   ],
   "staticData": null,
