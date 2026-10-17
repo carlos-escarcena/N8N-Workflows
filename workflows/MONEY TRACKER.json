@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2026-02-02T10:43:23.052Z",
-    "createdAt": "2026-02-02T10:43:23.052Z",
     "versionId": "3550de91-deb2-49d7-9b00-f41272314ca1",
     "workflowId": "hJhZlYHR6YcsW9Ut",
     "nodes": [
@@ -346,7 +344,9 @@
     "authors": "system migration",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2026-02-02T10:43:23.052Z",
+    "updatedAt": "2026-02-02T10:43:23.052Z"
   },
   "activeVersionId": "3550de91-deb2-49d7-9b00-f41272314ca1",
   "connections": {
@@ -413,6 +413,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "MONEY TRACKER",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -772,11 +773,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-16T12:29:32.123Z",
-      "createdAt": "2025-12-16T12:29:32.123Z",
       "role": "workflow:owner",
       "workflowId": "hJhZlYHR6YcsW9Ut",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-16T12:29:32.123Z",
+      "updatedAt": "2025-12-16T12:29:32.123Z"
     }
   ],
   "staticData": null,
