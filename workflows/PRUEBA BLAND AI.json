@@ -139,6 +139,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "PRUEBA BLAND AI",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -383,11 +384,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-22T09:49:45.187Z",
-      "createdAt": "2025-11-22T09:49:45.187Z",
       "role": "workflow:owner",
       "workflowId": "Tgc0FChj8QxzIqMW",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-22T09:49:45.187Z",
+      "updatedAt": "2025-11-22T09:49:45.187Z"
     }
   ],
   "staticData": null,
