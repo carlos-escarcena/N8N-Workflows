@@ -374,6 +374,7 @@
   "isArchived": false,
   "meta": null,
   "name": "Create Anything with Sora 2",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -1327,11 +1328,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T11:12:58.378Z",
-      "createdAt": "2025-12-11T11:12:58.378Z",
       "role": "workflow:owner",
       "workflowId": "pvuFZhVQoFTVcQB4",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T11:12:58.378Z",
+      "updatedAt": "2025-12-11T11:12:58.378Z"
     }
   ],
   "staticData": null,
