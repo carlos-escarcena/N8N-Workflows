@@ -38,6 +38,7 @@
   "isArchived": false,
   "meta": null,
   "name": "Ejemplo_Control_Errores",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -121,11 +122,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-10-25T01:58:47.256Z",
-      "createdAt": "2025-10-25T01:58:47.256Z",
       "role": "workflow:owner",
       "workflowId": "uXVxdR7tzc34O6ED",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-10-25T01:58:47.256Z",
+      "updatedAt": "2025-10-25T01:58:47.256Z"
     }
   ],
   "staticData": null,
