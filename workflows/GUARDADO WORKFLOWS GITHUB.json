@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-11T12:25:13.440Z",
-    "createdAt": "2025-12-11T12:25:13.440Z",
     "versionId": "03226d15-57f4-44af-9af3-471a6e309761",
     "workflowId": "nFezEpPCZGpD6lhD",
     "nodes": [
@@ -528,7 +526,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-11T12:25:13.440Z",
+    "updatedAt": "2025-12-11T12:25:13.440Z"
   },
   "activeVersionId": "03226d15-57f4-44af-9af3-471a6e309761",
   "connections": {
@@ -701,6 +701,7 @@
   "isArchived": false,
   "meta": null,
   "name": "GUARDADO WORKFLOWS GITHUB",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -1061,11 +1062,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T12:25:13.438Z",
-      "createdAt": "2025-12-11T12:25:13.438Z",
       "role": "workflow:owner",
       "workflowId": "nFezEpPCZGpD6lhD",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T12:25:13.438Z",
+      "updatedAt": "2025-12-11T12:25:13.438Z"
     }
   ],
   "staticData": null,
