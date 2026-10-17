@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2026-01-05T10:21:29.183Z",
-    "createdAt": "2026-01-05T10:21:29.183Z",
     "versionId": "011b3168-2485-4d26-a702-3ee7b6dda654",
     "workflowId": "cf6i7kJ2PeeZ1AUY",
     "nodes": [
@@ -494,7 +492,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2026-01-05T10:21:29.183Z",
+    "updatedAt": "2026-01-05T10:21:29.183Z"
   },
   "activeVersionId": "011b3168-2485-4d26-a702-3ee7b6dda654",
   "connections": {
@@ -581,6 +581,7 @@
   "isArchived": false,
   "meta": null,
   "name": "VAPI SERVIDOR MCP",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -998,11 +999,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T08:12:38.686Z",
-      "createdAt": "2025-12-11T08:12:38.686Z",
       "role": "workflow:owner",
       "workflowId": "cf6i7kJ2PeeZ1AUY",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T08:12:38.686Z",
+      "updatedAt": "2025-12-11T08:12:38.686Z"
     }
   ],
   "staticData": null,
