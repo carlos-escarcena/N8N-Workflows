@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-11T12:00:33.068Z",
-    "createdAt": "2025-12-11T12:00:33.068Z",
     "versionId": "cb9cfd77-c047-4c30-8d23-028cd7c78bef",
     "workflowId": "EYX2BC4I0DolsgK7",
     "nodes": [
@@ -158,7 +156,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-11T12:00:33.068Z",
+    "updatedAt": "2025-12-11T12:00:33.068Z"
   },
   "activeVersionId": "cb9cfd77-c047-4c30-8d23-028cd7c78bef",
   "connections": {
@@ -186,6 +186,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "Bot Telegram Errores",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -327,11 +328,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-10-25T01:06:30.178Z",
-      "createdAt": "2025-10-25T01:06:30.178Z",
       "role": "workflow:owner",
       "workflowId": "EYX2BC4I0DolsgK7",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-10-25T01:06:30.178Z",
+      "updatedAt": "2025-10-25T01:06:30.178Z"
     }
   ],
   "staticData": null,
