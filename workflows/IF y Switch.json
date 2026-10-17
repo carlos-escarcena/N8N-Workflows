@@ -25,6 +25,7 @@
   "isArchived": false,
   "meta": null,
   "name": "IF y Switch",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -119,11 +120,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-10-25T01:20:45.775Z",
-      "createdAt": "2025-10-25T01:20:45.775Z",
       "role": "workflow:owner",
       "workflowId": "4m1hPC3h8mEPmCR0",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-10-25T01:20:45.775Z",
+      "updatedAt": "2025-10-25T01:20:45.775Z"
     }
   ],
   "staticData": null,
