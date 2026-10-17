@@ -168,6 +168,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "AUTOMATIZACIÓN REDES SOCIALES",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -617,11 +618,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-16T10:07:41.330Z",
-      "createdAt": "2025-12-16T10:07:41.330Z",
       "role": "workflow:owner",
       "workflowId": "uHYH5HMOTMeurQso",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-16T10:07:41.330Z",
+      "updatedAt": "2025-12-16T10:07:41.330Z"
     }
   ],
   "staticData": null,
