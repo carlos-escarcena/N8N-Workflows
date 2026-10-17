@@ -400,6 +400,7 @@
   "isArchived": false,
   "meta": null,
   "name": "✅ Product Visualization Funnels",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -1357,11 +1358,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-10T16:28:40.912Z",
-      "createdAt": "2025-11-10T16:28:40.912Z",
       "role": "workflow:owner",
       "workflowId": "XKLIMDUTxZ4ux9Ks",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-10T16:28:40.912Z",
+      "updatedAt": "2025-11-10T16:28:40.912Z"
     }
   ],
   "staticData": null,
