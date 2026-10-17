@@ -73,6 +73,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "CHECKEO SEMANAL CON CLIENTES",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -206,11 +207,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-08T19:50:43.575Z",
-      "createdAt": "2025-12-08T19:50:43.575Z",
       "role": "workflow:owner",
       "workflowId": "MR7g2Bo8Al00xVqB",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-08T19:50:43.575Z",
+      "updatedAt": "2025-12-08T19:50:43.575Z"
     }
   ],
   "staticData": null,
