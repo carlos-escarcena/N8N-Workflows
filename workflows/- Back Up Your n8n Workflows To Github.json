@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2026-02-02T10:43:23.044Z",
-    "createdAt": "2026-02-02T10:43:23.044Z",
     "versionId": "20f15062-1e73-44c6-a3d5-481672ef0f1b",
     "workflowId": "N0iEiUE2qU7gcbkh",
     "nodes": [
@@ -743,7 +741,9 @@
     "authors": "system migration",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2026-02-02T10:43:23.044Z",
+    "updatedAt": "2026-02-02T10:43:23.044Z"
   },
   "activeVersionId": "20f15062-1e73-44c6-a3d5-481672ef0f1b",
   "connections": {
@@ -1005,6 +1005,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "- Back Up Your n8n Workflows To Github",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -1492,11 +1493,11 @@
   "settings": {},
   "shared": [
     {
-      "updatedAt": "2025-10-29T04:19:13.094Z",
-      "createdAt": "2025-10-29T04:19:13.094Z",
       "role": "workflow:owner",
       "workflowId": "N0iEiUE2qU7gcbkh",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-10-29T04:19:13.094Z",
+      "updatedAt": "2025-10-29T04:19:13.094Z"
     }
   ],
   "staticData": null,
