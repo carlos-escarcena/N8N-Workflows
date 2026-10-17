@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T11:54:11.305Z",
-    "createdAt": "2025-12-12T11:54:11.305Z",
     "versionId": "6697a84b-e29b-42d7-9d41-b6fb5c27bef5",
     "workflowId": "tV3QPdgokoiiXD7W",
     "nodes": [
@@ -72,7 +70,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T11:54:11.305Z",
+    "updatedAt": "2025-12-12T11:54:11.305Z"
   },
   "activeVersionId": "6697a84b-e29b-42d7-9d41-b6fb5c27bef5",
   "connections": {
@@ -95,6 +95,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "REGISTRO DIARIO DE COSTOS",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -151,11 +152,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-08T18:56:07.835Z",
-      "createdAt": "2025-12-08T18:56:07.835Z",
       "role": "workflow:owner",
       "workflowId": "tV3QPdgokoiiXD7W",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-08T18:56:07.835Z",
+      "updatedAt": "2025-12-08T18:56:07.835Z"
     }
   ],
   "staticData": null,
