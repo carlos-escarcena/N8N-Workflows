@@ -31,6 +31,7 @@
   "isArchived": false,
   "meta": null,
   "name": "AUTOMATIZACIÓN DE POSTS EN LINKEDIN",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -131,11 +132,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2026-01-05T10:47:41.395Z",
-      "createdAt": "2026-01-05T10:47:41.395Z",
       "role": "workflow:owner",
       "workflowId": "pvd44X6XenUwdbrX",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2026-01-05T10:47:41.395Z",
+      "updatedAt": "2026-01-05T10:47:41.395Z"
     }
   ],
   "staticData": null,
