@@ -186,6 +186,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "EMAIL OUTREACH TO PROSPECTS",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -604,11 +605,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T20:55:03.571Z",
-      "createdAt": "2025-12-11T20:55:03.571Z",
       "role": "workflow:owner",
       "workflowId": "jxJRAoeuPW5Bk9mG",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T20:55:03.571Z",
+      "updatedAt": "2025-12-11T20:55:03.571Z"
     }
   ],
   "staticData": null,
