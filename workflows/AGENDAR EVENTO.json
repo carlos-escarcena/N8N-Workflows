@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T17:55:25.472Z",
-    "createdAt": "2025-12-12T17:55:25.472Z",
     "versionId": "d16f9eed-0c94-4db9-b252-f87022834f72",
     "workflowId": "L0d9mpgl47vOaRp9",
     "nodes": [
@@ -189,7 +187,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T17:55:25.472Z",
+    "updatedAt": "2025-12-12T17:55:25.472Z"
   },
   "activeVersionId": "d16f9eed-0c94-4db9-b252-f87022834f72",
   "connections": {
@@ -223,6 +223,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "AGENDAR EVENTO",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -396,11 +397,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T08:17:22.642Z",
-      "createdAt": "2025-12-11T08:17:22.642Z",
       "role": "workflow:owner",
       "workflowId": "L0d9mpgl47vOaRp9",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T08:17:22.642Z",
+      "updatedAt": "2025-12-11T08:17:22.642Z"
     }
   ],
   "staticData": null,
