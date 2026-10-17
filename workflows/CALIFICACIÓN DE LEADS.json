@@ -27,6 +27,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "CALIFICACIÓN DE LEADS",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -181,11 +182,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-28T09:07:52.031Z",
-      "createdAt": "2025-12-28T09:07:52.031Z",
       "role": "workflow:owner",
       "workflowId": "3KslpFXAH8Yr8pco",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-28T09:07:52.031Z",
+      "updatedAt": "2025-12-28T09:07:52.031Z"
     }
   ],
   "staticData": null,
