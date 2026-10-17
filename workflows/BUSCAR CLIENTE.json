@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T17:19:29.111Z",
-    "createdAt": "2025-12-12T17:19:29.111Z",
     "versionId": "7aea900a-7b5c-4422-b43f-632ecccf8fed",
     "workflowId": "RoRTwgENIjerM6zd",
     "nodes": [
@@ -293,7 +291,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T17:19:29.111Z",
+    "updatedAt": "2025-12-12T17:19:29.111Z"
   },
   "activeVersionId": "7aea900a-7b5c-4422-b43f-632ecccf8fed",
   "connections": {
@@ -368,6 +368,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "BUSCAR CLIENTE",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -601,11 +602,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T08:14:27.559Z",
-      "createdAt": "2025-12-11T08:14:27.559Z",
       "role": "workflow:owner",
       "workflowId": "RoRTwgENIjerM6zd",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T08:14:27.559Z",
+      "updatedAt": "2025-12-11T08:14:27.559Z"
     }
   ],
   "staticData": null,
