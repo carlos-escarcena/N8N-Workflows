@@ -494,6 +494,7 @@
   "isArchived": false,
   "meta": null,
   "name": "✅ AI-Powered Music Videos copy",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -1574,11 +1575,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-10T16:26:28.413Z",
-      "createdAt": "2025-11-10T16:26:28.413Z",
       "role": "workflow:owner",
       "workflowId": "ToYdtXhnIxroQeAn",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-10T16:26:28.413Z",
+      "updatedAt": "2025-11-10T16:26:28.413Z"
     }
   ],
   "staticData": null,
