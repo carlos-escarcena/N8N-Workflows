@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-29T06:59:25.618Z",
-    "createdAt": "2025-12-29T06:59:25.618Z",
     "versionId": "12c535d5-a2ca-4cf2-99a0-8ce377ce5975",
     "workflowId": "gKT82y4sxCzvGJOE",
     "nodes": [
@@ -883,7 +881,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-29T06:59:25.618Z",
+    "updatedAt": "2025-12-29T06:59:25.618Z"
   },
   "activeVersionId": "12c535d5-a2ca-4cf2-99a0-8ce377ce5975",
   "connections": {
@@ -978,6 +978,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "FACTURAS EMAIL AUTOGUARDADO",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -1821,11 +1822,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T06:34:35.151Z",
-      "createdAt": "2025-12-29T06:34:35.151Z",
       "role": "workflow:owner",
       "workflowId": "gKT82y4sxCzvGJOE",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-29T06:34:35.151Z",
+      "updatedAt": "2025-12-29T06:34:35.151Z"
     }
   ],
   "staticData": null,
