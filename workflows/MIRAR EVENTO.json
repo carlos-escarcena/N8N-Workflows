@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T17:46:23.120Z",
-    "createdAt": "2025-12-12T17:46:23.120Z",
     "versionId": "18374ba1-d7b7-401e-a781-9a3c1c545a91",
     "workflowId": "kuRPALCtLeQXZZaV",
     "nodes": [
@@ -75,7 +73,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T17:46:23.120Z",
+    "updatedAt": "2025-12-12T17:46:23.120Z"
   },
   "activeVersionId": "18374ba1-d7b7-401e-a781-9a3c1c545a91",
   "connections": {
@@ -98,6 +98,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "MIRAR EVENTO",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -157,11 +158,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T08:21:11.251Z",
-      "createdAt": "2025-12-11T08:21:11.251Z",
       "role": "workflow:owner",
       "workflowId": "kuRPALCtLeQXZZaV",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T08:21:11.251Z",
+      "updatedAt": "2025-12-11T08:21:11.251Z"
     }
   ],
   "staticData": null,
