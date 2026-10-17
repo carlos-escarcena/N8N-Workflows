@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T17:34:09.386Z",
-    "createdAt": "2025-12-12T17:34:09.386Z",
     "versionId": "824874a9-8887-49be-9d0f-799eb6b4bf00",
     "workflowId": "J6aykVEsERZgqsem",
     "nodes": [
@@ -196,7 +194,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T17:34:09.386Z",
+    "updatedAt": "2025-12-12T17:34:09.386Z"
   },
   "activeVersionId": "824874a9-8887-49be-9d0f-799eb6b4bf00",
   "connections": {
@@ -230,6 +230,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "ACTUALIZAR EVENTO",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -399,11 +400,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T08:19:58.885Z",
-      "createdAt": "2025-12-11T08:19:58.885Z",
       "role": "workflow:owner",
       "workflowId": "J6aykVEsERZgqsem",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T08:19:58.885Z",
+      "updatedAt": "2025-12-11T08:19:58.885Z"
     }
   ],
   "staticData": null,
