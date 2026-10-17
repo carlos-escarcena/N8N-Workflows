@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-11T12:29:28.053Z",
-    "createdAt": "2025-12-11T12:29:28.053Z",
     "versionId": "5466a09e-71ab-46a7-9bb4-8877cd714094",
     "workflowId": "yU6WDslddBKEM8j4",
     "nodes": [
@@ -599,7 +597,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-11T12:29:28.053Z",
+    "updatedAt": "2025-12-11T12:29:28.053Z"
   },
   "activeVersionId": "5466a09e-71ab-46a7-9bb4-8877cd714094",
   "connections": {
@@ -807,6 +807,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "Back Up Workflows",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -1210,16 +1211,21 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-10-28T09:04:39.238Z",
-      "createdAt": "2025-10-28T09:04:39.238Z",
       "role": "workflow:owner",
       "workflowId": "yU6WDslddBKEM8j4",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-10-28T09:04:39.238Z",
+      "updatedAt": "2025-10-28T09:04:39.238Z"
     }
   ],
   "staticData": {
     "node:Schedule Trigger": {
-      "recurrenceRules": []
+      "recurrenceRules": [
+        null
+      ],
+      "recurrenceRuleSignatures": [
+        null
+      ]
     }
   },
   "tags": [],
