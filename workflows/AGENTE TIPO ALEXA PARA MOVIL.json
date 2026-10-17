@@ -55,6 +55,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "AGENTE TIPO ALEXA PARA MOVIL",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -193,11 +194,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2026-01-05T10:39:56.158Z",
-      "createdAt": "2026-01-05T10:39:56.158Z",
       "role": "workflow:owner",
       "workflowId": "8l4sp7aVAaZV7MQ4",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2026-01-05T10:39:56.158Z",
+      "updatedAt": "2026-01-05T10:39:56.158Z"
     }
   ],
   "staticData": null,
