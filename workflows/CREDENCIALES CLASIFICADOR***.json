@@ -8,6 +8,7 @@
   "isArchived": false,
   "meta": null,
   "name": "CREDENCIALES CLASIFICADOR***",
+  "nodeGroups": [],
   "nodes": [],
   "pinData": {},
   "settings": {
@@ -15,11 +16,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-16T12:33:58.148Z",
-      "createdAt": "2025-12-16T12:33:58.148Z",
       "role": "workflow:owner",
       "workflowId": "TUBcFEE8P7UTwqWb",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-16T12:33:58.148Z",
+      "updatedAt": "2025-12-16T12:33:58.148Z"
     }
   ],
   "staticData": null,
