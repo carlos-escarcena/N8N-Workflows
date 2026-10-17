@@ -186,6 +186,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "AGENTE TELEGRAM",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -753,11 +754,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T06:04:49.142Z",
-      "createdAt": "2025-12-11T06:04:49.142Z",
       "role": "workflow:owner",
       "workflowId": "xm5uJ4ecF8E81pdn",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T06:04:49.142Z",
+      "updatedAt": "2025-12-11T06:04:49.142Z"
     }
   ],
   "staticData": null,
