@@ -260,6 +260,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "GENERACIÓN REPORTE CONTABILIDAD MENSUAL",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -617,11 +618,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-10T09:02:13.952Z",
-      "createdAt": "2025-12-10T09:02:13.952Z",
       "role": "workflow:owner",
       "workflowId": "tcRmOREkBEuUBd7O",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-10T09:02:13.952Z",
+      "updatedAt": "2025-12-10T09:02:13.952Z"
     }
   ],
   "staticData": null,
