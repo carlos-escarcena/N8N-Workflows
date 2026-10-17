@@ -56,6 +56,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "Extract Links and URLs from PDF documents using PDF.co",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -235,11 +236,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-15T22:18:27.860Z",
-      "createdAt": "2025-11-15T22:18:27.860Z",
       "role": "workflow:owner",
       "workflowId": "WrMt4c0eAwUzIgQG",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-15T22:18:27.860Z",
+      "updatedAt": "2025-11-15T22:18:27.860Z"
     }
   ],
   "staticData": null,
