@@ -1,8 +1,6 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-12T17:23:08.540Z",
-    "createdAt": "2025-12-12T17:23:08.540Z",
     "versionId": "e4257dc7-e912-4ef9-9280-9a7bbf210308",
     "workflowId": "BtXRbnqmyL0oDa2o",
     "nodes": [
@@ -156,7 +154,9 @@
     "authors": "Carlos Escarcena",
     "name": null,
     "description": null,
-    "autosaved": false
+    "autosaved": false,
+    "createdAt": "2025-12-12T17:23:08.540Z",
+    "updatedAt": "2025-12-12T17:23:08.540Z"
   },
   "activeVersionId": "e4257dc7-e912-4ef9-9280-9a7bbf210308",
   "connections": {
@@ -202,6 +202,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "CHECKEO DISPONIBILIDAD",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -319,11 +320,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-11T08:17:02.495Z",
-      "createdAt": "2025-12-11T08:17:02.495Z",
       "role": "workflow:owner",
       "workflowId": "BtXRbnqmyL0oDa2o",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-11T08:17:02.495Z",
+      "updatedAt": "2025-12-11T08:17:02.495Z"
     }
   ],
   "staticData": null,
