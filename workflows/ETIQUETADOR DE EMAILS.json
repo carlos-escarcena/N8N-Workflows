@@ -156,6 +156,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "ETIQUETADOR DE EMAILS",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -784,11 +785,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T04:42:48.809Z",
-      "createdAt": "2025-12-29T04:42:48.809Z",
       "role": "workflow:owner",
       "workflowId": "l8mVs5EqVk1XQ2h2",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-29T04:42:48.809Z",
+      "updatedAt": "2025-12-29T04:42:48.809Z"
     }
   ],
   "staticData": null,
