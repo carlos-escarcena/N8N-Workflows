@@ -202,6 +202,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "CREACIÓN DE CUENTAS Y API-KEYS PARA CADA WORKFLOW",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -609,11 +610,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-03T18:11:49.722Z",
-      "createdAt": "2025-12-03T18:11:49.722Z",
       "role": "workflow:owner",
       "workflowId": "xKwa0Tl5HVRKL8b6",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-03T18:11:49.722Z",
+      "updatedAt": "2025-12-03T18:11:49.722Z"
     }
   ],
   "staticData": {
