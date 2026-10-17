@@ -263,6 +263,7 @@
     "templateCredsSetupCompleted": true
   },
   "name": "ENVIO DE EMAILS A CLIENTES PAGOS MENSUALES",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -794,11 +795,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-07T15:20:59.457Z",
-      "createdAt": "2025-12-07T15:20:59.457Z",
       "role": "workflow:owner",
       "workflowId": "NLFYarKTlmf8B5j1",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-12-07T15:20:59.457Z",
+      "updatedAt": "2025-12-07T15:20:59.457Z"
     }
   ],
   "staticData": null,
