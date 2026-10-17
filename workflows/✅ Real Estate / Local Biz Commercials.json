@@ -520,6 +520,7 @@
   "isArchived": false,
   "meta": null,
   "name": "✅ Real Estate / Local Biz Commercials",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {},
@@ -1832,11 +1833,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-10T16:29:01.888Z",
-      "createdAt": "2025-11-10T16:29:01.888Z",
       "role": "workflow:owner",
       "workflowId": "QUVmW8z88lSrV2gn",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-10T16:29:01.888Z",
+      "updatedAt": "2025-11-10T16:29:01.888Z"
     }
   ],
   "staticData": null,
