@@ -260,6 +260,7 @@
   "isArchived": false,
   "meta": null,
   "name": "✅ Auto-VSL Generator",
+  "nodeGroups": [],
   "nodes": [
     {
       "parameters": {
@@ -976,11 +977,11 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-10T16:27:47.680Z",
-      "createdAt": "2025-11-10T16:27:47.680Z",
       "role": "workflow:owner",
       "workflowId": "DBSDmx0CeYiI4jpi",
-      "projectId": "1hPYqGN0htWyJ6V9"
+      "projectId": "1hPYqGN0htWyJ6V9",
+      "createdAt": "2025-11-10T16:27:47.680Z",
+      "updatedAt": "2025-11-10T16:27:47.680Z"
     }
   ],
   "staticData": null,
